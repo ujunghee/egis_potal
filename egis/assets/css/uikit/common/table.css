@@ -1,0 +1,67 @@
+/* 공통 데이터 테이블 (v1) — 내부 격자선만, 외곽 border 없음 */
+.data-table {
+  width: 100%;
+  min-width: 84rem;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  height: 4.2rem;
+  padding: 0.8rem 1.2rem;
+  border-right: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+  border-right: 0;
+}
+
+.data-table--fit {
+  min-width: 100%;
+}
+
+/* 공통 게시판 테이블 (v2) — 가로 구분선만 */
+.table-02 {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table-02 th {
+  height: 4.8rem;
+  vertical-align: middle;
+}
+
+.table-02 td {
+  height: 5rem;
+  border-bottom: 1px solid var(--slate-200);
+  vertical-align: middle;
+}
+
+.table-02__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  min-width: 0;
+  max-width: 100%;
+  color: inherit;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.table-02__link:hover {
+  text-decoration: underline;
+}
+
+.table-02__ellipsis {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

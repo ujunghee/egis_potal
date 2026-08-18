@@ -1,0 +1,139 @@
+/* 마이페이지 — LNB(2) · 관심 데이터(10) */
+.mypage__lnb {
+  min-width: 0;
+}
+
+.mypage__lnb-title {
+  margin: 0 0 1.6rem;
+}
+
+.mypage__lnb-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mypage__lnb-link {
+  display: flex;
+  align-items: center;
+  height: 4.8rem;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-md-8);
+  color: var(--slate-700);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mypage__lnb-link:hover {
+  background-color: var(--slate-50);
+  color: var(--slate-900);
+}
+
+.mypage__lnb-link.is-active {
+  background-color: var(--slate-50);
+  color: var(--slate-900);
+  font-weight: 600;
+}
+
+.mypage__main {
+  min-width: 0;
+  /* 리스트 없을 때 푸터가 올라오지 않도록 — 헤더 7.6rem · 푸터 34.5rem */
+  min-height: calc(100vh - 7.6rem - 34.5rem);
+  min-height: calc(100dvh - 7.6rem - 34.5rem);
+}
+
+.mypage__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.mypage__head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.mypage__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  flex-shrink: 0;
+  padding: var(--spacing-16);
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+  white-space: nowrap;
+}
+
+.mypage__tabs {
+  display: flex;
+  height: 5.4rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.mypage__tab {
+  box-sizing: border-box;
+  min-width: 16.7rem; /* 167px */
+  height: 5.4rem; /* 54px */
+  padding: 0 var(--spacing-20);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mypage__tab.active {
+  border-bottom-color: var(--slate-900);
+}
+
+.mypage__toolbar {
+  margin-bottom: 1.6rem;
+}
+
+.mypage__checkall-label {
+  cursor: pointer;
+}
+
+/* Figma 1247:10643 — 선택 시 노출되는 선택 삭제 */
+.mypage__delete-selected {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  margin: 0;
+  padding: 0 var(--spacing-16);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mypage__delete-selected[hidden] {
+  display: none;
+}
+
+.mypage__sort {
+  width: 11.5rem; /* 115px */
+}
+
+.mypage__sort .select-40 {
+  padding: 0 calc(2.4rem + var(--spacing-4)) 0 var(--spacing-8);
+  background-position: right var(--spacing-2) center;
+}
+
+.mypage__panel[hidden] {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mypage__lnb,
+  .mypage__main {
+    grid-column: 1 / -1;
+  }
+}

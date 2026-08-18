@@ -1,0 +1,135 @@
+/* 이용자 지원 — 문의하기 작성 */
+.inquiry-write__card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.inquiry-write__row {
+  flex-wrap: wrap;
+}
+
+.inquiry-write .input-field-default-48 {
+  font-size: var(--font-size-body2);
+}
+
+.inquiry-write__content {
+  min-height: 20rem;
+  padding-bottom: 3.6rem;
+  resize: vertical;
+}
+
+.inquiry-write .textarea-wrapper.is-error .inquiry-write__content {
+  border-color: var(--red-500);
+}
+
+.inquiry-write .textarea-wrapper.is-error .error-message {
+  display: block;
+  margin-top: var(--spacing-6);
+  color: var(--red-500);
+  font-size: var(--font-size-body3);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-170);
+  letter-spacing: var(--letter-spacing-md);
+}
+
+.inquiry-write .select-wrapper.is-error .error-message,
+.inquiry-write .input-wrapper.is-error .error-message {
+  font-size: var(--font-size-body3);
+  line-height: var(--line-height-170);
+}
+
+.inquiry-write__counter {
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1.6rem;
+}
+
+.inquiry-write__info-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.4rem;
+  background: url('../../../image/icon/web/user-support/notice-bg-blue-40.svg') center / contain no-repeat;
+}
+
+[data-inquiry-image-list] {
+  list-style: none;
+}
+
+.inquiry-write__image-item {
+  width: 9rem;
+  height: 9rem;
+  flex-shrink: 0;
+}
+
+.inquiry-write__image-preview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+}
+
+.inquiry-write__image-preview img {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.inquiry-write__image-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.8rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--slate-700);
+  cursor: pointer;
+  flex: none;
+}
+
+.inquiry-write__image-add {
+  width: 9rem;
+  height: 9rem;
+  margin: 0;
+  padding: 0 var(--spacing-8);
+  border: 0;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-700);
+  cursor: pointer;
+}
+
+.inquiry-write__image-add:disabled,
+.inquiry-write__image-add[hidden] {
+  display: none;
+}
+
+.inquiry-write__image-add-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url("data:image/svg+xml,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M10 4V16M4 10H16' stroke='white' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
+}
+
+.inquiry-write__card form > div:last-of-type a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .inquiry-write__card {
+    padding: var(--spacing-24);
+  }
+
+  .inquiry-write__row {
+    flex-direction: column;
+  }
+}

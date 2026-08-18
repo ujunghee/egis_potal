@@ -1,0 +1,507 @@
+<!-- 선택 레이어: 표시·삭제·투명도·범례 -->
+<aside
+  class="selected-layer-panel"
+  data-selected-layer-panel
+  aria-hidden="true"
+  aria-labelledby="selected-layer-panel-title"
+>
+  <div class="selected-layer-panel__head">
+    <h2 id="selected-layer-panel-title" class="selected-layer-panel__title body2-sb-16 color-slate-900">
+      선택한 레이어 <span class="color-blue-500" data-selected-layer-count>3</span>
+    </h2>
+    <button type="button" data-selected-layer-panel-close aria-label="선택한 레이어 패널 닫기">
+      <i class="close-icon-32" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="selected-layer-panel__body">
+    <p class="blind" aria-live="polite" aria-atomic="true" data-selected-layer-order-status></p>
+    <ul class="selected-layer-panel__list" data-selected-layer-list>
+      <li class="selected-layer-item is-expanded" data-selected-layer-item="dataset-1">
+        <div class="selected-layer-item__head">
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__drag"
+              aria-label="순서 변경"
+              aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown"
+            >
+              <i class="map-layer-drag-icon" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__visibility"
+              data-selected-layer-visibility
+              aria-pressed="true"
+              aria-label="레이어 표시"
+            >
+              <i class="map-layer-eye-open-icon" aria-hidden="true"></i>
+              <i class="map-layer-eye-closed-icon" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="selected-layer-item__summary">
+            <p class="selected-layer-item__name body2-m-16 color-slate-900">데이터셋명</p>
+            <ul class="selected-layer-item__palette" aria-label="범례 미리보기">
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="0~10"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-50"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="10~20"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-100"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="20~30"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-200"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="30~40"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-300"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="40~50"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-400"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="50~60"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-500"></span>
+              </li>
+              <li class="selected-layer-item__palette-item">
+                <button
+                  type="button"
+                  class="selected-layer-item__palette-more"
+                  data-selected-layer-legend-more
+                  aria-label="범례 더보기"
+                >
+                  <i class="plus-icon" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__remove"
+              data-selected-layer-remove
+              aria-label="레이어 제거"
+            >
+              <i class="close-icon-32" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__expand"
+              data-selected-layer-expand
+              aria-expanded="true"
+              aria-label="레이어 설정 접기"
+            >
+              <i class="chevron-right-slate-700" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="selected-layer-item__body">
+          <div class="selected-layer-item__settings">
+            <div class="selected-layer-item__setting">
+              <p class="selected-layer-item__setting-label body3-r-14 color-slate-700">속성 조회</p>
+              <div class="selected-layer-item__setting-control">
+                <div class="selected-layer-item__setting-value">
+                  <label for="selected-layer-attribute-switch" class="selected-layer-item__switch">
+                    <span class="blind">속성 조회 사용</span>
+                    <input
+                      type="checkbox"
+                      id="selected-layer-attribute-switch"
+                      class="selected-layer-item__switch-input"
+                      data-selected-layer-switch="attribute"
+                      checked
+                    />
+                    <span class="selected-layer-item__switch-track" aria-hidden="true"></span>
+                  </label>
+                  <span
+                    class="selected-layer-item__switch-state body3-r-14 color-slate-900"
+                    data-selected-layer-switch-state
+                    >선택됨</span
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="selected-layer-item__help"
+                  data-tooltip-placement="top-end"
+                  aria-label="속성 조회 도움말"
+                >
+                  <i class="map-layer-tooltip-icon" aria-hidden="true"></i>
+                  <span class="integrated-search__tooltip selected-layer-item__help-tooltip body3-r-14"
+                    >지도에서 속성을 조회할 대상 레이어를 선택합니다.</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <div class="selected-layer-item__setting">
+              <p class="selected-layer-item__setting-label body3-r-14 color-slate-700">라벨 표시</p>
+              <div class="selected-layer-item__setting-control">
+                <div class="selected-layer-item__setting-value">
+                  <label for="selected-layer-label-switch" class="selected-layer-item__switch">
+                    <span class="blind">라벨 표시 사용</span>
+                    <input
+                      type="checkbox"
+                      id="selected-layer-label-switch"
+                      class="selected-layer-item__switch-input"
+                      data-selected-layer-switch="label"
+                      checked
+                    />
+                    <span class="selected-layer-item__switch-track" aria-hidden="true"></span>
+                  </label>
+                  <span
+                    class="selected-layer-item__switch-state body3-r-14 color-slate-900"
+                    data-selected-layer-switch-state
+                    >표시</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="selected-layer-item__setting">
+              <p class="selected-layer-item__setting-label body3-r-14 color-slate-700">투명도</p>
+              <div class="selected-layer-item__setting-control selected-layer-item__opacity">
+                <label for="selected-layer-opacity" class="blind">레이어 투명도</label>
+                <input
+                  type="range"
+                  id="selected-layer-opacity"
+                  min="0"
+                  max="100"
+                  value="20"
+                  data-selected-layer-opacity
+                />
+                <span
+                  class="selected-layer-item__opacity-value body3-r-14 color-slate-500"
+                  data-selected-layer-opacity-value
+                  >20%</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="selected-layer-item__tabs" role="tablist" aria-label="레이어 상세">
+              <button
+                type="button"
+                class="selected-layer-item__tab body2-m-16 is-active"
+                role="tab"
+                aria-selected="true"
+                data-selected-layer-tab="legend"
+              >
+                범례
+              </button>
+              <button
+                type="button"
+                class="selected-layer-item__tab body2-m-16"
+                role="tab"
+                aria-selected="false"
+                data-selected-layer-tab="info"
+              >
+                정보
+              </button>
+            </div>
+
+            <div
+              class="selected-layer-item__tab-panel is-active"
+              data-selected-layer-tab-panel="legend"
+              role="tabpanel"
+            >
+              <ul class="selected-layer-item__legend">
+                <li class="selected-layer-item__legend-item">
+                  <div class="selected-layer-item__legend-value">
+                    <span class="selected-layer-item__legend-swatch bg-blue-50"></span>
+                    <p class="selected-layer-item__legend-label body3-r-14 color-slate-700">5~10</p>
+                  </div>
+                </li>
+                <li class="selected-layer-item__legend-item">
+                  <div class="selected-layer-item__legend-value">
+                    <span class="selected-layer-item__legend-swatch bg-blue-200"></span>
+                    <p class="selected-layer-item__legend-label body3-r-14 color-slate-700">5~10</p>
+                  </div>
+                </li>
+                <li class="selected-layer-item__legend-item">
+                  <div class="selected-layer-item__legend-value">
+                    <span class="selected-layer-item__legend-swatch bg-blue-400"></span>
+                    <p class="selected-layer-item__legend-label body3-r-14 color-slate-700">5~10</p>
+                  </div>
+                </li>
+                <li class="selected-layer-item__legend-item">
+                  <div class="selected-layer-item__legend-value">
+                    <span class="selected-layer-item__legend-swatch bg-blue-500"></span>
+                    <p class="selected-layer-item__legend-label body3-r-14 color-slate-700">5~10</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="selected-layer-item__tab-panel" data-selected-layer-tab-panel="info" role="tabpanel">
+              <div class="selected-layer-item__info">
+                <dl class="selected-layer-item__info-meta">
+                  <div class="selected-layer-item__info-row">
+                    <dt class="selected-layer-item__info-term body3-r-14 color-slate-700">서비스 유형</dt>
+                    <dd class="selected-layer-item__info-value body3-m-14 color-slate-900">WMS / WFS</dd>
+                  </div>
+                  <div class="selected-layer-item__info-row">
+                    <dt class="selected-layer-item__info-term body3-r-14 color-slate-700">레이어명</dt>
+                    <dd class="selected-layer-item__info-value body3-m-14 color-slate-900">landcover_detail_2025</dd>
+                  </div>
+                  <div class="selected-layer-item__info-row">
+                    <dt class="selected-layer-item__info-term body3-r-14 color-slate-700">좌표계</dt>
+                    <dd class="selected-layer-item__info-value body3-m-14 color-slate-900">EPSG:5179</dd>
+                  </div>
+                  <div class="selected-layer-item__info-row">
+                    <dt class="selected-layer-item__info-term body3-r-14 color-slate-700">표시축적</dt>
+                    <dd class="selected-layer-item__info-value body3-m-14 color-slate-900">1:5,000~1:1,000,000</dd>
+                  </div>
+                </dl>
+                <button type="button" class="slate-50-button-40 w-full" data-selected-layer-info-detail>
+                  상세보기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="selected-layer-item" data-selected-layer-item="dataset-2">
+        <div class="selected-layer-item__head">
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__drag"
+              aria-label="순서 변경"
+              aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown"
+            >
+              <i class="map-layer-drag-icon" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__visibility"
+              data-selected-layer-visibility
+              aria-pressed="true"
+              aria-label="레이어 표시"
+            >
+              <i class="map-layer-eye-open-icon" aria-hidden="true"></i>
+              <i class="map-layer-eye-closed-icon" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="selected-layer-item__summary">
+            <p class="selected-layer-item__name body2-m-16 color-slate-900">데이터셋명</p>
+            <ul class="selected-layer-item__palette" aria-label="범례 미리보기">
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="0~10"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-50"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="10~20"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-100"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="20~30"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-200"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="30~40"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-300"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="40~50"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-400"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="50~60"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-500"></span>
+              </li>
+              <li class="selected-layer-item__palette-item">
+                <button
+                  type="button"
+                  class="selected-layer-item__palette-more"
+                  data-selected-layer-legend-more
+                  aria-label="범례 더보기"
+                >
+                  <i class="plus-icon" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__remove"
+              data-selected-layer-remove
+              aria-label="레이어 제거"
+            >
+              <i class="close-icon-32" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__expand"
+              data-selected-layer-expand
+              aria-expanded="false"
+              aria-label="레이어 설정 펼치기"
+            >
+              <i class="chevron-right-slate-700" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li class="selected-layer-item is-hidden-layer" data-selected-layer-item="dataset-3">
+        <div class="selected-layer-item__head">
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__drag"
+              aria-label="순서 변경"
+              aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown"
+            >
+              <i class="map-layer-drag-icon" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__visibility"
+              data-selected-layer-visibility
+              aria-pressed="false"
+              aria-label="레이어 숨김"
+            >
+              <i class="map-layer-eye-open-icon" aria-hidden="true"></i>
+              <i class="map-layer-eye-closed-icon" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="selected-layer-item__summary">
+            <p class="selected-layer-item__name body2-m-16 color-slate-900">데이터셋명1</p>
+            <ul class="selected-layer-item__palette" aria-label="범례 미리보기">
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="0~10"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-50"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="10~20"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-100"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="20~30"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-200"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="30~40"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-300"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="40~50"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-400"></span>
+              </li>
+              <li
+                class="selected-layer-item__palette-item"
+                data-legend-name="범례명"
+                data-legend-value="50~60"
+                aria-hidden="true"
+              >
+                <span class="selected-layer-item__palette-swatch bg-blue-500"></span>
+              </li>
+              <li class="selected-layer-item__palette-item">
+                <button
+                  type="button"
+                  class="selected-layer-item__palette-more"
+                  data-selected-layer-legend-more
+                  aria-label="범례 더보기"
+                >
+                  <i class="plus-icon" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="selected-layer-item__icon">
+            <button
+              type="button"
+              class="selected-layer-item__remove"
+              data-selected-layer-remove
+              aria-label="레이어 제거"
+            >
+              <i class="close-icon-32" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="selected-layer-item__expand"
+              data-selected-layer-expand
+              aria-expanded="false"
+              aria-label="레이어 설정 펼치기"
+            >
+              <i class="chevron-right-slate-700" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</aside>

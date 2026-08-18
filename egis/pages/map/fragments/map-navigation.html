@@ -1,0 +1,205 @@
+<!-- 지도 내비게이션: 검색·공간검색·도엽검색 메뉴 -->
+<div class="map-navigation-wrap">
+  <nav class="map-navigation" aria-label="지도 도구">
+    <ul class="map-navigation__list">
+      <!-- 통합검색: data-result-panel → 결과 패널 열기 -->
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-pressed="false"
+          aria-label="통합검색"
+          data-result-panel
+          data-result-panel-view="integrated-search"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--search" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">통합검색</span>
+          <span class="integrated-search__tooltip body3-r-14">통합검색</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-pressed="false"
+          aria-label="환경기초지도"
+          data-result-panel
+          data-result-panel-view="base-resource-map"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--globe" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">환경기초지도</span>
+          <span class="integrated-search__tooltip body3-r-14">환경기초지도</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-pressed="false"
+          aria-label="주제별 지도"
+          data-result-panel
+          data-result-panel-view="topical-map"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--layer" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">주제별 지도</span>
+          <span class="integrated-search__tooltip body3-r-14">주제별 지도</span>
+        </button>
+      </li>
+      <li class="map-navigation__divider" role="presentation" aria-hidden="true"></li>
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-pressed="false"
+          aria-label="공간검색"
+          data-spatial-search
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--draw" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">공간검색</span>
+          <span class="integrated-search__tooltip body3-r-14">공간검색</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-pressed="false"
+          aria-label="도엽검색"
+          data-result-panel
+          data-result-panel-view="map-sheet-search"
+          aria-controls="result-panel-view-map-sheet-search"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--frame" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">도엽검색</span>
+          <span class="integrated-search__tooltip body3-r-14">도엽검색</span>
+        </button>
+      </li>
+      <li class="map-navigation__bottom">
+        <button
+          type="button"
+          class="map-navigation__item"
+          aria-label="이용안내"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--guide" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">이용안내</span>
+          <span class="integrated-search__tooltip body3-r-14">이용안내</span>
+        </button>
+      </li>
+      <li class="map-navigation__divider" role="presentation" aria-hidden="true"></li>
+      <li>
+        <button
+          type="button"
+          class="map-navigation__item map-navigation__toggle"
+          data-nav-collapse
+          aria-expanded="true"
+          aria-label="메뉴 접기"
+          data-tooltip-placement="right"
+          data-tooltip-when="collapsed"
+        >
+          <i class="map-nav-icon map-nav-icon--toggle" aria-hidden="true"></i>
+          <span class="map-navigation__label body3-m-14">접기</span>
+          <span class="integrated-search__tooltip body3-r-14">펼치기</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <aside
+    class="spatial-search-panel"
+    id="spatial-search-panel"
+    data-spatial-search-panel
+    aria-hidden="true"
+    aria-label="공간검색 도구"
+  >
+    <ul class="spatial-search-panel__list">
+      <li>
+        <button
+          type="button"
+          class="spatial-search-panel__tool"
+          data-spatial-search-tool="square"
+          data-tooltip-placement="right"
+          aria-pressed="false"
+          aria-label="사각형"
+        >
+          <i class="spatial-search-icon spatial-search-icon--square" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">사각형</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="spatial-search-panel__tool"
+          data-spatial-search-tool="circle"
+          data-tooltip-placement="right"
+          aria-pressed="false"
+          aria-label="원"
+        >
+          <i class="spatial-search-icon spatial-search-icon--circle" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">원</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="spatial-search-panel__tool"
+          data-spatial-search-tool="random"
+          data-tooltip-placement="right"
+          aria-pressed="false"
+          aria-label="다각형"
+        >
+          <i class="spatial-search-icon spatial-search-icon--random" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">자유형</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="spatial-search-panel__tool"
+          data-spatial-search-tool="radius"
+          data-tooltip-placement="right"
+          aria-pressed="false"
+          aria-label="반경"
+        >
+          <i class="spatial-search-icon spatial-search-icon--radius" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">반경</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="spatial-search-panel__tool"
+          data-spatial-search-tool="eraser"
+          data-tooltip-placement="right"
+          aria-label="지우기"
+        >
+          <i class="spatial-search-icon spatial-search-icon--eraser" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">지우기</span>
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+  <button
+    type="button"
+    class="result-panel__toggle spatial-search-panel__toggle"
+    data-spatial-search-toggle
+    hidden
+    aria-expanded="true"
+    aria-controls="spatial-search-panel"
+    aria-label="공간검색 도구 패널 접기"
+  >
+    <i class="arrow-panel-icon" aria-hidden="true"></i>
+  </button>
+</div>

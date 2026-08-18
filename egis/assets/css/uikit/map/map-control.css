@@ -1,0 +1,118 @@
+/* Map Control Panel (지도 컨트롤 패널) */
+.map-control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  width: fit-content;
+}
+
+.map-control__group {
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+  border-radius: var(--radius-sm-4);
+  gap: 0;
+  overflow: hidden;
+}
+
+.map-view__toolbar .map-control__group {
+  gap: var(--spacing-16);
+  overflow: visible;
+}
+
+.map-view__control .map-control__group .map-control__btn {
+  border-radius: 0;
+}
+
+.map-view__control .map-control__group .map-control__btn:first-child {
+  border-radius: var(--radius-sm-4) var(--radius-sm-4) 0 0;
+}
+
+.map-view__control .map-control__group .map-control__btn:last-child {
+  border-radius: 0 0 var(--radius-sm-4) var(--radius-sm-4);
+}
+
+.map-view__control .map-control__group .map-control__btn:only-child {
+  border-radius: var(--radius-sm-4);
+}
+
+.map-view__control .map-control__group .map-control__btn + .map-control__btn {
+  border-top: 0;
+}
+
+.map-control__layer {
+  position: relative;
+  flex-shrink: 0;
+  width: 4rem;
+}
+
+.map-control__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm-4);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.map-control__btn--layer.is-active {
+  border-color: var(--blue-500);
+  background-color: var(--blue-50);
+}
+
+.map-control__btn--basemap.is-active {
+  border-color: var(--blue-500);
+  background-color: var(--blue-50);
+}
+
+.map-control__badge {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 var(--spacing-4);
+  border-radius: var(--radius-full);
+  background-color: var(--red-500);
+  color: var(--white);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.map-control__badge[hidden] {
+  display: none;
+}
+
+/* 툴팁 — 숨김 시 레이아웃 밖(fixed) → 지도 스크롤 유발 방지, 표시는 JS fixed 좌표 */
+.map-control__btn > .integrated-search__tooltip {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  transform: none;
+}
+
+.map-control__btn.active {
+  color: var(--blue-500);
+}
+
+.map-control__btn .plus-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.map-control__btn:active .plus-icon {
+  background: url("data:image/svg+xml,<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M6 2.4V9.6M9.6 6H2.4' stroke='%231A76FF' stroke-width='1.5' stroke-linecap='round'/></svg>") center center / contain no-repeat;
+}
+
+.map-control__btn:active .minus-icon {
+  background: url("data:image/svg+xml,<svg width='16' height='2' viewBox='0 0 16 2' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M14.75 0.75H0.75' stroke='%231A76FF' stroke-width='1.5' stroke-linecap='round'/></svg>") center center / contain no-repeat;
+}

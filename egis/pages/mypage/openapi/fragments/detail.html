@@ -1,0 +1,125 @@
+<!-- Open API 개발 계정 상세 — Figma 1189:7760 / 만료 1226:127 -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10" data-oa-detail data-oa-status="active">
+    <div class="oa-detail__head flex align-center justify-between gap-16 mb-32">
+      <h2 class="heading6-sb-28 color-slate-900 m-0">Open API 개발 계정</h2>
+      <div class="oa-detail__actions flex align-center gap-10 flex-none">
+        <button type="button" class="oa-detail__delete body2-m-16" data-oa-delete>계정 삭제</button>
+        <a href="./edit.html" class="border-slate-button-48 body2-m-16" data-oa-edit>정보 수정</a>
+        <button type="button" class="border-blue-button-48 body2-m-16" data-oa-extend>연장 신청</button>
+      </div>
+    </div>
+
+    <div class="oa-detail__body flex flex-col gap-40">
+      <div class="oa-detail__top flex flex-col gap-32">
+        <div class="oa-detail__summary flex align-center gap-32">
+          <!-- 정상 상태 카드 -->
+          <div class="oa-detail__status-card" data-oa-status-active>
+            <div class="oa-detail__status-top flex flex-col gap-12">
+              <i class="oa-detail__status-icon oa-detail__status-icon--ok" aria-hidden="true"></i>
+              <p class="heading9-sb-22 color-gray-900 m-0">
+                개발 계정을 정상적으로<br />이용하고 있습니다.
+              </p>
+            </div>
+            <div class="oa-detail__status-bottom flex flex-col gap-8">
+              <div class="flex flex-col gap-12">
+                <div class="oa-detail__period flex align-center justify-between gap-8">
+                  <span class="body2-r-16 color-slate-700">계정 유효기간</span>
+                  <span class="body2-sb-16 color-gray-900">2027-12-29까지</span>
+                </div>
+                <div class="oa-detail__progress" aria-hidden="true">
+                  <span class="oa-detail__progress-bar" style="width: 47%"></span>
+                </div>
+              </div>
+              <p class="body3-r-14 color-slate-500 m-0">만료까지 300일 남았습니다.</p>
+            </div>
+          </div>
+
+          <!-- 만료되었을때 -->
+          <div class="oa-detail__status-card" data-oa-status-expired hidden>
+            <div class="oa-detail__status-top flex flex-col gap-12">
+              <i class="oa-detail__status-icon oa-detail__status-icon--expired" aria-hidden="true"></i>
+              <p class="heading9-sb-22 color-gray-900 m-0">
+                개발 계정 이용기간이<br />만료되었습니다.
+              </p>
+            </div>
+            <div class="oa-detail__status-bottom flex flex-col gap-8">
+              <div class="oa-detail__period flex align-center justify-between gap-8">
+                <span class="body2-r-16 color-slate-700">계정 유효기간</span>
+                <span class="body2-sb-16 color-gray-900">2027-12-29 만료</span>
+              </div>
+              <p class="body2-r-16 color-slate-700 m-0">
+                계정을 다시 사용하려면 기간 연장을<br />신청해 주세요.
+              </p>
+            </div>
+          </div>
+
+          <div class="oa-detail__info-card flex-1 min-w-0">
+            <h3 class="heading9-sb-22 color-gray-900 m-0">계정 정보</h3>
+            <div class="oa-detail__info-body flex flex-col gap-16">
+              <div class="oa-detail__info-grid">
+                <div class="oa-detail__info-cell">
+                  <span class="body2-r-16 color-gray-700">신청계정</span>
+                  <span class="body2-m-16 color-gray-900">개발 계정</span>
+                </div>
+                <div class="oa-detail__info-cell">
+                  <span class="body2-r-16 color-gray-700">계정 상태</span>
+                  <span class="body2-m-16 color-gray-900" data-oa-account-status>사용 중</span>
+                </div>
+                <div class="oa-detail__info-cell">
+                  <span class="body2-r-16 color-gray-700">승인 방식</span>
+                  <span class="body2-m-16 color-gray-900">자동 승인</span>
+                </div>
+                <div class="oa-detail__info-cell">
+                  <span class="body2-r-16 color-gray-700">신청일</span>
+                  <span class="body2-m-16 color-gray-900">2025-12-29</span>
+                </div>
+              </div>
+              <div class="oa-detail__key-block flex flex-col gap-8">
+                <span class="body2-r-16 color-gray-700">인증키</span>
+                <div class="oa-detail__key-row flex align-center gap-8">
+                  <div class="oa-detail__key-field flex-1 min-w-0">
+                    <code class="body3-r-14 color-gray-900" data-oa-api-key data-masked="true">**********************************************************</code>
+                  </div>
+                  <button type="button" class="border-slate-button-40 body3-m-14" data-oa-toggle-key>보기</button>
+                  <button type="button" class="border-slate-button-40 body3-m-14" data-oa-copy-key>복사</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="oa-detail__usage-card">
+          <h3 class="heading9-sb-22 color-gray-900 m-0">이용 정보</h3>
+          <dl class="oa-detail__usage-list m-0">
+            <div class="oa-detail__usage-row">
+              <dt class="body2-r-16 color-gray-700">활용 서비스명</dt>
+              <dd class="body2-m-16 color-gray-900 m-0">환경공간정보서비스</dd>
+            </div>
+            <div class="oa-detail__usage-row">
+              <dt class="body2-r-16 color-gray-700">활용 서비스 URL</dt>
+              <dd class="body2-m-16 color-gray-900 m-0" data-oa-service-url>
+                https://api.data.go.kr/openapi/tn_pubr_public_fine_dust_rest_area_api
+              </dd>
+            </div>
+            <div class="oa-detail__usage-row">
+              <dt class="body2-r-16 color-gray-700">서비스 유형</dt>
+              <dd class="body2-m-16 color-gray-900 m-0">연구자료</dd>
+            </div>
+            <div class="oa-detail__usage-row oa-detail__usage-row--last">
+              <dt class="body2-r-16 color-gray-700">활용 목적</dt>
+              <dd class="body2-m-16 color-gray-900 m-0">OOO 논문의 연구자료로 참고</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="oa-detail__footer flex align-center justify-between">
+        <a href="./index.html" class="slate-50-button-48 body2-m-16">목록 보기</a>
+        <a href="./prod-apply.html" class="blue-button-48 body2-m-16 oa-detail__apply-prod" data-oa-apply-prod>운영계정 신청</a>
+      </div>
+    </div>
+  </div>
+</section>

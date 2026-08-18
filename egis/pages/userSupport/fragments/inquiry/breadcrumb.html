@@ -1,0 +1,41 @@
+<!-- 메뉴 및 경로 -->
+<div class="breadcrumb">
+  <div class="breadcrumb__inner inquiry-board__head flex align-start justify-between gap-16">
+    <div class="flex align-end gap-16 min-w-0">
+      <h1 class="breadcrumb__title heading4-b-32 color-slate-900 flex-none">문의하기</h1>
+      <nav class="breadcrumb__nav" aria-label="현재 위치">
+        <ol class="breadcrumb__list flex align-center gap-10">
+          <li class="breadcrumb__item">
+            <a href="../main/index.html" class="breadcrumb__link body2-r-16 color-slate-500">홈</a>
+          </li>
+          <li class="breadcrumb__item" aria-hidden="true">
+            <span class="breadcrumb-arrow" aria-hidden="true"></span>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="body2-r-16 color-slate-500">이용자 지원</span>
+          </li>
+          <li class="breadcrumb__item" aria-hidden="true">
+            <span class="breadcrumb-arrow" aria-hidden="true"></span>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="body2-m-16 color-slate-900" aria-current="page">문의하기</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="inquiry-board__actions flex align-center gap-8 flex-none">
+      <a
+        href="./inquiry.html?mine=1"
+        class="blue-50-button-48 flex align-center justify-center"
+        data-require-login
+        data-login-message="내가 쓴 문의는 로그인 후 이용할 수 있습니다."
+      >내가 쓴 문의</a>
+      <a
+        href="./inquiry-write.html"
+        class="blue-button-48 flex align-center justify-center"
+        data-require-login
+        data-login-message="문의하기는 로그인 후 이용할 수 있습니다."
+      >문의하기</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,280 @@
+/* 메인 히어로 — 검색바 (DS에 없는 스펙) */
+.main-hero-search {
+  height: 6.2rem;
+  max-width: 50rem;
+  border: 1px solid var(--slate-900);
+  border-radius: var(--radius-full);
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.main-hero-search__input {
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--slate-900);
+  outline: none;
+}
+
+.main-hero-search__input::placeholder {
+  color: var(--slate-400);
+}
+
+.main-hero-search__input:focus {
+  outline: none;
+}
+
+/* 콘텐츠 영역 — 338×3 + 24×2 = 1062px */
+.main-content {
+  max-width: 106.2rem;
+  min-width: 0;
+}
+
+/* 주요 서비스 — 3등분 flex 비율 + aspect-ratio */
+.main-feature-card--large,
+.main-feature__col-side {
+  flex: 1 1 calc((100% - var(--spacing-24) * 2) / 3);
+  min-width: 0;
+  aspect-ratio: 338 / 258;
+}
+
+.main-feature__col-side {
+  min-width: 0;
+}
+
+.main-feature-card {
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.main-feature-card.bg-blue-600:hover {
+  background-color: var(--blue-700);
+}
+
+.main-feature-card.bg-blue-600:active {
+  background-color: var(--blue-800);
+}
+
+.main-feature-card.bg-blue-800:hover {
+  background-color: var(--blue-900);
+}
+
+.main-feature-card.bg-blue-800:active {
+  background-color: var(--blue-900);
+}
+
+.main-feature-card.bg-green-700:hover {
+  background-color: var(--green-800);
+}
+
+.main-feature-card.bg-green-700:active {
+  background-color: var(--green-900);
+}
+
+.main-feature-card.bg-green-900:hover {
+  background-color: var(--green-900);
+}
+
+.main-feature-card.bg-green-900:active {
+  background-color: var(--green-900);
+}
+
+.main-feature-card:focus-visible {
+  outline: 0.2rem solid var(--blue-300);
+  outline-offset: 0.2rem;
+}
+
+.main-feature-card--large .main-feature-card__go {
+  margin-top: auto;
+}
+
+.main-feature-card--large .main-feature-card__icon {
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.main-feature-card--small {
+  min-height: 0;
+}
+
+.main-feature-card__content {
+  min-width: 0;
+}
+
+.main-feature-card__go .main-arrow-right-sm-icon {
+  transition: transform 0.2s ease;
+}
+
+.main-feature-card:hover .main-feature-card__go .main-arrow-right-sm-icon {
+  transform: translateX(0.4rem);
+}
+
+.main-feature-card__icon {
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.main-feature-card:hover .main-feature-card__icon {
+  transform: scale(0.92);
+}
+
+.main-portal__row[hidden] {
+  display: none;
+}
+
+/* 연계 포털 — 2등분 flex 비율 */
+.main-portal-card {
+  flex: 1 1 calc((100% - var(--spacing-24)) / 2);
+  min-width: 0;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.main-portal-card.bg-slate-50:hover {
+  background-color: var(--slate-100);
+}
+
+.main-portal-card.bg-slate-50:active {
+  background-color: var(--slate-200);
+}
+
+.main-portal-card:focus-visible {
+  outline: 0.2rem solid var(--blue-500);
+  outline-offset: 0.2rem;
+}
+
+.main-portal-card__content {
+  min-width: 0;
+}
+
+.main-portal-card__enter {
+  width: 3.4rem;
+  height: 3.4rem;
+  flex-shrink: 0;
+}
+
+.main-portal-card__enter .main-enter-icon {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@keyframes main-portal-enter-icon {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(0.5rem, -0.5rem);
+    opacity: 0;
+  }
+
+  41% {
+    transform: translate(-0.5rem, 0.5rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.main-portal-card:hover .main-portal-card__enter .main-enter-icon {
+  animation: main-portal-enter-icon 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-feature-card:hover .main-feature-card__go .main-arrow-right-sm-icon {
+    transform: none;
+  }
+
+  .main-feature-card:hover .main-feature-card__icon {
+    transform: none;
+  }
+
+  .main-portal-card:hover .main-portal-card__enter .main-enter-icon {
+    animation: none;
+  }
+}
+
+/* 노트북 (1280px 이하) */
+@media (max-width: 1280px) {
+  .main-hero {
+    padding-top: var(--spacing-48);
+    padding-bottom: var(--spacing-40);
+  }
+
+  .main-feature__col-side {
+    gap: var(--spacing-16);
+  }
+
+  .main-feature-card--large {
+    padding: var(--spacing-20);
+  }
+
+  .main-feature-card--large .main-map-icon {
+    width: 6.4rem;
+    height: 5.8rem;
+  }
+
+  .main-feature-card--large .main-layer-icon {
+    width: 6rem;
+    height: 6.1rem;
+  }
+
+  .main-feature-card--small {
+    padding: var(--spacing-14) var(--spacing-16);
+  }
+
+  .main-portal__row {
+    gap: var(--spacing-16);
+  }
+
+  .main-portal-card {
+    padding: var(--spacing-24);
+  }
+}
+
+/* 노트북 (1024px 이하) */
+@media (max-width: 1024px) {
+  .main-hero__title {
+    margin-bottom: var(--spacing-24);
+  }
+
+  .main-feature__row {
+    gap: var(--spacing-16);
+  }
+
+  .main-feature__col-side {
+    gap: var(--spacing-12);
+  }
+
+  .main-feature-card--large {
+    padding: var(--spacing-16);
+  }
+
+  .main-feature-card--large .main-map-icon {
+    width: 5.2rem;
+    height: 4.6rem;
+  }
+
+  .main-feature-card--large .main-layer-icon {
+    width: 4.8rem;
+    height: 4.9rem;
+  }
+
+  .main-feature-card--small {
+    padding: var(--spacing-12) var(--spacing-14);
+    gap: var(--spacing-8);
+  }
+
+  .main-feature-card--small .main-statistics-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .main-feature-card--small .main-impermeable-icon {
+    width: 4rem;
+    height: 3.6rem;
+  }
+}

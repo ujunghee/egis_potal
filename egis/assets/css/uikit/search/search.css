@@ -1,0 +1,157 @@
+/* 통합검색 결과 */
+
+/* 검색바 — 500×62 pill */
+.search-hero__form {
+  width: 50rem;
+  max-width: 100%;
+}
+
+.search-hero__field {
+  box-sizing: border-box;
+  height: 6.2rem;
+  padding: 0 var(--spacing-20) 0 var(--spacing-24);
+  border: 1px solid var(--slate-900);
+  border-radius: var(--radius-full);
+  background-color: var(--white);
+}
+
+.search-hero__input {
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--slate-900);
+  outline: none;
+}
+
+.search-hero__input::placeholder {
+  color: var(--slate-400);
+}
+
+/* 결과 구분 탭 — 180×54 ×5 */
+.search-tabs {
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.search-tabs__tab {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18rem;
+  height: 5.4rem;
+  padding: var(--spacing-10) 0;
+  gap: var(--spacing-4);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--slate-500);
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-tabs__tab:hover {
+  color: var(--slate-700);
+}
+
+.search-tabs__tab.is-active {
+  border-bottom-color: var(--slate-900);
+  color: var(--slate-900);
+}
+
+/* 결과 섹션 — 섹션 간 60px */
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-60);
+}
+
+.search-section[hidden] {
+  display: none;
+}
+
+.search-section__head {
+  min-height: 3.5rem;
+}
+
+.search-section__more {
+  text-decoration: none;
+}
+
+.search-section__more .arrow-right-sm-slate-700 {
+  transition: transform 0.2s ease;
+}
+
+.search-section__more:hover .arrow-right-sm-slate-700 {
+  transform: translateX(0.4rem);
+}
+
+/* 데이터셋 · Open API 카드 — 1280 안에서 3열 */
+.search-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+/* 북마크 버튼이 없는 카드라 버튼 자리로 잡아둔 여백을 되돌린다 */
+.search-cards .tp-card__footer {
+  min-height: 0;
+}
+
+.search-cards .tp-card__footer > p {
+  max-width: 100%;
+}
+
+/* 구분별 화면(데이터셋·Open API) 공용 — 필터 3단(284px) + 결과 9단(948px) */
+.search-listing {
+  align-items: start;
+}
+
+.search-listing__content {
+  min-width: 0;
+}
+
+.search-listing__head {
+  min-height: 3.8rem;
+}
+
+/* 문의하기 목록 */
+.search-inquiry__item {
+  box-sizing: border-box;
+  padding: var(--spacing-20) 0;
+  border-top: 1px solid var(--slate-200);
+}
+
+.search-inquiry__item:last-child {
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.search-inquiry__link {
+  text-decoration: none;
+}
+
+.search-inquiry__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-inquiry__link:hover .search-inquiry__title {
+  text-decoration: underline;
+}
+
+.search-inquiry__desc {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 노트북 (1024px 이하) — 카드 폭이 좁아 제목이 과하게 잘리는 구간 */
+@media (max-width: 1024px) {
+  .search-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

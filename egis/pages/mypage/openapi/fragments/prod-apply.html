@@ -1,0 +1,190 @@
+<!-- Open API 운영계정 신청 — Figma 1226:2329 -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <h2 class="heading6-sb-28 color-slate-900 m-0 mb-32">Open API 운영계정 신청</h2>
+
+    <form class="oa-prod flex flex-col gap-32" data-oa-prod-form>
+      <div class="oa-edit__summary flex gap-28">
+        <div class="oa-edit__summary-card flex-1">
+          <p class="body2-r-16 color-gray-700 m-0">신청계정</p>
+          <p class="body1-m-18 color-gray-900 m-0">개발계정</p>
+        </div>
+        <div class="oa-edit__summary-card flex-1">
+          <p class="body2-r-16 color-gray-700 m-0">신청일</p>
+          <p class="body1-m-18 color-gray-900 m-0">2025-12-29</p>
+        </div>
+        <div class="oa-edit__summary-card flex-1">
+          <p class="body2-r-16 color-gray-700 m-0">유효기간</p>
+          <p class="body1-m-18 color-gray-900 m-0">2027-12-29</p>
+        </div>
+      </div>
+
+      <div class="oa-prod__section flex flex-col gap-28">
+        <h3 class="heading9-sb-22 color-gray-900 m-0">이용 정보</h3>
+        <hr class="oa-edit__divider" />
+
+        <div class="oa-prod__fields flex flex-col gap-28">
+          <div class="oa-prod__row oa-prod__row--4 flex gap-28">
+            <div class="oa-prod__field flex-1 min-w-0 flex flex-col gap-12">
+              <label for="oa-prod-service-name" class="body2-m-16 color-slate-900">활용 서비스명</label>
+              <div class="input-wrapper" data-oa-prod-field="serviceName">
+                <input
+                  id="oa-prod-service-name"
+                  type="text"
+                  class="input-field-default-48 w-full"
+                  name="serviceName"
+                  maxlength="50"
+                  placeholder="50자 이내 입력 가능"
+                  autocomplete="off"
+                  data-oa-prod-service-name
+                />
+                <p class="error-message body2-r-16">서비스명을 입력해 주세요.</p>
+              </div>
+            </div>
+            <div class="oa-prod__field flex-1 min-w-0 flex flex-col gap-12">
+              <label for="oa-prod-category" class="body2-m-16 color-slate-900">분류</label>
+              <div class="select-wrapper" data-oa-prod-field="category">
+                <select id="oa-prod-category" class="select-48 w-full" name="category" data-oa-prod-category>
+                  <option value="" selected disabled hidden>선택해주세요</option>
+                  <option value="education">교육</option>
+                  <option value="land">국토관리</option>
+                  <option value="admin">공공행정</option>
+                  <option value="finance">재정·금융</option>
+                  <option value="industry">산업·고용</option>
+                  <option value="welfare">사회복지</option>
+                  <option value="food">식품·건강</option>
+                  <option value="culture">문화·관광</option>
+                  <option value="health">보건·의료</option>
+                  <option value="safety">재난·안전</option>
+                  <option value="traffic">교통·물류</option>
+                  <option value="env">환경·기상</option>
+                  <option value="science">과학·기술</option>
+                  <option value="agri">농축수산</option>
+                  <option value="diplomacy">통일·외교·안보</option>
+                  <option value="law">법률</option>
+                </select>
+                <p class="error-message body2-r-16">분류를 선택해 주세요.</p>
+              </div>
+            </div>
+            <div class="oa-prod__field flex-1 min-w-0 flex flex-col gap-12">
+              <label for="oa-prod-dev-type" class="body2-m-16 color-slate-900">개발유형</label>
+              <div class="select-wrapper" data-oa-prod-field="devType">
+                <select id="oa-prod-dev-type" class="select-48 w-full" name="devType" data-oa-prod-dev-type>
+                  <option value="" selected disabled hidden>선택해주세요</option>
+                  <option value="web">웹</option>
+                  <option value="android">Android</option>
+                  <option value="ios">iOS</option>
+                  <option value="windows">Windows</option>
+                  <option value="etc">기타</option>
+                </select>
+                <p class="error-message body2-r-16">개발유형을 선택해 주세요.</p>
+              </div>
+            </div>
+            <div class="oa-prod__field flex-1 min-w-0 flex flex-col gap-12">
+              <label for="oa-prod-applicant" class="body2-m-16 color-slate-900">신청인 유형</label>
+              <div class="select-wrapper" data-oa-prod-field="applicant">
+                <select id="oa-prod-applicant" class="select-48 w-full" name="applicant" data-oa-prod-applicant>
+                  <option value="" selected disabled hidden>선택해주세요</option>
+                  <option value="company">기업</option>
+                  <option value="personal">개인</option>
+                  <option value="student">학생</option>
+                  <option value="research">연구기관</option>
+                  <option value="etc">기타</option>
+                </select>
+                <p class="error-message body2-r-16">신청인 유형을 선택해 주세요.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="oa-prod__row oa-prod__row--url flex gap-28">
+            <div class="oa-prod__field flex-1 min-w-0 flex flex-col gap-12">
+              <label for="oa-prod-service-url" class="body2-m-16 color-slate-900">활용 서비스 URL</label>
+              <div class="input-wrapper" data-oa-prod-field="serviceUrl">
+                <input
+                  id="oa-prod-service-url"
+                  type="text"
+                  class="input-field-default-48 w-full"
+                  name="serviceUrl"
+                  placeholder="활용된 서비스를 확인할 수 있는 URL을 입력해주세요."
+                  autocomplete="url"
+                  data-oa-prod-service-url
+                />
+                <p class="error-message body2-r-16">서비스 URL을 입력해 주세요.</p>
+              </div>
+            </div>
+            <div class="oa-prod__field oa-prod__field--date flex flex-col gap-12" data-oa-prod-field="startDate">
+              <div class="oa-prod__date-label flex flex-col gap-12">
+                <label for="oa-prod-start-date" class="body2-m-16 color-slate-900">서비스 시작일</label>
+                <span class="input-wrapper">
+                  <span class="oa-prod__date relative">
+                    <input
+                      id="oa-prod-start-date"
+                      type="text"
+                      class="input-field-default-48 input-with-trailing-icon w-full"
+                      name="startDate"
+                      placeholder="연도-월-일"
+                      autocomplete="off"
+                      data-oa-prod-start-date
+                    />
+                    <button type="button" class="oa-prod__date-btn" data-datepicker-for="oa-prod-start-date" aria-label="서비스 시작일 선택">
+                      <i class="calendar-02-icon" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </span>
+              </div>
+              <p class="error-message body2-r-16">서비스 시작일을 선택해 주세요.</p>
+            </div>
+          </div>
+
+          <div class="oa-prod__field oa-prod__desc flex flex-col gap-12" data-oa-prod-field="description">
+            <label for="oa-prod-desc" class="body2-m-16 color-slate-900">서비스 설명</label>
+            <div class="textarea-wrapper relative">
+              <textarea
+                id="oa-prod-desc"
+                class="oa-prod__textarea"
+                name="description"
+                maxlength="4000"
+                placeholder="환경공간정보서비스를 활용한 앱/웹/서비스 화면이나 기능을 구체적으로 작성해주세요."
+                data-oa-prod-desc
+              ></textarea>
+              <span class="oa-prod__counter body2-r-16" aria-live="polite">
+                <span class="color-blue-500" data-oa-prod-count>0</span>
+                <span class="color-slate-400"> / 4000</span>
+              </span>
+            </div>
+            <p class="error-message body2-r-16">서비스 설명을 20자 이상 입력해 주세요.</p>
+          </div>
+        </div>
+
+        <div class="oa-prod__upload flex flex-col gap-20">
+          <p class="oa-prod__upload-guide flex align-center gap-8 body2-r-16 color-slate-700 m-0">
+            <i class="oa-prod__info-icon flex-none" aria-hidden="true"></i>
+            <span>이미지 파일은 최대 5장까지 첨부할 수 있습니다. 파일당 최대 10MB, 총 50MB 이내입니다. png, jpg, jpeg, gif, bmp 형식을 지원합니다.</span>
+          </p>
+          <div class="flex align-start gap-8 flex-wrap">
+            <ul class="oa-prod__image-list flex gap-8 flex-wrap m-0 p-0" data-oa-prod-image-list aria-label="첨부 이미지 목록"></ul>
+            <button type="button" class="oa-prod__image-add flex flex-col align-center justify-center gap-4" data-oa-prod-image-add>
+              <i class="oa-prod__image-add-icon" aria-hidden="true"></i>
+              <span class="body2-m-16 color-white" data-oa-prod-image-count>0/5</span>
+              <span class="blind">이미지 추가</span>
+            </button>
+            <input
+              type="file"
+              class="blind"
+              data-oa-prod-image-input
+              accept=".png,.jpg,.jpeg,.gif,.bmp,image/png,image/jpeg,image/gif,image/bmp"
+              multiple
+            />
+          </div>
+        </div>
+
+        <div class="oa-prod__actions flex align-center justify-center gap-8">
+          <a href="./detail.html" class="border-slate-button-48 body2-m-16 oa-prod__cancel">취소</a>
+          <button type="submit" class="blue-button-48 body2-m-16 oa-prod__submit">신청</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

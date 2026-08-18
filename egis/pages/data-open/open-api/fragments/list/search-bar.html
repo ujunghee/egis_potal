@@ -1,0 +1,97 @@
+<!-- 검색 조건 -->
+      <form class="tp-search flex align-center gap-12" data-search-form>
+        <button type="button" class="border-slate-button-48 flex align-center gap-8 active" aria-expanded="true" data-filter-toggle>
+          검색 필터
+          <i class="chevron-down-slate-700" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="border-slate-button-48 tp-condition-toggle flex align-center gap-8" aria-expanded="false" aria-controls="condition-panel" data-condition-toggle>
+          조건 검색
+          <i class="chevron-down-slate-700" aria-hidden="true"></i>
+        </button>
+        <div class="input-wrapper tp-search__input">
+          <label for="search-keyword" class="blind">API명 또는 태그 검색</label>
+          <input id="search-keyword" class="input-field-default-48 w-full" type="search" placeholder="API명 또는 태그 검색" />
+        </div>
+        <button type="submit" class="slate-button-48 tp-search__submit">검색</button>
+      </form>
+
+      <!-- 조건 검색 -->
+      <section id="condition-panel" class="tp-condition flex flex-col gap-16 mt-12 p-16 rounded-md bg-slate-50" aria-labelledby="condition-title" data-condition-panel hidden>
+        <div class="tp-condition__head flex align-center gap-16">
+          <div class="flex align-center gap-8">
+            <h2 id="condition-title" class="heading10-sb-20 color-slate-900">조건 검색</h2>
+            <div class="tp-condition-help-wrap">
+              <button type="button" class="tp-condition-help-btn" aria-describedby="condition-help-tip">
+                <i class="tp-condition-help" aria-hidden="true"></i>
+                <span class="blind">조건 검색 도움말</span>
+              </button>
+              <div id="condition-help-tip" class="tp-condition-help-tip" role="tooltip">
+                <p class="tp-condition-help-tip__title body2-sb-16">여러 검색 조건을 조합하여 원하는 결과를 더 정확하게 찾을 수 있습니다.</p>
+                <div class="tp-condition-help-tip__body body2-r-16">
+                  <p>AND : 입력한 검색어를 모두 포함</p>
+                  <p>OR : 입력한 검색어 중 하나 이상 포함</p>
+                  <p>NOT : 입력한 검색어를 제외</p>
+                </div>
+                <div class="tp-condition-help-tip__ex body2-r-16">
+                  <span>예)</span>
+                  <div>
+                    <p>환경 AND 도로 → 환경과 도로가 모두 포함된 결과</p>
+                    <p>환경 OR 교통 → 환경 또는 교통이 포함된 결과</p>
+                    <p>환경 NOT 소음 → 환경 관련 결과 중 소음 제외</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="body1-r-18 color-slate-700">조건은 최대 5개까지 추가할 수 있습니다.</p>
+        </div>
+        <div class="tp-condition__form flex align-center gap-8">
+          <div class="select-wrapper tp-condition__operator">
+            <label for="condition-operator" class="blind">검색 연산자</label>
+            <select id="condition-operator" class="select-48 w-full">
+              <option value="AND">AND</option>
+              <option value="OR">OR</option>
+              <option value="NOT">NOT</option>
+            </select>
+          </div>
+          <div class="input-wrapper flex-1">
+            <label for="condition-keyword" class="blind">조건 검색어</label>
+            <input id="condition-keyword" class="input-field-default-48 w-full" type="text" placeholder="입력한 검색어를 모두 포함" />
+          </div>
+          <button type="button" class="border-blue-button-48 tp-condition__add" data-condition-add>조건 추가</button>
+        </div>
+        <div class="tp-condition__summary flex align-center justify-between gap-16">
+          <div class="flex align-center gap-16">
+            <span class="body2-sb-16 color-slate-900 flex gap-8">조건<span class="color-blue-500" data-condition-count>0</span></span>
+            <ul class="tp-condition-list flex flex-wrap gap-8" data-condition-list></ul>
+          </div>
+          <button type="button" class="flex align-center gap-8" data-condition-reset>
+            <span class="body2-m-16 color-slate-700">초기화</span>
+            <i class="applied-reset-icon" aria-hidden="true"></i>
+            <span class="blind">조건 검색 초기화</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 적용된 검색 필터 — 왼쪽 검색 필터 선택 시에만 표시 -->
+      <div
+        class="applied-filter tp-applied bg-slate-50 radius-md-8 px-16 py-16 flex justify-between align-start gap-8"
+        data-applied-filter
+        hidden
+      >
+        <div class="applied-filter__list flex align-start gap-16">
+          <span class="flex gap-8 align-center body2-sb-16 color-slate-900 flex-shrink-0-auto pt-4"
+            >적용된 필터 <span class="applied-filter__count color-blue-500" data-applied-count>0</span></span
+          >
+          <ul class="flex flex-wrap gap-8" data-applied-list></ul>
+        </div>
+        <button
+          type="button"
+          class="mt-2 applied-filter__reset flex align-center gap-10 mt-6"
+          data-applied-reset
+        >
+          <span class="body2-m-16 color-slate-700">초기화</span>
+          <i class="applied-reset-icon" aria-hidden="true"></i>
+          <span class="blind">적용된 필터 초기화</span>
+        </button>
+      </div>

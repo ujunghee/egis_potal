@@ -1,0 +1,25 @@
+<!-- 공통 토스트. 레이아웃 body 끝에 한 번 넣습니다. -->
+<div class="toast-stack" role="status" aria-live="polite"></div>
+
+<!--
+  아래는 종류별 마크업입니다. toast.js가 같은 구조로 항목을 넣습니다.
+  is-open 이 있어야 화면에 보입니다.
+-->
+<template id="toast-markup">
+  <!-- 기본 -->
+  <div class="toast toast--default is-open">
+    <p class="toast__text body1-m-18 color-white">다운로드를 시작합니다.</p>
+  </div>
+
+  <!-- 경고 -->
+  <div class="toast toast--warning is-open">
+    <i class="toast__icon" aria-hidden="true"></i>
+    <p class="toast__text body1-m-18 color-white">이미 첨부된 파일입니다.</p>
+  </div>
+
+  <!-- 에러 -->
+  <div class="toast toast--error is-open">
+    <i class="toast__icon" aria-hidden="true"></i>
+    <p class="toast__text body1-m-18 color-white">파일을 첨부하지 못했습니다.</p>
+  </div>
+</template>

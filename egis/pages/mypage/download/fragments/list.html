@@ -1,0 +1,277 @@
+<!-- 다운로드 내역 — Figma 1247:11514 -->
+<section class="mypage dl-mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <div class="flex flex-col gap-24">
+      <div class="flex flex-col gap-24">
+        <h2 class="heading5-sb-30 color-slate-900 m-0">다운로드 내역</h2>
+
+        <form class="dl-mypage__filter flex align-center gap-8" data-dl-filter role="search">
+          <div class="dl-mypage__period flex align-center gap-8 flex-none">
+            <div class="dl-mypage__preset">
+              <label for="dl-filter-preset" class="blind">기간 프리셋</label>
+              <select id="dl-filter-preset" class="select-40" data-dl-preset>
+                <option value="7" selected>1주일</option>
+                <option value="30">1개월</option>
+                <option value="90">3개월</option>
+                <option value="180">6개월</option>
+                <option value="365">1년</option>
+              </select>
+            </div>
+
+            <div class="dl-mypage__dates flex align-center gap-8" role="group" aria-label="조회 기간">
+              <div class="input-wrapper oa-mypage__date relative">
+                <label for="dl-filter-start" class="blind">시작일</label>
+                <input
+                  id="dl-filter-start"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon"
+                  data-dl-date-start
+                  autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="dl-filter-start" aria-label="시작일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <span class="body2-r-16 color-slate-900" aria-hidden="true">~</span>
+              <div class="input-wrapper oa-mypage__date relative">
+                <label for="dl-filter-end" class="blind">종료일</label>
+                <input
+                  id="dl-filter-end"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon"
+                  data-dl-date-end
+                  autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="dl-filter-end" aria-label="종료일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dl-mypage__search-group flex align-center gap-8 flex-none">
+            <div class="dl-mypage__search">
+              <label for="dl-filter-keyword" class="blind">데이터명 검색</label>
+              <div class="search-40 w-full flex align-center">
+                <input
+                  id="dl-filter-keyword"
+                  type="search"
+                  class="body2-r-16 flex-1"
+                  placeholder="데이터명 입력"
+                  data-dl-keyword
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <button type="submit" class="slate-button-40 dl-mypage__search-btn">검색</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mypage__tabs" role="tablist" aria-label="다운로드 상태">
+        <button
+          type="button"
+          class="mypage__tab active body1-sb-18 color-slate-900"
+          role="tab"
+          aria-selected="true"
+          data-dl-tab="all"
+        >
+          전체 8
+        </button>
+        <button
+          type="button"
+          class="mypage__tab body1-sb-18 color-slate-500"
+          role="tab"
+          aria-selected="false"
+          data-dl-tab="done"
+        >
+          완료 0
+        </button>
+        <button
+          type="button"
+          class="mypage__tab body1-sb-18 color-slate-500"
+          role="tab"
+          aria-selected="false"
+          data-dl-tab="expired"
+        >
+          기간 만료 4
+        </button>
+      </div>
+
+      <ul class="dl-mypage__list flex flex-col gap-24" data-dl-list aria-label="다운로드 내역 목록">
+        <!-- 다운로드 가능 -->
+        <li class="dl-mypage__card" data-dl-card data-dl-status="available">
+          <div class="dl-mypage__card-body">
+            <div class="dl-mypage__card-head flex align-start justify-between gap-16">
+              <h3 class="dl-mypage__title body1-sb-18 color-slate-900">토지피복 시계열 변화량(1980-2010)</h3>
+              <div class="dl-mypage__card-actions flex align-center gap-10 flex-none">
+                <a href="../topicalMap/detail.html" class="border-slate-button-40">상세 보기</a>
+                <button type="button" class="blue-button-40 dl-mypage__download-btn flex align-center gap-8" data-dl-download>
+                  <i class="download-02-white" aria-hidden="true"></i>
+                  <span>다운로드</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="dl-mypage__meta body3-m-14">
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--data">
+                <p class="color-slate-700 m-0">구성 데이터</p>
+                <p class="color-slate-900 m-0">시군구 전기차 및 충전기 보급 통계(202503)</p>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">선택 영역</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">지역 4개</p>
+                  <button type="button" class="dl-mypage__view body3-m-14" data-dl-area-open="regions">보기</button>
+                </div>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">속성 항목</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">9개</p>
+                  <div class="dl-mypage__view-wrap">
+                    <button type="button" class="dl-mypage__view body3-m-14">보기</button>
+                    <div class="dl-mypage__attr-tooltip body3-m-14" role="tooltip">
+                      <p class="m-0">속성 1</p>
+                      <p class="m-0">속성 2</p>
+                      <p class="m-0">속성 3</p>
+                      <p class="m-0">속성 4</p>
+                      <p class="m-0">속성 5</p>
+                      <p class="m-0">속성 6</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex align-center justify-between gap-16">
+            <div class="flex align-center gap-8 min-w-0">
+              <span class="dl-mypage__file-type body3-sb-14 color-slate-900 flex-none">CSV</span>
+              <span class="body3-m-14 color-slate-900">ev_charger_202503_4areas.csv</span>
+            </div>
+            <p class="body3-m-14 color-slate-900 m-0 flex-none">
+              24.8MB · <span class="color-blue-500">2026-08-17</span>까지 다운로드 가능
+            </p>
+          </div>
+        </li>
+
+        <!-- 다운로드 가능 (지도에서 선택) -->
+        <li class="dl-mypage__card" data-dl-card data-dl-status="available">
+          <div class="dl-mypage__card-body">
+            <div class="dl-mypage__card-head flex align-start justify-between gap-16">
+              <h3 class="dl-mypage__title body1-sb-18 color-slate-900">토지피복 시계열 변화량(1980-2010)</h3>
+              <div class="dl-mypage__card-actions flex align-center gap-10 flex-none">
+                <a href="../topicalMap/detail.html" class="border-slate-button-40">상세 보기</a>
+                <button type="button" class="blue-button-40 dl-mypage__download-btn flex align-center gap-8" data-dl-download>
+                  <i class="download-02-white" aria-hidden="true"></i>
+                  <span>다운로드</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="dl-mypage__meta body3-m-14">
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--data">
+                <p class="color-slate-700 m-0">구성 데이터</p>
+                <p class="color-slate-900 m-0">시군구 전기차 및 충전기 보급 통계(202503)</p>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">선택 영역</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">지도에서 선택</p>
+                  <button type="button" class="dl-mypage__view body3-m-14" data-dl-area-open="map">보기</button>
+                </div>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">속성 항목</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">9개</p>
+                  <div class="dl-mypage__view-wrap">
+                    <button type="button" class="dl-mypage__view body3-m-14">보기</button>
+                    <div class="dl-mypage__attr-tooltip body3-m-14" role="tooltip">
+                      <p class="m-0">속성 1</p>
+                      <p class="m-0">속성 2</p>
+                      <p class="m-0">속성 3</p>
+                      <p class="m-0">속성 4</p>
+                      <p class="m-0">속성 5</p>
+                      <p class="m-0">속성 6</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex align-center justify-between gap-16">
+            <div class="flex align-center gap-8 min-w-0">
+              <span class="dl-mypage__file-type body3-sb-14 color-slate-900 flex-none">CSV</span>
+              <span class="body3-m-14 color-slate-900">ev_charger_202503_4areas.csv</span>
+            </div>
+            <p class="body3-m-14 color-slate-900 m-0 flex-none">
+              24.8MB · <span class="color-blue-500">2026-08-17</span>까지 다운로드 가능
+            </p>
+          </div>
+        </li>
+
+        <!-- 기간 만료 -->
+        <li class="dl-mypage__card" data-dl-card data-dl-status="expired">
+          <div class="dl-mypage__card-body">
+            <div class="dl-mypage__card-head flex align-start justify-between gap-16">
+              <h3 class="dl-mypage__title body1-sb-18 color-slate-900">토지피복 시계열 변화량(1980-2010)</h3>
+              <div class="dl-mypage__card-actions flex align-center gap-10 flex-none">
+                <a href="../topicalMap/detail.html" class="border-slate-button-40">상세 보기</a>
+              </div>
+            </div>
+
+            <div class="dl-mypage__meta body3-m-14">
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--data">
+                <p class="color-slate-700 m-0">구성 데이터</p>
+                <p class="color-slate-900 m-0">시군구 전기차 및 충전기 보급 통계(202503)</p>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">선택 영역</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">지역 4개</p>
+                  <button type="button" class="dl-mypage__view body3-m-14" data-dl-area-open="regions">보기</button>
+                </div>
+              </div>
+              <div class="dl-mypage__meta-box dl-mypage__meta-box--side">
+                <p class="color-slate-700 m-0">속성 항목</p>
+                <div class="flex align-center justify-between gap-8">
+                  <p class="color-slate-900 m-0">9개</p>
+                  <div class="dl-mypage__view-wrap">
+                    <button type="button" class="dl-mypage__view body3-m-14">보기</button>
+                    <div class="dl-mypage__attr-tooltip body3-m-14" role="tooltip">
+                      <p class="m-0">속성 1</p>
+                      <p class="m-0">속성 2</p>
+                      <p class="m-0">속성 3</p>
+                      <p class="m-0">속성 4</p>
+                      <p class="m-0">속성 5</p>
+                      <p class="m-0">속성 6</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex align-center justify-between gap-16">
+            <div class="flex align-center gap-8 min-w-0">
+              <span class="dl-mypage__file-type body3-sb-14 color-slate-900 flex-none">ZIP</span>
+              <span class="body3-m-14 color-slate-900">ecology_national_shp.zip</span>
+            </div>
+            <p class="body3-m-14 color-slate-900 m-0 flex-none">
+              다운로드 가능 기간이 2026-08-17에 만료되었습니다
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="dl-mypage__empty body1-m-18 color-slate-500 text-center" data-dl-empty hidden>
+        해당 조건의 다운로드 내역이 없습니다.
+      </p>
+    </div>
+  </div>
+</section>

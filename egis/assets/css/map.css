@@ -1,0 +1,22 @@
+/* EGIS 지도 화면 전용 스타일 */
+@import url('./default/icon.css');
+@import url('./uikit/map/map-header.css');
+@import url('./uikit/map/map-view.css');
+@import url('./uikit/map/map-control.css');
+@import url('./uikit/map/map-navigation.css');
+@import url('./uikit/map/map-side-panel.css');
+@import url('./uikit/map/result-panel.css');
+@import url('./uikit/map/pagination.css');
+@import url('./uikit/map/region-select.css');
+@import url('./uikit/common/filter.css');
+@import url('./uikit/map/integrated-search.css');
+@import url('./uikit/map/base-resource-map.css');
+@import url('./uikit/map/address-search.css');
+@import url('./uikit/map/spatial-search-panel.css');
+@import url('./uikit/map/radius-search-popup.css');
+@import url('./uikit/map/spatial-search-toast.css');
+@import url('./uikit/map/spatial-search-results.css');
+@import url('./uikit/map/map-sheet-search.css');
+@import url('./uikit/map/layer-info-panel.css');
+@import url('./uikit/map/selected-layer-panel.css');
+@import url('./uikit/map/background-map-panel.css');

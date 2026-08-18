@@ -1,0 +1,90 @@
+/* SweetAlert2 toast를 지도 중심점 안내 메시지 형태로 조정합니다. */
+.spatial-search-swal-toast-container {
+  padding-top: 8.4rem;
+}
+
+.swal2-popup.swal2-toast.spatial-search-swal-toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  padding: var(--spacing-10) var(--spacing-24);
+  border: 1px solid var(--black);
+  border-radius: var(--radius-md-6);
+  background-color: var(--white);
+  box-shadow: none;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.spatial-search-swal-toast--show {
+  animation: spatial-search-toast-slide-down 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.spatial-search-swal-toast--hide {
+  animation: spatial-search-toast-fade-out 160ms ease-in both;
+}
+
+.swal2-popup.swal2-toast .spatial-search-swal-toast__content {
+  display: block;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+}
+
+.spatial-search-swal-toast__message {
+  width: max-content;
+}
+
+.spatial-search-swal-toast__message p { margin: 0; white-space: nowrap; }
+
+.spatial-search-toast__icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  background: url('../../../image/icon/map/radius/toast-flag-pennant.svg') center / contain no-repeat;
+}
+
+@keyframes spatial-search-toast-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-2.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spatial-search-toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spatial-search-swal-toast--show,
+  .spatial-search-swal-toast--hide {
+    animation-duration: 1ms;
+  }
+}
+
+@media (max-width: 767px) {
+  .spatial-search-swal-toast {
+    min-width: 0;
+    max-width: calc(100% - 3.2rem);
+    padding-right: var(--spacing-16);
+    padding-left: var(--spacing-16);
+  }
+
+  .spatial-search-swal-toast__message { width: auto; }
+  .spatial-search-swal-toast__message p { white-space: normal; }
+}

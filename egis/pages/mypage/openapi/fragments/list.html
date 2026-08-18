@@ -1,0 +1,213 @@
+<!-- Open API 신청 현황 — Figma 1189:7167 / 빈상태 1935:4362 -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <div class="oa-mypage__stack flex flex-col gap-48">
+      <div class="oa-mypage__panel flex flex-col gap-24">
+      <div class="oa-mypage__head flex align-center justify-between gap-16">
+        <h2 class="heading5-sb-30 color-slate-900 m-0">Open API 신청 현황</h2>
+        <ul class="oa-mypage__stats flex align-center gap-12 m-0 p-0" aria-label="신청 현황 요약">
+          <li class="oa-mypage__stat body2-r-16 color-slate-900"><span>신청</span><span>000건</span></li>
+          <li class="oa-mypage__stat body2-r-16 color-slate-900"><span>승인</span><span>000건</span></li>
+          <li class="oa-mypage__stat body2-r-16 color-slate-900"><span>사용 중</span><span>000건</span></li>
+          <li class="oa-mypage__stat body2-r-16 color-slate-900"><span>반려</span><span>000건</span></li>
+          <li class="oa-mypage__stat body2-r-16 color-slate-900"><span>만료</span><span>000건</span></li>
+        </ul>
+      </div>
+
+      <form class="oa-mypage__filter flex align-end gap-8" data-oa-filter role="search">
+        <div class="oa-mypage__field oa-mypage__field--120 flex flex-col gap-8">
+          <label for="oa-filter-account" class="body2-r-16 color-slate-900">계정</label>
+          <select id="oa-filter-account" class="select-40 w-full">
+            <option value="" selected>전체</option>
+            <option value="dev">개발계정</option>
+            <option value="prod">운영계정</option>
+          </select>
+        </div>
+        <div class="oa-mypage__field oa-mypage__field--120 flex flex-col gap-8">
+          <label for="oa-filter-status" class="body2-r-16 color-slate-900">상태</label>
+          <select id="oa-filter-status" class="select-40 w-full">
+            <option value="" selected>전체</option>
+            <option value="using">사용 중</option>
+            <option value="apply">운영신청</option>
+            <option value="approved">승인</option>
+            <option value="rejected">반려</option>
+            <option value="expired">만료</option>
+          </select>
+        </div>
+        <div class="oa-mypage__field oa-mypage__field--period flex flex-col gap-8">
+          <span class="body2-r-16 color-slate-900" id="oa-filter-period-label">기간</span>
+          <div class="oa-mypage__period flex align-center gap-8" role="group" aria-labelledby="oa-filter-period-label">
+            <div class="input-wrapper oa-mypage__date relative flex-1">
+                <label for="oa-filter-start" class="blind">시작일</label>
+                <input
+                  id="oa-filter-start"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon w-full"
+                  data-oa-date-start
+                autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="oa-filter-start" aria-label="시작일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+            <span class="body2-r-16 color-slate-900" aria-hidden="true">~</span>
+            <div class="input-wrapper oa-mypage__date relative flex-1">
+                <label for="oa-filter-end" class="blind">종료일</label>
+                <input
+                  id="oa-filter-end"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon w-full"
+                  data-oa-date-end
+                autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="oa-filter-end" aria-label="종료일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+          </div>
+        </div>
+        <div class="oa-mypage__search flex-1 min-w-0">
+          <label for="oa-filter-keyword" class="blind">데이터명 검색</label>
+          <div class="search-40 w-full flex align-center gap-8">
+            <input
+              id="oa-filter-keyword"
+              type="search"
+              class="body2-r-16 flex-1"
+              placeholder="데이터명 입력"
+              data-oa-keyword
+              autocomplete="off"
+            />
+            <button type="submit" class="oa-mypage__search-btn flex-none" aria-label="검색">
+              <i class="search-icon-40" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div data-oa-results>
+        <table class="table-02 oa-mypage__table w-full" data-oa-table>
+          <caption class="blind">Open API 신청 현황 목록</caption>
+          <colgroup>
+            <col class="oa-mypage__col-account" />
+            <col class="oa-mypage__col-name" />
+            <col class="oa-mypage__col-status" />
+            <col class="oa-mypage__col-date" />
+            <col class="oa-mypage__col-date" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col" class="body2-r-16 color-slate-900 text-left">계정</th>
+              <th scope="col" class="body2-r-16 color-slate-900 text-left">데이터명</th>
+              <th scope="col" class="body2-r-16 color-slate-900 text-left">상태</th>
+              <th scope="col" class="body2-r-16 color-slate-900 text-left">신청일</th>
+              <th scope="col" class="body2-r-16 color-slate-900 text-left">만료일</th>
+            </tr>
+          </thead>
+          <tbody class="body2-r-16 color-slate-900">
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./detail.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td>사용 중</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./detail.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td>사용 중</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./detail.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td>사용 중</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./prod-detail-review.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td><span class="color-blue-500">운영신청</span></td>
+              <td>2025-12-29</td>
+              <td>
+                <span class="oa-mypage__expire">
+                  <span class="oa-mypage__expire-date">2027-12-29</span>
+                  <span class="oa-mypage__status-dot" tabindex="0" aria-label="인증키 만료"></span>
+                  <span class="oa-mypage__tooltip body3-r-14" role="tooltip">인증키 만료</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>운영계정</td>
+              <td><a href="./prod-detail.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td>승인</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>운영계정</td>
+              <td><a href="./prod-detail.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td>승인</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./prod-detail-rejected.html" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td class="color-pink-600">반려</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./detail.html?status=expired" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td class="color-pink-600">만료</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+            <tr>
+              <td>개발계정</td>
+              <td><a href="./detail.html?status=expired" class="table-02__link body2-r-16 color-slate-900">미세먼지 표준 데이터</a></td>
+              <td class="color-pink-600">만료</td>
+              <td>2025-12-29</td>
+              <td>2027-12-29</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="oa-mypage__empty body1-m-18 color-slate-500 text-center" data-oa-empty hidden>
+          선택한 기간에 해당하는 Open API 신청 내역이 없습니다.
+        </p>
+      </div>
+      </div>
+
+      <nav class="pagination pagination--filled" data-oa-pagination aria-label="Open API 신청 현황 페이지 이동">
+        <ul class="pagination__list flex align-center justify-center gap-8">
+          <li>
+            <a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">
+              <span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind"> 페이지</span>
+            </a>
+          </li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16" aria-current="page">1</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">2</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">3</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">4</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">5</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">6</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">7</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">8</a></li>
+          <li><span class="pagination__ellipsis body2-r-16 color-slate-500" aria-hidden="true">...</span></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">99</a></li>
+          <li>
+            <a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">
+              다음<span class="blind"> 페이지</span><span class="chevron-pagination-slate-700" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>

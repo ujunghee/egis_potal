@@ -1,0 +1,364 @@
+/* 정부 통합인증 안내 팝업 — Any-ID 위젯에서 안내 레이어만 남김 */
+#anyidc {
+    box-sizing: border-box;
+}
+
+#anyidc *,
+#anyidc *::before,
+#anyidc *::after {
+    box-sizing: border-box;
+}
+
+#anyidc h2,
+#anyidc h3,
+#anyidc p,
+#anyidc strong,
+#anyidc span,
+#anyidc b,
+#anyidc div {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+#anyidc button {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+#anyidc .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+#anyidc .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: auto;
+    height: 56px;
+    padding: 0 20px;
+    background-color: #246beb;
+    border: 1px solid #246beb;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#anyidc .btn.md {
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+#anyidc .btn.tertiary {
+    background-color: #fff;
+    border: 1px solid #1d1d1d;
+    color: #000b17;
+}
+
+#anyidc .btn.tertiary:hover {
+    background-color: #f8f8f8;
+}
+
+#anyidc .btn.tertiary:active {
+    background-color: #f0f0f0;
+}
+
+#anyidc .btn.tertiary:focus-visible {
+    outline-offset: -4px;
+    outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+#anyidc .anyid-information,
+#anyidc .anyid-information-back {
+    display: none;
+    visibility: hidden;
+    z-index: -1;
+}
+
+#anyidc .anyid-information-back.in,
+#anyidc .anyid-information.in {
+    visibility: visible;
+}
+
+#anyidc .anyid-information-back {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#anyidc .anyid-information-back.in {
+    display: block;
+    z-index: 1000;
+}
+
+#anyidc .anyid-information {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    transition: visibility 0.15s 0.3s, z-index 0s 0.3s, opacity 0.2s;
+}
+
+#anyidc .anyid-information > * {
+    width: 100%;
+}
+
+#anyidc .anyid-information.inner-pop .anyid-information-dialog {
+    max-width: 588px;
+}
+
+#anyidc .anyid-information.inner-pop .anyid-information-dialog .anyid-information-header {
+    padding: 20px 48px 20px 20px;
+}
+
+#anyidc .anyid-information.inner-pop .anyid-information-dialog .anyid-information-conts {
+    padding: 0 20px 1px;
+}
+
+#anyidc .anyid-information.inner-pop .anyid-information-dialog .anyid-information-btn {
+    padding: 20px;
+}
+
+#anyidc .anyid-information.inner-pop .anyid-information-dialog .anyid-information-btn .btn {
+    min-width: 60px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+#anyidc .anyid-information.in {
+    z-index: 1010;
+    transition-delay: 0s;
+    opacity: 1;
+}
+
+#anyidc .anyid-information.shown {
+    display: block;
+}
+
+#anyidc .anyid-information .anyid-information-dialog {
+    flex-direction: row;
+    z-index: 1020;
+    max-width: 846px;
+    width: calc(100% - 32px);
+    height: calc(100% - 160px);
+    min-height: calc(100% - 160px);
+    margin: 80px auto;
+}
+
+#anyidc .anyid-information .anyid-information-dialog,
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-content {
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-content > * {
+    width: 100%;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-content .anyid-information-title {
+    display: none;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-content:focus-visible {
+    outline-offset: 4px;
+    outline: 2px solid hsla(0, 0%, 100%, 0.9);
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-header {
+    width: 100%;
+    padding: 40px 48px 0 40px;
+    background-color: inherit;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-header .anyid-information-title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    color: #1d1d1d;
+    padding: 40px 40px 0;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts::-webkit-scrollbar {
+    width: 8px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts::-webkit-scrollbar-thumb {
+    background-color: #c6c6c6;
+    border-radius: 8px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts::-webkit-scrollbar-track {
+    background-color: #d8d8d8;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts > * {
+    width: 100%;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit {
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 18px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit .sub {
+    font-weight: 400;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit::after,
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    display: block;
+    height: 2px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit::before {
+    width: 210px;
+    background: #e4032e;
+    z-index: 1;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-tit::after {
+    width: 100%;
+    background: #1f3d7b;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-box {
+    padding: 30px 30px 30px 207px;
+    background: #f8f8f8 url(data:image/png;base64,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) no-repeat 30px/147px 28px;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-box .color-blue {
+    color: #246beb;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-gtit {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-conts .gov-txt {
+    margin-top: 20px;
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    padding: 32px 40px 40px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .anyid-information-btn .btn {
+    min-width: 92px;
+    height: 48px;
+    font-size: 17px;
+}
+
+#anyidc .anyid-information .anyid-information-dialog .btn-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 901;
+    width: 36px;
+    height: 36px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMuOTkgMy45OWwxMi4wMiAxMi4wMm0wLTEyLjAyTDMuOTkgMTYuMDEiIHN0cm9rZT0iIzJEMkQyRCIgc3Ryb2tlLXdpZHRoPSIxLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==) no-repeat 50%;
+    background-size: 20px;
+}
+
+#anyidc .anyid-information .txt-box {
+    padding: 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    border-radius: 12px;
+    color: #1d1d1d;
+}
+
+#anyidc .anyid-information .txt-box.bg-white {
+    display: flex;
+    align-items: normal;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 34px;
+    width: 100%;
+    background-color: #fff;
+}

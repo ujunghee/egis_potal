@@ -1,0 +1,190 @@
+/* 공간검색 도구 패널 — 좌측 내비 우측 (72px) */
+.map-navigation-wrap {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: visible;
+}
+
+.spatial-search-panel {
+  flex: 0 0 auto;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--white);
+  box-sizing: border-box;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.spatial-search-panel.is-open {
+  width: var(--spatial-search-panel-width, 6rem);
+  box-shadow: inset -1px 0 0 var(--slate-200);
+  pointer-events: auto;
+}
+
+.map-navigation-wrap.is-spatial-search-collapsed .spatial-search-panel.is-open {
+  width: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.map-navigation-wrap.is-spatial-search-active .spatial-search-panel__toggle {
+  display: flex;
+}
+
+/* 공간검색 모드 — 내비 width 트랜지션 제거 */
+.map-navigation-wrap.is-spatial-search-active .map-navigation,
+.map-navigation-wrap.is-spatial-search-active .map-navigation__list {
+  transition: none;
+}
+
+.spatial-search-panel__toggle[hidden] {
+  display: none !important;
+}
+
+.map-navigation-wrap.is-spatial-search-collapsed .spatial-search-panel__toggle .arrow-panel-icon {
+  transform: rotate(180deg);
+}
+
+.spatial-search-panel__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  width: var(--spatial-search-panel-width, 6rem);
+  min-width: var(--spatial-search-panel-width, 6rem);
+  height: 100%;
+  margin: 0;
+  padding: var(--spacing-10);
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.spatial-search-panel__tool {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md-8);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* 툴팁 — 숨김 시 레이아웃 밖(fixed) → 패널 overflow 클립 방지, 표시는 integrated-search.js */
+.spatial-search-panel__tool > .integrated-search__tooltip {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  transform: none;
+}
+
+.spatial-search-panel__tool:hover,
+.spatial-search-panel__tool.is-active {
+  background-color: var(--slate-50);
+}
+
+.spatial-search-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.spatial-search-icon--square {
+  background-image: url('../../../image/icon/map/radius/Square-Gray.svg');
+}
+
+.spatial-search-panel__tool.is-active .spatial-search-icon--square,
+.spatial-search-panel__tool:hover .spatial-search-icon--square {
+  background-image: url('../../../image/icon/map/radius/Square-Blue-active.svg');
+}
+
+.spatial-search-icon--circle {
+  background-image: url('../../../image/icon/map/radius/Circle-Gray.svg');
+}
+
+.spatial-search-panel__tool.is-active .spatial-search-icon--circle,
+.spatial-search-panel__tool:hover .spatial-search-icon--circle {
+  background-image: url('../../../image/icon/map/radius/Circle-Blue-active.svg');
+}
+
+.spatial-search-icon--random {
+  background-image: url('../../../image/icon/map/radius/Random-Gray.svg');
+}
+
+.spatial-search-panel__tool.is-active .spatial-search-icon--random,
+.spatial-search-panel__tool:hover .spatial-search-icon--random {
+  background-image: url('../../../image/icon/map/radius/Random-Blue-active.svg');
+}
+
+.spatial-search-icon--radius {
+  background-image: url('../../../image/icon/map/radius/Radius-Gray.svg');
+}
+
+.spatial-search-panel__tool.is-active .spatial-search-icon--radius,
+.spatial-search-panel__tool:hover .spatial-search-icon--radius {
+  background-image: url('../../../image/icon/map/radius/Radius-Blue-active.svg');
+}
+
+.spatial-search-icon--eraser {
+  background-image: url('../../../image/icon/map/radius/Eraser-Gray.svg');
+}
+
+.spatial-search-panel__tool:hover .spatial-search-icon--eraser {
+  background-image: url('../../../image/icon/map/radius/Eraser-Blue-active.svg');
+}
+
+/* 공간검색 그리기 모드 — 지도 커서 */
+.leaflet-container.is-spatial-drawing {
+  cursor: crosshair;
+}
+
+/* 공간검색 검색 안내 — Leaflet overlayPane 기준 (지도 좌표 고정) */
+.spatial-search-hint {
+  position: absolute;
+  z-index: 1000;
+  left: -9999px;
+  top: -9999px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-8);
+  padding: var(--spacing-10);
+  border: 1px solid var(--slate-500);
+  border-radius: var(--radius-xs-2);
+  background-color: var(--white);
+  box-shadow: 0 0.2rem 0.8rem rgba(15, 23, 42, 0.12);
+  pointer-events: auto;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.spatial-search-hint[hidden] {
+  display: none !important;
+}
+
+.spatial-search-hint__text {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: left;
+}
+
+.spatial-search-hint__btn {
+  width: 100%;
+  border-radius: var(--radius-xs-2);
+  border: 1px solid var(--slate-200);
+  height: 3.2rem;
+  font-size: var(--font-size-body5);
+}

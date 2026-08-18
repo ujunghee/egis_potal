@@ -1,0 +1,95 @@
+<!-- 지도 상단 도구: 행정구역·레이어·배경지도 -->
+<div class="map-view__toolbar">
+  <div class="region-select">
+    <div class="region-select__tabs">
+      <button
+        type="button"
+        class="region-select__tab"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="region-select-panel-0"
+      >
+        <span class="body2-r-16 color-slate-900">서울특별시</span>
+      </button>
+      <i class="chevron-right-slate-700 region-select__divider-icon" aria-hidden="true"></i>
+      <button
+        type="button"
+        class="region-select__tab"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="region-select-panel-1"
+      >
+        <span class="body2-r-16 color-slate-900">강남구</span>
+      </button>
+      <i class="chevron-right-slate-700 region-select__divider-icon" aria-hidden="true"></i>
+      <button
+        type="button"
+        class="region-select__tab"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="region-select-panel-2"
+      >
+        <span class="body2-r-16 color-slate-900">역삼동</span>
+      </button>
+    </div>
+
+    <ul id="region-select-panel-0" class="region-select__panel z-index-10" role="listbox" aria-label="광역시・도 선택">
+      <li class="region-select__item active" role="option" aria-selected="true">서울특별시</li>
+      <li class="region-select__item" role="option" aria-selected="false">부산광역시</li>
+      <li class="region-select__item" role="option" aria-selected="false">대구광역시</li>
+      <li class="region-select__item" role="option" aria-selected="false">인천광역시</li>
+      <li class="region-select__item" role="option" aria-selected="false">광주광역시</li>
+      <li class="region-select__item" role="option" aria-selected="false">대전광역시</li>
+    </ul>
+
+    <ul id="region-select-panel-1" class="region-select__panel z-index-10" role="listbox" aria-label="시・군・구 선택">
+      <li class="region-select__item active" role="option" aria-selected="true">강남구</li>
+      <li class="region-select__item" role="option" aria-selected="false">강동구</li>
+      <li class="region-select__item" role="option" aria-selected="false">강북구</li>
+      <li class="region-select__item" role="option" aria-selected="false">강서구</li>
+      <li class="region-select__item" role="option" aria-selected="false">관악구</li>
+      <li class="region-select__item" role="option" aria-selected="false">광진구</li>
+    </ul>
+
+    <ul id="region-select-panel-2" class="region-select__panel z-index-10" role="listbox" aria-label="읍・면・동 선택">
+      <li class="region-select__item active" role="option" aria-selected="true">역삼동</li>
+      <li class="region-select__item" role="option" aria-selected="false">삼성동</li>
+      <li class="region-select__item" role="option" aria-selected="false">대치동</li>
+      <li class="region-select__item" role="option" aria-selected="false">청담동</li>
+      <li class="region-select__item" role="option" aria-selected="false">논현동</li>
+      <li class="region-select__item" role="option" aria-selected="false">개포동</li>
+    </ul>
+  </div>
+
+  <div class="map-view__toolbar-actions">
+    <div class="map-control__group" role="group" aria-label="지도 레이어·유형">
+      <div class="map-control__layer">
+        <button
+          type="button"
+          class="map-control__btn map-control__btn--layer"
+          aria-pressed="false"
+          data-selected-layer-panel-open
+          data-tooltip-placement="left"
+          aria-label="레이어"
+        >
+          <i class="map-layer-plus-icon" aria-hidden="true"></i>
+          <span class="integrated-search__tooltip body3-r-14">레이어</span>
+          <span class="blind">레이어</span>
+        </button>
+        <span class="map-control__badge body5-sb-12" data-selected-layer-badge>3</span>
+      </div>
+      <button
+        type="button"
+        class="map-control__btn map-control__btn--basemap"
+        aria-pressed="false"
+        data-background-map-panel-open
+        data-tooltip-placement="left"
+        aria-label="배경지도"
+      >
+        <i class="map-gps-map-icon" aria-hidden="true"></i>
+        <span class="integrated-search__tooltip body3-r-14">배경지도</span>
+        <span class="blind">배경지도</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,195 @@
+<!-- 검색 필터. 항목은 데이터 개방 Open API 목록 화면의 필터를 따른다.
+     접기·펼치기와 날짜 선택·검증은 공용 search-filter.js -->
+<div class="search-listing__filter grid-column-3" data-filter-panel>
+  <aside class="search-filter" aria-labelledby="search-filter-title">
+    <div class="search-filter__head flex justify-between align-center">
+      <h2 id="search-filter-title" class="search-filter__title heading10-sb-20 color-slate-900">검색 필터</h2>
+      <button type="button" class="search-filter__reset flex align-center gap-10" data-search-filter-reset>
+        <span class="body2-m-16 color-slate-700">초기화</span>
+        <i class="filter-reset-20" aria-hidden="true"></i>
+        <span class="blind">검색 필터 초기화</span>
+      </button>
+    </div>
+
+    <!-- 대분류 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        대분류
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list">
+          <li class="search-filter__item"><div class="flex align-center justify-between gap-8"><div class="flex align-center gap-8"><input id="oa-major-nature" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature" data-search-filter-major checked><label for="oa-major-nature" class="body2-r-16 color-slate-700">자연환경</label></div><span class="search-filter__count body2-r-16 color-slate-900">2</span></div></li>
+          <li class="search-filter__item"><div class="flex align-center justify-between gap-8"><div class="flex align-center gap-8"><input id="oa-major-water" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water" data-search-filter-major checked><label for="oa-major-water" class="body2-r-16 color-slate-700">물관리</label></div><span class="search-filter__count body2-r-16 color-slate-900">3</span></div></li>
+          <li class="search-filter__item"><div class="flex align-center justify-between gap-8"><div class="flex align-center gap-8"><input id="oa-major-carbon" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon" data-search-filter-major><label for="oa-major-carbon" class="body2-r-16 color-slate-700">탄소중립</label></div><span class="search-filter__count body2-r-16 color-slate-900">1</span></div></li>
+          <li class="search-filter__item"><div class="flex align-center justify-between gap-8"><div class="flex align-center gap-8"><input id="oa-major-energy" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy" data-search-filter-major><label for="oa-major-energy" class="body2-r-16 color-slate-700">에너지</label></div><span class="search-filter__count body2-r-16 color-slate-900">0</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 중분류 — 대분류 선택 시 표시. 연동은 공용 search-filter.js -->
+    <div class="search-filter__section" data-search-filter-section="mid">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="false" data-search-filter-toggle>
+        중분류
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <div data-search-filter-mid>
+          <div class="search-filter__mid-group" data-search-filter-mid-for="nature">
+            <p class="search-filter__group-title body2-m-16 color-slate-900">자연환경</p>
+            <ul class="search-filter__list search-filter__list--cols-2">
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-1" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-1" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-1" class="body2-r-16 color-slate-700">중분류 1</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-2" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-2" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-2" class="body2-r-16 color-slate-700">중분류 2</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-3" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-3" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-3" class="body2-r-16 color-slate-700">중분류 3</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-4" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-4" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-4" class="body2-r-16 color-slate-700">중분류 4</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-5" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-5" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-5" class="body2-r-16 color-slate-700">중분류 5</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-nature-6" type="checkbox" class="checkbox-basic checkbox-basic-md" value="nature-6" data-search-filter-mid data-search-filter-mid-parent="nature"><label for="oa-nature-6" class="body2-r-16 color-slate-700">중분류 6</label></div></li>
+            </ul>
+          </div>
+          <div class="search-filter__mid-group" data-search-filter-mid-for="water">
+            <p class="search-filter__group-title body2-m-16 color-slate-900">물관리</p>
+            <ul class="search-filter__list search-filter__list--cols-2">
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-water-1" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water-1" data-search-filter-mid data-search-filter-mid-parent="water"><label for="oa-water-1" class="body2-r-16 color-slate-700">중분류 1</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-water-2" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water-2" data-search-filter-mid data-search-filter-mid-parent="water"><label for="oa-water-2" class="body2-r-16 color-slate-700">중분류 2</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-water-3" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water-3" data-search-filter-mid data-search-filter-mid-parent="water"><label for="oa-water-3" class="body2-r-16 color-slate-700">중분류 3</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-water-4" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water-4" data-search-filter-mid data-search-filter-mid-parent="water"><label for="oa-water-4" class="body2-r-16 color-slate-700">중분류 4</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-water-5" type="checkbox" class="checkbox-basic checkbox-basic-md" value="water-5" data-search-filter-mid data-search-filter-mid-parent="water"><label for="oa-water-5" class="body2-r-16 color-slate-700">중분류 5</label></div></li>
+            </ul>
+          </div>
+          <div class="search-filter__mid-group" data-search-filter-mid-for="carbon">
+            <p class="search-filter__group-title body2-m-16 color-slate-900">탄소중립</p>
+            <ul class="search-filter__list search-filter__list--cols-2">
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-1" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-1" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-1" class="body2-r-16 color-slate-700">중분류 1</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-2" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-2" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-2" class="body2-r-16 color-slate-700">중분류 2</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-3" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-3" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-3" class="body2-r-16 color-slate-700">중분류 3</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-4" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-4" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-4" class="body2-r-16 color-slate-700">중분류 4</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-5" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-5" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-5" class="body2-r-16 color-slate-700">중분류 5</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-carbon-6" type="checkbox" class="checkbox-basic checkbox-basic-md" value="carbon-6" data-search-filter-mid data-search-filter-mid-parent="carbon"><label for="oa-carbon-6" class="body2-r-16 color-slate-700">중분류 6</label></div></li>
+            </ul>
+          </div>
+          <div class="search-filter__mid-group" data-search-filter-mid-for="energy">
+            <p class="search-filter__group-title body2-m-16 color-slate-900">에너지</p>
+            <ul class="search-filter__list search-filter__list--cols-2">
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-1" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-1" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-1" class="body2-r-16 color-slate-700">중분류 1</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-2" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-2" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-2" class="body2-r-16 color-slate-700">중분류 2</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-3" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-3" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-3" class="body2-r-16 color-slate-700">중분류 3</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-4" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-4" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-4" class="body2-r-16 color-slate-700">중분류 4</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-5" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-5" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-5" class="body2-r-16 color-slate-700">중분류 5</label></div></li>
+              <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-energy-6" type="checkbox" class="checkbox-basic checkbox-basic-md" value="energy-6" data-search-filter-mid data-search-filter-mid-parent="energy"><label for="oa-energy-6" class="body2-r-16 color-slate-700">중분류 6</label></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 데이터 형태 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        데이터 형태
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2">
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-type-spatial" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-type-spatial" class="body2-r-16 color-slate-700">공간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-type-statistics" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-type-statistics" class="body2-r-16 color-slate-700">통계</label></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 갱신 주기 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        갱신 주기
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2">
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-1" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-1" class="body2-r-16 color-slate-700">수시</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-2" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-2" class="body2-r-16 color-slate-700">실시간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-3" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-3" class="body2-r-16 color-slate-700">매시간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-4" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-4" class="body2-r-16 color-slate-700">일간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-5" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-5" class="body2-r-16 color-slate-700">주간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-6" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-6" class="body2-r-16 color-slate-700">월간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-7" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-7" class="body2-r-16 color-slate-700">연간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-cycle-8" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-cycle-8" class="body2-r-16 color-slate-700">비정기</label></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 데이터 기준연도. id는 공용 search-filter.js 가 참조하므로 filter-period-* 를 유지한다 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        데이터 기준연도
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2 search-filter__period-radios">
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="filter-period-all" name="filter-period" value="all" type="radio" class="radio-basic radio-basic-md" checked><label for="filter-period-all" class="body2-r-16 color-slate-700">전체 기간</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="filter-period-1y" name="filter-period" value="1y" type="radio" class="radio-basic radio-basic-md"><label for="filter-period-1y" class="body2-r-16 color-slate-700">최근 1년</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="filter-period-3y" name="filter-period" value="3y" type="radio" class="radio-basic radio-basic-md"><label for="filter-period-3y" class="body2-r-16 color-slate-700">최근 3년</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="filter-period-5y" name="filter-period" value="5y" type="radio" class="radio-basic radio-basic-md"><label for="filter-period-5y" class="body2-r-16 color-slate-700">최근 5년</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="filter-period-custom" name="filter-period" value="custom" type="radio" class="radio-basic radio-basic-md"><label for="filter-period-custom" class="body2-r-16 color-slate-700">직접 설정</label></div></li>
+        </ul>
+        <div class="search-filter__period-dates">
+          <div class="search-filter__period-date flex align-center gap-8">
+                <label for="filter-period-start" class="search-filter__period-label body2-m-16 color-slate-900">시작일</label>
+                <span class="input-wrapper flex-1">
+                  <span class="relative w-full flex align-center">
+                    <input id="filter-period-start" type="text" class="input-field-default-40 input-with-trailing-icon w-full" placeholder="연도-월-일" autocomplete="off">
+                <button type="button" class="absolute right-0 top-50 translate-y-50" data-datepicker-for="filter-period-start" aria-label="시작일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </span>
+            </span>
+          </div>
+          <div class="search-filter__period-date flex align-center gap-8">
+                <label for="filter-period-end" class="search-filter__period-label body2-m-16 color-slate-900">종료일</label>
+                <span class="input-wrapper flex-1">
+                  <span class="relative w-full flex align-center">
+                    <input id="filter-period-end" type="text" class="input-field-default-40 input-with-trailing-icon w-full" placeholder="연도-월-일" autocomplete="off">
+                <button type="button" class="absolute right-0 top-50 translate-y-50" data-datepicker-for="filter-period-end" aria-label="종료일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 서비스 유형 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        서비스유형
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2">
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-json" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-json" class="body2-r-16 color-slate-700">REST</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-xml" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-xml" class="body2-r-16 color-slate-700">WMS</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-csv" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-csv" class="body2-r-16 color-slate-700">WFS</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-xlsx" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-xlsx" class="body2-r-16 color-slate-700">WMTS</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-shp" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-shp" class="body2-r-16 color-slate-700">LINK</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-format-pdf" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-format-pdf" class="body2-r-16 color-slate-700">DOWNLOAD</label></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 제공기관 -->
+    <div class="search-filter__section active">
+      <button type="button" class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between" aria-expanded="true" data-search-filter-toggle>
+        제공기관
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list">
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-provider-me" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-provider-me" class="body2-r-16 color-slate-700">기후에너지환경부</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-provider-nier" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-provider-nier" class="body2-r-16 color-slate-700">국립환경과학원</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-provider-keco" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-provider-keco" class="body2-r-16 color-slate-700">한국환경공단</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-provider-hrfco" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-provider-hrfco" class="body2-r-16 color-slate-700">한강홍수통제소</label></div></li>
+          <li class="search-filter__item"><div class="flex align-center gap-8"><input id="oa-provider-geum" type="checkbox" class="checkbox-basic checkbox-basic-md"><label for="oa-provider-geum" class="body2-r-16 color-slate-700">금강유역청</label></div></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>

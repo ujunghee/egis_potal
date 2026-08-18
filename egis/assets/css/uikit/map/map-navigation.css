@@ -1,0 +1,191 @@
+/* Map Navigation (지도 좌측 도구 내비게이션) */
+.map-navigation {
+  --map-navigation-width: 24rem;
+  --map-navigation-collapsed-width: 6rem;
+  width: var(--map-navigation-width);
+  height: 100%;
+  background-color: var(--white);
+  border-right: 1px solid var(--slate-200);
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-shrink: 0;
+  transition: width 0.25s ease;
+}
+
+/* 접힘 — 아이콘만 노출 (72px) */
+.map-navigation.is-collapsed {
+  width: var(--map-navigation-collapsed-width);
+}
+
+.map-navigation__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  width: var(--map-navigation-width);
+  min-width: var(--map-navigation-width);
+  margin: 0;
+  padding: var(--spacing-10);
+  list-style: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: width 0.25s ease, min-width 0.25s ease;
+}
+
+.map-navigation.is-collapsed .map-navigation__list {
+  align-items: center;
+  width: var(--map-navigation-collapsed-width);
+  min-width: var(--map-navigation-collapsed-width);
+  padding: var(--spacing-10);
+}
+
+.map-navigation__list > li {
+  width: 100%;
+}
+
+.map-navigation__divider {
+  width: calc(100% - var(--spacing-10)) !important;
+  height: 1px;
+  margin: var(--spacing-12) auto;
+  background-color: var(--slate-200);
+}
+
+.map-navigation.is-collapsed .map-navigation__divider {
+  width: calc(100% - var(--spacing-8));
+}
+
+.map-navigation__bottom {
+  margin-top: auto;
+}
+
+/* 펼침 — 아이콘 + 텍스트 가로 배치 */
+.map-navigation__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-8);
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-md-8);
+  color: var(--slate-700);
+  cursor: pointer;
+  min-height: 4rem;
+  padding: 0 var(--spacing-10);
+}
+
+/* 접힘 — 아이콘만 세로 중앙 */
+.map-navigation.is-collapsed .map-navigation__item {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: var(--spacing-4) 0;
+  min-width: 4rem;
+}
+
+.map-navigation__item:hover {
+  background-color: var(--slate-50);
+}
+
+.map-navigation__item.active {
+  color: var(--slate-900);
+  background-color: var(--slate-50);
+}
+
+.map-navigation__label {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.map-navigation.is-collapsed .map-navigation__label {
+  display: none;
+}
+
+/* 툴팁 — 숨김 시 레이아웃 밖(fixed). 표시는 접힘 상태에서만 */
+.map-navigation__item > .integrated-search__tooltip {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  transform: none;
+}
+
+.map-nav-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.map-nav-icon--search {
+  background-image: url('../../../image/icon/map/navigation/search.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--search,
+.map-navigation__item:hover .map-nav-icon--search {
+  background-image: url('../../../image/icon/map/navigation/search-active.svg');
+}
+
+.map-nav-icon--globe {
+  background-image: url('../../../image/icon/map/navigation/globe-earth.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--globe,
+.map-navigation__item:hover .map-nav-icon--globe {
+  background-image: url('../../../image/icon/map/navigation/globe-earth-active.svg');
+}
+
+.map-nav-icon--layer {
+  background-image: url('../../../image/icon/map/navigation/layer-group.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--layer,
+.map-navigation__item:hover .map-nav-icon--layer {
+  background-image: url('../../../image/icon/map/navigation/layer-group-active.svg');
+}
+
+.map-nav-icon--draw {
+  background-image: url('../../../image/icon/map/navigation/draw-square.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--draw,
+.map-navigation__item:hover .map-nav-icon--draw {
+  background-image: url('../../../image/icon/map/navigation/draw-square-active.svg');
+}
+
+.map-nav-icon--frame {
+  background-image: url('../../../image/icon/map/navigation/frame.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--frame,
+.map-navigation__item:hover .map-nav-icon--frame {
+  background-image: url('../../../image/icon/map/navigation/frame-active.svg');
+}
+
+.map-nav-icon--guide {
+  background-image: url('../../../image/icon/map/navigation/book-text.svg');
+}
+
+.map-navigation__item.active .map-nav-icon--guide,
+.map-navigation__item:hover .map-nav-icon--guide {
+  background-image: url('../../../image/icon/map/navigation/book-text-active.svg');
+}
+
+/* 펼침: << 접기 / 접힘: >> 펼치기 (SVG 기본 방향이 >>) */
+.map-nav-icon--toggle {
+  background-image: url('../../../image/icon/map/navigation/angles-left.svg');
+  transition: transform 0.25s ease;
+  transform: rotate(180deg);
+}
+
+.map-navigation.is-collapsed .map-nav-icon--toggle {
+  transform: none;
+}
+
+.map-navigation.is-collapsed .map-navigation__toggle {
+  justify-content: center;
+}

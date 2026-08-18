@@ -1,0 +1,214 @@
+<!-- 통합검색 결과 — 구분별 섹션.
+     섹션 '전체보기'의 주소는 search/search-head.js 가 같은 구분의 탭 링크로 맞춘다.
+     여기 적힌 href 는 스크립트 없이 열었을 때를 위한 값이다 -->
+<div class="search-results mt-32">
+  <!-- 데이터셋 -->
+  <section class="search-section" data-search-section="dataset" aria-labelledby="search-dataset-title">
+    <header class="search-section__head flex align-center justify-between gap-24">
+      <h3 id="search-dataset-title" class="flex align-center gap-8 heading9-sb-22">
+        <span class="color-slate-900">데이터셋</span>
+        <span class="color-blue-500" data-search-count="dataset">32</span>
+      </h3>
+      <a
+        href="./dataset.html"
+        class="search-section__more flex align-center gap-4 body1-sb-18 color-slate-700 flex-none"
+        data-search-more="dataset"
+      >
+        전체보기
+        <i class="arrow-right-sm-slate-700" aria-hidden="true"></i>
+      </a>
+    </header>
+    <!-- 카드는 search/results.js 가 렌더 -->
+    <ul class="search-cards mt-24" data-search-cards="dataset" aria-label="데이터셋 검색 결과"></ul>
+  </section>
+
+  <!-- Open API -->
+  <section class="search-section" data-search-section="openapi" aria-labelledby="search-openapi-title">
+    <header class="search-section__head flex align-center justify-between gap-24">
+      <h3 id="search-openapi-title" class="flex align-center gap-8 heading9-sb-22">
+        <span class="color-slate-900">Open API</span>
+        <span class="color-blue-500" data-search-count="openapi">6</span>
+      </h3>
+      <a
+        href="./openapi.html"
+        class="search-section__more flex align-center gap-4 body1-sb-18 color-slate-700 flex-none"
+        data-search-more="openapi"
+      >
+        전체보기
+        <i class="arrow-right-sm-slate-700" aria-hidden="true"></i>
+      </a>
+    </header>
+    <ul class="search-cards mt-24" data-search-cards="openapi" aria-label="Open API 검색 결과"></ul>
+  </section>
+
+  <!-- 자주 묻는 질문. 아코디언은 공용 user-support/faq.js -->
+  <section class="search-section" data-search-section="faq" aria-labelledby="search-faq-title">
+    <header class="search-section__head flex align-center justify-between gap-24">
+      <h3 id="search-faq-title" class="flex align-center gap-8 heading9-sb-22">
+        <span class="color-slate-900">자주 묻는 질문</span>
+        <span class="color-blue-500" data-search-count="faq">4</span>
+      </h3>
+      <a
+        href="./faq.html"
+        class="search-section__more flex align-center gap-4 body1-sb-18 color-slate-700 flex-none"
+        data-search-more="faq"
+      >
+        전체보기
+        <i class="arrow-right-sm-slate-700" aria-hidden="true"></i>
+      </a>
+    </header>
+
+    <div class="mt-24" data-faq-list>
+      <article class="faq-item is-open" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__toggle flex align-center gap-16 w-full"
+          aria-expanded="true"
+          data-faq-toggle
+        >
+          <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">1</span>
+          <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+            >대분류·중분류·세분류의 차이와 분류코드는 어디에서 확인하나요?</span
+          >
+          <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+        </button>
+        <div class="faq-item__panel" data-faq-panel>
+          <div class="faq-item__answer">
+            <pre class="faq-item__body body2-r-16 color-slate-700 line-170">자료가 제작되지 않았거나, 현재 선택한 도엽종류·사업종류에 포함되지 않았을 수 있습니다.
+도엽종류(대·중·세분류)와 사업종류를 바꿔 다시 검색합니다. 제작 현황에서 해당 연도·지역을 확인합니다.
+미제작 자료는 제공되지 않습니다.</pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__toggle flex align-center gap-16 w-full"
+          aria-expanded="false"
+          data-faq-toggle
+        >
+          <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">2</span>
+          <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+            >대분류 토지피복지도를 SHP 파일로 받을 수 있나요?</span
+          >
+          <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+        </button>
+        <div class="faq-item__panel" data-faq-panel>
+          <div class="faq-item__answer">
+            <pre class="faq-item__body body2-r-16 color-slate-700 line-170">대분류 토지피복지도는 SHP와 CSV 형식으로 제공합니다.
+데이터 상세 화면의 다운로드 영역에서 원하는 형식과 연도를 선택해 신청하세요.</pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__toggle flex align-center gap-16 w-full"
+          aria-expanded="false"
+          data-faq-toggle
+        >
+          <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">3</span>
+          <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+            >다른 공간자료와 겹쳤을 때 위치가 어긋나요. 어떻게 맞추나요?</span
+          >
+          <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+        </button>
+        <div class="faq-item__panel" data-faq-panel>
+          <div class="faq-item__answer">
+            <pre class="faq-item__body body2-r-16 color-slate-700 line-170">좌표계가 다르면 위치가 어긋나 보입니다. 제공 좌표계와 사용 중인 지도의 좌표계를 확인하세요.
+본 서비스는 EPSG:5179를 기본으로 제공하며, 필요한 경우 변환 후 중첩하시면 됩니다.</pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__toggle flex align-center gap-16 w-full"
+          aria-expanded="false"
+          data-faq-toggle
+        >
+          <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">4</span>
+          <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+            >다른 공간자료와 겹쳤을 때 위치가 어긋나요. 어떻게 맞추나요?</span
+          >
+          <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+        </button>
+        <div class="faq-item__panel" data-faq-panel>
+          <div class="faq-item__answer">
+            <pre class="faq-item__body body2-r-16 color-slate-700 line-170">좌표계가 다르면 위치가 어긋나 보입니다. 제공 좌표계와 사용 중인 지도의 좌표계를 확인하세요.
+본 서비스는 EPSG:5179를 기본으로 제공하며, 필요한 경우 변환 후 중첩하시면 됩니다.</pre>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 문의하기 -->
+  <section class="search-section" data-search-section="inquiry" aria-labelledby="search-inquiry-title">
+    <header class="search-section__head flex align-center justify-between gap-24">
+      <h3 id="search-inquiry-title" class="flex align-center gap-8 heading9-sb-22">
+        <span class="color-slate-900">문의하기</span>
+        <span class="color-blue-500" data-search-count="inquiry">9</span>
+      </h3>
+      <a
+        href="./inquiry.html"
+        class="search-section__more flex align-center gap-4 body1-sb-18 color-slate-700 flex-none"
+        data-search-more="inquiry"
+      >
+        전체보기
+        <i class="arrow-right-sm-slate-700" aria-hidden="true"></i>
+      </a>
+    </header>
+
+    <ul class="search-inquiry mt-24" aria-label="문의하기 검색 결과">
+      <li class="search-inquiry__item flex flex-col align-start gap-4">
+        <span class="meta-tag meta-tag--dataset flex-none">데이터셋</span>
+        <a href="../userSupport/inquiry-detail.html" class="search-inquiry__link flex flex-col gap-4 w-full">
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__title body1-m-18 color-slate-900">토지피복도 좌표계 관련 문의</span>
+          </span>
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__desc body2-r-16 color-slate-700"
+              >다운로드한 공간데이터의 좌표계와 지도서비스 좌표계가 동일한지 문의드립니다.</span
+            >
+            <time class="body3-m-14 color-slate-500 flex-none" datetime="2026-07-18">2026-07-18</time>
+          </span>
+        </a>
+      </li>
+
+      <li class="search-inquiry__item flex flex-col align-start gap-4">
+        <span class="meta-tag meta-tag--openapi flex-none">Open API</span>
+        <a href="../userSupport/inquiry-detail.html" class="search-inquiry__link flex flex-col gap-4 w-full">
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__title body1-m-18 color-slate-900">토지피복도 좌표계 관련 문의</span>
+          </span>
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__desc body2-r-16 color-slate-700"
+              >다운로드한 공간데이터의 좌표계와 지도서비스 좌표계가 동일한지 문의드립니다.</span
+            >
+            <time class="body3-m-14 color-slate-500 flex-none" datetime="2026-07-18">2026-07-18</time>
+          </span>
+        </a>
+      </li>
+
+      <li class="search-inquiry__item flex flex-col align-start gap-4">
+        <span class="meta-tag flex-none">일반문의</span>
+        <a href="../userSupport/inquiry-detail.html" class="search-inquiry__link flex flex-col gap-4 w-full">
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__title body1-m-18 color-slate-900">토지피복도 좌표계 관련 문의</span>
+            <span class="meta-tag flex-none">답변 완료</span>
+          </span>
+          <span class="flex align-center justify-between gap-16">
+            <span class="search-inquiry__desc body2-r-16 color-slate-700"
+              >다운로드한 공간데이터의 좌표계와 지도서비스 좌표계가 동일한지 문의드립니다.</span
+            >
+            <time class="body3-m-14 color-slate-500 flex-none" datetime="2026-07-18">2026-07-18</time>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+/* EGIS 웹 화면 스타일 */
+
+@import url('./default/icon.css');
+
+/* 공통 레이아웃 · 컴포넌트 */
+@import url('./uikit/common/header.css');
+@import url('./uikit/common/footer.css');
+@import url('./uikit/common/filter.css');
+@import url('./uikit/common/applied-filter.css');
+@import url('./uikit/common/table.css');
+@import url('./uikit/common/toast.css');
+
+/* 페이지별 */
+@import url('./uikit/main/main.css');
+@import url('./uikit/search/search.css');
+@import url('./uikit/topical/topical.css');
+@import url('./uikit/topical/topical-detail.css');
+/* data-open */
+@import url('./uikit/data-open/open-api-detail.css');
+@import url('./uikit/data-open/open-api-apply.css');
+@import url('./uikit/data-open/land-cover.css');
+@import url('./uikit/user-support/notice.css');
+@import url('./uikit/user-support/faq.css');
+@import url('./uikit/user-support/inquiry.css');
+@import url('./uikit/user-support/inquiry-write.css');
+@import url('./uikit/mypage/mypage.css');
+@import url('./uikit/mypage/openapi.css');
+@import url('./uikit/mypage/inquiry.css');
+@import url('./uikit/mypage/authkey.css');
+@import url('./uikit/mypage/download.css');
+@import url('./uikit/login/login.css');
+@import url('./uikit/login/app.css');

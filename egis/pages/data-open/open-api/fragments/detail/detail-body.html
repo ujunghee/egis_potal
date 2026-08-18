@@ -1,0 +1,339 @@
+<div class="tp-detail__layout tp-layout grid-column-default inner align-start mt-40">
+  <div class="tp-detail__main grid-column-9">
+    <section class="tp-detail__section flex flex-col gap-20" aria-labelledby="basic-info-title">
+        <h2 id="basic-info-title" class="heading10-sb-20 color-slate-900">API 개요</h2>
+        <dl class="tp-detail__highlights flex gap-24">
+          <div class="flex-1 flex flex-col gap-6 p-20 radius-md-8 bg-slate-50">
+            <dt class="body2-r-16 color-slate-700 line-160">최근 갱신일</dt>
+            <dd class="body1-m-18 color-slate-900 line-170">2019-09-15</dd>
+          </div>
+          <div class="flex-1 flex flex-col gap-6 p-20 radius-md-8 bg-slate-50">
+            <dt class="body2-r-16 color-slate-700 line-160">데이터 형식</dt>
+            <dd class="body1-m-18 color-slate-900 line-170">XML</dd>
+          </div>
+          <div class="flex-1 flex flex-col gap-6 p-20 radius-md-8 bg-slate-50">
+            <dt class="body2-r-16 color-slate-700 line-160">버전</dt>
+            <dd class="body1-m-18 color-slate-900 line-170">v1.3.0</dd>
+          </div>
+        </dl>
+        <dl class="flex flex-col">
+          <div class="flex align-center gap-12 h-58 border-b border-slate-200">
+            <dt class="body2-r-16 color-slate-700 w-160">요청 URL</dt>
+            <dd class="body2-m-16 color-slate-900">https://aid.mcee.go.kr/eibp/geoserver/wms</dd>
+          </div>
+          <div class="flex align-center gap-12 h-58 border-b border-slate-200">
+            <dt class="body2-r-16 color-slate-700 w-160">요청 서비스 코드</dt>
+            <dd class="body2-m-16 color-slate-900">MCEE-DS-KECO-WMS-01_0003</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="oa-detail__api flex flex-col gap-48">
+        <!-- 요청 변수 -->
+        <section class="oa-detail__section flex flex-col gap-20" aria-labelledby="oa-params-title">
+          <h2 id="oa-params-title" class="heading10-sb-20 color-slate-900">요청 변수</h2>
+          <div class="overflow-auto">
+            <table class="data-table w-full">
+              <caption class="blind">Open API 요청 변수</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">항목</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">국문</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">영문</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">타입</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">필수</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">설명</th>
+                </tr>
+              </thead>
+              <tbody class="body2-r-16 color-slate-700">
+                <tr>
+                  <td class="body2-m-16 color-slate-900">service</td>
+                  <td>서비스</td><td>SERVICE</td><td>String</td><td>필수</td><td>WMS 서비스 유형 (WMS)</td>
+                </tr>
+                <tr>
+                  <td class="body2-m-16 color-slate-900">version</td>
+                  <td>버전</td><td>VERSION</td><td>String</td><td>필수</td><td>WMS 버전 (1.3.0)</td>
+                </tr>
+                <tr>
+                  <td class="body2-m-16 color-slate-900">request</td>
+                  <td>요청</td><td>REQUEST</td><td>String</td><td>필수</td><td>GetCapabilities, GetMap, GetFeatureInfo</td>
+                </tr>
+                <tr>
+                  <td class="body2-m-16 color-slate-900">layers</td>
+                  <td>레이어</td><td>LAYERS</td><td>String</td><td>선택</td><td>요청 레이어명</td>
+                </tr>
+                <tr>
+                  <td class="body2-m-16 color-slate-900">bbox</td>
+                  <td>경계</td><td>BBOX</td><td>String</td><td>선택</td><td>요청 영역 좌표 (minX,minY,maxX,maxY)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 데이터 호출 예시 -->
+        <section class="oa-detail__section flex flex-col gap-20" aria-labelledby="oa-examples-title">
+          <h2 id="oa-examples-title" class="heading10-sb-20 color-slate-900">오퍼레이션별 요청 예시</h2>
+          <ul class="flex flex-col gap-12">
+            <li class="flex flex-col gap-12 p-20 radius-md-8 border border-slate-200 bg-white">
+              <div class="flex align-center gap-12">
+                <strong class="body2-m-16 color-slate-900 w-200">GetCapabilities</strong>
+                <p class="body2-r-16 color-slate-700">WMS 서버의 서비스 및 레이어 정보를 조회합니다.</p>
+              </div>
+              <div class="flex align-center justify-between gap-16 px-16 py-12 radius-md-8 bg-slate-50">
+                <p class="body2-r-16 color-slate-700 flex-1 oa-detail__url" data-api-url>https://aid.mcee.go.kr/eibp/geoserver/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities</p>
+                <button type="button" class="flex align-center gap-4 flex-none body2-r-16 color-slate-900" data-api-copy-url aria-label="GetCapabilities URL 복사">
+                  <i class="link-angled" aria-hidden="true"></i><span>복사</span>
+                </button>
+              </div>
+            </li>
+            <li class="flex flex-col gap-12 p-20 radius-md-8 border border-slate-200 bg-white">
+              <div class="flex align-center gap-12">
+                <strong class="body2-m-16 color-slate-900 w-200">GetMap</strong>
+                <p class="body2-r-16 color-slate-700">지정 영역의 지도 이미지를 조회합니다.</p>
+              </div>
+              <div class="flex align-center justify-between gap-16 px-16 py-12 radius-md-8 bg-slate-50">
+                <p class="body2-r-16 color-slate-700 flex-1 oa-detail__url" data-api-url>https://aid.mcee.go.kr/eibp/geoserver/wms?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;layers=water:keco_station&amp;bbox=935000,1910000,960000,1935000&amp;width=1024&amp;height=768&amp;format=image/png</p>
+                <button type="button" class="flex align-center gap-4 flex-none body2-r-16 color-slate-900" data-api-copy-url aria-label="GetMap URL 복사">
+                  <i class="link-angled" aria-hidden="true"></i><span>복사</span>
+                </button>
+              </div>
+            </li>
+            <li class="flex flex-col gap-12 p-20 radius-md-8 border border-slate-200 bg-white">
+              <div class="flex align-center gap-12">
+                <strong class="body2-m-16 color-slate-900 w-200">GetFeatureInfo</strong>
+                <p class="body2-r-16 color-slate-700">클릭 지점의 피처 속성 정보를 조회합니다.</p>
+              </div>
+              <div class="flex align-center justify-between gap-16 px-16 py-12 radius-md-8 bg-slate-50">
+                <p class="body2-r-16 color-slate-700 flex-1 oa-detail__url" data-api-url>https://aid.mcee.go.kr/eibp/geoserver/wms?service=WMS&amp;version=1.3.0&amp;request=GetFeatureInfo&amp;layers=water:keco_station&amp;query_layers=water:keco_station&amp;i=245&amp;j=310</p>
+                <button type="button" class="flex align-center gap-4 flex-none body2-r-16 color-slate-900" data-api-copy-url aria-label="GetFeatureInfo URL 복사">
+                  <i class="link-angled" aria-hidden="true"></i><span>복사</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 응답 -->
+        <section class="oa-detail__section flex flex-col gap-20" aria-labelledby="oa-response-title">
+          <h2 id="oa-response-title" class="heading10-sb-20 color-slate-900">응답</h2>
+          <div class="overflow-auto">
+            <table class="data-table w-full">
+              <caption class="blind">Open API 응답 필드</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">항목</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">국문</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">영문</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">타입</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">설명</th>
+                </tr>
+              </thead>
+              <tbody class="body2-r-16 color-slate-700">
+                <tr><td class="body2-m-16 color-slate-900">stationId</td><td>관측소 ID</td><td>STATION_ID</td><td>String</td><td>관측소 고유 식별자</td></tr>
+                <tr><td class="body2-m-16 color-slate-900">stationName</td><td>관측소명</td><td>STATION_NAME</td><td>String</td><td>관측소 명칭</td></tr>
+                <tr><td class="body2-m-16 color-slate-900">lon</td><td>경도</td><td>LON</td><td>Double</td><td>관측소 경도 좌표</td></tr>
+                <tr><td class="body2-m-16 color-slate-900">lat</td><td>위도</td><td>LAT</td><td>Double</td><td>관측소 위도 좌표</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 오류 코드 -->
+        <section class="oa-detail__section flex flex-col gap-20" aria-labelledby="oa-error-title">
+          <h2 id="oa-error-title" class="heading10-sb-20 color-slate-900">오류 코드</h2>
+          <div class="overflow-auto">
+            <table class="data-table w-full">
+              <caption class="blind">Open API 오류 코드</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">오류코드</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">메시지</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">의미</th>
+                  <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">해결방안</th>
+                </tr>
+              </thead>
+              <tbody class="body2-r-16 color-slate-700">
+                <tr><td class="body2-m-16 color-slate-900">400</td><td>InvalidParameterValue</td><td>요청 파라미터 값 오류</td><td>요청 변수 표를 확인하여 파라미터를 수정합니다.</td></tr>
+                <tr><td class="body2-m-16 color-slate-900">401</td><td>Unauthorized</td><td>인증키 누락 또는 만료</td><td>유효한 API 인증키를 요청 헤더에 포함합니다.</td></tr>
+                <tr><td class="body2-m-16 color-slate-900">404</td><td>LayerNotDefined</td><td>존재하지 않는 레이어</td><td>GetCapabilities 응답의 레이어명을 확인합니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+  </div>
+
+  <aside class="tp-detail__aside grid-column-3 flex flex-col gap-24 p-24 rounded-md" aria-label="데이터 이용 정보">
+    <section>
+      <div class="flex align-center justify-between">
+        <h2 class="body1-sb-18 color-slate-900 line-170">라이선스</h2>
+        <a href="https://www.kogl.or.kr/info/license.do" class="body3-r-14 color-slate-700" target="_blank" rel="noopener noreferrer">정책보기</a>
+      </div>
+      <strong class="body2-m-16 color-slate-900">공공누리 제 1유형</strong>
+      <dl class="flex flex-col gap-10 body2-r-16">
+        <div class="flex justify-between gap-12">
+          <dt class="color-slate-700">상업적 활용</dt>
+          <dd class="body2-m-16 color-slate-900 text-right">가능</dd>
+        </div>
+        <div class="flex justify-between gap-12">
+          <dt class="color-slate-700">재배포</dt>
+          <dd class="body2-m-16 color-slate-900 text-right">가능</dd>
+        </div>
+        <div class="flex justify-between gap-12">
+          <dt class="color-slate-700">2차 저작물</dt>
+          <dd class="body2-m-16 color-pink-700 text-right">불가</dd>
+        </div>
+      </dl>
+    </section>
+    <section>
+      <h2 class="body1-sb-18 color-slate-900 line-170">태그</h2>
+      <ul class="tp-detail__tags flex flex-wrap gap-8">
+        <li class="body2-r-16 color-slate-700 bg-slate-50 radius-sm-4 px-8">토지피복</li>
+        <li class="body2-r-16 color-slate-700 bg-slate-50 radius-sm-4 px-8">시계열</li>
+        <li class="body2-r-16 color-slate-700 bg-slate-50 radius-sm-4 px-8">환경변화</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="body1-sb-18 color-slate-900 line-170">담당 기관</h2>
+      <dl class="body2-r-16">
+        <div class="flex gap-10">
+          <dt class="color-slate-700">관리부서</dt>
+          <dd class="body2-m-16 color-slate-900">환경부 대기환경과</dd>
+        </div>
+      </dl>
+    </section>
+    <section>
+      <h2 class="body1-sb-18 color-slate-900 line-170">활동 통계</h2>
+      <dl class="body2-r-16 flex flex-col gap-10">
+        <div class="flex justify-between gap-12">
+          <dt class="color-slate-700">조회수</dt>
+          <dd class="body2-m-16 color-slate-900 text-right">452건</dd>
+        </div>
+        <div class="flex justify-between gap-12">
+          <dt class="color-slate-700">다운로드 수</dt>
+          <dd class="body2-m-16 color-slate-900 text-right">245건</dd>
+        </div>
+      </dl>
+    </section>
+  </aside>
+
+  <!-- API 테스트 — 12단 전체 -->
+  <section class="oa-detail__section oa-detail__test grid grid-column-12 gap-24" aria-labelledby="oa-test-title">
+    <div class="flex flex-col gap-20 min-w-0">
+      <h2 id="oa-test-title" class="heading10-sb-20 color-slate-900">API 테스트</h2>
+      <form class="oa-detail__test-form flex flex-col gap-12" data-api-test-form>
+        <div class="flex align-center">
+          <label for="oa-test-service" class="body3-r-14 color-slate-700 w-100 flex-none">요청 서비스</label>
+          <select id="oa-test-service" class="select-40 w-full"><option value="WMS" selected>WMS</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-version" class="body3-r-14 color-slate-700 w-100 flex-none">버전</label>
+          <select id="oa-test-version" class="select-40 w-full"><option value="1.3.0" selected>1.3.0</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-request" class="body3-r-14 color-slate-700 w-100 flex-none">요청명</label>
+          <select id="oa-test-request" class="select-40 w-full">
+            <option value="GetCapabilities">GetCapabilities</option>
+            <option value="GetMap" selected>GetMap</option>
+            <option value="GetFeatureInfo">GetFeatureInfo</option>
+          </select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-layers" class="body3-r-14 color-slate-700 w-100 flex-none">레이어</label>
+          <select id="oa-test-layers" class="select-40 w-full"><option value="water:keco_station" selected>water:keco_station</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-crs" class="body3-r-14 color-slate-700 w-100 flex-none">좌표계</label>
+          <select id="oa-test-crs" class="select-40 w-full"><option value="EPSG:5186" selected>EPSG:5186</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-bbox" class="body3-r-14 color-slate-700 w-100 flex-none">범위 (bbox)</label>
+          <input id="oa-test-bbox" type="text" class="input-field-default-40 w-full" value="935000,1910000,960000,1935000" />
+        </div>
+        <div class="flex align-center">
+          <span class="body3-r-14 color-slate-700 w-100 flex-none">이미지너비</span>
+          <div class="flex flex-1 gap-12">
+            <input id="oa-test-width" type="text" class="input-field-default-40 flex-1" value="1024" aria-label="이미지 너비" />
+            <input id="oa-test-height" type="text" class="input-field-default-40 flex-1" value="768" aria-label="이미지 높이" />
+          </div>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-format" class="body3-r-14 color-slate-700 w-100 flex-none">포맷</label>
+          <select id="oa-test-format" class="select-40 w-full"><option value="image/png" selected>image/png</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-transparent" class="body3-r-14 color-slate-700 w-100 flex-none">투명배경</label>
+          <select id="oa-test-transparent" class="select-40 w-full">
+            <option value="true" selected>true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-query-layers" class="body3-r-14 color-slate-700 w-100 flex-none">정보조회:레이어</label>
+          <select id="oa-test-query-layers" class="select-40 w-full"><option value="water:keco_station" selected>water:keco_station</option></select>
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-i" class="body3-r-14 color-slate-700 w-100 flex-none">픽셀X (i)</label>
+          <input id="oa-test-i" type="text" class="input-field-default-40 w-full" value="245" />
+        </div>
+        <div class="flex align-center">
+          <label for="oa-test-j" class="body3-r-14 color-slate-700 w-100 flex-none">픽셀Y (j)</label>
+          <input id="oa-test-j" type="text" class="input-field-default-40 w-full" value="310" />
+        </div>
+        <div class="flex align-center pt-8">
+          <span class="w-100 flex-none" aria-hidden="true"></span>
+          <div class="flex flex-1 gap-12">
+            <button type="reset" class="border-slate-button-40 flex-none body2-m-16 color-slate-700">초기화</button>
+            <button type="button" class="blue-button-40 flex-1 flex align-center justify-center gap-8" data-api-test-run>
+              <i class="play" aria-hidden="true"></i><span>API 테스트</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="oa-detail__test-result flex flex-col gap-20 min-w-0">
+      <div class="flex align-center justify-between gap-16">
+        <h2 class="heading10-sb-20 color-slate-900">결과</h2>
+      </div>
+      <div class="oa-detail__result-panel radius-md-8 overflow-hidden bg-slate-900">
+        <div class="oa-detail__result-body grid" data-api-result-view="xml">
+          <pre class="oa-detail__code-body body3-r-14 color-slate-100 p-20 overflow-auto" data-api-result-code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;FeatureCollection&gt;
+  &lt;boundedBy&gt;
+    &lt;Envelope srsName="EPSG:5186"&gt;
+      &lt;lowerCorner&gt;935000 1910000&lt;/lowerCorner&gt;
+      &lt;upperCorner&gt;960000 1935000&lt;/upperCorner&gt;
+    &lt;/Envelope&gt;
+  &lt;/boundedBy&gt;
+  &lt;water:keco_station&gt;
+    &lt;water:station_id&gt;110001&lt;/water:station_id&gt;
+    &lt;water:station_name&gt;한강본류&lt;/water:station_name&gt;
+  &lt;/water:keco_station&gt;
+&lt;/FeatureCollection&gt;</pre>
+          <div class="oa-detail__map-preview">
+            <div class="oa-detail__map-inner relative">
+              <button type="button" class="oa-detail__map-expand flex align-center justify-center" data-api-result-expand aria-label="지도 크게보기" aria-controls="oa-map-fullscreen" aria-expanded="false">
+                <i class="maximise-02" aria-hidden="true"></i>
+              </button>
+              <div id="oa-result-map" class="oa-detail__map-canvas" data-api-result-map aria-label="Open API 테스트 지도"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="./index.html" class="tp-detail__list-button grid-column-12 slate-50-button-48">목록 보기</a>
+</div>
+
+<div class="oa-detail__map-fullscreen" id="oa-map-fullscreen" data-api-map-fullscreen hidden>
+  <div class="oa-detail__map-fullscreen-stage">
+    <div id="oa-result-map-fullscreen" class="oa-detail__map-canvas" data-api-map-fullscreen-canvas aria-label="Open API 테스트 지도 전체화면"></div>
+    <button type="button" class="oa-detail__map-fullscreen-close flex align-center justify-center" data-api-map-fullscreen-close aria-label="화면 최소화">
+      <i class="minimise-01-white" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

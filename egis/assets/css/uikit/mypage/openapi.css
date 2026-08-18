@@ -1,0 +1,690 @@
+/* Open API 관리 — 목록 / 상세 / 수정 */
+
+/* ========== 목록 (1189:7167) ========== */
+.oa-mypage__stats {
+  list-style: none;
+}
+
+.oa-mypage__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  height: 4rem;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+  white-space: nowrap;
+}
+
+.oa-mypage__field--120 {
+  width: 12rem; /* 120px */
+  flex: none;
+}
+
+.oa-mypage__field--period {
+  width: 33.5rem; /* 335px */
+  flex: none;
+}
+
+.oa-mypage__date .input-field-default-40 {
+  min-width: 0;
+}
+
+.oa-mypage__date-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.oa-mypage__search {
+  min-width: 0;
+}
+
+.oa-mypage__search .search-40 {
+  padding-left: 1.6rem;
+  padding-right: 0.8rem;
+  border-color: var(--slate-500);
+  border-radius: var(--radius-md-8);
+}
+
+.oa-mypage__search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.oa-mypage__search-btn .search-icon-40 {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* Figma 1189:7481 — account 79px / name 1fr / status·date fit-content */
+.oa-mypage__col-account {
+  width: 7.9rem;
+}
+
+.oa-mypage__col-name {
+  width: auto;
+}
+
+.oa-mypage__col-status {
+  width: 9.6rem;
+}
+
+.oa-mypage__col-date {
+  width: 12.4rem;
+}
+
+.oa-mypage__table.table-02 th,
+.oa-mypage__table.table-02 td {
+  height: auto;
+  min-height: 0;
+  padding: 0.8rem 1.2rem; /* py-8 px-12 */
+  border-bottom: 1px solid var(--slate-200);
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.oa-mypage__table.table-02 thead th {
+  background-color: var(--slate-50);
+}
+
+.oa-mypage__table.table-02 td:nth-child(2) {
+  white-space: normal;
+}
+
+.oa-mypage__expire {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem; /* gap-4 */
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+.oa-mypage__expire-date {
+  flex: none;
+}
+
+.oa-mypage__status-dot {
+  display: inline-block;
+  width: 1rem; /* 10px */
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--red-500);
+  flex: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.oa-mypage__tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-left: 0.4rem;
+  transform: translateY(-50%);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm-4);
+  background-color: var(--slate-900);
+  color: var(--white);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.oa-mypage__expire:has(.oa-mypage__status-dot:hover) .oa-mypage__tooltip,
+.oa-mypage__expire:has(.oa-mypage__status-dot:focus-visible) .oa-mypage__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.oa-mypage__empty {
+  margin: 0;
+  padding: 8rem 0;
+}
+
+.oa-mypage__empty[hidden],
+.oa-mypage__table[hidden],
+[data-oa-pagination][hidden] {
+  display: none;
+}
+
+/* ========== 상세 (1189:7760 / 1226:127) ========== */
+.oa-detail__actions {
+  gap: 1rem;
+}
+
+.oa-detail__delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.8rem;
+  padding: 0 1.6rem;
+  border: 0;
+  border-radius: var(--radius-md-8);
+  background-color: var(--red-50);
+  color: var(--red-600);
+  cursor: pointer;
+}
+
+.oa-detail__status-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 28.2rem;
+  height: 31.2rem;
+  padding: 2.4rem;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+  flex-shrink: 0;
+}
+
+.oa-detail__status-card[hidden] {
+  display: none;
+}
+
+.oa-detail__status-icon {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.oa-detail__status-icon--ok {
+  background-image: url('../../../image/icon/mypage/oa-status-ok.svg');
+}
+
+.oa-detail__status-icon--expired {
+  background-image: url('../../../image/icon/mypage/oa-status-expired.svg');
+}
+
+.oa-detail__progress {
+  width: 100%;
+  height: 1.2rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--slate-200);
+}
+
+.oa-detail__progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--blue-500);
+}
+
+.oa-detail__info-card,
+.oa-detail__usage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-sizing: border-box;
+  padding: 2.8rem;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+}
+
+.oa-detail__info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+}
+
+.oa-detail__info-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  height: 5.8rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.oa-detail__key-field {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 0 1.2rem;
+  overflow: hidden;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+}
+
+.oa-detail__key-field code {
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.oa-detail__usage-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.oa-detail__usage-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  min-height: 5.8rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--slate-100);
+  box-sizing: border-box;
+}
+
+.oa-detail__usage-row--last {
+  border-bottom: 0;
+}
+
+.oa-detail__usage-row dt {
+  width: 16rem;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.oa-detail__usage-row dd {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.oa-detail__apply-prod {
+  width: 20rem;
+}
+
+[data-oa-status='expired'] [data-oa-edit] {
+  display: none;
+}
+
+[data-oa-status='expired'] [data-oa-account-status] {
+  color: var(--red-600);
+}
+
+/* ========== 수정 (1226:1737) ========== */
+.oa-edit__summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-sizing: border-box;
+  min-height: 9.3rem;
+  padding: 1.6rem 2rem;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+}
+
+.oa-edit__divider {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--slate-900);
+}
+
+.oa-edit__textarea {
+  height: 10.8rem;
+  min-height: 10.8rem;
+  resize: none;
+}
+
+.oa-edit__counter {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1rem;
+  pointer-events: none;
+}
+
+.oa-edit__cancel {
+  width: 12rem;
+}
+
+.oa-edit__submit {
+  width: 16rem;
+}
+
+/* ========== 운영계정 신청 (1226:2329) ========== */
+.oa-prod__field--date {
+  width: 24.7rem;
+  flex: none;
+}
+
+.oa-prod__date-btn {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.oa-prod__textarea {
+  height: 15.2rem;
+  min-height: 15.2rem;
+  resize: none;
+}
+
+/* Figma 1749:3290 — 서비스 설명 필드 에러 */
+.oa-prod__field.is-error .oa-prod__textarea {
+  border-color: var(--red-500);
+}
+
+.oa-prod__field.is-error > .error-message {
+  display: block;
+  margin: 0;
+  color: var(--red-500);
+}
+
+.oa-prod__counter {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1rem;
+  pointer-events: none;
+}
+
+/* Figma 1226:2689 — 연한 파란 원 + 파란 느낌표 */
+.oa-prod__info-icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url('../../../image/icon/mypage/oa-info-alert.svg') center / contain no-repeat;
+}
+
+.oa-prod__image-list {
+  list-style: none;
+}
+
+.oa-prod__image-item {
+  width: 9rem;
+  height: 9rem;
+  flex-shrink: 0;
+}
+
+.oa-prod__image-preview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+}
+
+.oa-prod__image-preview img {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.oa-prod__image-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.8rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--slate-700);
+  cursor: pointer;
+  flex: none;
+}
+
+.oa-prod__image-add {
+  width: 9rem;
+  height: 9rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-700);
+  cursor: pointer;
+}
+
+.oa-prod__image-add:disabled,
+.oa-prod__image-add[hidden] {
+  display: none;
+}
+
+.oa-prod__image-add-icon {
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+  background: url("data:image/svg+xml,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M10 4V16M4 10H16' stroke='white' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
+}
+
+.oa-prod__cancel {
+  width: 10rem;
+}
+
+.oa-prod__submit {
+  width: 20rem;
+}
+
+/* ========== 운영계정 신청 상세 (1234:1118 / 1226:3244 / 1234:1388) ========== */
+.oa-prod-detail__banner + .oa-edit__summary,
+.oa-edit__summary + .oa-prod-detail__card,
+.oa-prod-detail__card + .oa-prod-detail__card {
+  margin-top: 2.8rem;
+}
+
+.oa-prod-detail__footer {
+  padding-top: 4.8rem;
+  text-align: center;
+}
+
+.oa-prod-detail__banner {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--radius-md-8);
+}
+
+.oa-prod-detail__banner--review {
+  border: 1px solid var(--blue-500);
+}
+
+.oa-prod-detail__banner--reject {
+  border: 1px solid var(--red-500);
+}
+
+.oa-prod-detail__banner-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  padding: 0 2rem;
+}
+
+.oa-prod-detail__banner--review .oa-prod-detail__banner-icon-wrap {
+  background-color: var(--blue-50);
+}
+
+.oa-prod-detail__banner--reject .oa-prod-detail__banner-icon-wrap {
+  background-color: var(--red-50);
+}
+
+.oa-prod-detail__banner-icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.oa-prod-detail__banner-icon--review {
+  background: url('../../../image/icon/mypage/oa-review-alert.svg') center / contain no-repeat;
+}
+
+.oa-prod-detail__banner-icon--reject {
+  background: url('../../../image/icon/mypage/oa-reject-alert.svg') center / contain no-repeat;
+}
+
+.oa-prod-detail__banner-text {
+  flex: 1;
+  min-width: 0;
+  padding: 1.6rem;
+}
+
+.oa-prod-detail__reject-list {
+  padding-left: 2.4rem;
+  list-style: disc;
+}
+
+.oa-prod-detail__reject-list li {
+  margin: 0;
+}
+
+.oa-prod-detail__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2.8rem;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+}
+
+.oa-prod-detail__info-row {
+  display: flex;
+  gap: 3.2rem;
+  align-items: stretch;
+}
+
+.oa-prod-detail__info-cell {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  min-height: 5.8rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.oa-prod-detail__info-cell--desc {
+  align-items: flex-start;
+}
+
+.oa-prod-detail__label {
+  width: 14rem;
+  flex: none;
+}
+
+.oa-prod-detail__info-row--files {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1.6rem 0;
+}
+
+.oa-prod-detail__files {
+  list-style: none;
+}
+
+.oa-prod-detail__file {
+  box-sizing: border-box;
+  width: 9rem;
+  height: 9rem;
+  overflow: hidden;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--gray-50, var(--slate-50));
+}
+
+.oa-prod-detail__file img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oa-prod-detail__dev-meta {
+  width: 28rem;
+}
+
+.oa-prod-detail__dev-row {
+  gap: 0;
+}
+
+.oa-prod-detail__list-btn {
+  width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .oa-mypage__filter,
+  .oa-detail__summary,
+  .oa-edit__summary,
+  .oa-edit__row,
+  .oa-prod__row--4,
+  .oa-prod__row--url {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .oa-prod__field--date {
+    width: 100%;
+  }
+
+  .oa-prod-detail__info-row,
+  .oa-prod-detail__dev {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .oa-prod-detail__dev-meta {
+    width: 100%;
+  }
+
+  .oa-mypage__field--120,
+  .oa-mypage__field--period,
+  .oa-detail__status-card {
+    width: 100%;
+  }
+
+  .oa-detail__status-card {
+    height: auto;
+    min-height: 24rem;
+  }
+
+  .oa-detail__info-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}

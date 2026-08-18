@@ -1,0 +1,233 @@
+<!-- 문의하기 목록 -->
+<section class="inquiry-board pt-28 pb-100" aria-labelledby="inquiry-board-title">
+  <h2 id="inquiry-board-title" class="blind">문의하기 목록</h2>
+
+  <aside class="inquiry-board__notice bg-slate-50 radius-md-8 p-20 mb-32 flex align-start" aria-labelledby="inquiry-notice-title">
+    <h3 id="inquiry-notice-title" class="inquiry-board__notice-title flex align-center gap-8 body1-sb-18 color-slate-900 flex-none">
+      <i class="inquiry-board__notice-icon flex-none" aria-hidden="true"></i>
+      작성 전 확인해 주세요
+    </h3>
+    <div class="inquiry-board__notice-body flex flex-col gap-16 flex-1">
+      <p class="body1-sb-18 color-slate-900">
+        저작권침해, 개인정보 유출 또는 상업성, 음란성 등 게시판의 용도에 맞지 않는 글은 임의 삭제 조치 됩니다.
+      </p>
+      <div>
+        <p class="body2-m-16 color-slate-900">저작권 침해 주의</p>
+        <p class="body2-r-16 color-slate-700">
+          다른 사람의 저작물을 무단으로 게시하여 저작물을 침해하는 경우, 저작권자의 의사에 따라 민,형사상의 불이익을 받으실 수 있습니다.
+          저작권을 침해하는 게시물은 등록하지 않도록 주의하여 주시기 바랍니다. 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」
+        </p>
+      </div>
+      <div>
+        <p class="body2-m-16 color-slate-900">개인정보 유출 주의</p>
+        <p class="body2-r-16 color-slate-700">
+          해당 게시판은 누구나 작성하고 볼 수 있는 공개 게시판입니다. 개인정보 보호를 위해 주민등록번호, 운전면허번호, 계좌번호, 여권번호, 연락처, 주소 등의
+          개인정보는 이 게시판에 등록하지 않도록 주의하여 주시기 바랍니다. 「개인정보 보호지침 제25조」
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <div class="inquiry-board__toolbar flex align-center justify-between gap-16 mb-24">
+    <p class="body1-sb-18 color-slate-900 flex-none">총 <strong class="body1-sb-18 color-blue-500">000</strong>건</p>
+    <form class="inquiry-board__filter flex align-center gap-8" role="search">
+      <label for="inquiry-category" class="blind">문의 구분</label>
+      <select id="inquiry-category" class="select-48 inquiry-board__select">
+        <option value="">문의 구분 전체</option>
+        <option value="general">일반</option>
+        <option value="dataset">데이터셋 오류</option>
+        <option value="open-api">Open API 오류</option>
+      </select>
+      <label for="inquiry-type" class="blind">문의 유형</label>
+      <select id="inquiry-type" class="select-48 inquiry-board__select">
+        <option value="" selected>문의 유형 전체</option>
+      </select>
+      <label for="inquiry-search" class="blind">문의 검색</label>
+      <div class="inquiry-board__search search-48 w-360 flex align-center gap-12">
+        <input
+          id="inquiry-search"
+          type="search"
+          class="body2-r-16"
+          placeholder="제목 또는 내용을 입력해주세요"
+          autocomplete="off"
+        />
+      </div>
+      <button type="submit" class="slate-button-48 flex-none w-86">검색</button>
+    </form>
+  </div>
+
+  <table class="table-02 w-full">
+    <caption class="blind">문의하기 목록</caption>
+    <colgroup>
+      <col class="w-72" />
+      <col class="w-100" />
+      <col />
+      <col class="w-100" />
+      <col class="w-160" />
+      <col class="w-100" />
+      <col class="w-100" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-center">번호</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-left">문의</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-left">제목</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-center">작성자</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-center">작성일</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-center">조회수</th>
+        <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50 text-center">답변</th>
+      </tr>
+    </thead>
+    <tbody class="body2-r-16 color-slate-700">
+      <tr>
+        <td class="text-center">1</td>
+        <td class="text-left">일반</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">지도 화면이 정상적으로 표시되지 않습니다</span>
+            <span class="badge-n" aria-label="새 게시글">N</span>
+          </a>
+        </td>
+        <td class="text-center">이OO</td>
+        <td class="text-center">2026-07-18</td>
+        <td class="text-center">260</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+      <tr>
+        <td class="text-center">2</td>
+        <td class="text-left">데이터셋</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">주제별지도 데이터 다운로드 오류 문의</span>
+          </a>
+        </td>
+        <td class="text-center">김OO</td>
+        <td class="text-center">2026-07-17</td>
+        <td class="text-center">184</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+      <tr>
+        <td class="text-center">3</td>
+        <td class="text-left">Open API</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">API 키 발급 후 호출이 되지 않습니다</span>
+            <span class="badge-n" aria-label="새 게시글">N</span>
+          </a>
+        </td>
+        <td class="text-center">박OO</td>
+        <td class="text-center">2026-07-16</td>
+        <td class="text-center">152</td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">4</td>
+        <td class="text-left">일반</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">회원가입 인증 메일이 오지 않습니다</span>
+          </a>
+        </td>
+        <td class="text-center">최OO</td>
+        <td class="text-center">2026-07-15</td>
+        <td class="text-center">143</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+      <tr>
+        <td class="text-center">5</td>
+        <td class="text-left">데이터셋</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">다운로드 파일 좌표계 변경 방법 문의</span>
+          </a>
+        </td>
+        <td class="text-center">정OO</td>
+        <td class="text-center">2026-07-14</td>
+        <td class="text-center">128</td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">6</td>
+        <td class="text-left">Open API</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">WMS 서비스 URL 형식 확인 요청</span>
+          </a>
+        </td>
+        <td class="text-center">한OO</td>
+        <td class="text-center">2026-07-13</td>
+        <td class="text-center">117</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+      <tr>
+        <td class="text-center">7</td>
+        <td class="text-left">일반</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">통합지도 레이어 검색 결과가 다릅니다</span>
+          </a>
+        </td>
+        <td class="text-center">윤OO</td>
+        <td class="text-center">2026-07-12</td>
+        <td class="text-center">109</td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">8</td>
+        <td class="text-left">데이터셋</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">데이터 이용 허락 범위 확인 문의</span>
+          </a>
+        </td>
+        <td class="text-center">조OO</td>
+        <td class="text-center">2026-07-11</td>
+        <td class="text-center">98</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+      <tr>
+        <td class="text-center">9</td>
+        <td class="text-left">Open API</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">일일 호출 한도 초과 기준 문의</span>
+          </a>
+        </td>
+        <td class="text-center">장OO</td>
+        <td class="text-center">2026-07-10</td>
+        <td class="text-center">86</td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">10</td>
+        <td class="text-left">일반</td>
+        <td>
+          <a href="./inquiry-detail.html" class="table-02__link body2-r-16 color-slate-700">
+            <span class="table-02__ellipsis">모바일 환경에서 지도 이용 가능 여부</span>
+          </a>
+        </td>
+        <td class="text-center">임OO</td>
+        <td class="text-center">2026-07-09</td>
+        <td class="text-center">74</td>
+        <td class="text-center body2-r-16 color-slate-500">완료</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav class="pt-48 pagination pagination--filled" aria-label="문의하기 페이지 이동">
+    <ul class="pagination__list flex align-center justify-center gap-8">
+      <li><a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700"><span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind"> 페이지</span></a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16" aria-current="page">1</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">2</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">3</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">4</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">5</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">6</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">7</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">8</a></li>
+      <li><span class="pagination__ellipsis body2-r-16 color-slate-500" aria-hidden="true">...</span></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">99</a></li>
+      <li><a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">다음<span class="blind"> 페이지</span><span class="chevron-pagination-slate-700" aria-hidden="true"></span></a></li>
+    </ul>
+  </nav>
+</section>

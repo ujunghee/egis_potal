@@ -1,0 +1,33 @@
+<dialog class="tp-fav-modal fixed overflow-hidden rounded-md bg-white" data-fav-modal aria-labelledby="fav-title">
+  <div class="tp-fav-modal__header flex align-center justify-between">
+    <h2 id="fav-title" class="heading8-sb-24 color-slate-900">관심 데이터</h2>
+  </div>
+  <div class="tp-fav-modal__body">
+    <div class="tp-fav-modal__toolbar flex align-center justify-between gap-16">
+      <h3 class="heading10-sb-20 color-slate-900">총 <span class="color-blue-500" data-fav-modal-count>0</span>개</h3>
+      <div class="flex align-center gap-8 flex-none">
+        <div class="view-toggle" role="group" aria-label="관심 데이터 보기 방식">
+          <button type="button" class="view-toggle__btn active" aria-pressed="true" data-fav-view="card">
+            <i class="dashboards-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+            <i class="dashboards-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+            <span class="body2-r-16 color-slate-900">카드형</span>
+          </button>
+          <button type="button" class="view-toggle__btn" aria-pressed="false" data-fav-view="list">
+            <i class="list-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+            <i class="list-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+            <span class="body2-r-16 color-slate-700">리스트형</span>
+          </button>
+        </div>
+        <a href="../mypage/index.html" class="tp-fav-manage">
+          관심 데이터 관리
+          <i class="arrow-right-blue-20" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <ul class="tp-fav-list grid gap-24" data-fav-list aria-label="관심 데이터 목록"></ul>
+  </div>
+  <button type="button" class="tp-fav-modal__close" data-fav-close>
+    <i class="modal__close" aria-hidden="true"></i>
+    <span class="blind">관심 데이터 닫기</span>
+  </button>
+</dialog>

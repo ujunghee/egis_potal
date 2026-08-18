@@ -1,0 +1,160 @@
+/* Open API 상세 — 추가 섹션 (레이아웃 유지, overflow만 처리) */
+
+.oa-detail__api {
+  margin-top: 6rem;
+  min-width: 0;
+}
+
+.oa-detail__section {
+  min-width: 0;
+}
+
+.oa-detail__url {
+  min-width: 0;
+  word-break: break-all;
+}
+
+.oa-detail__test {
+  grid-template-columns: minmax(0, 33.2rem) minmax(0, 1fr);
+  align-items: start;
+  min-width: 0;
+}
+
+.oa-detail__test-form {
+  min-width: 0;
+}
+
+.oa-detail__test-form .flex.align-center > :not(.flex-none) {
+  min-width: 0;
+}
+
+.oa-detail__test-form input {
+  min-width: 0;
+}
+
+.oa-detail__test-result {
+  min-width: 0;
+}
+
+.oa-detail__result-tab {
+  min-width: 7.2rem;
+  height: 32px;
+  padding: 0 1.6rem;
+  border: 0;
+  border-radius: var(--radius-md-8);
+  background: var(--slate-50);
+  color: var(--slate-700);
+  cursor: pointer;
+}
+
+.oa-detail__result-tab.active {
+  background: var(--slate-700);
+  color: var(--white);
+}
+
+.oa-detail__result-panel {
+  height: 612px;
+  min-height: 612px;
+  background-color: var(--slate-900);
+}
+
+.oa-detail__result-body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+}
+
+.oa-detail__result-body.is-image-only {
+  grid-template-columns: 1fr;
+}
+
+.oa-detail__result-body.is-image-only [data-api-result-code] {
+  display: none;
+}
+
+.oa-detail__code-body {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.oa-detail__map-preview {
+  height: 100%;
+  min-height: 0;
+  padding: var(--spacing-20);
+  box-sizing: border-box;
+}
+
+.oa-detail__map-inner {
+  height: 100%;
+  min-height: 0;
+  border-radius: var(--radius-md-8);
+  overflow: hidden;
+  background: var(--slate-50);
+}
+
+.oa-detail__map-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  pointer-events: none;
+}
+
+.oa-detail__map-expand {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 1;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--slate-900);
+  cursor: pointer;
+}
+
+/* Figma 1728:6382 — OpenAPI 지도 전체화면 */
+.oa-detail__map-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 3.2rem;
+  box-sizing: border-box;
+  background: var(--slate-900);
+}
+
+.oa-detail__map-fullscreen[hidden] {
+  display: none;
+}
+
+.oa-detail__map-fullscreen-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md-8);
+  background: var(--slate-50);
+}
+
+.oa-detail__map-fullscreen-close {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 1;
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 0;
+  border-radius: var(--radius-md-8);
+  background: var(--slate-900);
+  cursor: pointer;
+}
+
+body.is-oa-map-fullscreen {
+  overflow: hidden;
+}

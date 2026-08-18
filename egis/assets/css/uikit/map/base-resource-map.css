@@ -1,0 +1,9 @@
+/* 기초자원지도 — 통합검색 트리 UI 공유, 필터 없음 · 검색만 */
+.base-resource-map.integrated-search .integrated-search__toolbar {
+  padding-bottom: var(--spacing-12);
+}
+
+.base-resource-map .integrated-search__search {
+  flex: 1;
+  width: 100%;
+}

@@ -1,0 +1,139 @@
+<!-- 녹지(녹피)/불투수면 통계 패널 -->
+<div class="land-cover__screen" data-land-cover-panel="green" hidden>
+  <div class="land-cover__head flex align-end justify-between gap-24 mb-24">
+    <h3 class="heading10-sb-20 color-slate-900 m-0">녹지(녹피)/불투수면 통계</h3>
+    <dl class="land-cover__meta flex align-center gap-24 m-0">
+      <div class="m-0">
+        <dt class="blind">통계작성 기준 년도</dt>
+        <dd class="body2-r-16 color-slate-700 m-0 flex gap-8">
+          통계작성 기준 년도 <strong class="body2-sb-16 color-slate-900">2024</strong>
+        </dd>
+      </div>
+      <div class="m-0">
+        <dt class="blind">공개시기</dt>
+        <dd class="body2-r-16 color-slate-700 m-0 flex gap-8">
+          공개시기 <strong class="body2-sb-16 color-slate-900">2026년 3월</strong>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="land-cover__filter flex align-end gap-8 flex-wrap mb-32" data-land-cover-filter>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="green-cover-period" class="land-cover__field-label body3-r-14 color-slate-500">조사실시기간</label>
+      <select id="green-cover-period" class="select-40 land-cover__select">
+        <option value="2025" selected>2025</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="green-cover-sido" class="land-cover__field-label body3-r-14 color-slate-500">시도</label>
+      <select id="green-cover-sido" class="select-40 land-cover__select" data-land-cover-sido>
+        <option value="all" selected>전국</option>
+        <option value="seoul">서울특별시</option>
+        <option value="gyeonggi">경기도</option>
+        <option value="busan">부산광역시</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="green-cover-sigungu" class="land-cover__field-label body3-r-14 color-slate-500">시군구</label>
+      <select id="green-cover-sigungu" class="select-40 land-cover__select" data-land-cover-sigungu disabled>
+        <option value="all" selected>전체</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="green-cover-eupmyeondong" class="land-cover__field-label body3-r-14 color-slate-500">읍면동</label>
+      <select id="green-cover-eupmyeondong" class="select-40 land-cover__select" data-land-cover-eupmyeondong disabled>
+        <option value="all" selected>전체</option>
+      </select>
+    </div>
+    <button type="button" class="slate-button-40 flex align-center justify-center w-100" data-land-cover-search>조회</button>
+  </div>
+
+  <div class="flex flex-col gap-32">
+    <div class="land-cover__green-summary grid gap-24">
+      <article class="land-cover__green-card flex flex-col p-20 radius-md-8 bg-slate-50">
+        <div class="land-cover__green-card-head flex align-start justify-between gap-16">
+          <h3 class="body3-r-14 color-slate-700 m-0">녹지(녹피) 현황</h3>
+          <span class="land-cover__scope-badge body4-m-13 color-white radius-full px-12" data-land-cover-scope-badge>전국</span>
+        </div>
+        <p class="m-0">
+          <span class="heading10-sb-20 color-slate-900" data-land-cover-green-rate>69.2</span><span class="body3-r-14 color-slate-700">%</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0 mb-8" data-land-cover-green-desc>식생이 있는 면적(산림·초지·농업 등)은 69,851.4 km²</p>
+        <span class="land-cover__green-bar" aria-hidden="true">
+          <span class="land-cover__green-bar-fill land-cover__green-bar-fill--green" data-land-cover-green-bar style="width:69.2%"></span>
+        </span>
+      </article>
+      <article class="land-cover__green-card flex flex-col p-20 radius-md-8 bg-slate-50">
+        <div class="land-cover__green-card-head flex align-start justify-between gap-16">
+          <h3 class="body3-r-14 color-slate-700 m-0">불투수면 현황</h3>
+          <span class="land-cover__scope-badge body4-m-13 color-white radius-full px-12" data-land-cover-scope-badge>전국</span>
+        </div>
+        <p class="m-0">
+          <span class="heading10-sb-20 color-slate-900" data-land-cover-impervious-rate>8.9</span><span class="body3-r-14 color-slate-700">%</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0 mb-8" data-land-cover-impervious-desc>빗물이 스며들지 않는 면적(도로·건물 등)은 8,991.4 km²</p>
+        <span class="land-cover__green-bar" aria-hidden="true">
+          <span class="land-cover__green-bar-fill land-cover__green-bar-fill--impervious" data-land-cover-impervious-bar style="width:8.9%"></span>
+        </span>
+      </article>
+    </div>
+
+    <div class="land-cover__rank-panel radius-md-8 border border-slate-200 bg-white p-32">
+      <div class="land-cover__rank-head flex align-center justify-between gap-16 flex-wrap mb-24">
+        <div class="land-cover__rank-intro">
+          <h3 class="heading10-sb-20 color-slate-900 m-0">시도별 순위</h3>
+          <p class="body2-r-16 color-slate-700 m-0 mt-4">지역을 클릭하면 상단 지표가 해당 지역 기준으로 바뀝니다</p>
+        </div>
+        <div class="land-cover__rank-tools flex align-center gap-16">
+          <div class="land-cover__rank-tabs" role="tablist" aria-label="순위 지표" data-land-cover-rank-tabs>
+            <button
+              type="button"
+              class="land-cover__rank-tab is-active flex align-center gap-8 body3-r-14 color-slate-900"
+              role="tab"
+              aria-selected="true"
+              data-land-cover-metric="green"
+            >
+              <span class="land-cover__rank-tab-swatch land-cover__rank-tab-swatch--green" aria-hidden="true"></span>
+              녹지(녹피)
+            </button>
+            <button
+              type="button"
+              class="land-cover__rank-tab flex align-center gap-8 body3-r-14 color-slate-900"
+              role="tab"
+              aria-selected="false"
+              data-land-cover-metric="impervious"
+            >
+              <span class="land-cover__rank-tab-swatch land-cover__rank-tab-swatch--impervious" aria-hidden="true"></span>
+              불투수면
+            </button>
+          </div>
+          <select class="select-40 land-cover__rank-sort w-92" data-land-cover-rank-sort aria-label="정렬">
+            <option value="desc" selected>높은순</option>
+            <option value="asc">낮은순</option>
+          </select>
+        </div>
+      </div>
+      <ol class="land-cover__rank-list m-0 p-0" data-land-cover-rank-list aria-label="시도별 녹지(녹피) 순위"></ol>
+    </div>
+
+    <div class="land-cover__compare-panel radius-md-8 border border-slate-200 bg-white p-24">
+      <div class="land-cover__compare-head flex align-start justify-between gap-16 flex-wrap mb-24">
+        <div class="land-cover__compare-intro">
+          <h3 class="heading10-sb-20 color-slate-900 m-0">지역별 녹지 · 불투수면 비교</h3>
+        </div>
+        <ul class="land-cover__compare-legend flex align-center gap-16 m-0 p-0" aria-label="범례">
+          <li class="flex align-center gap-8 body3-r-14 color-slate-700">
+            <span class="land-cover__compare-legend-swatch land-cover__compare-legend-swatch--green" aria-hidden="true"></span>
+            녹지(녹피) 비율
+          </li>
+          <li class="flex align-center gap-8 body3-r-14 color-slate-700">
+            <span class="land-cover__compare-legend-swatch land-cover__compare-legend-swatch--impervious" aria-hidden="true"></span>
+            불투수면 비율
+          </li>
+        </ul>
+      </div>
+      <ol class="land-cover__compare-list m-0 p-0" data-land-cover-compare-list aria-label="지역별 녹지·불투수면 비교"></ol>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1303 @@
+<!-- 검색 결과 패널: 통합검색·환경기초지도·주소검색·레이어 정보 -->
+<div id="map-result-panel-wrap" class="result-panel-wrap hidden">
+  <!-- 검색 종류에 따라 내부 화면이 전환되는 결과 패널 본체 -->
+  <aside id="map-result-panel" class="result-panel" aria-labelledby="integrated-search-title">
+    <!-- 통합검색 결과와 상세 필터 화면 -->
+    <div class="result-panel__view" data-result-panel-view="integrated-search" id="result-panel-view-integrated-search">
+      <div class="integrated-search">
+        <div class="integrated-search__toolbar">
+          <button
+            type="button"
+            class="integrated-search__filter"
+            data-integrated-search-filter
+            aria-label="상세 필터"
+            aria-pressed="false"
+          >
+            <i class="map-layer-filter-icon" aria-hidden="true"></i>
+            <span
+              class="integrated-search__filter-count body3-sb-14"
+              data-integrated-search-filter-count
+              hidden
+              aria-hidden="true"
+              >0</span
+            >
+          </button>
+          <form class="integrated-search__search search-48" data-integrated-search-form role="search">
+            <label for="integrated-search-input" class="blind">데이터명 검색</label>
+            <i class="search-icon-40" aria-hidden="true"><span class="blind">검색</span></i>
+            <input
+              type="search"
+              id="integrated-search-input"
+              class="body2-r-16 w-full"
+              data-integrated-search-input
+              placeholder="데이터명 검색"
+              autocomplete="off"
+            />
+          </form>
+        </div>
+
+        <div class="integrated-search__body">
+          <!-- 검색 필터 — 필터 버튼 클릭 시 catalog 대신 표시 -->
+          <div class="integrated-search__filter-panel" data-integrated-search-filter-panel data-filter-panel>
+            <div class="integrated-search__filter-head">
+              <h3 class="integrated-search__filter-title heading10-sb-20 color-slate-900">검색 필터</h3>
+              <button
+                type="button"
+                class="integrated-search__filter-reset transparent-button-32"
+                data-integrated-search-filter-reset data-search-filter-reset
+              >
+                <span class="body2-m-16 color-slate-500">초기화</span>
+                <i class="filter-reset-20" aria-hidden="true"></i>
+                <span class="blind">검색 필터 초기화</span>
+              </button>
+            </div>
+
+            <ul
+              class="integrated-search__filter-chips flex flex-wrap gap-8"
+              data-integrated-search-filter-chips
+              aria-label="선택된 필터"
+            ></ul>
+
+            <div data-fragment="./fragments/integrated-search-filter.html"></div>
+          </div>
+
+          <div class="integrated-search__catalog" data-integrated-search-catalog>
+            <div class="flex align-center justify-between pb-12">
+              <p class="integrated-search__summary body2-m-16 color-slate-900">
+                총 <span class="color-blue-500" data-integrated-search-total>36</span>개
+              </p>
+              <div class="flex align-center gap-8" role="group" aria-label="트리 펼침">
+                <button
+                  type="button"
+                  class="border-none bg-white p-0 cursor-pointer body3-r-14 color-slate-900"
+                  data-integrated-search-expand-all
+                >
+                  전체 펼치기
+                </button>
+                <span class="body3-r-14 color-slate-200" aria-hidden="true">|</span>
+                <button
+                  type="button"
+                  class="border-none bg-white p-0 cursor-pointer body3-r-14 color-slate-900"
+                  data-integrated-search-collapse-all
+                >
+                  전체 접기
+                </button>
+              </div>
+            </div>
+
+            <ul
+              class="integrated-search__tree"
+              data-integrated-search-catalog-total="36"
+              aria-label="데이터 레이어 목록"
+            >
+              <li class="integrated-search__node is-expanded" data-integrated-search-node="land-cover" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="true"
+                    aria-label="토지피복지도 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="layer-land-cover"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    data-checkall-target="#layer-land-cover-1980-urban, #layer-land-cover-1980-forest, #layer-land-cover-1980-water, #layer-land-cover-2000-all, #layer-land-cover-medium-2010-all"
+                    value="land-cover"
+                  />
+                  <label for="layer-land-cover" class="integrated-search__label body2-m-16 color-slate-900"
+                    >토지피복지도</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="36"
+                    >
+                      <span class="color-blue-500" data-integrated-search-node-count-selected>2</span>/36
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children">
+                  <li
+                    class="integrated-search__node is-expanded"
+                    data-integrated-search-node="land-cover-large"
+                    data-depth="2"
+                  >
+                    <div class="integrated-search__row">
+                      <button
+                        type="button"
+                        class="integrated-search__expand"
+                        data-integrated-search-expand
+                        aria-expanded="true"
+                        aria-label="대분류 펼치기"
+                      >
+                        <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                      </button>
+                      <input
+                        type="checkbox"
+                        id="layer-land-cover-large"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        data-checkall-target="#layer-land-cover-1980-urban, #layer-land-cover-1980-forest, #layer-land-cover-1980-water, #layer-land-cover-2000-all"
+                        value="land-cover-large"
+                      />
+                      <label for="layer-land-cover-large" class="integrated-search__label body2-m-16 color-slate-900"
+                        >대분류</label
+                      >
+                    </div>
+                    <ul class="integrated-search__children">
+                      <li
+                        class="integrated-search__node is-expanded"
+                        data-integrated-search-node="land-cover-1980"
+                        data-depth="3"
+                      >
+                        <div class="integrated-search__row">
+                          <button
+                            type="button"
+                            class="integrated-search__expand"
+                            data-integrated-search-expand
+                            aria-expanded="true"
+                            aria-label="1980년대 펼치기"
+                          >
+                            <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                          </button>
+                          <input
+                            type="checkbox"
+                            id="layer-land-cover-1980"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            data-checkall-target="[id^='layer-land-cover-1980-']"
+                            value="land-cover-1980"
+                          />
+                          <label for="layer-land-cover-1980" class="integrated-search__label body2-m-16 color-slate-900"
+                            >1980년대</label
+                          >
+                        </div>
+                        <ul class="integrated-search__children">
+                          <li
+                            class="integrated-search__node"
+                            data-integrated-search-node="land-cover-1980-urban"
+                            data-depth="4"
+                          >
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-land-cover-1980-urban"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="land-cover-1980-urban"
+                                checked
+                              />
+                              <label
+                                for="layer-land-cover-1980-urban"
+                                class="integrated-search__label body2-m-16 color-slate-900"
+                                >도시·공업지역</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            class="integrated-search__node"
+                            data-integrated-search-node="land-cover-1980-forest"
+                            data-depth="4"
+                          >
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-land-cover-1980-forest"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="land-cover-1980-forest"
+                                checked
+                              />
+                              <label
+                                for="layer-land-cover-1980-forest"
+                                class="integrated-search__label body2-m-16 color-slate-900"
+                                >산림·초지</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            class="integrated-search__node"
+                            data-integrated-search-node="land-cover-1980-water"
+                            data-depth="4"
+                          >
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-land-cover-1980-water"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="land-cover-1980-water"
+                              />
+                              <label
+                                for="layer-land-cover-1980-water"
+                                class="integrated-search__label body2-m-16 color-slate-900"
+                                >수역</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="integrated-search__node" data-integrated-search-node="land-cover-2000" data-depth="3">
+                        <div class="integrated-search__row">
+                          <button
+                            type="button"
+                            class="integrated-search__expand"
+                            data-integrated-search-expand
+                            aria-expanded="false"
+                            aria-label="2000년대 펼치기"
+                          >
+                            <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                          </button>
+                          <input
+                            type="checkbox"
+                            id="layer-land-cover-2000"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            data-checkall-target="#layer-land-cover-2000-all"
+                            value="land-cover-2000"
+                          />
+                          <label for="layer-land-cover-2000" class="integrated-search__label body2-m-16 color-slate-900"
+                            >2000년대</label
+                          >
+                        </div>
+                        <ul class="integrated-search__children">
+                          <li
+                            class="integrated-search__node"
+                            data-integrated-search-node="land-cover-2000-all"
+                            data-depth="4"
+                          >
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-land-cover-2000-all"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="land-cover-2000-all"
+                              />
+                              <label
+                                for="layer-land-cover-2000-all"
+                                class="integrated-search__label body2-m-16 color-slate-900"
+                                >2000년대</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="integrated-search__node" data-integrated-search-node="land-cover-medium" data-depth="2">
+                    <div class="integrated-search__row">
+                      <button
+                        type="button"
+                        class="integrated-search__expand"
+                        data-integrated-search-expand
+                        aria-expanded="false"
+                        aria-label="중분류 펼치기"
+                      >
+                        <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                      </button>
+                      <input
+                        type="checkbox"
+                        id="layer-land-cover-medium"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        data-checkall-target="#layer-land-cover-medium-2010-all"
+                        value="land-cover-medium"
+                      />
+                      <label for="layer-land-cover-medium" class="integrated-search__label body2-m-16 color-slate-900"
+                        >중분류</label
+                      >
+                    </div>
+                    <ul class="integrated-search__children">
+                      <li
+                        class="integrated-search__node"
+                        data-integrated-search-node="land-cover-medium-2010"
+                        data-depth="3"
+                      >
+                        <div class="integrated-search__row">
+                          <button
+                            type="button"
+                            class="integrated-search__expand"
+                            data-integrated-search-expand
+                            aria-expanded="false"
+                            aria-label="2010년대 펼치기"
+                          >
+                            <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                          </button>
+                          <input
+                            type="checkbox"
+                            id="layer-land-cover-medium-2010"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            data-checkall-target="#layer-land-cover-medium-2010-all"
+                            value="land-cover-medium-2010"
+                          />
+                          <label
+                            for="layer-land-cover-medium-2010"
+                            class="integrated-search__label body2-m-16 color-slate-900"
+                            >2010년대</label
+                          >
+                        </div>
+                        <ul class="integrated-search__children">
+                          <li
+                            class="integrated-search__node"
+                            data-integrated-search-node="land-cover-medium-2010-all"
+                            data-depth="4"
+                          >
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-land-cover-medium-2010-all"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="land-cover-medium-2010-all"
+                              />
+                              <label
+                                for="layer-land-cover-medium-2010-all"
+                                class="integrated-search__label body2-m-16 color-slate-900"
+                                >2010년대</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="integrated-search__node" data-integrated-search-node="land-cover-small" data-depth="2">
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="layer-land-cover-small"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="land-cover-small"
+                      />
+                      <label for="layer-land-cover-small" class="integrated-search__label body2-m-16 color-slate-900"
+                        >세분류</label
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="integrated-search__node" data-integrated-search-node="nature" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="false"
+                    aria-label="자연환경 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="layer-nature"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    data-checkall-target="#layer-ecosystem"
+                    value="nature"
+                  />
+                  <label for="layer-nature" class="integrated-search__label body2-m-16 color-slate-900">자연환경</label>
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="4"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/4
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children">
+                  <li class="integrated-search__node" data-integrated-search-node="nature-large" data-depth="2">
+                    <div class="integrated-search__row">
+                      <button
+                        type="button"
+                        class="integrated-search__expand"
+                        data-integrated-search-expand
+                        aria-expanded="false"
+                        aria-label="대분류 펼치기"
+                      >
+                        <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                      </button>
+                      <input
+                        type="checkbox"
+                        id="layer-nature-large"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        data-checkall-target="#layer-ecosystem"
+                        value="nature-large"
+                      />
+                      <label for="layer-nature-large" class="integrated-search__label body2-m-16 color-slate-900"
+                        >대분류</label
+                      >
+                    </div>
+                    <ul class="integrated-search__children">
+                      <li class="integrated-search__node" data-integrated-search-node="nature-ecosystem" data-depth="3">
+                        <div class="integrated-search__row">
+                          <button
+                            type="button"
+                            class="integrated-search__expand"
+                            data-integrated-search-expand
+                            aria-expanded="false"
+                            aria-label="생태계 펼치기"
+                          >
+                            <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                          </button>
+                          <input
+                            type="checkbox"
+                            id="layer-nature-ecosystem"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            data-checkall-target="#layer-ecosystem"
+                            value="nature-ecosystem"
+                          />
+                          <label
+                            for="layer-nature-ecosystem"
+                            class="integrated-search__label body2-m-16 color-slate-900"
+                            >생태계</label
+                          >
+                        </div>
+                        <ul class="integrated-search__children">
+                          <li class="integrated-search__node" data-integrated-search-node="ecosystem" data-depth="4">
+                            <div class="integrated-search__row">
+                              <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                              <input
+                                type="checkbox"
+                                id="layer-ecosystem"
+                                class="checkbox-basic checkbox-basic-sm"
+                                data-integrated-search-layer
+                                value="ecosystem"
+                              />
+                              <label for="layer-ecosystem" class="integrated-search__label body2-m-16 color-slate-900"
+                                >생태계</label
+                              >
+                              <div class="integrated-search__meta">
+                                <button
+                                  type="button"
+                                  class="integrated-search__info"
+                                  data-integrated-search-info
+                                  aria-label="정보 보기"
+                                >
+                                  <i class="book-text-icon" aria-hidden="true"></i>
+                                  <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="water" data-depth="1">
+                <div class="integrated-search__row">
+                  <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                  <input
+                    type="checkbox"
+                    id="layer-water"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="water"
+                  />
+                  <label for="layer-water" class="integrated-search__label body2-m-16 color-slate-900">물관리</label>
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="5"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/5
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="carbon" data-depth="1">
+                <div class="integrated-search__row">
+                  <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                  <input
+                    type="checkbox"
+                    id="layer-carbon"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="carbon"
+                  />
+                  <label for="layer-carbon" class="integrated-search__label body2-m-16 color-slate-900">탄소중립</label>
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="5"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/5
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="energy" data-depth="1">
+                <div class="integrated-search__row">
+                  <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                  <input
+                    type="checkbox"
+                    id="layer-energy"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="energy"
+                  />
+                  <label for="layer-energy" class="integrated-search__label body2-m-16 color-slate-900">에너지</label>
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="5"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/5
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h2 id="integrated-search-title" class="blind">통합검색</h2>
+      </div>
+    </div>
+
+    <!-- 기초자원지도 데이터 검색 결과 화면 -->
+    <div
+      class="result-panel__view"
+      data-result-panel-view="base-resource-map"
+      id="result-panel-view-base-resource-map"
+      hidden
+    >
+      <div class="integrated-search base-resource-map">
+        <div class="integrated-search__toolbar">
+          <form class="integrated-search__search search-48" data-integrated-search-form role="search">
+            <label for="base-resource-map-input" class="blind">데이터명 검색</label>
+            <i class="search-icon-40" aria-hidden="true"><span class="blind">검색</span></i>
+            <input
+              type="search"
+              id="base-resource-map-input"
+              class="body2-r-16 w-full"
+              data-integrated-search-input
+              placeholder="데이터명 검색"
+              autocomplete="off"
+            />
+          </form>
+        </div>
+
+        <div class="integrated-search__body">
+          <div class="integrated-search__catalog" data-integrated-search-catalog>
+            <div class="flex align-center justify-between pb-12">
+              <p class="integrated-search__summary body2-m-16 color-slate-900">
+                총 <span class="color-blue-500" data-integrated-search-total>36</span>개
+              </p>
+              <div class="flex align-center gap-8" role="group" aria-label="트리 펼침">
+                <button
+                  type="button"
+                  class="border-none bg-white p-0 cursor-pointer body3-r-14 color-slate-900"
+                  data-integrated-search-expand-all
+                >
+                  전체 펼치기
+                </button>
+                <span class="body3-r-14 color-slate-200" aria-hidden="true">|</span>
+                <button
+                  type="button"
+                  class="border-none bg-white p-0 cursor-pointer body3-r-14 color-slate-900"
+                  data-integrated-search-collapse-all
+                >
+                  전체 접기
+                </button>
+              </div>
+            </div>
+
+            <ul
+              class="integrated-search__tree"
+              data-integrated-search-catalog-total="36"
+              aria-label="기초자원 레이어 목록"
+            >
+              <li
+                class="integrated-search__node is-expanded"
+                data-integrated-search-node="brm-land-cover"
+                data-depth="1"
+              >
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="true"
+                    aria-label="토지피복지도 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="brm-layer-land-cover"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    data-checkall-target="#brm-layer-1980, #brm-layer-2000, #brm-layer-medium, #brm-layer-small, #brm-layer-ecology, #brm-layer-wetland, #brm-layer-env-assessment"
+                    value="brm-land-cover"
+                  />
+                  <label for="brm-layer-land-cover" class="integrated-search__label body2-m-16 color-slate-900"
+                    >토지피복지도</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="36"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/36
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children">
+                  <li
+                    class="integrated-search__node is-expanded"
+                    data-integrated-search-node="brm-land-cover-large"
+                    data-depth="2"
+                  >
+                    <div class="integrated-search__row">
+                      <button
+                        type="button"
+                        class="integrated-search__expand"
+                        data-integrated-search-expand
+                        aria-expanded="true"
+                        aria-label="대분류 펼치기"
+                      >
+                        <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                      </button>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-land-cover-large"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        data-checkall-target="#brm-layer-1980, #brm-layer-2000"
+                        value="brm-land-cover-large"
+                      />
+                      <label
+                        for="brm-layer-land-cover-large"
+                        class="integrated-search__label body2-m-16 color-slate-900"
+                        >대분류</label
+                      >
+                    </div>
+                    <ul class="integrated-search__children">
+                      <li
+                        class="integrated-search__node"
+                        data-integrated-search-node="brm-land-cover-1980"
+                        data-depth="3"
+                      >
+                        <div class="integrated-search__row">
+                          <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                          <input
+                            type="checkbox"
+                            id="brm-layer-1980"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            value="brm-land-cover-1980"
+                          />
+                          <label for="brm-layer-1980" class="integrated-search__label body2-m-16 color-slate-900"
+                            >1980년대</label
+                          >
+                          <div class="integrated-search__meta">
+                            <button
+                              type="button"
+                              class="integrated-search__info"
+                              data-integrated-search-info
+                              aria-label="정보 보기"
+                            >
+                              <i class="book-text-icon" aria-hidden="true"></i>
+                              <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="integrated-search__node"
+                        data-integrated-search-node="brm-land-cover-2000"
+                        data-depth="3"
+                      >
+                        <div class="integrated-search__row">
+                          <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                          <input
+                            type="checkbox"
+                            id="brm-layer-2000"
+                            class="checkbox-basic checkbox-basic-sm"
+                            data-integrated-search-layer
+                            value="brm-land-cover-2000"
+                          />
+                          <label for="brm-layer-2000" class="integrated-search__label body2-m-16 color-slate-900"
+                            >2000년대</label
+                          >
+                          <div class="integrated-search__meta">
+                            <button
+                              type="button"
+                              class="integrated-search__info"
+                              data-integrated-search-info
+                              aria-label="정보 보기"
+                            >
+                              <i class="book-text-icon" aria-hidden="true"></i>
+                              <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li
+                    class="integrated-search__node"
+                    data-integrated-search-node="brm-land-cover-medium"
+                    data-depth="2"
+                    data-integrated-search-meta-tags="대분류,중분류,세분류"
+                    data-integrated-search-meta-tag-active="중분류"
+                  >
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-medium"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="brm-land-cover-medium"
+                      />
+                      <label for="brm-layer-medium" class="integrated-search__label body2-m-16 color-slate-900"
+                        >중분류</label
+                      >
+                      <div class="integrated-search__meta">
+                        <button
+                          type="button"
+                          class="integrated-search__info"
+                          data-integrated-search-info
+                          aria-label="정보 보기"
+                        >
+                          <i class="book-text-icon" aria-hidden="true"></i>
+                          <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="integrated-search__node"
+                    data-integrated-search-node="brm-land-cover-small"
+                    data-depth="2"
+                    data-integrated-search-meta-tags="대분류,중분류,세분류"
+                    data-integrated-search-meta-tag-active="세분류"
+                  >
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-small"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="brm-land-cover-small"
+                      />
+                      <label for="brm-layer-small" class="integrated-search__label body2-m-16 color-slate-900"
+                        >세분류</label
+                      >
+                      <div class="integrated-search__meta">
+                        <button
+                          type="button"
+                          class="integrated-search__info"
+                          data-integrated-search-info
+                          aria-label="정보 보기"
+                        >
+                          <i class="book-text-icon" aria-hidden="true"></i>
+                          <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="integrated-search__node" data-integrated-search-node="brm-ecology-map" data-depth="2">
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-ecology"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="brm-ecology-map"
+                      />
+                      <label for="brm-layer-ecology" class="integrated-search__label body2-m-16 color-slate-900"
+                        >생태자연도</label
+                      >
+                      <div class="integrated-search__meta">
+                        <button
+                          type="button"
+                          class="integrated-search__info"
+                          data-integrated-search-info
+                          aria-label="정보 보기"
+                        >
+                          <i class="book-text-icon" aria-hidden="true"></i>
+                          <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="integrated-search__node" data-integrated-search-node="brm-wetland-map" data-depth="2">
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-wetland"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="brm-wetland-map"
+                      />
+                      <label for="brm-layer-wetland" class="integrated-search__label body2-m-16 color-slate-900"
+                        >습지경계지도</label
+                      >
+                      <div class="integrated-search__meta">
+                        <button
+                          type="button"
+                          class="integrated-search__info"
+                          data-integrated-search-info
+                          aria-label="정보 보기"
+                        >
+                          <i class="book-text-icon" aria-hidden="true"></i>
+                          <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="integrated-search__node"
+                    data-integrated-search-node="brm-env-assessment-map"
+                    data-depth="2"
+                  >
+                    <div class="integrated-search__row">
+                      <span class="integrated-search__expand-spacer" aria-hidden="true"></span>
+                      <input
+                        type="checkbox"
+                        id="brm-layer-env-assessment"
+                        class="checkbox-basic checkbox-basic-sm"
+                        data-integrated-search-layer
+                        value="brm-env-assessment-map"
+                      />
+                      <label for="brm-layer-env-assessment" class="integrated-search__label body2-m-16 color-slate-900"
+                        >국토환경성평가지도</label
+                      >
+                      <div class="integrated-search__meta">
+                        <button
+                          type="button"
+                          class="integrated-search__info"
+                          data-integrated-search-info
+                          aria-label="정보 보기"
+                        >
+                          <i class="book-text-icon" aria-hidden="true"></i>
+                          <span class="integrated-search__tooltip body3-r-14">정보 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="integrated-search__node" data-integrated-search-node="brm-nature" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="false"
+                    aria-label="자연환경 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="brm-layer-nature"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="brm-nature"
+                  />
+                  <label for="brm-layer-nature" class="integrated-search__label body2-m-16 color-slate-900"
+                    >자연환경</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="4"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/4
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children"></ul>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="brm-water" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="false"
+                    aria-label="물관리 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="brm-layer-water"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="brm-water"
+                  />
+                  <label for="brm-layer-water" class="integrated-search__label body2-m-16 color-slate-900"
+                    >물관리</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="4"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/4
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children"></ul>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="brm-carbon" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="false"
+                    aria-label="탄소중립 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="brm-layer-carbon"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="brm-carbon"
+                  />
+                  <label for="brm-layer-carbon" class="integrated-search__label body2-m-16 color-slate-900"
+                    >탄소중립</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="5"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/5
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children"></ul>
+              </li>
+              <li class="integrated-search__node" data-integrated-search-node="brm-energy" data-depth="1">
+                <div class="integrated-search__row">
+                  <button
+                    type="button"
+                    class="integrated-search__expand"
+                    data-integrated-search-expand
+                    aria-expanded="false"
+                    aria-label="에너지 펼치기"
+                  >
+                    <i class="chevron-right-slate-700" aria-hidden="true"></i>
+                  </button>
+                  <input
+                    type="checkbox"
+                    id="brm-layer-energy"
+                    class="checkbox-basic checkbox-basic-sm"
+                    data-integrated-search-layer
+                    value="brm-energy"
+                  />
+                  <label for="brm-layer-energy" class="integrated-search__label body2-m-16 color-slate-900"
+                    >에너지</label
+                  >
+                  <div class="integrated-search__meta">
+                    <span
+                      class="integrated-search__count body2-r-16 color-slate-900"
+                      data-integrated-search-node-count
+                      data-integrated-search-node-total="5"
+                    >
+                      <span data-integrated-search-node-count-selected>0</span>/5
+                    </span>
+                  </div>
+                </div>
+                <ul class="integrated-search__children"></ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h2 id="base-resource-map-title" class="blind">기초자원지도</h2>
+      </div>
+    </div>
+
+    <!-- 헤더에서 주소를 검색했을 때 표시되는 주소 목록 화면 -->
+    <div
+      class="result-panel__view"
+      data-result-panel-view="address-search"
+      id="result-panel-view-address-search"
+      hidden
+    >
+      <div class="address-search">
+        <div class="address-search__head flex align-center justify-between">
+          <h2 id="address-search-title" class="address-search__title body2-m-16 color-slate-900">
+            검색 결과 <span class="address-search__count body2-m-16 color-blue-500">25</span>개
+          </h2>
+          <div class="select-wrapper address-search__select">
+            <label class="blind" for="result-panel-region">지역 필터</label>
+            <select
+              id="result-panel-region"
+              class="select-40 flex align-center"
+              name="result-panel-region"
+              aria-label="지역 필터"
+            >
+              <option value="all" selected>전체 지역</option>
+              <option value="seoul">서울특별시</option>
+              <option value="busan">부산광역시</option>
+              <option value="daegu">대구광역시</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="address-search__list" role="listbox" aria-label="검색 결과 목록">
+          <li role="presentation">
+            <button
+              type="button"
+              class="address-search__item active"
+              role="option"
+              aria-selected="true"
+              data-lat="35.8694"
+              data-lng="128.6060"
+            >
+              <p class="address-search__road body3-m-14 color-slate-900">대구광역시 중구 종로 40(종로2가)</p>
+              <div class="address-search__jibun-row flex align-center gap-6">
+                <span class="address-search__badge body5-r-12 color-slate-700 bg-white">지번</span>
+                <p class="address-search__jibun body3-r-14 color-slate-500">대구광역시 중구 종로2가 1</p>
+              </div>
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              type="button"
+              class="address-search__item"
+              role="option"
+              aria-selected="false"
+              data-lat="35.8694"
+              data-lng="128.6060"
+            >
+              <p class="address-search__road body3-m-14 color-slate-900">대구광역시 중구 종로 40(종로2가)</p>
+              <div class="address-search__jibun-row flex align-center gap-6">
+                <span class="address-search__badge body5-r-12 color-slate-700 bg-white">지번</span>
+                <p class="address-search__jibun body3-r-14 color-slate-500">대구광역시 중구 종로2가 1</p>
+              </div>
+            </button>
+          </li>
+        </ul>
+
+        <div class="address-search__footer">
+          <nav class="pagination map-pagination" aria-label="검색 결과 페이지 이동">
+            <ul class="pagination__list flex align-center justify-center">
+              <li>
+                <a href="javascript:void(0);" class="pagination__nav">
+                  <span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>
+                  <span class="blind">이전 페이지</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="pagination__link body3-r-14" aria-current="page">1</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="pagination__nav">
+                  <span class="chevron-pagination-slate-700" aria-hidden="true"></span>
+                  <span class="blind">다음 페이지</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- 도엽검색 (Figma 936:4485) -->
+    <div
+      class="result-panel__view"
+      data-result-panel-view="map-sheet-search"
+      id="result-panel-view-map-sheet-search"
+      hidden
+    >
+      <div data-fragment="./fragments/map-sheet-search.html"></div>
+    </div>
+  </aside>
+
+  <!-- 통합검색의 정보 보기 버튼으로 여는 레이어 상세정보 패널 -->
+  <aside
+    class="layer-info-panel"
+    data-integrated-search-layer-info-panel
+    hidden
+    aria-labelledby="layer-info-panel-title"
+  >
+    <div class="layer-info-panel__head">
+      <ul class="meta-tag-list" data-integrated-search-layer-info-chips aria-label="레이어 분류"></ul>
+      <button type="button" data-integrated-search-layer-info-close aria-label="정보 패널 닫기">
+        <i class="close-icon-32" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="layer-info-panel__body">
+      <h3
+        id="layer-info-panel-title"
+        class="layer-info-panel__title heading10-sb-20 color-slate-900"
+        data-integrated-search-layer-info-title
+      >
+        주제도명
+      </h3>
+
+      <dl class="layer-info-panel__meta" data-integrated-search-layer-info-meta>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">원천기관</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">관리기관</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">원천시스템</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">
+            <a href="javascript:void(0);" class="layer-info-panel__link flex align-center gap-6">
+              <span>원천정보 시스템</span>
+              <i class="map-layer-link-icon" aria-hidden="true"></i>
+            </a>
+          </dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">관리시스템</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">환경기초 Map</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">최근 갱신일</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">2019-09-15</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">기준연도</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">1980~2010</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">갱신주기</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">실시간</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">서비스 유형</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">WMS / WFS</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">레이어명</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900" data-integrated-search-layer-info-layer-name>
+            L1106010
+          </dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">좌표계</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">EPSG:5179</dd>
+        </div>
+        <div class="layer-info-panel__row">
+          <dt class="layer-info-panel__term body2-r-16 color-slate-700">표시축적</dt>
+          <dd class="layer-info-panel__value body2-m-16 color-slate-900">1:1,000,000 ~ 1:5,000</dd>
+        </div>
+      </dl>
+
+      <p class="layer-info-panel__desc body2-r-16 color-slate-700" data-integrated-search-layer-info-desc>
+        실시간 측정망 자료를 기반으로 전국 주요 도시의 대기오염물질 농도와 대기질 등급을 제공합니다. 시간·일·월 단위로
+        조회할 수 있으며, 환경정책 수립 및 대기질 분석에 활용할 수 있습니다.
+      </p>
+    </div>
+
+    <div class="layer-info-panel__footer">
+      <button type="button" class="slate-button-48 w-full" data-integrated-search-layer-info-detail>상세보기</button>
+    </div>
+  </aside>
+
+  <!-- 결과 패널 전체를 접거나 펼치는 버튼 -->
+  <button
+    type="button"
+    class="result-panel__toggle"
+    data-result-panel-toggle
+    aria-expanded="true"
+    aria-controls="map-result-panel"
+    aria-label="결과 패널 접기"
+  >
+    <i class="arrow-panel-icon" aria-hidden="true"></i>
+  </button>
+</div>

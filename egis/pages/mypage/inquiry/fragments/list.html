@@ -1,0 +1,235 @@
+<!-- 나의 문의 목록 — Figma 1234:2134 -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <div class="oa-mypage__stack flex flex-col gap-48">
+      <div class="oa-mypage__panel flex flex-col gap-24">
+        <h2 class="heading6-sb-28 color-slate-900 m-0">나의 문의</h2>
+
+        <form class="oa-mypage__filter flex align-end gap-8 flex-wrap" data-mi-filter role="search">
+          <div class="mi-mypage__field--160 flex flex-col gap-8">
+            <label for="mi-filter-category" class="body2-r-16 color-slate-900">문의 구분</label>
+            <select id="mi-filter-category" class="select-40 w-full" data-mi-category>
+              <option value="" selected>전체</option>
+              <option value="general">일반 문의</option>
+              <option value="dataset">데이터셋</option>
+              <option value="open-api">Open API</option>
+            </select>
+          </div>
+
+          <div class="mi-mypage__field--160 flex flex-col gap-8">
+            <label for="mi-filter-type" class="body2-r-16 color-slate-900">문의 유형</label>
+            <select id="mi-filter-type" class="select-40 w-full" data-mi-type disabled>
+              <option value="">전체</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-8">
+            <span class="body2-r-16 color-slate-900" id="mi-filter-period-label">기간</span>
+            <div class="oa-mypage__period flex align-center gap-8" role="group" aria-labelledby="mi-filter-period-label">
+              <div class="mi-mypage__field--preset">
+                <label for="mi-filter-preset" class="blind">기간 프리셋</label>
+                <select id="mi-filter-preset" class="select-40 w-full" data-mi-preset>
+                  <option value="7" selected>1주일</option>
+                  <option value="30">1개월</option>
+                  <option value="90">3개월</option>
+                  <option value="180">6개월</option>
+                  <option value="365">1년</option>
+                </select>
+              </div>
+              <div class="oa-mypage__field--period flex align-center gap-8">
+                <div class="input-wrapper oa-mypage__date relative flex-1">
+                <label for="mi-filter-start" class="blind">시작일</label>
+                <input
+                  id="mi-filter-start"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon w-full"
+                  data-mi-date-start
+                    autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="mi-filter-start" aria-label="시작일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+                <span class="body2-r-16 color-slate-900" aria-hidden="true">~</span>
+                <div class="input-wrapper oa-mypage__date relative flex-1">
+                <label for="mi-filter-end" class="blind">종료일</label>
+                <input
+                  id="mi-filter-end"
+                  type="text"
+                  class="input-field-default-40 input-with-trailing-icon w-full"
+                  data-mi-date-end
+                    autocomplete="off"
+                />
+                <button type="button" class="oa-mypage__date-btn" data-datepicker-for="mi-filter-end" aria-label="종료일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mi-mypage__field--answer flex flex-col gap-8">
+            <label for="mi-filter-answer" class="body2-r-16 color-slate-900">답변상태</label>
+            <select id="mi-filter-answer" class="select-40 w-full">
+              <option value="" selected>전체</option>
+              <option value="pending">대기</option>
+              <option value="done">완료</option>
+            </select>
+          </div>
+
+          <button type="submit" class="blue-button-40 mi-mypage__search-btn">검색</button>
+        </form>
+
+        <div data-mi-results>
+          <table class="table-02 oa-mypage__table mi-mypage__table w-full" data-mi-table>
+            <caption class="blind">나의 문의 목록</caption>
+            <colgroup>
+              <col class="mi-mypage__col-category" />
+              <col class="mi-mypage__col-type" />
+              <col />
+              <col class="mi-mypage__col-answer" />
+              <col class="mi-mypage__col-date" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" class="body2-r-16 color-slate-900 text-left">문의 구분</th>
+                <th scope="col" class="body2-r-16 color-slate-900 text-left">문의 유형</th>
+                <th scope="col" class="body2-r-16 color-slate-900 text-left">문의내역</th>
+                <th scope="col" class="body2-r-16 color-slate-900 text-left">답변여부</th>
+                <th scope="col" class="body2-r-16 color-slate-900 text-left">문의일</th>
+              </tr>
+            </thead>
+            <tbody class="body2-r-16 color-slate-900">
+              <tr>
+                <td>일반 문의</td>
+                <td>데이터 추가</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td><span class="color-blue-500">대기</span></td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>데이터셋</td>
+                <td>데이터 값 오류</td>
+                <td>
+                  <a href="./detail.html?type=dataset" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>Open API</td>
+                <td>기타</td>
+                <td>
+                  <a href="./detail.html?type=openapi" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>데이터·기능</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>불편사항</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>개선의견</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>서비스 장애</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>기타</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+              <tr>
+                <td>일반 문의</td>
+                <td>데이터 추가</td>
+                <td>
+                  <a href="./detail.html?type=general" class="table-02__link body2-r-16 color-slate-900 mi-mypage__title">
+                    사용자가 입력했던 문의 제목
+                  </a>
+                </td>
+                <td>완료</td>
+                <td>2025-12-29</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <nav class="pagination pagination--filled" data-mi-pagination aria-label="나의 문의 페이지 이동">
+        <ul class="pagination__list flex align-center justify-center gap-8">
+          <li>
+            <a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">
+              <span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind"> 페이지</span>
+            </a>
+          </li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16" aria-current="page">1</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">2</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">3</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">4</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">5</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">6</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">7</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">8</a></li>
+          <li><span class="pagination__ellipsis body2-r-16 color-slate-500" aria-hidden="true">...</span></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">99</a></li>
+          <li>
+            <a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">
+              다음<span class="blind"> 페이지</span><span class="chevron-pagination-slate-700" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>

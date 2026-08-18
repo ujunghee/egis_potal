@@ -1,0 +1,136 @@
+<!-- 자주 묻는 질문 검색 결과. 아코디언은 공용 user-support/faq.js -->
+<section class="search-listing__results mt-32" aria-labelledby="faq-result-title">
+  <div class="search-listing__head flex align-center justify-between gap-16">
+    <h2 id="faq-result-title" class="flex align-center gap-10 heading8-sb-24">
+      <span class="color-slate-900">자주 묻는 질문</span>
+      <span class="color-blue-500" data-search-count="faq">4</span>
+    </h2>
+    <div class="select-wrapper">
+      <label for="faq-page-size" class="blind">페이지당 결과 수</label>
+      <select id="faq-page-size" class="select-40 w-100">
+        <option>10개씩</option>
+        <option>20개씩</option>
+        <option>30개씩</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-24" data-faq-list>
+    <article class="faq-item is-open" data-faq-item>
+      <button
+        type="button"
+        class="faq-item__toggle flex align-center gap-16 w-full"
+        aria-expanded="true"
+        data-faq-toggle
+      >
+        <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">1</span>
+        <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+          >대분류·중분류·세분류의 차이와 분류코드는 어디에서 확인하나요?</span
+        >
+        <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel>
+        <div class="faq-item__answer">
+          <pre class="faq-item__body body2-r-16 color-slate-700 line-170">자료가 제작되지 않았거나, 현재 선택한 도엽종류·사업종류에 포함되지 않았을 수 있습니다.
+도엽종류(대·중·세분류)와 사업종류를 바꿔 다시 검색합니다. 제작 현황에서 해당 연도·지역을 확인합니다.
+미제작 자료는 제공되지 않습니다.</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="faq-item" data-faq-item>
+      <button
+        type="button"
+        class="faq-item__toggle flex align-center gap-16 w-full"
+        aria-expanded="false"
+        data-faq-toggle
+      >
+        <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">2</span>
+        <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+          >대분류 토지피복지도를 SHP 파일로 받을 수 있나요?</span
+        >
+        <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel>
+        <div class="faq-item__answer">
+          <pre class="faq-item__body body2-r-16 color-slate-700 line-170">대분류 토지피복지도는 SHP와 CSV 형식으로 제공합니다.
+데이터 상세 화면의 다운로드 영역에서 원하는 형식과 연도를 선택해 신청하세요.</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="faq-item" data-faq-item>
+      <button
+        type="button"
+        class="faq-item__toggle flex align-center gap-16 w-full"
+        aria-expanded="false"
+        data-faq-toggle
+      >
+        <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">3</span>
+        <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+          >다른 공간자료와 겹쳤을 때 위치가 어긋나요. 어떻게 맞추나요?</span
+        >
+        <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel>
+        <div class="faq-item__answer">
+          <pre class="faq-item__body body2-r-16 color-slate-700 line-170">좌표계가 다르면 위치가 어긋나 보입니다. 제공 좌표계와 사용 중인 지도의 좌표계를 확인하세요.
+본 서비스는 EPSG:5179를 기본으로 제공하며, 필요한 경우 변환 후 중첩하시면 됩니다.</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="faq-item" data-faq-item>
+      <button
+        type="button"
+        class="faq-item__toggle flex align-center gap-16 w-full"
+        aria-expanded="false"
+        data-faq-toggle
+      >
+        <span class="faq-item__num heading10-m-20 color-slate-500 w-72 flex-none text-left">4</span>
+        <span class="faq-item__question body1-m-18 color-slate-900 flex-1 text-left"
+          >다른 공간자료와 겹쳤을 때 위치가 어긋나요. 어떻게 맞추나요?</span
+        >
+        <span class="chevron-down-slate-700 flex-none" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel>
+        <div class="faq-item__answer">
+          <pre class="faq-item__body body2-r-16 color-slate-700 line-170">좌표계가 다르면 위치가 어긋나 보입니다. 제공 좌표계와 사용 중인 지도의 좌표계를 확인하세요.
+본 서비스는 EPSG:5179를 기본으로 제공하며, 필요한 경우 변환 후 중첩하시면 됩니다.</pre>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <nav class="pagination pagination--filled pt-48" aria-label="페이지 이동">
+    <ul class="pagination__list flex align-center justify-center gap-8">
+      <li>
+        <a
+          href="javascript:void(0);"
+          class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700"
+          ><span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind">
+            페이지</span
+          ></a
+        >
+      </li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16" aria-current="page">1</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">2</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">3</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">4</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">5</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">6</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">7</a></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">8</a></li>
+      <li><span class="pagination__ellipsis body2-r-16 color-slate-500" aria-hidden="true">...</span></li>
+      <li><a href="javascript:void(0);" class="pagination__link body2-r-16">99</a></li>
+      <li>
+        <a
+          href="javascript:void(0);"
+          class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700"
+          >다음<span class="blind"> 페이지</span
+          ><span class="chevron-pagination-slate-700" aria-hidden="true"></span
+        ></a>
+      </li>
+    </ul>
+  </nav>
+</section>

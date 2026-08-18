@@ -1,0 +1,122 @@
+<!-- 문의하기 작성 — Figma 1728:6101 에러 / 1728:6361~6377 토스트 -->
+<section class="inquiry-write__card bg-white radius-md-8 p-40 mt-28" aria-labelledby="inquiry-write-title">
+  <h2 id="inquiry-write-title" class="heading4-b-32 color-slate-900 text-center mb-32">문의하기</h2>
+
+  <aside class="bg-slate-50 radius-md-8 p-24 mb-40" aria-labelledby="inquiry-write-notice-title">
+    <h3 id="inquiry-write-notice-title" class="flex align-center gap-8 body1-sb-18 color-slate-900 mb-12">
+      <i class="inquiry-board__notice-icon flex-none" aria-hidden="true"></i>
+      문의 등록 전 확인해 주세요
+    </h3>
+    <ul class="body2-r-16 color-slate-700 line-170 flex flex-col m-0">
+      <li>· 문의 내용이나 첨부파일에 주민등록번호, 연락처, 이메일 등 개인정보를 포함하지 마세요.</li>
+      <li class="color-pink-600">· 타인의 개인정보나 저작물을 무단으로 게시할 경우 관련 법령에 따라 삭제되거나 제재를 받을 수 있습니다.</li>
+      <li>· 정확한 답변을 위해 이용 메뉴, 발생한 문제, 오류 시점과 상황을 구체적으로 작성해 주세요.</li>
+      <li>· 문의 구분, 문의 유형, 제목, 내용은 필수 입력 항목입니다.</li>
+    </ul>
+  </aside>
+
+  <form class="flex flex-col gap-32" data-inquiry-write-form novalidate>
+    <div>
+      <h3 class="heading10-sb-20 color-slate-900 mb-12">문의 대상 데이터</h3>
+      <dl class="m-0">
+        <div class="flex align-start gap-16">
+          <dt class="body2-r-16 color-slate-500 flex-none w-100">데이터명</dt>
+          <dd class="body2-m-16 color-slate-900 m-0">대기오염 측정 정보</dd>
+        </div>
+        <div class="flex align-start gap-16 mt-12">
+          <dt class="body2-r-16 color-slate-500 flex-none w-100">페이지 URL</dt>
+          <dd class="body2-m-16 color-slate-900 min-w-0 m-0">https://www.data.go.kr/data/15063711/fileData.do</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="flex flex-col gap-24">
+      <div class="inquiry-write__row flex gap-16">
+        <div class="flex-1 min-w-0">
+          <label for="inquiry-write-category" class="block body2-m-16 color-slate-900 mb-8">문의 구분</label>
+          <div class="select-wrapper" data-inquiry-field="category">
+            <select id="inquiry-write-category" class="select-48 w-full" required>
+              <option value="" selected disabled hidden>문의 구분을 선택해 주세요.</option>
+              <option value="all">전체</option>
+              <option value="general">일반</option>
+              <option value="dataset">데이터셋 오류</option>
+              <option value="open-api">Open API 오류</option>
+            </select>
+            <p class="error-message body3-r-14" data-inquiry-error>문의 구분을 선택해 주세요.</p>
+          </div>
+        </div>
+        <div class="flex-1 min-w-0">
+          <label for="inquiry-write-type" class="block body2-m-16 color-slate-900 mb-8">문의 유형</label>
+          <div class="select-wrapper" data-inquiry-field="type">
+            <select id="inquiry-write-type" class="select-48 w-full" disabled required>
+              <option value="" selected disabled hidden>문의 유형을 선택해 주세요.</option>
+            </select>
+            <p class="error-message body3-r-14" data-inquiry-error>문의 유형을 선택해 주세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="inquiry-write-subject" class="block body2-m-16 color-slate-900 mb-8">문의 제목</label>
+        <div class="input-wrapper" data-inquiry-field="subject">
+          <input
+            id="inquiry-write-subject"
+            type="text"
+            class="input-field-default-48 w-full"
+            placeholder="문의 내용을 한 문장으로 요약해주세요."
+            autocomplete="off"
+            required
+          />
+          <p class="error-message body3-r-14" data-inquiry-error>문의 제목을 입력해 주세요.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="inquiry-write-content" class="block body2-m-16 color-slate-900 mb-8">문의 내용</label>
+        <div class="textarea-wrapper" data-inquiry-field="content">
+          <div class="relative">
+            <textarea
+              id="inquiry-write-content"
+              class="inquiry-write__content w-full"
+              maxlength="2000"
+              placeholder="아래 내용을 포함하여 문의 내용을 작성해 주세요.&#10;- 이용 중인 메뉴 또는 기능&#10;- 발생한 문제 또는 궁금한 점&#10;- 오류 발생 시점 및 상황"
+              required
+            ></textarea>
+            <span class="inquiry-write__counter body2-r-16 color-slate-500" data-inquiry-content-count aria-live="polite">0/2000</span>
+          </div>
+          <p class="error-message body3-r-14" data-inquiry-error>문의 내용을 입력해 주세요.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex align-start gap-8 body2-r-16 color-slate-700 line-170 mb-28">
+          <i class="inquiry-write__info-icon flex-none" aria-hidden="true"></i>
+          <div>
+            <p class="m-0">본문과 첨부파일에 개인정보가 포함되지 않도록 확인해 주세요.</p>
+            <p class="m-0">이미지는 최대 5개, 전체 10MB까지 첨부할 수 있습니다.</p>
+            <p class="m-0">PNG, JPG, JPEG, GIF, BMP 형식의 파일을 첨부할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="flex align-start gap-8 flex-wrap">
+          <ul class="flex gap-8 flex-wrap m-0 p-0" data-inquiry-image-list aria-label="첨부 이미지 목록"></ul>
+          <button type="button" class="inquiry-write__image-add flex flex-col align-center justify-center gap-8" data-inquiry-image-add aria-label="이미지 등록">
+            <i class="inquiry-write__image-add-icon" aria-hidden="true"></i>
+            <span class="body2-m-16 color-white text-center" data-inquiry-image-count>이미지 등록</span>
+          </button>
+          <input
+            type="file"
+            class="blind"
+            data-inquiry-image-input
+            accept=".png,.jpg,.jpeg,.gif,.bmp,image/png,image/jpeg,image/gif,image/bmp"
+            multiple
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex align-center justify-center gap-8 pt-8">
+      <a href="./inquiry.html" class="border-slate-button-48 flex align-center justify-center w-200">취소</a>
+      <button type="submit" class="blue-button-48 flex align-center justify-center w-200">문의 등록하기</button>
+    </div>
+  </form>
+</section>

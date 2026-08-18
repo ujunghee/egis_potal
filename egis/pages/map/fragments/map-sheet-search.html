@@ -1,0 +1,114 @@
+<!-- 도엽검색 패널 본문 (Figma 936:4485 / 1603:564) -->
+<section class="map-sheet-search" data-map-sheet-search-panel aria-labelledby="map-sheet-search-title">
+  <h2 id="map-sheet-search-title" class="blind">도엽검색</h2>
+
+  <div class="map-sheet-search__field flex flex-col gap-6">
+    <label for="map-sheet-scale" class="body2-m-16 color-slate-900">축척</label>
+    <div class="select-wrapper">
+      <select
+        id="map-sheet-scale"
+        class="select-48 w-full"
+        name="map-sheet-scale"
+        data-map-sheet-scale
+      >
+        <option value="5000" selected>1:5,000</option>
+        <option value="25000">1:25,000</option>
+        <option value="50000">1:50,000</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="map-sheet-search__field flex flex-col gap-6">
+    <label for="map-sheet-number" class="body2-m-16 color-slate-900">도엽번호</label>
+    <form class="map-sheet-search__search search-48 flex align-center gap-8" role="search" data-map-sheet-number-form>
+      <i class="map-sheet-search-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        id="map-sheet-number"
+        class="body2-r-16"
+        name="map-sheet-number"
+        data-map-sheet-number
+        placeholder="예) 37640001"
+        autocomplete="off"
+      />
+    </form>
+  </div>
+
+  <!-- 검색 결과 (Figma 1603:823) — 도엽번호 입력 시 표시 -->
+  <div class="map-sheet-search__result" data-map-sheet-result hidden>
+    <h3 class="map-sheet-search__result-title body2-m-16 color-slate-900">
+      검색 결과
+      <span class="map-sheet-search__result-count body2-m-16 color-blue-500" data-map-sheet-result-count>0</span>건
+    </h3>
+
+    <ul class="map-sheet-search__list" role="listbox" aria-label="도엽 검색 결과" data-map-sheet-list>
+      <li role="presentation">
+        <button
+          type="button"
+          class="map-sheet-search__item"
+          role="option"
+          aria-selected="false"
+          data-map-sheet-item
+          data-sheet-number="37640001"
+        >
+          <p class="map-sheet-search__item-number body3-m-14 color-slate-900">37640001</p>
+          <p class="map-sheet-search__item-name body3-r-14 color-slate-700">서대문 · 서울 서대문구 충현동</p>
+        </button>
+      </li>
+      <li role="presentation">
+        <button
+          type="button"
+          class="map-sheet-search__item"
+          role="option"
+          aria-selected="false"
+          data-map-sheet-item
+          data-sheet-number="37640002"
+        >
+          <p class="map-sheet-search__item-number body3-m-14 color-slate-900">37640002</p>
+          <p class="map-sheet-search__item-name body3-r-14 color-slate-700">서대문 · 서울 중구 정동</p>
+        </button>
+      </li>
+      <li role="presentation">
+        <button
+          type="button"
+          class="map-sheet-search__item"
+          role="option"
+          aria-selected="false"
+          data-map-sheet-item
+          data-sheet-number="37640003"
+        >
+          <p class="map-sheet-search__item-number body3-m-14 color-slate-900">37640003</p>
+          <p class="map-sheet-search__item-name body3-r-14 color-slate-700">아현 · 서울 마포구 아현동</p>
+        </button>
+      </li>
+      <li role="presentation">
+        <button
+          type="button"
+          class="map-sheet-search__item"
+          role="option"
+          aria-selected="false"
+          data-map-sheet-item
+          data-sheet-number="37640004"
+        >
+          <p class="map-sheet-search__item-number body3-m-14 color-slate-900">37640004</p>
+          <p class="map-sheet-search__item-name body3-r-14 color-slate-700">공덕 · 서울 서대문구 신촌동</p>
+        </button>
+      </li>
+      <li role="presentation">
+        <button
+          type="button"
+          class="map-sheet-search__item"
+          role="option"
+          aria-selected="false"
+          data-map-sheet-item
+          data-sheet-number="37640005"
+        >
+          <p class="map-sheet-search__item-number body3-m-14 color-slate-900">37640005</p>
+          <p class="map-sheet-search__item-name body3-r-14 color-slate-700">효창 · 서울 용산구 효창동</p>
+        </button>
+      </li>
+    </ul>
+
+    <p class="map-sheet-search__empty body3-r-14 color-slate-700">일치하는 도엽번호가 없습니다.</p>
+  </div>
+</section>

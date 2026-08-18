@@ -1,0 +1,68 @@
+/* 이용자 지원 — 자주 묻는 질문 */
+.faq-item {
+  transition:
+    background-color 0.3s ease,
+    padding 0.3s ease,
+    border-radius 0.3s ease,
+    margin-bottom 0.3s ease;
+}
+
+.faq-item.is-open {
+  border-bottom: 0;
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-20) var(--spacing-16);
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+}
+
+.faq-item__toggle {
+  margin: 0;
+  padding: var(--spacing-20) var(--spacing-16);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  transition: padding 0.3s ease;
+}
+
+.faq-item.is-open .faq-item__toggle {
+  padding: 0 0 var(--spacing-16);
+}
+
+.faq-item__toggle .chevron-down-slate-700 {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.is-open .faq-item__toggle .chevron-down-slate-700 {
+  transform: rotate(180deg);
+}
+
+.faq-item__question {
+  min-width: 0;
+}
+
+.faq-item__panel {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.faq-item__panel.is-open {
+  overflow: visible;
+}
+
+.faq-item__answer {
+  padding: 0 0 0 calc(7.2rem + var(--spacing-16));
+}
+
+.faq-item__body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

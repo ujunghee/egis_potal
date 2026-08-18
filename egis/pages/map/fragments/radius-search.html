@@ -1,0 +1,113 @@
+<!-- 반경검색: 중심점과 반경 설정 -->
+<div
+  class="radius-search-popup"
+  data-radius-search-popup
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="radius-search-popup-title"
+  tabindex="-1"
+>
+  <div class="radius-search-popup__inner flex flex-col gap-16 p-16 border border-slate-300 radius-md-8 bg-white">
+    <section class="flex flex-col gap-12">
+      <h3 id="radius-search-popup-title" class="radius-search-popup__title body2-sb-16 color-slate-900">중심점</h3>
+      <div class="radius-search-popup__center p-16 radius-md-8 bg-slate-50">
+        <div class="flex align-center justify-between">
+          <strong class="body3-sb-14 color-slate-900">서울역</strong>
+          <button type="button" class="transparent-button-28 body3-r-14 color-slate-700" data-radius-center-change>
+            변경
+          </button>
+        </div>
+        <p class="radius-search-popup__coordinates body4-r-13 color-slate-400" data-radius-center-coordinates>
+          37.5547, 126.9707
+        </p>
+      </div>
+    </section>
+    <section class="flex flex-col gap-12">
+      <h3 class="radius-search-popup__title body2-sb-16 color-slate-900">반경</h3>
+      <div class="flex align-center gap-8">
+        <div class="input-wrapper radius-search-popup__value-wrap">
+          <label for="radius-search-value" class="blind">반경 값</label>
+          <input
+            type="number"
+            id="radius-search-value"
+            class="input-field-default-36 w-full"
+            data-radius-value
+            min="0"
+            step="0.1"
+            value="10"
+            inputmode="decimal"
+            aria-label="반경 값"
+          />
+          <p class="error-message" id="radius-search-value-error">반경 값을 확인해주세요</p>
+        </div>
+        <div class="select-wrapper radius-search-popup__unit-wrap">
+          <label for="radius-search-unit" class="blind">반경 단위</label>
+          <select
+            id="radius-search-unit"
+            class="select-36 flex align-center"
+            name="radius-search-unit"
+            data-radius-unit
+            aria-label="반경 단위"
+          >
+            <option value="m">m</option>
+            <option value="km" selected>km</option>
+          </select>
+          <p class="error-message">반경 단위를 확인해주세요</p>
+        </div>
+      </div>
+      <div class="selected-layer-item__opacity">
+        <label for="radius-search-slider" class="blind">반경 범위 조절</label>
+        <input type="range" id="radius-search-slider" data-radius-slider min="0" max="20000" step="100" value="10000" />
+      </div>
+      <div class="radius-search-popup__presets" role="group" aria-label="반경 빠른 선택">
+        <button
+          type="button"
+          class="border-slate-button-28 radius-search-popup__preset"
+          data-radius-preset="500"
+          data-radius-preset-unit="m"
+          aria-pressed="false"
+        >
+          500m
+        </button>
+        <button
+          type="button"
+          class="border-slate-button-28 radius-search-popup__preset"
+          data-radius-preset="1"
+          data-radius-preset-unit="km"
+          aria-pressed="false"
+        >
+          1km
+        </button>
+        <button
+          type="button"
+          class="border-slate-button-28 radius-search-popup__preset"
+          data-radius-preset="2"
+          data-radius-preset-unit="km"
+          aria-pressed="false"
+        >
+          2km
+        </button>
+        <button
+          type="button"
+          class="border-slate-button-28 radius-search-popup__preset"
+          data-radius-preset="5"
+          data-radius-preset-unit="km"
+          aria-pressed="false"
+        >
+          5km
+        </button>
+        <button
+          type="button"
+          class="border-slate-button-28 radius-search-popup__preset active"
+          data-radius-preset="10"
+          data-radius-preset-unit="km"
+          aria-pressed="true"
+        >
+          10km
+        </button>
+      </div>
+    </section>
+    <button type="button" class="slate-button-36 w-full" data-radius-search-submit>검색하기</button>
+  </div>
+</div>

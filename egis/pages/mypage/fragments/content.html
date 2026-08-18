@@ -1,0 +1,97 @@
+<!-- 마이페이지: LNB(공통) + 관심 데이터 -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="./fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <header class="mypage__head">
+      <div class="mypage__head-text">
+        <h2 class="heading6-sb-28 color-slate-900">관심 데이터</h2>
+        <p class="body2-r-16 color-slate-700">
+          관심으로 저장한 주제별 지도와 Open API를 한곳에서 확인하고 관리할 수 있습니다.
+        </p>
+      </div>
+      <p class="mypage__status body2-r-16 color-slate-700">
+        저장 현황
+        <span class="body2-sb-16">
+          <span class="color-blue-500">6</span><span class="color-slate-900">/20</span>
+        </span>
+      </p>
+    </header>
+
+    <div class="mypage__tabs" role="tablist" aria-label="관심 데이터 구분">
+      <button
+        type="button"
+        class="mypage__tab active body1-sb-18 color-slate-900"
+        role="tab"
+        aria-selected="true"
+        data-mypage-tab="all"
+      >
+        전체
+      </button>
+      <button
+        type="button"
+        class="mypage__tab body1-sb-18 color-slate-500"
+        role="tab"
+        aria-selected="false"
+        data-mypage-tab="topical"
+      >
+        주제별 지도 4
+      </button>
+      <button
+        type="button"
+        class="mypage__tab body1-sb-18 color-slate-500"
+        role="tab"
+        aria-selected="false"
+        data-mypage-tab="openapi"
+      >
+        Open API 2
+      </button>
+    </div>
+
+    <div class="mypage__toolbar flex align-center justify-between gap-16">
+      <div class="mypage__toolbar-left flex align-center">
+        <div class="flex align-center gap-8">
+          <input
+            type="checkbox"
+            class="checkbox-basic checkbox-basic-md"
+            id="mypage-checkall"
+            data-checkall-target="[data-mypage-check]"
+          />
+          <label for="mypage-checkall" class="mypage__checkall-label body1-r-18 color-slate-700">전체 선택</label>
+        </div>
+        <button
+          type="button"
+          class="mypage__delete-selected body1-r-18 color-red-600"
+          data-mypage-delete-selected
+          hidden
+        >
+          선택 삭제
+        </button>
+      </div>
+      <div class="flex align-center gap-8">
+        <div class="view-toggle" role="group" aria-label="보기 방식">
+          <button type="button" class="view-toggle__btn active" aria-pressed="true" data-mypage-view="card">
+            <i class="dashboards-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+            <i class="dashboards-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+            <span class="body2-r-16 color-slate-700">카드형</span>
+          </button>
+          <button type="button" class="view-toggle__btn" aria-pressed="false" data-mypage-view="list">
+            <i class="list-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+            <i class="list-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+            <span class="body2-r-16 color-slate-700">리스트형</span>
+          </button>
+        </div>
+        <div class="select-wrapper mypage__sort">
+          <label for="mypage-sort" class="blind">정렬 순서</label>
+          <select id="mypage-sort" class="select-40 w-110">
+            <option>최근 저장순</option>
+            <option>이름순</option>
+            <option>조회순</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <ul class="tp-cards mypage__cards" data-mypage-list aria-label="관심 데이터 목록"></ul>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<!-- 로그인 방식 선택 -->
+<section class="login__card flex flex-col gap-32 mt-32" aria-labelledby="login-title">
+  <div class="flex flex-col gap-16">
+    <h1 id="login-title" class="heading2-b-40 color-slate-900">로그인 방식을 선택해주세요.</h1>
+    <div class="flex flex-col gap-4">
+      <p class="heading10-r-20 color-slate-700">
+        <span class="login__gov-term">정부 통합로그인<button type="button" class="login__help" aria-label="정부 통합로그인 안내" aria-haspopup="dialog" aria-controls="anyid_information" data-login-anyid-open></button></span>
+        서비스를 통해 별도의 회원가입 없이 환경공간정보서비스를 이용할 수 있습니다.
+      </p>
+      <p class="heading10-r-20 color-slate-700">원하는 로그인 방식을 선택해 주세요.</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-24">
+    <hr class="login__divider" />
+
+    <div class="login__row flex justify-between align-start">
+      <h2 class="heading8-b-24 color-slate-900">인증 수단으로 로그인하기</h2>
+      <div class="login__method-list flex flex-col gap-16">
+        <button type="button" class="login__method" data-login-method="mobile-id">
+          <span class="login__method-row flex align-center gap-24 w-full">
+            <img src="../../assets/image/icon/web/login/mobile-id.svg" alt="" class="login__method-logo" />
+            <span class="heading10-sb-20 color-slate-900 flex-1 text-left">모바일 신분증</span>
+            <i class="login__method-arrow" aria-hidden="true"></i>
+          </span>
+          <span class="login__method-desc body1-r-18 color-slate-700">스마트폰의 모바일 신분증으로 로그인</span>
+        </button>
+        <button type="button" class="login__method" data-login-method="simple-auth">
+          <span class="login__method-row flex align-center gap-24 w-full">
+            <img src="../../assets/image/icon/web/login/simple-auth.svg" alt="" class="login__method-logo" />
+            <span class="heading10-sb-20 color-slate-900 flex-1 text-left">간편 인증</span>
+            <i class="login__method-arrow" aria-hidden="true"></i>
+          </span>
+          <span class="login__method-desc body1-r-18 color-slate-700">네이버, 카카오, 또는 금융기관등<br />민간 전자서명으로 로그인</span>
+        </button>
+      </div>
+    </div>
+
+    <hr class="login__divider" />
+
+    <div class="login__row flex justify-between align-start">
+      <h2 class="heading8-b-24 color-slate-900">소셜 계정으로 로그인하기</h2>
+      <div class="login__method-list flex flex-col gap-16">
+        <button type="button" class="login__method" data-login-method="naver">
+          <span class="login__method-row flex align-center gap-24 w-full">
+            <img src="../../assets/image/icon/web/login/naver.svg" alt="" class="login__method-logo" />
+            <span class="heading10-sb-20 color-slate-900 flex-1 text-left">네이버 로그인 하기</span>
+            <i class="login__method-arrow" aria-hidden="true"></i>
+          </span>
+        </button>
+        <button type="button" class="login__method" data-login-method="kakao">
+          <span class="login__method-row flex align-center gap-24 w-full">
+            <img src="../../assets/image/icon/web/login/kakao.svg" alt="" class="login__method-logo" />
+            <span class="heading10-sb-20 color-slate-900 flex-1 text-left">카카오 로그인 하기</span>
+            <i class="login__method-arrow" aria-hidden="true"></i>
+          </span>
+        </button>
+        <button type="button" class="login__method" data-login-method="payco">
+          <span class="login__method-row flex align-center gap-24 w-full">
+            <img src="../../assets/image/icon/web/login/payco.svg" alt="" class="login__method-logo" />
+            <span class="heading10-sb-20 color-slate-900 flex-1 text-left">페이코 로그인 하기</span>
+            <i class="login__method-arrow" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

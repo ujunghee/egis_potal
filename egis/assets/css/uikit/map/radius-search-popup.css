@@ -1,0 +1,75 @@
+/* 반경검색 팝업 — Leaflet overlayPane 기준 (지도 좌표 고정) */
+.radius-search-popup {
+  position: absolute;
+  z-index: 1000;
+  left: -9999px;
+  top: -9999px;
+  width: 19.6rem;
+  margin: 0;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.radius-search-popup[hidden] {
+  display: none !important;
+}
+
+.radius-search-popup__inner {
+  box-sizing: border-box;
+}
+
+/* 중심점 */
+.radius-search-popup__title {
+  margin: 0;
+}
+
+.radius-search-popup__center {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.radius-search-popup__coordinates {
+  margin: var(--spacing-4) 0 0;
+  white-space: nowrap;
+}
+
+/* 반경 */
+.radius-search-popup__value-wrap {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.radius-search-popup__value-wrap .input-field-default-36 {
+  width: 100%;
+  border-radius: var(--radius-md-6);
+}
+
+.radius-search-popup .slate-button-36 {
+  border-radius: var(--radius-md-6);
+}
+
+.radius-search-popup__unit-wrap {
+  flex: 0 0 6.3rem;
+  margin: 0;
+}
+
+.radius-search-popup__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-8);
+}
+
+.radius-search-popup__preset {
+  width: auto;
+  min-width: 0;
+  padding-right: var(--spacing-10);
+  padding-left: var(--spacing-10);
+  border-radius: var(--radius-sm-4);
+}
+
+.radius-search-popup__preset.active {
+  border-color: var(--slate-900);
+  color: var(--slate-900);
+  background-color: var(--slate-50);
+}

@@ -1,0 +1,128 @@
+<!-- 공간검색 결과: 레이어별 결과 표 -->
+<section
+  class="spatial-search-results"
+  data-spatial-search-results
+  hidden
+  aria-labelledby="spatial-search-results-title"
+>
+  <header class="spatial-search-results__header flex align-center justify-between">
+    <h2 id="spatial-search-results-title" class="body1-sb-18 color-slate-900">공간검색 결과</h2>
+    <div class="flex align-center gap-4">
+      <button
+        type="button"
+        class="transparent-button-36 spatial-search-results__collapse flex-center"
+        data-spatial-results-collapse
+        aria-expanded="true"
+        aria-controls="spatial-search-results-content"
+      >
+        <i class="arrow-icon" aria-hidden="true"></i>
+        <span class="blind">공간검색 결과 접기</span>
+      </button>
+      <button
+        type="button"
+        class="transparent-button-36 flex-center"
+        data-spatial-results-close
+        aria-label="공간검색 결과 닫기"
+      >
+        <i class="close-icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+  <div id="spatial-search-results-content" class="spatial-search-results__content">
+    <div class="spatial-search-results__tabs flex align-center" role="tablist" aria-label="검색 결과 레이어">
+      <button
+        type="button"
+        class="spatial-search-results__tab body2-m-16 active"
+        role="tab"
+        aria-selected="true"
+        data-spatial-results-tab
+      >
+        활성화된 레이어 1
+      </button>
+      <button
+        type="button"
+        class="spatial-search-results__tab body2-m-16 color-slate-600"
+        role="tab"
+        aria-selected="false"
+        data-spatial-results-tab
+      >
+        활성화된 레이어 2
+      </button>
+      <button
+        type="button"
+        class="spatial-search-results__tab body2-m-16 color-slate-600"
+        role="tab"
+        aria-selected="false"
+        data-spatial-results-tab
+      >
+        활성화된 레이어 3
+      </button>
+    </div>
+    <div class="spatial-search-results__toolbar flex align-center justify-between">
+      <h3 class="body2-m-16 color-slate-900">테이블 미리보기</h3>
+      <button type="button" class="border-slate-button-32 flex align-center gap-6">
+        <i class="download-02" aria-hidden="true"></i>
+        <span>Exel 다운로드</span>
+      </button>
+    </div>
+    <div class="overflow-auto">
+      <table class="spatial-search-results__table">
+        <caption class="blind">
+          공간검색 결과 속성 테이블 미리보기
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">속성</th>
+            <th scope="col">속성</th>
+            <th scope="col">속성</th>
+            <th scope="col">속성</th>
+            <th scope="col">속성</th>
+            <th scope="col">속성</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+          </tr>
+          <tr>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+          </tr>
+          <tr>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+          </tr>
+          <tr>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+          </tr>
+          <tr>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+            <td>값</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

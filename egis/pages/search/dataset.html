@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>통합검색 데이터셋 | 환경공간정보서비스</title>
+    <link rel="stylesheet" href="../../assets/css/foundation.css" />
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
+  </head>
+  <body data-search-tab="dataset">
+    <div data-fragment="../../shared/fragments/web-header.html"></div>
+    <main role="main" class="inner-default pb-100">
+      <div data-fragment="./fragments/search-bar.html"></div>
+      <div data-fragment="./fragments/tabs.html"></div>
+      <section class="search-listing grid-column-default w-full mx-auto mt-32">
+        <div data-fragment="./fragments/dataset-filter.html"></div>
+        <div class="search-listing__content grid-column-9">
+          <div data-fragment="./fragments/applied-filter.html"></div>
+          <div data-fragment="./fragments/dataset-results.html"></div>
+        </div>
+      </section>
+    </main>
+    <div data-fragment="../../shared/fragments/footer.html"></div>
+    <script src="../../shared/js/fragment-loader.js"></script>
+    <script src="../../shared/js/script-loader.js"></script>
+    <script src="./dataset-app.js"></script>
+  </body>
+</html>

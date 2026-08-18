@@ -1,0 +1,167 @@
+<!-- Open API 개발계정 신청 — Figma 1927:10520 / 에러 1927:10780 -->
+<section class="oa-apply__wrap" aria-labelledby="oa-apply-title">
+  <h1 id="oa-apply-title" class="heading6-sb-28 color-slate-900 mb-32">Open API 개발계정 신청</h1>
+
+  <div class="oa-apply__account flex flex-col gap-20 mb-48">
+    <h2 class="heading9-sb-22 color-slate-900 m-0">계정 정보</h2>
+    <div class="oa-apply__account-box bg-gray-50 radius-md-8 p-24 flex flex-col gap-16">
+      <dl class="oa-apply__account-meta flex align-center justify-between m-0">
+        <div class="flex align-center">
+          <dt class="body2-r-16 color-slate-700 oa-apply__meta-label">신청계정</dt>
+          <dd class="body2-m-16 color-slate-900 m-0">개발계정</dd>
+        </div>
+        <div class="flex align-center">
+          <dt class="body2-r-16 color-slate-700 oa-apply__meta-label">신청일</dt>
+          <dd class="body2-m-16 color-slate-900 m-0" data-oa-apply-date>2025-12-29</dd>
+        </div>
+        <div class="flex align-center">
+          <dt class="body2-r-16 color-slate-700 oa-apply__meta-label">만료일</dt>
+          <dd class="body2-m-16 color-slate-900 m-0" data-oa-apply-expire>2025-12-29</dd>
+        </div>
+      </dl>
+      <hr class="oa-apply__divider" />
+      <p class="oa-apply__notice flex align-center gap-8 body2-m-16 color-slate-900 m-0">
+        <i class="oa-apply__notice-icon flex-none" aria-hidden="true"></i>
+        <span
+          >사용기간은 신청일 기준 <span class="color-blue-500">00</span>개월이며, 만료 후 이용이
+          제한됩니다.</span
+        >
+      </p>
+    </div>
+  </div>
+
+  <form class="oa-apply__form" data-oa-apply-form novalidate>
+    <div class="oa-apply__form-head flex flex-col gap-28">
+      <h2 class="heading9-sb-22 color-slate-900 m-0">이용 신청서</h2>
+      <hr class="oa-apply__form-rule" />
+    </div>
+
+    <div class="oa-apply__fields flex flex-col gap-28 mb-48 mt-28">
+      <div class="oa-apply__row flex gap-24">
+        <div class="flex-1 min-w-0 flex flex-col gap-12">
+          <label for="oa-apply-service-name" class="body2-m-16 color-slate-900">활용 서비스명</label>
+          <div class="input-wrapper" data-oa-field="serviceName">
+            <input
+              id="oa-apply-service-name"
+              type="text"
+              class="input-field-default-48 w-full"
+              name="serviceName"
+              placeholder="서비스명을 입력해 주세요."
+              autocomplete="off"
+            />
+            <p class="error-message body2-r-16" data-oa-error>서비스명을 입력해 주세요.</p>
+          </div>
+        </div>
+        <div class="flex-1 min-w-0 flex flex-col gap-12">
+          <label for="oa-apply-service-type" class="body2-m-16 color-slate-900">서비스 유형</label>
+          <div class="select-wrapper" data-oa-field="serviceType">
+            <select id="oa-apply-service-type" class="select-48 w-full" name="serviceType">
+              <option value="" selected disabled hidden>선택해주세요</option>
+              <option value="web">웹 기반 서비스</option>
+              <option value="mobile">모바일 기반 서비스</option>
+              <option value="analysis">데이터 분석·시각화</option>
+              <option value="internal">내부 시스템</option>
+              <option value="research">연구·학술 목적</option>
+              <option value="etc">기타</option>
+            </select>
+            <p class="error-message body2-r-16" data-oa-error>서비스 유형을 선택해 주세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-12">
+        <label for="oa-apply-service-url" class="body2-m-16 color-slate-900">활용 서비스 URL</label>
+        <div class="input-wrapper" data-oa-field="serviceUrl">
+          <input
+            id="oa-apply-service-url"
+            type="text"
+            class="input-field-default-48 w-full"
+            name="serviceUrl"
+            placeholder="서비스 URL을 입력해 주세요."
+            autocomplete="url"
+          />
+          <p class="error-message body2-r-16" data-oa-error>서비스 URL을 입력해 주세요.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-12">
+        <label for="oa-apply-purpose" class="body2-m-16 color-slate-900">활용 목적</label>
+        <div class="oa-apply__field" data-oa-field="purpose">
+          <div class="oa-apply__purpose relative">
+            <textarea
+              id="oa-apply-purpose"
+              class="oa-apply__purpose-input w-full body2-r-16"
+              name="purpose"
+              maxlength="400"
+              placeholder="API를 어떤 목적으로 사용하며, 서비스에 어떻게 적용할 예정인지 작성해주세요."
+            ></textarea>
+            <span
+              class="oa-apply__counter body3-r-14 color-slate-700"
+              data-oa-apply-purpose-count
+              aria-live="polite"
+              >0/400</span
+            >
+          </div>
+          <p class="error-message body2-r-16" data-oa-error>활용 목적을 20자 이상 입력해 주세요.</p>
+        </div>
+      </div>
+
+      <div class="oa-apply__agree flex flex-col gap-20" data-oa-field="agree">
+        <label class="flex align-center gap-8">
+          <input
+            type="checkbox"
+            id="oa-apply-agree-all"
+            class="checkbox-basic checkbox-basic-lg flex-none"
+            data-checkall-target=".oa-apply__agree-item"
+          />
+          <span class="body2-sb-16 color-slate-900">아래의 내용에 모두 확인 및 동의합니다.</span>
+        </label>
+        <hr class="oa-apply__divider" />
+        <div class="flex align-center justify-between gap-16">
+          <label class="flex align-center gap-8 min-w-0">
+            <input
+              type="checkbox"
+              id="oa-apply-agree-policy"
+              class="checkbox-basic checkbox-basic-lg flex-none oa-apply__agree-item"
+              name="agreePolicy"
+            />
+            <span class="body2-m-16 color-slate-700"
+              ><span class="color-red-500">[필수]</span> 환경공간정보서비스 정책 이용동의</span
+            >
+          </label>
+          <a
+            href="javascript:void(0);"
+            class="oa-apply__policy-link body2-sb-16 color-slate-500 flex-none"
+            data-oa-apply-policy="service"
+            >내용보기</a
+          >
+        </div>
+        <div class="flex align-center justify-between gap-16">
+          <label class="flex align-center gap-8 min-w-0">
+            <input
+              type="checkbox"
+              id="oa-apply-agree-license"
+              class="checkbox-basic checkbox-basic-lg flex-none oa-apply__agree-item"
+              name="agreeLicense"
+            />
+            <span class="body2-m-16 color-slate-700"
+              ><span class="color-red-500">[필수]</span> 라이선스 정책 이용동의</span
+            >
+          </label>
+          <a
+            href="https://www.kogl.or.kr/info/license.do"
+            class="oa-apply__policy-link body2-sb-16 color-slate-500 flex-none"
+            target="_blank"
+            rel="noopener noreferrer"
+            >내용보기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="oa-apply__actions flex align-center justify-center gap-8">
+      <a href="./detail.html" class="border-slate-button-48 flex align-center justify-center w-200">취소</a>
+      <button type="submit" class="blue-button-48 flex align-center justify-center w-200">발급 신청</button>
+    </div>
+  </form>
+</section>

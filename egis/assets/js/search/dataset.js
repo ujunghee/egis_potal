@@ -1,0 +1,98 @@
+/** 통합검색 데이터셋 — 결과 목록. 렌더·보기 전환·필터 칩은 공용 listing.js */
+(() => {
+  // API 붙이면 이 배열만 교체하면 됨
+  const items = [
+    {
+      id: 'ds-1',
+      tags: ['토지피복', '시계열 변화', '토지피복 변화량'],
+      title: '토지피복 시계열 변화량(1980-2010)',
+      date: '2025.10.27',
+      provider: '환경부 · 국립환경과학원',
+      format: 'SHP, CSV',
+      views: 675,
+    },
+    {
+      id: 'ds-2',
+      tags: ['토지피복', '세분류', '2023'],
+      title: '세분류 토지피복지도(2023)',
+      date: '2025.09.30',
+      provider: '환경부 · 국립환경과학원',
+      format: 'SHP',
+      views: 412,
+    },
+    {
+      id: 'ds-3',
+      tags: ['토지피복', '대분류', '전국'],
+      title: '대분류 토지피복지도(1980-2020)',
+      date: '2025.08.14',
+      provider: '환경부 · 국립환경과학원',
+      format: 'SHP, GeoTIFF',
+      views: 908,
+    },
+    {
+      id: 'ds-4',
+      tags: ['토지피복', '중분류', '권역별'],
+      title: '중분류 토지피복지도(2022)',
+      date: '2025.07.08',
+      provider: '환경부 · 한국환경공단',
+      format: 'SHP, CSV',
+      views: 534,
+    },
+    {
+      id: 'ds-5',
+      tags: ['토지피복', '변화 분석', '도시화'],
+      title: '도시지역 토지피복 변화 분석 자료(2000-2020)',
+      date: '2025.06.19',
+      provider: '환경부 · 국립환경과학원',
+      format: 'CSV, XLSX',
+      views: 287,
+    },
+    {
+      id: 'ds-6',
+      tags: ['토지피복', '분류코드', '메타데이터'],
+      title: '토지피복 분류체계 및 분류코드 정의서',
+      date: '2025.05.22',
+      provider: '환경부',
+      format: 'XLSX, PDF',
+      views: 1204,
+    },
+    {
+      id: 'ds-7',
+      tags: ['토지피복', '위성영상', '판독'],
+      title: '위성영상 기반 토지피복 판독 결과(2021)',
+      date: '2025.04.30',
+      provider: '환경부 · 국립환경과학원',
+      format: 'GeoTIFF',
+      views: 366,
+    },
+    {
+      id: 'ds-8',
+      tags: ['토지피복', '통계', '시군구'],
+      title: '시군구별 토지피복 면적 통계(2020)',
+      date: '2025.03.11',
+      provider: '환경부 · 한국환경공단',
+      format: 'CSV, XLSX',
+      views: 742,
+    },
+    {
+      id: 'ds-9',
+      tags: ['토지피복', '유역', '물관리'],
+      title: '유역별 토지피복 현황(2022)',
+      date: '2025.02.27',
+      provider: '환경부 · 한국수자원공사',
+      format: 'SHP, CSV',
+      views: 319,
+    },
+    {
+      id: 'ds-10',
+      tags: ['토지피복', '제작현황', '연도별'],
+      title: '토지피복지도 제작 현황(1980-2024)',
+      date: '2025.01.16',
+      provider: '환경부',
+      format: 'XLSX',
+      views: 455,
+    },
+  ];
+
+  window.SearchListing?.init('[data-dataset-list]', items);
+})();

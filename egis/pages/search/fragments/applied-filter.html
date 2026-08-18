@@ -1,0 +1,18 @@
+<!-- 적용된 필터 — 데이터셋·Open API 화면 공용. 칩 렌더·삭제는 각 화면 스크립트 -->
+<div
+  class="applied-filter bg-slate-50 radius-md-8 p-16 flex justify-between align-start gap-8"
+  data-applied-filter
+  hidden
+>
+  <div class="applied-filter__list flex align-start gap-16">
+    <span class="flex gap-8 align-center body2-sb-16 color-slate-900 flex-shrink-0-auto pt-4"
+      >적용된 필터 <span class="applied-filter__count color-blue-500" data-applied-count>0</span></span
+    >
+    <ul class="flex flex-wrap gap-8" data-applied-list></ul>
+  </div>
+  <button type="button" class="applied-filter__reset flex align-center gap-10 mt-6" data-applied-reset>
+    <span class="body2-m-16 color-slate-700">초기화</span>
+    <i class="applied-reset-icon" aria-hidden="true"></i>
+    <span class="blind">적용된 필터 초기화</span>
+  </button>
+</div>

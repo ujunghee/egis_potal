@@ -1,0 +1,147 @@
+/* Open API 개발계정 신청 — Figma 1927:10520 */
+.oa-apply {
+  padding-top: 6rem;
+  box-sizing: border-box;
+}
+
+.oa-apply__wrap {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.oa-apply__account {
+  width: 100%;
+}
+
+.oa-apply__meta-label {
+  width: 8rem;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.oa-apply__account-box {
+  box-sizing: border-box;
+}
+
+.oa-apply__divider {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--slate-200);
+}
+
+.oa-apply__notice-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url('../../../image/icon/web/user-support/info-blue.svg') center / contain no-repeat;
+}
+
+.oa-apply__form {
+  width: 100%;
+  gap: var(--spacing-28);
+}
+
+.oa-apply__form-rule {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--slate-900);
+}
+
+.oa-apply__row {
+  width: 100%;
+}
+
+.oa-apply__purpose-input {
+  box-sizing: border-box;
+  min-height: 12rem;
+  height: 12rem;
+  padding: var(--spacing-16);
+  padding-bottom: 3.6rem;
+  border: 1px solid var(--slate-400, #8390a2);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+  color: var(--slate-900);
+  resize: vertical;
+  outline: none;
+}
+
+.oa-apply__purpose-input::placeholder {
+  color: var(--slate-400, #8390a2);
+}
+
+.oa-apply__purpose-input:hover,
+.oa-apply__purpose-input:focus {
+  border-color: var(--blue-500);
+}
+
+.oa-apply__field .error-message,
+.oa-apply .input-wrapper .error-message,
+.oa-apply .select-wrapper .error-message {
+  display: none;
+}
+
+.oa-apply__field.is-error .oa-apply__purpose-input {
+  border-color: var(--red-500);
+}
+
+.oa-apply__field.is-error .error-message,
+.oa-apply .input-wrapper.is-error .error-message,
+.oa-apply .select-wrapper.is-error .error-message {
+  display: block;
+  margin-top: var(--spacing-8);
+  color: var(--red-500);
+  font-size: var(--font-size-body2);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-160);
+  letter-spacing: var(--letter-spacing-md);
+}
+
+.oa-apply__agree.is-error .checkbox-basic:not(:checked) {
+  border-color: var(--red-500);
+}
+
+.oa-apply__counter {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  pointer-events: none;
+}
+
+.oa-apply__policy-link {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.oa-apply__policy-link:hover {
+  color: var(--slate-700);
+}
+
+.oa-apply__actions {
+  width: 100%;
+}
+
+.oa-apply__actions a {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .oa-apply {
+    padding-top: 4rem;
+  }
+
+  .oa-apply__account-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-12);
+  }
+
+  .oa-apply__row {
+    flex-direction: column;
+  }
+}

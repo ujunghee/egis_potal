@@ -1,0 +1,61 @@
+/* 이용자 지원 — 공지사항 검색 */
+.notice-board__search {
+  width: 40rem;
+  max-width: 100%;
+  padding: 0 var(--spacing-16);
+  box-sizing: border-box;
+}
+
+.notice-board__search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--slate-900);
+  outline: none;
+}
+
+.notice-board__search input::placeholder {
+  color: var(--slate-400);
+}
+
+.notice-board__search:focus-within {
+  border-color: var(--blue-500);
+}
+
+/* 공지사항 상세 */
+.notice-detail__date {
+  display: block;
+}
+
+.notice-detail__body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.notice-detail__file {
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.notice-detail__file:hover {
+  border-color: var(--blue-500);
+}
+
+.notice-detail__file-icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  background: url('../../../image/icon/map/layer/download-02.svg') center / contain no-repeat;
+}

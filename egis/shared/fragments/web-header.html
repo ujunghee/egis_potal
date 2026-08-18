@@ -1,0 +1,362 @@
+<!-- 공식 전자정부 누리집 안내. 헤더 바로 위 -->
+<div class="gov-masthead" role="region" aria-label="공식 전자정부 누리집 안내">
+  <div class="gov-masthead__inner inner-default">
+    <i class="gov-masthead__flag" aria-hidden="true"></i>
+    <p class="gov-masthead__text body3-r-14 color-slate-900">
+      이 누리집은 대한민국 공식 전자정부 누리집입니다.
+    </p>
+  </div>
+</div>
+
+<!-- 공통 웹 헤더: 로고, GNB, 통합검색 -->
+<header class="header" role="banner">
+  <div class="header-top">
+    <div class="inner-default header-top__inner flex align-center justify-between">
+      <h1 class="header__logo">
+        <a href="../main/index.html" aria-label="환경공간정보서비스 홈으로 이동">
+          <img src="../../assets/image/icon/header-logo.svg" alt="환경공간정보서비스" />
+        </a>
+      </h1>
+      <div class="header-util flex align-center" role="group" aria-label="사용자 계정 관리">
+        <button
+          type="button"
+          class="header-util__btn transparent-button-40 gap-8 flex align-center"
+          data-header-search-open
+          aria-expanded="false"
+          aria-controls="header-search-panel"
+        >
+          <i class="header-search-24" aria-hidden="true"></i>
+          <span class="body1-m-18 color-slate-900">통합검색</span>
+        </button>
+        <a
+          href="../login/index.html"
+          class="header-util__btn header-util__btn--login transparent-button-40 gap-8 flex align-center"
+          data-header-login
+        >
+          <i class="header-login-24" aria-hidden="true"></i>
+          <span class="body1-m-18 color-slate-900">로그인</span>
+        </a>
+        <!-- 로그인 후 노출. 프로토타입은 로그인 버튼으로 전환 -->
+        <div class="header-mypage" data-header-mypage hidden>
+          <button
+            type="button"
+            class="header-util__btn header-util__btn--mypage transparent-button-40 gap-8 flex align-center"
+            data-header-mypage-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="header-mypage-menu"
+          >
+            <i class="header-mypage-24" aria-hidden="true"></i>
+            <span class="body1-m-18">마이페이지</span>
+          </button>
+
+          <!-- 마이페이지 드롭다운. 버튼 아래 8px 간격 -->
+          <div class="header-mypage__menu" id="header-mypage-menu" role="menu" aria-label="마이페이지 메뉴" hidden>
+            <ul class="header-mypage__list" role="none">
+              <li role="none">
+                <a href="../mypage/index.html" class="header-mypage__link body1-r-18" role="menuitem">관심데이터</a>
+              </li>
+              <li role="none">
+                <a href="../mypage/download/index.html" class="header-mypage__link body1-r-18" role="menuitem">다운로드 내역</a>
+              </li>
+              <li role="none">
+                <a href="../mypage/openapi/index.html" class="header-mypage__link body1-r-18" role="menuitem">Open API 관리</a>
+              </li>
+              <li role="none">
+                <a href="../mypage/authkey/index.html" class="header-mypage__link body1-r-18" role="menuitem">인증키 발급 현황</a>
+              </li>
+              <li role="none">
+                <a href="../mypage/inquiry/index.html" class="header-mypage__link body1-r-18" role="menuitem">나의 문의</a>
+              </li>
+            </ul>
+            <div class="header-mypage__foot">
+              <button type="button" class="header-mypage__logout body2-r-16" role="menuitem" data-header-logout>
+                <i class="header-logout-24" aria-hidden="true"></i>
+                <span>로그아웃</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GNB. 하위메뉴 있는 건 button + data-header-nav-toggle -->
+  <nav class="header-nav" role="navigation" aria-label="주 메뉴">
+    <div class="inner-default">
+      <ul class="header-nav__list">
+        <li class="header-nav__item">
+          <a href="../map/index.html" class="header-nav__link body1-m-18">환경기초지도</a>
+        </li>
+        <li class="header-nav__item">
+          <a href="../topicalMap/index.html" class="header-nav__link body1-m-18">주제별 지도</a>
+        </li>
+        <li class="header-nav__item">
+          <button
+            type="button"
+            class="header-nav__link body1-m-18"
+            data-header-nav-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="header-nav-sub-3"
+          >
+            데이터 개방
+            <i class="arrow-icon" aria-hidden="true"></i>
+          </button>
+          <div class="header-nav__sub" id="header-nav-sub-3">
+            <div class="inner-default header-nav__sub-inner">
+              <div class="header-nav__sub-aside">
+                <p class="heading9-sb-22 color-slate-900">데이터 개방</p>
+              </div>
+              <div class="header-nav__sub-content">
+                <ul class="header-nav__sub-list" role="menu" aria-label="데이터 개방 하위 메뉴">
+                  <li role="none">
+                    <a href="../data-open/open-api/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >Open API<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                  <li role="none">
+                    <a href="../data-open/land-cover/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >국가토지피복 통계<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                  <li role="none">
+                    <a href="../data-open/ai-dataset/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >학습 데이터<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="header-nav__item">
+          <button
+            type="button"
+            class="header-nav__link body1-m-18"
+            data-header-nav-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="header-nav-sub-4"
+          >
+            이용안내
+            <i class="arrow-icon" aria-hidden="true"></i>
+          </button>
+          <div class="header-nav__sub" id="header-nav-sub-4">
+            <div class="inner-default header-nav__sub-inner">
+              <div class="header-nav__sub-aside">
+                <p class="heading9-sb-22 color-slate-900">이용안내</p>
+              </div>
+              <div class="header-nav__sub-content">
+                <ul class="header-nav__sub-list" role="menu" aria-label="이용안내 하위 메뉴">
+                  <li role="none">
+                    <a href="javascript:void(0);" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >서비스 소개<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                  <li role="none">
+                    <a href="javascript:void(0);" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >이용 매뉴얼<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="header-nav__item">
+          <button
+            type="button"
+            class="header-nav__link body1-m-18"
+            data-header-nav-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="header-nav-sub-5"
+          >
+            이용자 지원
+            <i class="arrow-icon" aria-hidden="true"></i>
+          </button>
+          <div class="header-nav__sub" id="header-nav-sub-5">
+            <div class="inner-default header-nav__sub-inner">
+              <div class="header-nav__sub-aside">
+                <p class="heading9-sb-22 color-slate-900">이용자 지원</p>
+              </div>
+              <div class="header-nav__sub-content">
+                <ul class="header-nav__sub-list" role="menu" aria-label="사용자 지원 하위 메뉴">
+                  <li role="none">
+                    <a href="../userSupport/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >공지사항<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                  <li role="none">
+                    <a href="../userSupport/faq.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >자주 묻는 질문<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                  <li role="none">
+                    <a href="../userSupport/inquiry.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >문의하기<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 통합검색 레이어. hidden 토글은 header.js -->
+  <div
+    class="header-search-panel"
+    id="header-search-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="header-search-title"
+    hidden
+  >
+    <div class="header-search-wrapper">
+      <div class="flex justify-between align-center gap-16">
+        <h2 id="header-search-title" class="heading8-sb-24 color-slate-900">모든 환경 데이터, 이제 한 곳에서 찾아보세요.</h2>
+        <button type="button" data-header-search-close aria-label="검색 닫기">
+          <i class="close-icon-lg"><span class="blind">검색 닫기</span></i>
+        </button>
+      </div>
+      <div class="mt-36">
+        <div class="search-58 flex pl-20 pr-16 align-center">
+          <label for="header-search-input" class="blind">검색어</label>
+          <input
+            type="search"
+            id="header-search-input"
+            class="search-input heading10-r-20 flex-1"
+            placeholder="찾고 싶은 환경정보를 검색해 보세요"
+            autocomplete="off"
+          />
+          <button type="button" class="search-button h-fit">
+            <i class="search-icon-30"><span class="blind">검색</span></i>
+          </button>
+        </div>
+      </div>
+      <div class="header-search-panel__columns flex mt-24 gap-32">
+        <!-- 인기 검색어 -->
+        <section aria-labelledby="header-search-popular-title">
+          <h3 id="header-search-popular-title" class="heading10-sb-20 color-slate-900 mb-8">인기 검색어</h3>
+          <ol>
+            <li>
+              <a href="../map/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">1</span>미세먼지</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">2</span>기후변화 분석</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">3</span>탄소배출량</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">4</span>수질오염 예측</a
+              >
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">5</span>도시 열섬 현상</a
+              >
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">6</span>초미세먼지 현상</a
+              >
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">7</span>오존 경보 지역</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/open-api/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">8</span>해수면 상승 모니터링</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/ai-dataset/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">9</span>산불 위험도 지수</a
+              >
+            </li>
+            <li>
+              <a href="../data-open/ai-dataset/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
+                ><span class="body2-sb-16 color-blue-500">9</span>재생에너지 발전량</a
+              >
+            </li>
+          </ol>
+        </section>
+        <!-- 최근 검색어. 비어 있으면 header.js가 안내 문구로 전환 -->
+        <section class="header-search-panel__recent flex-1" aria-labelledby="header-search-recent-title">
+          <div class="flex align-center justify-between">
+            <h3 id="header-search-recent-title" class="heading10-sb-20 color-slate-900">최근 검색어</h3>
+            <button
+              type="button"
+              class="header-search-panel__clear"
+              data-header-search-clear
+            >
+              전체삭제
+            </button>
+          </div>
+          <p class="body2-m-16 color-slate-500 mt-16" data-header-search-empty>최근 검색어가 없습니다.</p>
+          <!-- 최근 검색어 목록. 지금은 하드코딩, API 붙이면 ul 안만 채우면 됨 -->
+          <ul class="header-search-panel__recent-list hidden mt-8" data-header-search-recent-list>
+            <li class="header-search-panel__recent-item">
+              <a href="../map/index.html" class="header-search-panel__recent-link body2-m-16 color-slate-700">환경지도</a>
+              <button
+                type="button"
+                class="header-search-panel__recent-remove"
+                data-header-search-recent-remove
+                aria-label="환경지도 검색어 삭제"
+              >
+                <i class="close-icon-24" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li class="header-search-panel__recent-item">
+              <a href="../data-open/land-cover/index.html" class="header-search-panel__recent-link body2-m-16 color-slate-700">토지피복</a>
+              <button
+                type="button"
+                class="header-search-panel__recent-remove"
+                data-header-search-recent-remove
+                aria-label="토지피복 검색어 삭제"
+              >
+                <i class="close-icon-24" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li class="header-search-panel__recent-item">
+              <a href="../data-open/open-api/index.html" class="header-search-panel__recent-link body2-m-16 color-slate-700">Open API</a>
+              <button
+                type="button"
+                class="header-search-panel__recent-remove"
+                data-header-search-recent-remove
+                aria-label="Open API 검색어 삭제"
+              >
+                <i class="close-icon-24" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li class="header-search-panel__recent-item">
+              <a href="../topicalMap/index.html" class="header-search-panel__recent-link body2-m-16 color-slate-700">주제별 지도</a>
+              <button
+                type="button"
+                class="header-search-panel__recent-remove"
+                data-header-search-recent-remove
+                aria-label="주제별 지도 검색어 삭제"
+              >
+                <i class="close-icon-24" aria-hidden="true"></i>
+              </button>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,87 @@
+/* Result Panel (지도 검색 결과 패널) */
+.result-panel-wrap {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: visible;
+  --result-panel-width: 36rem;
+}
+
+/* 도엽검색 패널 — Figma 260px */
+.result-panel-wrap[data-result-panel-view="map-sheet-search"] {
+  --result-panel-width: 26rem;
+}
+
+.result-panel-wrap.hidden {
+  display: none;
+}
+
+.result-panel {
+  display: flex;
+  flex-direction: column;
+  width: var(--result-panel-width);
+  min-width: 0;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: var(--white);
+  box-sizing: border-box;
+  box-shadow: inset -1px 0 0 var(--slate-200);
+  overflow: hidden;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+}
+
+.result-panel-wrap.is-collapsed .result-panel {
+  width: 0;
+  box-shadow: none;
+}
+
+.result-panel__view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-shrink: 0;
+  width: var(--result-panel-width);
+  min-width: var(--result-panel-width);
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.result-panel__view[hidden] {
+  display: none !important;
+}
+
+/* 접기/펼치기 — 패널 우측 가장자리 */
+.result-panel__toggle {
+  position: absolute;
+  top: 50%;
+  right: -1.2rem;
+  z-index: 10;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 5.2rem;
+  padding: 0;
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+  border-right: 1px solid var(--slate-200);
+  border-top-right-radius: var(--radius-md-6);
+  border-bottom-right-radius: var(--radius-md-6);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.result-panel__toggle:hover {
+  background-color: var(--slate-50);
+}
+
+.result-panel__toggle .arrow-panel-icon {
+  transition: transform 0.25s ease;
+}
+
+.result-panel-wrap.is-collapsed .result-panel__toggle .arrow-panel-icon {
+  transform: rotate(180deg);
+}

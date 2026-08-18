@@ -1,0 +1,47 @@
+﻿<!-- 검색 결과 -->
+    <section class="tp-results mt-24 pb-100" aria-labelledby="result-title">
+      <div class="tp-results__head flex align-center justify-between gap-16">
+        <h2 id="result-title" class="heading10-sb-20 color-slate-900">검색 결과 <span class="color-blue-500">45</span>개</h2>
+        <div class="flex align-center gap-8">
+          <div class="view-toggle" role="group" aria-label="보기 방식">
+            <button type="button" class="view-toggle__btn active" aria-pressed="true" data-view="card">
+              <i class="dashboards-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+              <i class="dashboards-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+              <span class="body2-r-16 color-slate-700">카드형</span>
+            </button>
+            <button type="button" class="view-toggle__btn" aria-pressed="false" data-view="list">
+              <i class="list-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+              <i class="list-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+              <span class="body2-r-16 color-slate-700">리스트형</span>
+            </button>
+          </div>
+          <div class="select-wrapper tp-results__sort">
+            <label for="open-api-sort" class="blind">정렬 순서</label>
+            <select id="open-api-sort" class="select-40 w-110"><option>관련도순</option><option>최신순</option><option>조회순</option></select>
+          </div>
+          <div class="select-wrapper tp-results__size">
+            <label for="open-api-page-size" class="blind">페이지당 결과 수</label>
+            <select id="open-api-page-size" class="select-40 w-100"><option>10개씩</option><option>20개씩</option><option>30개씩</option></select>
+          </div>
+        </div>
+      </div>
+
+      <ul class="tp-cards" data-result-list aria-label="Open API 검색 결과"></ul>
+
+      <nav class="pagination pagination--filled pt-48" aria-label="페이지 이동">
+        <ul class="pagination__list flex align-center justify-center gap-8">
+          <li><a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700"><span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind"> 페이지</span></a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16" aria-current="page">1</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">2</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">3</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">4</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">5</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">6</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">7</a></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">8</a></li>
+          <li><span class="pagination__ellipsis body2-r-16 color-slate-500" aria-hidden="true">...</span></li>
+          <li><a href="javascript:void(0);" class="pagination__link body2-r-16">99</a></li>
+          <li><a href="javascript:void(0);" class="pagination__nav transparent-button-40 flex align-center body2-r-16 color-slate-700">다음<span class="blind"> 페이지</span><span class="chevron-pagination-slate-700" aria-hidden="true"></span></a></li>
+        </ul>
+      </nav>
+    </section>

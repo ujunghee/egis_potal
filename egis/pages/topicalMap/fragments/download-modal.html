@@ -1,0 +1,446 @@
+<dialog class="tp-dl rounded-md bg-white overflow-hidden" data-dl-modal aria-labelledby="dl-title">
+  <header class="tp-dl__header flex align-center px-24 py-20">
+    <h2 id="dl-title" class="heading8-sb-24 color-slate-900">다운로드</h2>
+  </header>
+  <div class="tp-dl__layout flex">
+    <aside class="tp-dl__step-nums bg-slate-50 px-16 py-20" aria-label="다운로드 진행 단계">
+      <h3 class="body2-m-16 color-slate-700 mb-12">진행 단계</h3>
+      <ol class="flex flex-col gap-8" data-dl-nav-list="full">
+        <li class="active flex align-center gap-14 px-16 radius-md-8 bg-white" data-dl-nav="1"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-blue-500 radius-full">1</span><strong class="body1-sb-18 color-slate-900">구성 데이터 선택</strong></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="2"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">2</span><span class="body1-sb-18 color-slate-500">다운로드 영역 선택</span></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="3"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">3</span><span class="body1-sb-18 color-slate-500">속성 항목 선택</span></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="4"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">4</span><span class="body1-sb-18 color-slate-500">파일 형식 및 미리보기</span></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="5"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">5</span><span class="body1-sb-18 color-slate-500">설문 및 이용조건 동의</span></li>
+      </ol>
+      <ol class="flex flex-col gap-8" data-dl-nav-list="dataset" hidden>
+        <li class="active flex align-center gap-14 px-16 radius-md-8 bg-white" data-dl-nav="1"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-blue-500 radius-full">1</span><strong class="body1-sb-18 color-slate-900">속성 항목 선택</strong></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="2"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">2</span><span class="body1-sb-18 color-slate-500">파일 형식 및 미리보기</span></li>
+        <li class="flex align-center gap-14 px-16" data-dl-nav="3"><span class="tp-dl__step-num flex-center body1-sb-18 color-white bg-slate-200 radius-full">3</span><span class="body1-sb-18 color-slate-500">설문 및 이용조건 동의</span></li>
+      </ol>
+    </aside>
+    <section class="tp-dl__content flex flex-col gap-16 p-20" data-dl-step="1">
+      <div class="flex flex-col gap-10">
+        <h3 class="heading10-sb-20 color-slate-900">구성 데이터 선택</h3>
+        <p class="body2-r-16 color-slate-700">다운로드할 데이터를 선택해 주세요.</p>
+      </div>
+      <fieldset class="tp-dl__options flex flex-col gap-16">
+        <legend class="blind">구성 데이터</legend>
+        <label class="tp-dl__option flex flex-col gap-8 p-16 radius-md-8 cursor-pointer">
+          <span class="flex gap-8"><span class="body3-m-14 color-blue-700 bg-blue-50 radius-sm-4 px-8">공간 데이터</span><span class="body3-m-14 color-violet-700 bg-violet-50 radius-sm-4 px-8">시계열 데이터</span></span>
+          <span class="flex align-center justify-between gap-8"><span class="body2-m-16 color-slate-900">토지피복 시계열 변화량</span><input class="radio-basic radio-basic-lg" type="radio" name="download-dataset" value="landcover-change" checked /></span>
+        </label>
+        <label class="tp-dl__option flex flex-col gap-8 p-16 radius-md-8 cursor-pointer">
+          <span class="flex gap-8"><span class="body3-m-14 color-blue-700 bg-blue-50 radius-sm-4 px-8">공간 데이터</span><span class="body3-m-14 color-violet-700 bg-violet-50 radius-sm-4 px-8">시계열 데이터</span></span>
+          <span class="flex align-center justify-between gap-8"><span class="body2-m-16 color-slate-900">연도별 토지피복 현황</span><input class="radio-basic radio-basic-lg" type="radio" name="download-dataset" value="landcover-year" /></span>
+        </label>
+        <label class="tp-dl__option flex flex-col gap-8 p-16 radius-md-8 cursor-pointer">
+          <span class="flex gap-8"><span class="body3-m-14 color-blue-700 bg-blue-50 radius-sm-4 px-8">공간 데이터</span><span class="body3-m-14 color-violet-700 bg-violet-50 radius-sm-4 px-8">시계열 데이터</span></span>
+          <span class="flex align-center justify-between gap-8"><span class="body2-m-16 color-slate-900">토지피복 변화 통계</span><input class="radio-basic radio-basic-lg" type="radio" name="download-dataset" value="landcover-statistics" /></span>
+        </label>
+        <label class="tp-dl__option flex flex-col gap-8 p-16 radius-md-8 cursor-pointer">
+          <span class="flex gap-8"><span class="body3-m-14 color-blue-700 bg-blue-50 radius-sm-4 px-8">공간 데이터</span><span class="body3-m-14 color-violet-700 bg-violet-50 radius-sm-4 px-8">시계열 데이터</span></span>
+          <span class="flex align-center justify-between gap-8"><span class="body2-m-16 color-slate-900">토지피복 분류 데이터</span><input class="radio-basic radio-basic-lg" type="radio" name="download-dataset" value="landcover-category" /></span>
+        </label>
+      </fieldset>
+    </section>
+    <section class="tp-dl__content flex flex-col gap-20 p-20" data-dl-step="2" hidden>
+      <div class="flex flex-col gap-10">
+        <h3 class="heading10-sb-20 color-slate-900">다운로드 영역 선택</h3>
+        <p class="body2-r-16 color-slate-700">데이터를 다운로드할 지역 또는 범위를 선택해 주세요.</p>
+      </div>
+      <div class="flex align-center gap-10 p-16 radius-md-8 bg-slate-50"><span class="body2-r-16 color-slate-700">구성 데이터</span><strong class="body2-m-16 color-slate-900">토지피복 시계열 변화량</strong></div>
+      <div class="tp-dl__range-tabs flex bg-slate-50 radius-md-8" role="tablist" aria-label="다운로드 영역 선택 방법">
+        <button type="button" class="body2-m-16 color-slate-900" role="tab" aria-selected="false" data-dl-range-tab="all">전체</button>
+        <button type="button" class="active body2-m-16 color-slate-900 bg-white radius-md-8" role="tab" aria-selected="true" data-dl-range-tab="address">주소로 선택</button>
+        <button type="button" class="body2-m-16 color-slate-900" role="tab" aria-selected="false" data-dl-range-tab="map">지도에서 직접 선택</button>
+      </div>
+      <div class="flex flex-col gap-20" data-dl-range="address">
+        <div class="tp-dl__address flex gap-8">
+          <label class="blind" for="download-region-1">광역시·도</label><select id="download-region-1" class="select-48"><option value="">광역시 · 도</option><option>서울특별시</option></select>
+          <label class="blind" for="download-region-2">시·군·구</label><select id="download-region-2" class="select-48" disabled><option value="">시 · 군 · 구</option><option>종로구</option></select>
+          <label class="blind" for="download-region-3">읍·면·동</label><select id="download-region-3" class="select-48" disabled><option value="">읍 · 면 · 동</option><option>청운효자동</option></select>
+          <button type="button" class="slate-button-48" data-dl-region-add>추가</button>
+        </div>
+        <div class="tp-dl__region-result flex flex-col gap-16 is-empty" data-dl-region-panel>
+          <div class="flex align-center justify-between" data-dl-region-head hidden>
+            <p class="body1-sb-18 color-slate-900">선택한 영역 <strong class="color-blue-500" data-dl-region-count>0</strong>개</p>
+            <button type="button" class="border-slate-button-32" data-dl-region-clear>전체 삭제</button>
+          </div>
+          <ul class="tp-dl__regions" data-dl-region-list aria-label="선택한 영역 목록"></ul>
+          <p class="tp-dl__regions-empty body2-m-16 color-slate-300 text-center" data-dl-region-empty>
+            아직 추가한 주소가 없습니다.<br />
+            위에서 주소를 고르고 추가를 누르세요.
+          </p>
+        </div>
+      </div>
+      <div class="tp-dl__map radius-md-8 overflow-hidden" data-dl-range="map" hidden>
+        <img src="../../assets/image/background/map/map-bg-default.png" alt="지도에서 다운로드 영역 선택" />
+        <div class="tp-dl__map-bar flex align-center justify-between">
+          <div class="select-wrapper tp-dl__map-scale" data-dl-map-scale hidden>
+            <label class="blind" for="download-map-scale">축척</label>
+            <select id="download-map-scale" class="select-36 tp-dl__map-scale-select">
+              <option selected>1:5,000</option>
+              <option>1:25,000</option>
+              <option>1:50,000</option>
+            </select>
+          </div>
+          <div class="tp-dl__map-tools flex align-center gap-8" role="group" aria-label="지도 영역 선택 도구">
+            <button type="button" class="tp-dl__map-tool body3-m-14" data-dl-map-tool="free" aria-pressed="false">
+              <i class="random-blue-icon" aria-hidden="true"></i>
+              <span>자유형</span>
+            </button>
+            <button type="button" class="tp-dl__map-tool body3-m-14" data-dl-map-tool="sheet" aria-pressed="false">
+              <i class="frame-icon" aria-hidden="true"></i>
+              <span>도엽</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tp-dl__content flex flex-col gap-20 p-20" data-dl-step="3" hidden>
+      <div class="flex flex-col gap-10">
+        <h3 class="heading10-sb-20 color-slate-900">속성 항목 선택</h3>
+        <p class="body2-r-16 color-slate-700">다운로드 파일에 포함할 항목을 선택해 주세요.</p>
+      </div>
+      <div class="flex align-center gap-10 p-16 radius-md-8 bg-slate-50">
+        <span class="body2-r-16 color-slate-700">구성 데이터</span>
+        <strong class="body2-m-16 color-slate-900">시군구 전기차 및 충전기 보급 통계(202503)</strong>
+        <span class="body2-m-16 color-slate-900" data-dl-full-only>·</span>
+        <span class="body2-m-16 color-slate-700 flex gap-10" data-dl-full-only>영역 <strong class="body2-m-16 color-slate-900">4개</strong></span>
+      </div>
+      <div class="tp-dl__attributes flex flex-col gap-16">
+        <p class="body2-sb-16 color-slate-900">
+          선택한 항목
+          <strong class="color-blue-500" data-dl-attr-count>4</strong>
+          /
+          <span data-dl-attr-total>24</span>
+        </p>
+        <ul class="tp-dl__attributes-list" data-download-attr-list aria-label="속성 항목 목록">
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-all" data-dl-attr-all />
+            <label for="download-attr-all" class="body2-m-16 color-slate-900">전체</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-1" data-dl-attr checked />
+            <label for="download-attr-1" class="body2-m-16 color-slate-900">기준년월</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-2" data-dl-attr checked />
+            <label for="download-attr-2" class="body2-m-16 color-slate-900">시도코드</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-3" data-dl-attr checked />
+            <label for="download-attr-3" class="body2-m-16 color-slate-900">시도명</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-4" data-dl-attr checked />
+            <label for="download-attr-4" class="body2-m-16 color-slate-900">시군구코드</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-5" data-dl-attr />
+            <label for="download-attr-5" class="body2-m-16 color-slate-900">시군구명</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-6" data-dl-attr />
+            <label for="download-attr-6" class="body2-m-16 color-slate-900">전기차등록대수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-7" data-dl-attr />
+            <label for="download-attr-7" class="body2-m-16 color-slate-900">전기승용차등록대수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-8" data-dl-attr />
+            <label for="download-attr-8" class="body2-m-16 color-slate-900">전기화물차등록대수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-9" data-dl-attr />
+            <label for="download-attr-9" class="body2-m-16 color-slate-900">전기버스등록대수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-10" data-dl-attr />
+            <label for="download-attr-10" class="body2-m-16 color-slate-900">충전기설치대수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-11" data-dl-attr />
+            <label for="download-attr-11" class="body2-m-16 color-slate-900">급속충전기수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-12" data-dl-attr />
+            <label for="download-attr-12" class="body2-m-16 color-slate-900">완속충전기수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-13" data-dl-attr />
+            <label for="download-attr-13" class="body2-m-16 color-slate-900">충전소수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-14" data-dl-attr />
+            <label for="download-attr-14" class="body2-m-16 color-slate-900">인구수</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-15" data-dl-attr />
+            <label for="download-attr-15" class="body2-m-16 color-slate-900">면적</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-16" data-dl-attr />
+            <label for="download-attr-16" class="body2-m-16 color-slate-900">전기차보급률</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-17" data-dl-attr />
+            <label for="download-attr-17" class="body2-m-16 color-slate-900">충전기보급률</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-18" data-dl-attr />
+            <label for="download-attr-18" class="body2-m-16 color-slate-900">전년대비증감률</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-19" data-dl-attr />
+            <label for="download-attr-19" class="body2-m-16 color-slate-900">데이터출처</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-20" data-dl-attr />
+            <label for="download-attr-20" class="body2-m-16 color-slate-900">집계기준일</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-21" data-dl-attr />
+            <label for="download-attr-21" class="body2-m-16 color-slate-900">좌표X</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-22" data-dl-attr />
+            <label for="download-attr-22" class="body2-m-16 color-slate-900">좌표Y</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-23" data-dl-attr />
+            <label for="download-attr-23" class="body2-m-16 color-slate-900">공간ID</label>
+          </li>
+          <li class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-attr-24" data-dl-attr />
+            <label for="download-attr-24" class="body2-m-16 color-slate-900">비고</label>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="tp-dl__content flex flex-col gap-20 p-20" data-dl-step="4" hidden>
+      <div class="flex flex-col gap-10">
+        <h3 class="heading10-sb-20 color-slate-900">파일 형식 및 미리보기</h3>
+        <p class="body2-r-16 color-slate-700">다운로드할 파일 형식을 선택하고 미리보기를 확인해 주세요.</p>
+      </div>
+      <div class="flex flex-col gap-10">
+        <div class="bg-slate-50 radius-md-8 p-16">
+          <ul class="flex flex-wrap align-center gap-10">
+            <li>
+              <p class="body2-m-16 color-slate-700">구성 데이터</p>
+            </li>
+            <li class="flex align-center gap-8">
+              <p class="body2-m-16 color-slate-900">시군구 전기차 및 충전기 보급 통계(202503)</p>
+              <p class="body2-m-16 color-slate-900" data-dl-full-only>·</p>
+              <p class="body2-m-16 color-slate-700 flex gap-10" data-dl-full-only>영역 <strong class="body2-m-16 color-slate-900">4개</strong></p>
+              <p class="body2-m-16 color-slate-900">·</p>
+              <p class="body2-m-16 color-slate-700 flex gap-10">속성 <strong class="body2-m-16 color-slate-900">1개</strong></p>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-16">
+          <h4 class="body2-sb-16 color-slate-900">파일 형식</h4>
+          <fieldset class="tp-dl__formats flex gap-8">
+            <legend class="blind">파일 형식</legend>
+            <label class="tp-dl__format flex-1 flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body2-m-16 color-slate-900">CSV</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-format" value="csv" checked />
+            </label>
+            <label class="tp-dl__format flex-1 flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body2-m-16 color-slate-900">SHP</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-format" value="shp" />
+            </label>
+            <label class="tp-dl__format flex-1 flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body2-m-16 color-slate-900">GeoJSON</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-format" value="geojson" />
+            </label>
+            <label class="tp-dl__format flex-1 flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body2-m-16 color-slate-900">XLSX</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-format" value="xlsx" />
+            </label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="flex flex-col gap-16 pt-8">
+        <h4 class="body2-sb-16 color-slate-900">데이터 미리보기</h4>
+        <div class="tp-dl__preview overflow-auto">
+          <table class="data-table data-table--fit w-full">
+            <caption class="blind">다운로드 데이터 미리보기</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">기준년월</th>
+                <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">시도명</th>
+                <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">시군구명</th>
+                <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">전기차등록대수</th>
+                <th scope="col" class="body2-m-16 color-slate-900 bg-slate-50">충전기설치대수</th>
+              </tr>
+            </thead>
+            <tbody class="body2-r-16 color-slate-700">
+              <tr><td>202503</td><td>서울특별시</td><td>종로구</td><td>1,284</td><td>96</td></tr>
+              <tr><td>202503</td><td>서울특별시</td><td>중구</td><td>2,015</td><td>142</td></tr>
+              <tr><td>202503</td><td>서울특별시</td><td>용산구</td><td>1,756</td><td>118</td></tr>
+              <tr><td>202503</td><td>서울특별시</td><td>성동구</td><td>1,932</td><td>131</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="tp-dl__content flex flex-col gap-16 p-20" data-dl-step="5" hidden>
+      <div class="flex flex-col gap-10">
+        <h3 class="heading10-sb-20 color-slate-900">설문 및 이용조건 동의</h3>
+        <p class="body2-r-16 color-slate-700">공공데이터 제공 현황 파악을 위한 설문입니다. 응답하시면 바로 내려받습니다.</p>
+      </div>
+      <div class="tp-dl__survey flex flex-col gap-32">
+        <div class="tp-dl__survey-question flex flex-col gap-12" role="group" aria-labelledby="download-survey-job-title" data-dl-survey="job">
+          <p id="download-survey-job-title" class="body2-sb-16 color-slate-900">귀하의 직업은 무엇입니까?<span class="color-red-500">*</span></p>
+          <div class="tp-dl__survey-options tp-dl__survey-options--chip flex gap-12">
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">공공기관</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-job" value="public" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">학교</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-job" value="school" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">연구기관</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-job" value="research" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">민간기업</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-job" value="private" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">기타</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-job" value="etc" />
+            </label>
+          </div>
+          <p class="tp-dl__survey-error body3-m-14 color-red-600" data-dl-survey-error hidden>
+            <i class="tp-dl__survey-error-icon" aria-hidden="true"></i>
+            직업을 선택해 주세요.
+          </p>
+        </div>
+        <div class="tp-dl__survey-question flex flex-col gap-12" role="group" aria-labelledby="download-survey-purpose-title" data-dl-survey="purpose">
+          <p id="download-survey-purpose-title" class="body2-sb-16 color-slate-900">데이터의 활용 목적은 무엇입니까?<span class="color-red-500">*</span></p>
+          <div class="tp-dl__survey-options tp-dl__survey-options--chip flex gap-12">
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">공공업무</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-purpose" value="public-work" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">학술연구</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-purpose" value="research" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">상업활동</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-purpose" value="commercial" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">기타</span>
+              <input class="radio-basic radio-basic-lg" type="radio" name="download-purpose" value="etc" />
+            </label>
+          </div>
+          <p class="tp-dl__survey-error body3-m-14 color-red-600" data-dl-survey-error hidden>
+            <i class="tp-dl__survey-error-icon" aria-hidden="true"></i>
+            데이터 활용 목적을 선택해 주세요.
+          </p>
+        </div>
+        <div class="tp-dl__survey-question flex flex-col gap-12" role="group" aria-labelledby="download-survey-field-title" data-dl-survey="field">
+          <p id="download-survey-field-title" class="tp-dl__survey-title body2-sb-16 color-slate-900">
+            데이터가 활용될 분야<span class="color-red-500">*</span>
+            <span class="body4-r-13 color-slate-700">복수 선택 가능</span>
+          </p>
+          <div class="tp-dl__survey-field-grid">
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">농업</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="agriculture" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">생태계</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="ecosystem" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">건강</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="health" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">기후과학</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="climate" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">산림</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="forest" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">물관리</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="water" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">감시/예측</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="monitoring" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">환경규제</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="regulation" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">산업/에너지</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="industry" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">연안</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="coast" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">도시계획/개발</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="urban" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">토지이용</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="land" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">해양/수산업</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="marine" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">재난/재해</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="disaster" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">지질</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="geology" />
+            </label>
+            <label class="tp-dl__format flex align-center justify-between gap-8 radius-md-8 cursor-pointer">
+              <span class="body3-m-14 color-slate-700">기타</span>
+              <input class="radio-basic radio-basic-lg" type="checkbox" name="download-field" value="etc" />
+            </label>
+          </div>
+          <p class="tp-dl__survey-error body3-m-14 color-red-600" data-dl-survey-error hidden>
+            <i class="tp-dl__survey-error-icon" aria-hidden="true"></i>
+            데이터 활용 분야를 1개 이상 선택해 주세요.
+          </p>
+        </div>
+        <div class="tp-dl__survey-agree flex flex-col gap-8" data-dl-survey="agree">
+          <div class="flex align-center gap-8">
+            <input type="checkbox" class="checkbox-basic checkbox-basic-lg" id="download-agree-license" />
+            <label for="download-agree-license" class="body2-m-16 color-slate-900 cursor-pointer"><strong class="body2-sb-16">[필수]</strong> 데이터 이용조건 및 라이선스를 확인했으며 이에 동의합니다.</label>
+          </div>
+          <p class="tp-dl__survey-error body3-m-14 color-red-600" data-dl-survey-error hidden>
+            <i class="tp-dl__survey-error-icon" aria-hidden="true"></i>
+            데이터 이용조건 및 라이선스에 동의해 주세요.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="tp-dl__footer flex align-center justify-between px-24 py-20">
+    <button type="button" class="border-slate-button-48 tp-dl__prev" data-dl-prev hidden>이전</button>
+    <button type="button" class="blue-button-48 tp-dl__next flex align-center justify-center gap-8" data-dl-next>
+      <i class="download-02-white tp-dl__next-icon" aria-hidden="true" hidden></i>
+      <span class="tp-dl__next-label">다음</span>
+    </button>
+  </footer>
+  <button type="button" class="tp-dl__close modal__close" data-dl-close><span class="blind">다운로드 팝업 닫기</span></button>
+</dialog>

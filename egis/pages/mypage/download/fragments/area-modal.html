@@ -1,0 +1,141 @@
+<!-- 선택 영역 보기 팝업 — Figma 1762:3894 / 1762:3895 / 1762:3953 -->
+
+<!-- 지역 선택형 (목록 + 지도) -->
+<dialog
+  class="dl-area-modal"
+  data-dl-area-modal="regions"
+  aria-labelledby="dl-area-regions-title"
+>
+  <div class="dl-area-modal__header flex align-center justify-between">
+    <h2 id="dl-area-regions-title" class="heading8-sb-24 color-gray-900 m-0">선택 영역 보기</h2>
+    <button type="button" class="dl-area-modal__x" data-dl-area-close aria-label="닫기">
+      <i class="modal__close" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="dl-area-modal__body flex">
+    <aside class="dl-area-modal__side flex flex-col gap-16" aria-label="선택한 지역 목록">
+      <div class="flex align-center justify-between gap-8">
+        <p class="body1-sb-18 color-slate-900 m-0">
+          선택한 지역 <span class="color-blue-500" data-dl-area-count>4</span>개
+        </p>
+        <button type="button" class="border-slate-button-36" data-dl-area-all>전체 영역 보기</button>
+      </div>
+      <ul class="dl-area-modal__list flex flex-col gap-2 m-0 p-0" data-dl-area-list>
+        <li>
+          <button type="button" class="dl-area-modal__item" data-dl-area-item="1">
+            <span class="dl-area-modal__badge" aria-hidden="true">1</span>
+            <span class="body2-r-16 color-slate-900">경상남도 창원시 마산합포구</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dl-area-modal__item" data-dl-area-item="2">
+            <span class="dl-area-modal__badge" aria-hidden="true">2</span>
+            <span class="body2-r-16 color-slate-900">서울 특별시 종로구 청운효자동</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dl-area-modal__item" data-dl-area-item="3">
+            <span class="dl-area-modal__badge" aria-hidden="true">3</span>
+            <span class="body2-r-16 color-slate-900">서울 특별시 종로구 청운효자동</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dl-area-modal__item" data-dl-area-item="4">
+            <span class="dl-area-modal__badge" aria-hidden="true">4</span>
+            <span class="body2-r-16 color-slate-900">서울 특별시 종로구 청운효자동</span>
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="dl-area-modal__map relative" data-dl-area-map>
+      <!-- 전체 영역 보기 (1762:3894) -->
+      <div class="dl-area-modal__map-view" data-dl-area-view="overview">
+        <img
+          class="dl-area-modal__map-img"
+          src="../../../assets/image/mypage/dl-area-map-overview.png"
+          alt="선택한 지역 전체 지도"
+        />
+        <div class="dl-area-modal__marker" style="--x: 34%; --y: 16%" data-marker="1">
+          <span class="dl-area-modal__rect" aria-hidden="true"></span>
+          <span class="dl-area-modal__pin">1</span>
+        </div>
+        <div class="dl-area-modal__marker" style="--x: 70%; --y: 30%" data-marker="2">
+          <span class="dl-area-modal__rect" aria-hidden="true"></span>
+          <span class="dl-area-modal__pin">2</span>
+        </div>
+        <div class="dl-area-modal__marker" style="--x: 26%; --y: 44%" data-marker="3">
+          <span class="dl-area-modal__rect" aria-hidden="true"></span>
+          <span class="dl-area-modal__pin">3</span>
+        </div>
+        <div class="dl-area-modal__marker" style="--x: 64%; --y: 66%" data-marker="4">
+          <span class="dl-area-modal__rect" aria-hidden="true"></span>
+          <span class="dl-area-modal__pin">4</span>
+        </div>
+      </div>
+
+      <!-- 지역 선택 시 (1762:3895) -->
+      <div class="dl-area-modal__map-view" data-dl-area-view="focus" hidden>
+        <img
+          class="dl-area-modal__map-img"
+          src="../../../assets/image/mypage/dl-area-map-street.png"
+          alt="선택한 지역 상세 지도"
+        />
+        <img
+          class="dl-area-modal__polygon"
+          src="../../../assets/image/mypage/dl-area-polygon-focus.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+
+      <div class="dl-area-modal__zoom" role="group" aria-label="지도 확대 축소">
+        <button type="button" class="dl-area-modal__zoom-btn" aria-label="지도 확대">
+          <i class="map-plus-icon" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="dl-area-modal__zoom-btn" aria-label="지도 축소">
+          <i class="map-minus-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dl-area-modal__footer flex align-center justify-end">
+    <button type="button" class="border-slate-button-48 dl-area-modal__close-btn" data-dl-area-close>닫기</button>
+  </div>
+</dialog>
+
+<!-- 지도에서 선택형 (1762:3953) -->
+<dialog
+  class="dl-area-modal dl-area-modal--map-only"
+  data-dl-area-modal="map"
+  aria-labelledby="dl-area-map-title"
+>
+  <div class="dl-area-modal__header flex align-center justify-between">
+    <h2 id="dl-area-map-title" class="heading8-sb-24 color-gray-900 m-0">선택 영역 보기</h2>
+    <button type="button" class="dl-area-modal__x" data-dl-area-close aria-label="닫기">
+      <i class="modal__close" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="dl-area-modal__body">
+    <div class="dl-area-modal__map relative dl-area-modal__map--full">
+      <img
+        class="dl-area-modal__map-img"
+        src="../../../assets/image/mypage/dl-area-map-street.png"
+        alt="지도에서 선택한 영역"
+      />
+      <img
+        class="dl-area-modal__polygon dl-area-modal__polygon--draw"
+        src="../../../assets/image/mypage/dl-area-polygon-draw.svg"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+  </div>
+
+  <div class="dl-area-modal__footer flex align-center justify-end">
+    <button type="button" class="border-slate-button-48 dl-area-modal__close-btn" data-dl-area-close>닫기</button>
+  </div>
+</dialog>

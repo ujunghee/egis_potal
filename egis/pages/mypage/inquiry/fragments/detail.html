@@ -1,0 +1,98 @@
+<!-- 나의 문의 상세 — Figma 1234:2462(데이터셋) / 1234:2864(일반) -->
+<section class="mypage grid-column-default pt-48 pb-100" aria-label="마이페이지">
+  <div data-fragment="../fragments/lnb.html"></div>
+
+  <div class="mypage__main grid-column-10">
+    <article class="mi-inquiry-detail flex flex-col gap-40" data-mi-detail>
+      <section class="mi-inquiry-detail__question flex flex-col gap-20" aria-labelledby="mi-question-title">
+        <header class="flex flex-col gap-6">
+          <div class="flex align-center justify-between gap-16 w-full">
+            <span class="meta-tag meta-tag--dataset" data-mi-tag>데이터셋</span>
+            <time class="body3-r-14 color-slate-500 flex-none" datetime="2025-07-23">2025.07.23</time>
+          </div>
+          <div class="flex align-center gap-8 min-w-0">
+            <i class="mi-inquiry-detail__icon mi-inquiry-detail__icon--q" aria-hidden="true"></i>
+            <h2 id="mi-question-title" class="mi-inquiry-detail__title body1-sb-18 color-slate-900">
+              사용자가 입력했던 문의 제목
+            </h2>
+          </div>
+        </header>
+
+        <dl class="mi-inquiry-detail__meta flex flex-col gap-4 bg-slate-50 radius-md-8 px-24 py-20" data-mi-meta>
+          <div class="flex align-center">
+            <dt class="mi-inquiry-detail__meta-label body2-r-16 color-slate-700">데이터명</dt>
+            <dd class="body2-m-16 color-slate-900 m-0">대기오염 측정 정보</dd>
+          </div>
+          <div class="flex align-center min-w-0">
+            <dt class="mi-inquiry-detail__meta-label body2-r-16 color-slate-700">페이지 URL</dt>
+            <dd class="m-0 min-w-0">
+              <a
+                href="https://www.data.go.kr/data/15063711/fileData.do"
+                class="body2-m-16 color-slate-900"
+                target="_blank"
+                rel="noopener noreferrer"
+              >https://www.data.go.kr/data/15063711/fileData.do</a>
+            </dd>
+          </div>
+        </dl>
+
+        <pre class="mi-inquiry-detail__body body2-r-16 color-slate-900 line-170">환경정보 융합 빅데이터 플랫폼을 이용 중입니다.
+지도 화면에서 배경지도와 레이어를 선택한 후 다른 메뉴로 이동하면
+이전에 설정한 레이어가 유지되지 않고 초기화됩니다.
+
+브라우저는 Chrome(버전 124)이며,
+로그인 상태에서 동일한 현상이 반복 발생하고 있습니다.
+
+해당 기능이 정상 동작하는지 확인 부탁드립니다.</pre>
+
+        <ul class="mi-inquiry-detail__images flex align-center gap-20">
+          <li>
+            <a
+              href="../../../assets/image/user-support/inquiry/sample-attachment-01.svg"
+              download="문의첨부_01.svg"
+              class="mi-inquiry-detail__image"
+            >
+              <img src="../../assets/image/user-support/inquiry/sample-attachment-01.svg" alt="문의 첨부 이미지 1" />
+              <span class="mi-inquiry-detail__image-overlay flex flex-col align-center justify-center gap-8">
+                <i class="download-02-white" aria-hidden="true"></i>
+                <span class="body2-m-16 color-white">다운로드</span>
+              </span>
+              <span class="blind">문의 첨부 이미지 1 다운로드</span>
+            </a>
+          </li>
+          <li><span class="mi-inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+          <li><span class="mi-inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+          <li><span class="mi-inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+          <li><span class="mi-inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+        </ul>
+      </section>
+
+      <hr class="border-0 border-t border-slate-200 m-0" />
+
+      <section class="mi-inquiry-detail__answer flex flex-col gap-20" aria-labelledby="mi-answer-title">
+        <header class="flex align-center justify-between gap-16">
+          <div class="flex align-center gap-8">
+            <i class="mi-inquiry-detail__icon mi-inquiry-detail__icon--a" aria-hidden="true"></i>
+            <h3 id="mi-answer-title" class="body1-sb-18 color-blue-500 m-0">답변</h3>
+          </div>
+          <time class="body3-r-14 color-slate-500 flex-none" datetime="2025-07-26">2025.07.26</time>
+        </header>
+
+        <pre class="mi-inquiry-detail__body body2-r-16 color-slate-900 line-170">안녕하세요. 환경공간정보 운영팀입니다.
+
+문의 주신 지도 화면 레이어 설정 유지 관련하여 확인 결과,
+현재 일부 브라우저 환경에서 설정값이 저장되지 않는 현상이 확인되었습니다.
+
+해당 문제는 내부 검토 후 개선 예정이며,
+임시로는 레이어 설정 후 동일 화면 내에서 이용해 주시길 부탁드립니다.
+
+이용에 불편을 드려 죄송하며,
+추가 문의사항이 있으실 경우 언제든지 1:1 문의를 이용해 주세요.
+
+감사합니다.</pre>
+      </section>
+
+      <a href="./index.html" class="mi-inquiry-detail__list-button slate-50-button-48">목록 보기</a>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<!-- 배경지도: 기본지도·위성지도 선택 -->
+<aside
+  class="background-map-panel"
+  data-background-map-panel
+  aria-hidden="true"
+  aria-labelledby="background-map-panel-title"
+>
+  <div class="background-map-panel__head">
+    <h2 id="background-map-panel-title" class="background-map-panel__title body2-sb-16 color-slate-900">배경지도</h2>
+    <button type="button" data-background-map-panel-close aria-label="배경지도 패널 닫기">
+      <i class="close-icon-32" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="background-map-panel__body">
+    <ul class="background-map-panel__list">
+      <li>
+        <button
+          type="button"
+          class="background-map-panel__option is-selected"
+          data-background-map-option="standard"
+          aria-pressed="true"
+        >
+          <span class="background-map-panel__thumb map-bg-default">
+            <span class="background-map-panel__check" aria-hidden="true"></span>
+          </span>
+          <span class="background-map-panel__label body3-m-14 color-slate-900">기본지도</span>
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="background-map-panel__option"
+          data-background-map-option="satellite"
+          aria-pressed="false"
+        >
+          <span class="background-map-panel__thumb map-bg-satellite">
+            <span class="background-map-panel__check" aria-hidden="true"></span>
+          </span>
+          <span class="background-map-panel__label body3-m-14 color-slate-900">위성지도</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</aside>

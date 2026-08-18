@@ -1,0 +1,190 @@
+<!-- 검색 필터. 접기·펼치기와 날짜 선택·검증은 공용 search-filter.js
+     날짜 입력 id는 filter-period-* 를 유지한다 -->
+<div class="search-listing__filter grid-column-3" data-filter-panel>
+  <aside class="search-filter" aria-labelledby="search-filter-title">
+    <div class="search-filter__head flex justify-between align-center">
+      <h2 id="search-filter-title" class="search-filter__title heading10-sb-20 color-slate-900">검색 필터</h2>
+      <button type="button" class="search-filter__reset flex align-center gap-10" data-search-filter-reset>
+        <span class="body2-m-16 color-slate-700">초기화</span>
+        <i class="filter-reset-20" aria-hidden="true"></i>
+        <span class="blind">검색 필터 초기화</span>
+      </button>
+    </div>
+
+    <!-- 문의 유형 -->
+    <div class="search-filter__section active">
+      <button
+        type="button"
+        class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between"
+        aria-expanded="true"
+        data-search-filter-toggle
+      >
+        문의 유형
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list">
+          <li class="search-filter__item">
+            <div class="flex align-center justify-between gap-8">
+              <div class="flex align-center gap-8">
+                <input id="iq-type-dataset" type="checkbox" class="checkbox-basic checkbox-basic-md" value="dataset" />
+                <label for="iq-type-dataset" class="body2-r-16 color-slate-700">데이터셋</label>
+              </div>
+              <span class="search-filter__count body2-r-16 color-slate-900">6</span>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center justify-between gap-8">
+              <div class="flex align-center gap-8">
+                <input id="iq-type-openapi" type="checkbox" class="checkbox-basic checkbox-basic-md" value="openapi" />
+                <label for="iq-type-openapi" class="body2-r-16 color-slate-700">Open API</label>
+              </div>
+              <span class="search-filter__count body2-r-16 color-slate-900">24</span>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center justify-between gap-8">
+              <div class="flex align-center gap-8">
+                <input id="iq-type-general" type="checkbox" class="checkbox-basic checkbox-basic-md" value="general" />
+                <label for="iq-type-general" class="body2-r-16 color-slate-700">일반문의</label>
+              </div>
+              <span class="search-filter__count body2-r-16 color-slate-900">9</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 답변 여부 — 첫 항목(전체)은 한 줄, 나머지는 2열 -->
+    <div class="search-filter__section active">
+      <button
+        type="button"
+        class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between"
+        aria-expanded="true"
+        data-search-filter-toggle
+      >
+        답변 여부
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2 search-filter__period-radios">
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="iq-answer-all"
+                name="inquiry-answer"
+                value="all"
+                type="radio"
+                class="radio-basic radio-basic-md"
+                checked
+              />
+              <label for="iq-answer-all" class="body2-r-16 color-slate-900">전체</label>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="iq-answer-done"
+                name="inquiry-answer"
+                value="done"
+                type="radio"
+                class="radio-basic radio-basic-md"
+              />
+              <label for="iq-answer-done" class="body2-r-16 color-slate-700">답변 완료</label>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="iq-answer-wait"
+                name="inquiry-answer"
+                value="wait"
+                type="radio"
+                class="radio-basic radio-basic-md"
+              />
+              <label for="iq-answer-wait" class="body2-r-16 color-slate-700">답변 대기</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 등록일 -->
+    <div class="search-filter__section active">
+      <button
+        type="button"
+        class="search-filter__toggle body1-m-18 color-slate-900 flex align-center justify-between"
+        aria-expanded="true"
+        data-search-filter-toggle
+      >
+        등록일
+        <i class="arrow-icon" aria-hidden="true"></i>
+      </button>
+      <div class="search-filter__panel">
+        <ul class="search-filter__list search-filter__list--cols-2 search-filter__period-radios">
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="filter-period-all"
+                name="filter-period"
+                value="all"
+                type="radio"
+                class="radio-basic radio-basic-md"
+                checked
+              />
+              <label for="filter-period-all" class="body2-r-16 color-slate-900">전체 기간</label>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="filter-period-1y"
+                name="filter-period"
+                value="1y"
+                type="radio"
+                class="radio-basic radio-basic-md"
+              />
+              <label for="filter-period-1y" class="body2-r-16 color-slate-700">최근 1년</label>
+            </div>
+          </li>
+          <li class="search-filter__item">
+            <div class="flex align-center gap-8">
+              <input
+                id="filter-period-custom"
+                name="filter-period"
+                value="custom"
+                type="radio"
+                class="radio-basic radio-basic-md"
+              />
+              <label for="filter-period-custom" class="body2-r-16 color-slate-700">직접 설정</label>
+            </div>
+          </li>
+        </ul>
+        <div class="search-filter__period-dates">
+          <div class="search-filter__period-date flex align-center gap-8">
+                <label for="filter-period-start" class="search-filter__period-label body2-m-16 color-slate-900">시작일</label>
+                <span class="input-wrapper flex-1">
+                  <span class="relative w-full flex align-center">
+                    <input id="filter-period-start" type="text" class="input-field-default-40 input-with-trailing-icon w-full" placeholder="연도-월-일" autocomplete="off">
+                <button type="button" class="absolute right-0 top-50 translate-y-50" data-datepicker-for="filter-period-start" aria-label="시작일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </span>
+            </span>
+          </div>
+          <div class="search-filter__period-date flex align-center gap-8">
+                <label for="filter-period-end" class="search-filter__period-label body2-m-16 color-slate-900">종료일</label>
+                <span class="input-wrapper flex-1">
+                  <span class="relative w-full flex align-center">
+                    <input id="filter-period-end" type="text" class="input-field-default-40 input-with-trailing-icon w-full" placeholder="연도-월-일" autocomplete="off">
+                <button type="button" class="absolute right-0 top-50 translate-y-50" data-datepicker-for="filter-period-end" aria-label="종료일 선택">
+                  <i class="calendar-02-icon" aria-hidden="true"></i>
+                </button>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>

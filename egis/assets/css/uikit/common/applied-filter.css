@@ -1,0 +1,17 @@
+/* Applied Filter */
+.applied-filter {
+  box-sizing: border-box;
+}
+
+/* .flex 유틸이 user-agent [hidden]{display:none} 을 덮어쓰므로 명시한다 */
+.applied-filter[hidden] {
+  display: none;
+}
+
+.applied-filter__list {
+  min-width: 0;
+}
+
+.applied-filter__reset {
+  flex-shrink: 0;
+}

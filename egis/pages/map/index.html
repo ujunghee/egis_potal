@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>환경기초지도 | 환경공간정보서비스</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+    <link rel="stylesheet" href="../../assets/css/foundation.css" />
+    <link rel="stylesheet" href="../../assets/css/map.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  </head>
+  <body>
+    <div data-fragment="../../shared/fragments/map-header.html"></div>
+    <div class="map-body">
+      <div data-fragment="./fragments/map-navigation.html"></div>
+      <div data-fragment="./fragments/result-panel.html"></div>
+      <main role="main" id="map-main" class="map-view" aria-label="환경기초지도">
+        <h2 class="blind">환경기초지도</h2>
+        <div data-fragment="./fragments/map-toolbar.html"></div>
+        <div class="map-view__stage">
+          <div class="map-view__stage-inner">
+            <div id="map-canvas" class="map-view__canvas" tabindex="0" aria-label="환경기초지도 인터랙티브 지도"></div>
+            <div data-fragment="./fragments/radius-search.html"></div>
+            <div data-fragment="./fragments/spatial-search.html"></div>
+            <div data-fragment="./fragments/spatial-search-results.html"></div>
+            <div data-fragment="./fragments/map-controls.html"></div>
+          </div>
+          <div data-fragment="./fragments/selected-layer.html"></div>
+          <div data-fragment="./fragments/background-map.html"></div>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../shared/js/fragment-loader.js"></script>
+    <script src="../../shared/js/script-loader.js"></script>
+  <script src="./map-app.js?v=20260721-4"></script>
+  </body>
+</html>

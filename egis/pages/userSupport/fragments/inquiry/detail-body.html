@@ -1,0 +1,102 @@
+<!-- 문의하기 상세 -->
+<article class="inquiry-detail pt-48 pb-100">
+  <section class="inquiry-detail__question" aria-labelledby="inquiry-question-title">
+    <header class="inquiry-detail__header flex flex-col align-start gap-6 mb-20">
+      <span class="meta-tag meta-tag--dataset">데이터셋</span>
+      <div class="flex align-center justify-between gap-16 w-full">
+        <div class="flex align-center gap-8 min-w-0">
+          <span class="inquiry-detail__badge inquiry-detail__badge--q body2-m-16 color-white flex-none" aria-hidden="true">Q</span>
+          <h2 id="inquiry-question-title" class="inquiry-detail__title body1-sb-18 color-slate-900">사용자가 입력했던 문의 제목</h2>
+        </div>
+        <time class="inquiry-detail__date body2-r-16 color-slate-500 flex-none" datetime="2025-07-23">2025.07.23</time>
+      </div>
+    </header>
+
+    <dl class="flex gap-4 flex-col bg-slate-50 radius-md-8 p-20">
+      <div class="inquiry-detail__meta-row flex align-start gap-16">
+        <dt class="inquiry-detail__meta-label body2-r-16 color-slate-700 flex-none">데이터명</dt>
+        <dd class="body2-m-16 color-slate-900">대기오염 측정 정보</dd>
+      </div>
+      <div class="inquiry-detail__meta-row flex align-start gap-16 mt-8">
+        <dt class="inquiry-detail__meta-label body2-r-16 color-slate-700 flex-none0">페이지 URL</dt>
+        <dd class="min-w-0">
+          <a href="https://www.data.go.kr/data/15063711/fileData.do" class="body2-m-16 color-slate-900" target="_blank" rel="noopener noreferrer">https://www.data.go.kr/data/15063711/fileData.do</a>
+        </dd>
+      </div>
+    </dl>
+
+    <pre class="body2-r-16 color-slate-900 line-170 py-20">안녕하세요. 환경공간정보서비스 이용 중 아래와 같은 문제가 발생하여 문의드립니다.
+
+Chrome 브라우저 124 버전, Windows 11 환경에서 로그인 후 통합지도를 이용하고 있습니다.
+레이어를 선택해 지도에 표시한 뒤 다른 메뉴로 이동했다가 돌아오면 선택했던 레이어가 저장되지 않고 초기화됩니다.
+
+동일 계정으로 Edge 브라우저에서는 정상 동작하는 것으로 보아 Chrome 환경에서만 발생하는 문제로 추정됩니다.
+확인 부탁드립니다.</pre>
+
+    <ul class="inquiry-detail__images flex align-center gap-8 mt-20">
+      <li>
+        <a
+          href="../../assets/image/user-support/inquiry/sample-attachment-01.svg"
+          download="문의첨부_01.svg"
+          class="inquiry-detail__image"
+        >
+          <img src="../../assets/image/user-support/inquiry/sample-attachment-01.svg" alt="문의 첨부 이미지 1" />
+          <span class="inquiry-detail__image-overlay flex flex-col align-center justify-center gap-4">
+            <i class="download-02-white" aria-hidden="true"></i>
+            <span class="body3-r-14 color-white">다운로드</span>
+          </span>
+          <span class="blind">문의 첨부 이미지 1 다운로드</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="../../assets/image/user-support/inquiry/sample-attachment-02.svg"
+          download="문의첨부_02.svg"
+          class="inquiry-detail__image"
+        >
+          <img src="../../assets/image/user-support/inquiry/sample-attachment-02.svg" alt="문의 첨부 이미지 2" />
+          <span class="inquiry-detail__image-overlay flex flex-col align-center justify-center gap-4">
+            <i class="download-02-white" aria-hidden="true"></i>
+            <span class="body3-r-14 color-white">다운로드</span>
+          </span>
+          <span class="blind">문의 첨부 이미지 2 다운로드</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="../../assets/image/user-support/inquiry/sample-attachment-03.svg"
+          download="문의첨부_03.svg"
+          class="inquiry-detail__image"
+        >
+          <img src="../../assets/image/user-support/inquiry/sample-attachment-03.svg" alt="문의 첨부 이미지 3" />
+          <span class="inquiry-detail__image-overlay flex flex-col align-center justify-center gap-4">
+            <i class="download-02-white" aria-hidden="true"></i>
+            <span class="body3-r-14 color-white">다운로드</span>
+          </span>
+          <span class="blind">문의 첨부 이미지 3 다운로드</span>
+        </a>
+      </li>
+      <li><span class="inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+      <li><span class="inquiry-detail__image-placeholder" aria-hidden="true"></span></li>
+    </ul>
+  </section>
+
+  <section class="inquiry-detail__answer border-t border-slate-200 pt-40 mt-40" aria-labelledby="inquiry-answer-title">
+    <header class="inquiry-detail__header flex align-center justify-between gap-16 mb-20">
+      <div class="flex align-center gap-8">
+        <span class="inquiry-detail__badge inquiry-detail__badge--a body2-m-16 color-white flex-none" aria-hidden="true">A</span>
+        <h3 id="inquiry-answer-title" class="body1-sb-18 color-blue-500">답변</h3>
+      </div>
+      <time class="inquiry-detail__date body2-r-16 color-slate-500 flex-none" datetime="2025-07-26">2025.07.26</time>
+    </header>
+
+    <pre class="inquiry-detail__body body2-r-16 color-slate-900 line-170">안녕하세요. 환경공간정보서비스 운영팀입니다.
+
+문의해 주신 Chrome 브라우저에서 레이어 선택 정보가 유지되지 않는 현상은 내부 확인 결과, 특정 버전에서 세션 저장 처리 오류로 확인되었습니다.
+현재 수정 작업을 진행 중이며, 완료 전까지는 브라우저 캐시 삭제 후 재접속하시거나 Edge 등 다른 브라우저 이용을 권장드립니다.
+
+불편을 드려 죄송합니다. 조속히 개선하겠습니다.</pre>
+  </section>
+
+  <a href="./inquiry.html" class="tp-detail__list-button slate-50-button-48">목록 보기</a>
+</article>

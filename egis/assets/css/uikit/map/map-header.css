@@ -1,0 +1,16 @@
+/* 지도 헤더 — h-64 기준 로고 */
+.map-header .header__logo a {
+  display: block;
+}
+
+.map-header .header__logo img {
+  display: block;
+  height: 3.6rem;
+  width: auto;
+}
+
+/* .flex 유틸이 [hidden] 을 덮어쓰지 않도록 */
+.map-header [data-header-login][hidden],
+.map-header [data-header-mypage][hidden] {
+  display: none;
+}

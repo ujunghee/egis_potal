@@ -1,0 +1,24 @@
+<!-- 통합검색 — 검색어 재입력 + 결과 건수 -->
+<section class="search-hero pt-48 flex flex-col align-center" aria-labelledby="search-hero-title">
+  <h2 id="search-hero-title" class="blind">통합검색</h2>
+  <form class="search-hero__form" role="search" action="./index.html" method="get">
+    <div class="search-hero__field flex align-center gap-12">
+      <i class="main-gov-logo-icon" aria-hidden="true"></i>
+      <label for="search-keyword" class="blind">검색어</label>
+      <input
+        type="search"
+        id="search-keyword"
+        name="q"
+        class="search-hero__input flex-1 heading10-r-20"
+        placeholder="찾고 싶은 환경정보를 통합검색해 보세요"
+        value="토지 피복"
+        autocomplete="off"
+      />
+    </div>
+  </form>
+  <!-- 검색어·건수는 search/results.js 가 채움 -->
+  <p class="body1-sb-18 color-black text-center mt-16">
+    ‘<span data-search-keyword>토지피복</span>’ 검색 결과 총
+    <span class="color-blue-500" data-search-total>68</span>건
+  </p>
+</section>

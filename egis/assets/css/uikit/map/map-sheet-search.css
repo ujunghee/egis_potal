@@ -1,0 +1,121 @@
+/* 도엽검색 — 결과 패널 뷰 (Figma 936:4485, 260px) */
+.map-sheet-search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  height: 100%;
+  min-height: 0;
+  padding: var(--spacing-20);
+  box-sizing: border-box;
+  background-color: var(--white);
+  border-right: 1px solid var(--slate-200);
+}
+
+.map-sheet-search__field {
+  width: 100%;
+  min-width: 0;
+}
+
+.map-sheet-search .select-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+.map-sheet-search__search.search-48 {
+  width: 100%;
+  height: var(--search-height-48);
+  padding: 0 var(--spacing-16) 0 var(--spacing-12);
+  border: none;
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+}
+
+.map-sheet-search__search.search-48:hover,
+.map-sheet-search__search.search-48:focus,
+.map-sheet-search__search.search-48:active,
+.map-sheet-search__search.search-48:focus-within {
+  border: none;
+}
+
+.map-sheet-search__search.search-48 input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.map-sheet-search__search.search-48 input::placeholder {
+  color: var(--slate-400);
+}
+
+/* 검색 결과 (Figma 1603:823) */
+.map-sheet-search__result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* 입력 필드와의 간격 12px — 섹션 gap 24px 보정 */
+  margin-top: calc(var(--spacing-12) - var(--spacing-24));
+}
+
+.map-sheet-search__result[hidden] {
+  display: none;
+}
+
+.map-sheet-search__result-title {
+  flex-shrink: 0;
+  margin: 0 0 var(--spacing-12);
+}
+
+.map-sheet-search__result-count {
+  margin: 0 var(--spacing-2);
+}
+
+.map-sheet-search__list {
+  flex: 1;
+  min-height: 0;
+  /* 행 배경이 패널 폭을 모두 채우도록 섹션 좌우·하단 패딩 상쇄 */
+  margin: 0 calc(var(--spacing-20) * -1) calc(var(--spacing-20) * -1);
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.map-sheet-search__item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-20);
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.map-sheet-search__item:hover,
+.map-sheet-search__item.active {
+  background-color: var(--slate-50);
+}
+
+.map-sheet-search__item-number {
+  margin: 0 0 var(--spacing-4);
+}
+
+.map-sheet-search__item-name {
+  margin: 0;
+}
+
+.map-sheet-search__empty {
+  display: none;
+  margin: 0;
+}
+
+.map-sheet-search__result.is-empty .map-sheet-search__list {
+  display: none;
+}
+
+.map-sheet-search__result.is-empty .map-sheet-search__empty {
+  display: block;
+}

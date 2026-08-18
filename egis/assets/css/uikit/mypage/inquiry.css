@@ -1,0 +1,164 @@
+/* 마이페이지 — 나의 문의 (Figma 1234:2134 / 1234:2462 / 1234:2864) */
+
+.mi-mypage__field--160 {
+  width: 16rem; /* 160px */
+  flex: none;
+}
+
+.mi-mypage__field--preset {
+  width: 12rem; /* 120px — 기간 프리셋 */
+  flex: none;
+}
+
+.mi-mypage__field--answer {
+  width: 12rem; /* 120px */
+  flex: none;
+}
+
+.mi-mypage__search-btn {
+  width: 6rem; /* 60px */
+  flex: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mi-mypage__col-category {
+  width: 12rem;
+}
+
+.mi-mypage__col-type {
+  width: 14rem;
+}
+
+.mi-mypage__col-answer {
+  width: 10rem;
+}
+
+.mi-mypage__col-date {
+  width: 12rem;
+}
+
+.mi-mypage__table.table-02 td:nth-child(3) {
+  white-space: normal;
+}
+
+.mi-mypage__title {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+/* 상세 */
+.mi-inquiry-detail {
+  width: 100%;
+}
+
+.mi-inquiry-detail__icon {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mi-inquiry-detail__icon--q {
+  background-image: url('../../../image/icon/mypage/question-circle.svg');
+}
+
+.mi-inquiry-detail__icon--a {
+  background-image: url('../../../image/icon/mypage/answer-circle.svg');
+}
+
+.mi-inquiry-detail__title {
+  margin: 0;
+  min-width: 0;
+}
+
+.mi-inquiry-detail__meta {
+  margin: 0;
+}
+
+.mi-inquiry-detail__meta-label {
+  width: 12rem;
+  flex: none;
+}
+
+.mi-inquiry-detail__body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.mi-inquiry-detail__images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mi-inquiry-detail__image {
+  position: relative;
+  display: block;
+  width: 9rem; /* 90px */
+  height: 9rem;
+  overflow: hidden;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+  text-decoration: none;
+}
+
+.mi-inquiry-detail__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mi-inquiry-detail__image-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(30 33 36 / 75%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mi-inquiry-detail__image:hover .mi-inquiry-detail__image-overlay,
+.mi-inquiry-detail__image:focus-visible .mi-inquiry-detail__image-overlay {
+  opacity: 1;
+}
+
+.mi-inquiry-detail__image-placeholder {
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--slate-50);
+}
+
+.mi-inquiry-detail__list-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22rem;
+  margin: 4.8rem auto 0;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .mi-mypage__field--160,
+  .mi-mypage__field--preset,
+  .mi-mypage__field--answer,
+  .mi-mypage__search-btn {
+    width: 100%;
+  }
+}

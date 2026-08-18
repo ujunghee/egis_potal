@@ -1,0 +1,110 @@
+<!-- 국가 토지피복 통계 패널 -->
+<div class="land-cover__screen" data-land-cover-panel="cover">
+  <div class="land-cover__head flex align-end justify-between gap-24 mb-24">
+    <h3 class="heading10-sb-20 color-slate-900 m-0">국가 토지피복 통계</h3>
+    <dl class="land-cover__meta flex align-center gap-24 m-0">
+      <div class="m-0">
+        <dt class="blind">통계작성 기준 년도</dt>
+        <dd class="body2-r-16 color-slate-700 m-0 flex gap-8">
+          통계작성 기준 년도 <strong class="body2-sb-16 color-slate-900">2024</strong>
+        </dd>
+      </div>
+      <div class="m-0">
+        <dt class="blind">공개시기</dt>
+        <dd class="body2-r-16 color-slate-700 m-0 flex gap-8">
+          공개시기 <strong class="body2-sb-16 color-slate-900">2026년 3월</strong>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="land-cover__filter flex align-end gap-8 flex-wrap mb-32" data-land-cover-filter>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="land-cover-period" class="land-cover__field-label body3-r-14 color-slate-500">조사실시기간</label>
+      <select id="land-cover-period" class="select-40 land-cover__select">
+        <option value="2025" selected>2025</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="land-cover-sido" class="land-cover__field-label body3-r-14 color-slate-500">시도</label>
+      <select id="land-cover-sido" class="select-40 land-cover__select" data-land-cover-sido>
+        <option value="all" selected>전국</option>
+        <option value="seoul">서울특별시</option>
+        <option value="gyeonggi">경기도</option>
+        <option value="busan">부산광역시</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="land-cover-sigungu" class="land-cover__field-label body3-r-14 color-slate-500">시군구</label>
+      <select id="land-cover-sigungu" class="select-40 land-cover__select" data-land-cover-sigungu disabled>
+        <option value="all" selected>전체</option>
+      </select>
+    </div>
+    <div class="land-cover__field flex flex-col gap-8">
+      <label for="land-cover-eupmyeondong" class="land-cover__field-label body3-r-14 color-slate-500">읍면동</label>
+      <select id="land-cover-eupmyeondong" class="select-40 land-cover__select" data-land-cover-eupmyeondong disabled>
+        <option value="all" selected>전체</option>
+      </select>
+    </div>
+    <button type="button" class="slate-button-40 flex align-center justify-center w-100" data-land-cover-search>조회</button>
+  </div>
+
+  <div class="flex flex-col gap-32">
+    <div class="land-cover__summary grid gap-24">
+      <article class="land-cover__summary-card flex flex-col p-24 radius-md-8 bg-slate-50">
+        <h3 class="body3-r-14 color-slate-700 m-0">총 면적</h3>
+        <p class="m-0">
+          <span class="heading10-sb-20 color-slate-900">100,412</span><span class="body3-r-14 color-slate-700"> km²</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0">전국</p>
+      </article>
+      <article class="land-cover__summary-card flex flex-col p-24 radius-md-8 bg-slate-50">
+        <h3 class="body3-r-14 color-slate-700 m-0">가장 넓은 분류</h3>
+        <p class="m-0">
+          <span class="heading10-sb-20 color-slate-900">산림</span><span class="body3-r-14 color-slate-700"> 28.8%</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0 flex align-center gap-6">
+          <span class="land-cover__dot land-cover__dot--forest" aria-hidden="true"></span>
+          침엽 외 2건 합산
+        </p>
+      </article>
+      <article class="land-cover__summary-card flex flex-col p-24 radius-md-8 bg-slate-50">
+        <h3 class="body3-r-14 color-slate-700 m-0">시가화·건조 지역</h3>
+        <p class="m-0">
+          <span class="heading10-sb-20 color-slate-900">7,120</span><span class="body3-r-14 color-slate-700"> km²</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0">전 국토의 약 7.1%</p>
+      </article>
+      <article class="land-cover__summary-card flex flex-col p-24 radius-md-8 bg-slate-50">
+        <h3 class="body3-r-14 color-slate-700 m-0">시가화 지역 증가</h3>
+        <p class="m-0">
+          <span class="heading10-sb-20" data-land-cover-delta>+ 182</span><span class="body3-r-14 color-slate-700"> km²</span>
+        </p>
+        <p class="body4-r-13 color-slate-500 m-0">전년 대비 변화</p>
+      </article>
+    </div>
+
+    <div class="land-cover__chart-panel radius-md-8 border border-slate-200 bg-white p-32">
+      <div class="land-cover__chart-head flex align-center justify-between gap-16 mb-24">
+        <h3 class="heading10-sb-20 color-slate-900 m-0">전국 토지피복 구성</h3>
+        <p class="body2-r-16 color-slate-700 m-0">대분류를 선택하면 세분류가 펼쳐집니다.</p>
+      </div>
+
+      <div class="land-cover__chart-body">
+        <div class="land-cover__donut-wrap">
+          <canvas data-land-cover-donut aria-label="전국 토지피복 구성 도넛 차트"></canvas>
+          <div class="land-cover__donut-center" aria-hidden="true">
+            <span class="body3-r-14 color-slate-700">총 면적</span>
+            <strong class="heading6-sb-28 color-slate-900">100,412</strong>
+          </div>
+        </div>
+        <ul class="land-cover__legend m-0 p-0" data-land-cover-legend aria-label="토지피복 분류별 비율"></ul>
+      </div>
+
+      <div class="land-cover__sub-legend mt-24 pt-24 border-t border-slate-200" data-land-cover-sub-legend>
+        <span class="land-cover__sub-title color-slate-900" data-land-cover-sub-title>산림</span>
+        <ul class="land-cover__sub-list m-0 p-0" data-land-cover-sub-list></ul>
+      </div>
+    </div>
+  </div>
+</div>

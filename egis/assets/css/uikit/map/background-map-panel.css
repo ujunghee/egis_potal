@@ -1,0 +1,134 @@
+/* 배경지도 패널 — 지도 우측 (max-width 160px) */
+.background-map-panel {
+  flex: 0 0 auto;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--white);
+  box-sizing: border-box;
+  box-shadow: none;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: none;
+}
+
+.background-map-panel.is-open {
+  width: var(--background-map-panel-width, 16rem);
+  box-shadow: inset 1px 0 0 var(--slate-200);
+  pointer-events: auto;
+}
+
+.background-map-panel__head,
+.background-map-panel__body {
+  flex-shrink: 0;
+  width: var(--background-map-panel-width, 16rem);
+  min-width: var(--background-map-panel-width, 16rem);
+  box-sizing: border-box;
+}
+
+.background-map-panel__head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  min-height: 5.6rem;
+  padding: var(--spacing-10) var(--spacing-10) var(--spacing-10) var(--spacing-20);
+}
+
+.background-map-panel__title {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.background-map-panel__head [data-background-map-panel-close] {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.background-map-panel__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 var(--spacing-20) var(--spacing-20);
+}
+
+.background-map-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.background-map-panel__option {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 120/116;
+  padding: 0;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md-8);
+  background-color: var(--white);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.background-map-panel__option.is-selected {
+  border-color: var(--blue-500);
+}
+
+.background-map-panel__thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-map-panel__thumb.map-bg-default {
+  background-image: url("../../../image/background/map/map-bg-default.png");
+}
+
+.background-map-panel__thumb.map-bg-satellite {
+  background-image: url("../../../image/background/map/map-bg-satellite.png");
+}
+
+.background-map-panel__check {
+  position: absolute;
+  top: var(--spacing-8);
+  right: var(--spacing-8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  background-color: var(--blue-500);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12' fill='none'%3E%3Cpath d='M1 6.33346L5.8421 11.0001L12.3333 1.00012' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-size: .9rem 1.6rem;
+  background-repeat: no-repeat;
+}
+
+.background-map-panel__option.is-selected .background-map-panel__check {
+  display: flex;
+}
+
+.background-map-panel__label {
+  display: block;
+  text-align: left;
+  padding: var(--spacing-6) var(--spacing-12);
+  white-space: nowrap;
+}

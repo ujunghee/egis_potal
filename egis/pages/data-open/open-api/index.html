@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open API | 환경공간정보서비스</title>
+    <link rel="stylesheet" href="../../../assets/css/foundation.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
+  </head>
+  <body>
+    <div data-fragment="../../../shared/fragments/web-header.html"></div>
+    <main role="main" class="inner-default">
+      <div data-fragment="./fragments/breadcrumb.html"></div>
+      <section class="tp-layout grid-column-default w-full mx-auto pt-60">
+        <div data-fragment="./fragments/list/filter-panel.html"></div>
+        <div class="tp-content grid-column-9">
+          <div data-fragment="./fragments/list/search-bar.html"></div>
+          <div data-fragment="./fragments/list/pinned.html"></div>
+          <div data-fragment="./fragments/list/results.html"></div>
+        </div>
+        <div data-fragment="./fragments/list/quick-menu.html"></div>
+      </section>
+    </main>
+    <div data-fragment="./fragments/list/favorite-modal.html"></div>
+    <div data-fragment="../../../shared/fragments/footer.html"></div>
+    <script src="../../../shared/js/fragment-loader.js"></script>
+    <script src="../../../shared/js/script-loader.js"></script>
+    <script src="./open-api-app.js"></script>
+  </body>
+</html>

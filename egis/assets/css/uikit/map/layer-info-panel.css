@@ -1,0 +1,108 @@
+/* 레이어 정보 패널 — 통합검색 정보보기 클릭 시 결과 패널 우측 */
+.layer-info-panel {
+  display: flex;
+  flex-direction: column;
+  width: var(--result-panel-width, 36rem);
+  min-width: 0;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: var(--white);
+  box-sizing: border-box;
+  box-shadow: inset -1px 0 0 var(--slate-200);
+  overflow: hidden;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+}
+
+.layer-info-panel[hidden] {
+  display: none !important;
+}
+
+.result-panel-wrap.is-collapsed .layer-info-panel {
+  width: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.layer-info-panel__head,
+.layer-info-panel__body,
+.layer-info-panel__footer {
+  flex-shrink: 0;
+  width: var(--result-panel-width, 36rem);
+  min-width: var(--result-panel-width, 36rem);
+  box-sizing: border-box;
+}
+
+.layer-info-panel__head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-center;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  padding: var(--spacing-10) var(--spacing-10) var(--spacing-10) var(--spacing-20);
+}
+
+.layer-info-panel__head .meta-tag-list {
+  flex: 1;
+  min-width: 0;
+}
+
+.layer-info-panel__head [data-integrated-search-layer-info-close] {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.layer-info-panel__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 var(--spacing-20) var(--spacing-20);
+}
+
+.layer-info-panel__title {
+  margin: 0 0 var(--spacing-16);
+}
+
+.layer-info-panel__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  margin: 0 0 var(--spacing-16);
+}
+
+.layer-info-panel__row {
+  display: grid;
+  grid-template-columns: 9.6rem minmax(0, 1fr);
+  gap: var(--spacing-12);
+  align-items: start;
+}
+
+.layer-info-panel__term {
+  margin: 0;
+}
+
+.layer-info-panel__value {
+  margin: 0;
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.layer-info-panel__link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+.layer-info-panel__desc {
+  margin: 0;
+}
+
+.layer-info-panel__footer {
+  flex-shrink: 0;
+  padding: var(--spacing-20);
+}

@@ -1,0 +1,500 @@
+/* 데이터 개방 — 국가토지피복 통계 */
+.land-cover__tabs {
+  display: flex;
+  height: 5.4rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.land-cover__tab {
+  width: auto;
+  padding: 0 var(--spacing-20);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.land-cover__tab.active {
+  border-bottom-color: var(--slate-900);
+}
+
+.land-cover__head {
+  min-height: 3.2rem;
+}
+
+.land-cover__table-section .data-table {
+  border-top: 1px solid var(--slate-200);
+}
+
+.land-cover__meta {
+  flex-shrink: 0;
+}
+
+.land-cover__field {
+  width: 16rem;
+  min-width: 14rem;
+}
+
+.land-cover__field:has(.select-40:disabled) .land-cover__field-label {
+  color: var(--slate-400);
+}
+
+.land-cover__select {
+  width: 100%;
+}
+
+.land-cover__summary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.land-cover__dot {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.land-cover__dot--forest {
+  background-color: #38be78;
+}
+
+.land-cover__chart-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.land-cover__donut-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.land-cover__donut-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.land-cover__donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.land-cover__legend {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.land-cover__legend-item {
+  display: grid;
+  grid-template-columns: 1.2rem 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+  row-gap: 0.6rem;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius-md-8);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.land-cover__legend-item:hover,
+.land-cover__legend-item.is-active {
+  background-color: var(--slate-50);
+}
+
+.land-cover__legend-swatch {
+  grid-column: 1;
+  grid-row: 1;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
+}
+
+.land-cover__legend-label {
+  grid-column: 2 / -1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.land-cover__legend-value {
+  grid-column: 3;
+  grid-row: 2;
+  flex-shrink: 0;
+}
+
+.land-cover__legend-bar {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  display: block;
+  width: 100%;
+  height: 1rem;
+  border-radius: var(--radius-full);
+  background-color: var(--slate-50);
+  overflow: hidden;
+}
+
+.land-cover__legend-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.land-cover__sub-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.land-cover__sub-title {
+  flex-shrink: 0;
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-170);
+  letter-spacing: var(--letter-spacing-md);
+}
+
+.land-cover__sub-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-2) var(--spacing-60);
+  list-style: none;
+}
+
+.land-cover__sub-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-170);
+  letter-spacing: var(--letter-spacing-md);
+}
+
+.land-cover__sub-text {
+  display: flex;
+  align-items: center;
+}
+
+.land-cover__sub-label {
+  flex: 0 0 var(--spacing-120);
+  min-width: var(--spacing-120);
+}
+
+.land-cover__sub-swatch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* 녹지(녹피)/불투수면 통계 */
+.land-cover__green-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.land-cover__scope-badge {
+  flex-shrink: 0;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  background-color: var(--slate-500);
+}
+
+.land-cover__green-bar {
+  display: block;
+  width: 100%;
+  max-width: 53rem;
+  height: 1rem;
+  border-radius: var(--radius-full);
+  background-color: var(--slate-200);
+  overflow: hidden;
+}
+
+.land-cover__green-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.land-cover__green-bar-fill--green {
+  background-color: #0f8b5a;
+}
+
+.land-cover__green-bar-fill--impervious {
+  background-color: var(--slate-700);
+}
+
+.land-cover__rank-tools {
+  flex-shrink: 0;
+}
+
+.land-cover__rank-tabs {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.4rem;
+  box-sizing: border-box;
+  height: 4rem;
+  padding: 0.4rem;
+  border-radius: var(--radius-md-6);
+  background-color: var(--slate-50);
+}
+
+.land-cover__rank-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0 0.8rem;
+  border-radius: var(--radius-md-6);
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.land-cover__rank-tab.is-active {
+  background-color: var(--white);
+  padding-inline: 1rem;
+}
+
+.land-cover__rank-tab-swatch {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
+}
+
+.land-cover__rank-tab-swatch--green {
+  background-color: #0f8b5a;
+}
+
+.land-cover__rank-tab-swatch--impervious {
+  background-color: var(--slate-700);
+}
+
+.land-cover__rank-sort {
+  width: 100%;
+  max-width: 9.2rem;
+}
+
+.land-cover__rank-list {
+  list-style: none;
+  overflow: hidden;
+}
+
+.land-cover__rank-item {
+  display: grid;
+  grid-template-columns: 4rem 16rem 1fr 6rem;
+  align-items: center;
+  gap: 1.6rem;
+  min-height: 4.8rem;
+  width: 100%;
+}
+
+.land-cover__rank-item.is-baseline {
+  background-color: var(--white);
+}
+
+.land-cover__rank-no {
+  text-align: center;
+}
+
+.land-cover__rank-name {
+  min-width: 0;
+}
+
+.land-cover__rank-name.is-baseline {
+  color: var(--blue-500);
+  font-weight: var(--font-weight-medium);
+}
+
+.land-cover__rank-bar {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  border-radius: var(--radius-sm-4);
+  background-color: var(--slate-50);
+  overflow: hidden;
+}
+
+.land-cover__rank-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #0f8b5a;
+}
+
+.land-cover__rank-bar-fill--impervious {
+  background-color: var(--slate-700);
+}
+
+.land-cover__rank-value {
+  text-align: right;
+}
+
+.land-cover__compare-legend {
+  list-style: none;
+}
+
+.land-cover__compare-legend-swatch {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
+}
+
+.land-cover__compare-legend-swatch--green {
+  background-color: #0f8b5a;
+}
+
+.land-cover__compare-legend-swatch--impervious {
+  background-color: var(--slate-700);
+}
+
+.land-cover__compare-list {
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.land-cover__compare-item {
+  display: grid;
+  grid-template-columns: 16rem 1fr 6.4rem;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+  min-height: 5.6rem;
+}
+
+.land-cover__compare-name {
+  min-width: 0;
+}
+
+.land-cover__compare-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.land-cover__compare-bar {
+  display: block;
+  width: 100%;
+  height: 1.4rem;
+  border-radius: var(--radius-sm-4);
+  background-color: var(--slate-50);
+  overflow: hidden;
+}
+
+.land-cover__compare-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.land-cover__compare-bar-fill--green {
+  background-color: #0f8b5a;
+}
+
+.land-cover__compare-bar-fill--impervious {
+  background-color: var(--slate-700);
+}
+
+.land-cover__compare-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+@media (max-width: 1280px) {
+  .land-cover__summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .land-cover__chart-body {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .land-cover__donut-wrap {
+    margin-inline: auto;
+  }
+
+  .land-cover__green-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .land-cover__rank-list > .land-cover__rank-item {
+    grid-template-columns: 3.2rem 1fr 5.6rem;
+    grid-template-rows: auto auto;
+    gap: 0.8rem 1.2rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  .land-cover__rank-list > .land-cover__rank-item .land-cover__rank-no {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .land-cover__rank-list > .land-cover__rank-item .land-cover__rank-name {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .land-cover__rank-list > .land-cover__rank-item .land-cover__rank-value {
+    grid-row: 1;
+    grid-column: 3;
+    text-align: right;
+  }
+
+  .land-cover__rank-list > .land-cover__rank-item .land-cover__rank-bar {
+    grid-row: 2;
+    grid-column: 1 / -1;
+  }
+
+  .land-cover__compare-item {
+    grid-template-columns: 1fr 5.6rem;
+    grid-template-rows: auto auto auto;
+    gap: 0.8rem 1.2rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  .land-cover__compare-name {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+
+  .land-cover__compare-bars {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .land-cover__compare-values {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}

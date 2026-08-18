@@ -1,0 +1,80 @@
+/* Address Search (주소 검색 결과 뷰) */
+.address-search {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.address-search__head {
+  flex-shrink: 0;
+  gap: var(--spacing-12);
+  padding: var(--spacing-24) var(--spacing-20) var(--spacing-16);
+}
+
+.address-search__title {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.address-search__count {
+  margin: 0 var(--spacing-2);
+}
+
+.address-search__select {
+  flex: none;
+  width: 14rem;
+  min-width: 0;
+}
+
+.address-search__list {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.address-search__item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-20);
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.address-search__item:hover,
+.address-search__item.active {
+  background-color: var(--slate-50);
+}
+
+.address-search__road {
+  margin: 0 0 var(--spacing-4);
+}
+
+.address-search__jibun-row {
+  min-width: 0;
+}
+
+.address-search__badge {
+  flex-shrink: 0;
+  padding: 0 var(--spacing-6);
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm-4);
+  line-height: 1.6;
+}
+
+.address-search__jibun {
+  margin: 0;
+  min-width: 0;
+}
+
+.address-search__footer {
+  flex-shrink: 0;
+  padding: var(--spacing-8) var(--spacing-20);
+  border-top: 1px solid var(--slate-200);
+}
