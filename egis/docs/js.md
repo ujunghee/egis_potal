@@ -1,10 +1,22 @@
 # 화면별 기능 JS
 
-JS는 **참고용**입니다. HTML·CSS만 붙여도 화면은 나옵니다.  
-`*-app.js`는 프로토타입에서 JS를 나눠 불러오려고 둔 목록 파일이라 **무시하셔도 됩니다.**  
+대부분 화면은 JS가 **참고용**입니다. HTML·CSS만 붙여도 화면은 나옵니다.  
+예외는 **환경 시각화 도구**(차트를 ECharts로 그림)와 **AI 검색 결과**(답변·카드를 목업 데이터로 그림)입니다. 이 두 화면은 JS가 없으면 내용이 비고, 목업 상수를 API 응답으로 바꿔야 합니다.
+
+`*-app.js`는 프로토타입에서 JS를 나눠 불러오려고 둔 목록 파일이라 **무시하셔도 됩니다.** 다만 **로드 순서**는 참고하세요(뒤 파일이 앞 파일의 전역 함수를 씁니다).  
 `fragment-loader.js`도 프로토타입 전용입니다. 조각 HTML을 브라우저에서 붙여 주는 역할이라 JSP에는 넣지 않습니다.  
 실제로 보시면 되는 것은 아래 표의 기능 JS입니다.  
 파일 위치는 [structure.md](./structure.md), HTML 붙이는 법은 [jsp.md](./jsp.md).
+
+---
+
+## 외부 라이브러리 (CDN)
+
+| 라이브러리 | 버전 | 쓰는 화면 |
+|------------|------|-----------|
+| jQuery | 3.7.1 | 전 화면 (기능 JS 대부분이 `jQuery(function ($) { … })`) |
+| flatpickr + `l10n/ko.js` | 4.6.13 | 날짜 선택이 있는 화면 (메인 상세검색, AI 조건 수정, 필터 등). CSS `flatpickr.min.css`도 `<head>`에 필요 |
+| ECharts | 6.1.0 | 환경 시각화 도구 |
 
 ---
 
@@ -37,15 +49,25 @@ HTML에는 화면이 이미 그려져 있습니다. JS는 보여 주고 숨기�
 | 확인 팝업 | `confirm-dialog.js` |
 | 복사 | `clipboard.js` |
 | 검색 필터 | `search-filter.js` |
-| 날짜 선택 | `datepicjer.js` |
+| 적용된 필터 칩 | `applied-filter.js` |
+| 체크박스 보조 | `checkbox.js` |
+| 데이터셋 카드(카드형·리스트형) | `dataset-card.js` |
+| 날짜 선택 | `datepicjer.js` — `window.initPicker(inputId, options)`. `dialog.modal-container` 안이면 달력을 dialog에 붙임 |
 
 ---
 
 ## 화면별
 
-### 메인
+### 메인 — `assets/js/main/`
 
-정적. `pages/main/main-app.js` → `header.js`만.
+진입: `pages/main/main-app.js`. 상세 → [main.md](./main.md)
+
+| JS | 동적인 것 |
+|----|-----------|
+| `hero-mode.js` | AI 질문 / 통합검색 전환, 추천 질문, Tab으로 들어올 때만 검색창 포커스 링 |
+| `hero-ai-progress.js` | AI 질문 제출 → 진행 팝업 4단계 → `../search/ai.html?q=` |
+| `hero-rank.js` | 인기 검색어 열고 닫기 |
+| `detail-search.js` | 상세검색 팝업: 탭, 대·중분류 연동, 적용된 필터, 기간·달력, 제출 파라미터 |
 
 ### 통합검색 — `assets/js/search/`
 
@@ -56,6 +78,23 @@ HTML에는 화면이 이미 그려져 있습니다. JS는 보여 주고 숨기�
 | Open API | `openapi-app.js` | 위와 같음 |
 | FAQ 탭 | `faq-app.js` → `user-support/faq.js` | 질문 열고 닫기 |
 | 문의 탭 | `inquiry-app.js` | 필터·목록 |
+| AI 검색 결과 | `ai-app.js` → `ai-results.js`, `ai-condition.js` (+ `listing.js`, `quick-nav.js`, `favorites-recent.js`) | 질문·답변·근거 데이터셋, 조건 수정 팝업. 상세 → [ai-search.md](./ai-search.md) |
+
+관심·최근 본 빠른 메뉴(`quick-nav.js`, `favorites-recent.js`)는 데이터셋·Open API·AI 탭이 같이 씁니다. 최근 본 목록은 `sessionStorage['egis-search-recent-ids']`.
+
+### 환경 시각화 도구 — `assets/js/visual-tool/`
+
+진입: `pages/visualTool/visualTool-app.js`. 상세 → [visual-tool.md](./visual-tool.md)
+
+| JS | 동적인 것 |
+|----|-----------|
+| `treemap.js` | 트리맵 드릴다운(대 → 중 → 소), 경로 이동, 데이터셋 목록 이동 |
+| `step-cat-sync.js` | 단계(1~4) ↔ 분류 트리 체크 동기화 (`window.syncVtCatTreeFromStep`) |
+| `relation-map.js` | 관계도맵: 단계 슬라이더, 대분류 테마, 데이터셋 상세·팝오버, 확대/축소 |
+| `expand-map.js` | 확장맵: 관계도맵 필터·상세를 복제해 사용, 아이콘 노드 그래프 |
+| `tabs.js` | 맵 유형 탭 전환, 전체화면 진입·종료(Esc) |
+
+공개 API: `window.VtTreemap`, `window.VtRelationMap`, `window.VtExpandMap` — `show()`, `enterFullscreen()`, `exitFullscreen()` 등.
 
 ### 주제별 지도 — `assets/js/topical/`
 

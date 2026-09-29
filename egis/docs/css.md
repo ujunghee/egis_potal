@@ -95,6 +95,8 @@ egis/assets/css/
     ├── data-open/
     ├── user-support/
     ├── mypage/
+    ├── login/
+    ├── visual-tool/        (환경 시각화 도구)
     └── map/
 ```
 
@@ -153,9 +155,10 @@ flowchart TD
 | 영역 | 파일 |
 |------|------|
 | 공통 | `uikit/common/header.css`, `footer.css`, `filter.css`, `applied-filter.css`, `table.css`, `toast.css` |
-| 메인 | `uikit/main/main.css` |
-| 통합검색 | `uikit/search/search.css` |
+| 메인 | `uikit/main/main.css` (상세검색·AI 진행 팝업 포함) |
+| 통합검색 | `uikit/search/search.css`, `ai-search.css`(AI 검색 결과·조건 수정 팝업) |
 | 주제도 | `uikit/topical/topical.css`, `topical-detail.css` |
+| 환경 시각화 도구 | `uikit/visual-tool/visual-tool.css` |
 | 데이터 개방 | `uikit/data-open/open-api-detail.css`, `open-api-apply.css`, `land-cover.css` |
 | 이용자 지원 | `uikit/user-support/notice.css`, `faq.css`, `inquiry.css`, `inquiry-write.css` |
 | 로그인 | `uikit/login/login.css`, `app.css`(정부 통합인증 안내) |
@@ -313,6 +316,38 @@ flowchart TD
 
 지도 전용 페이지네이션은 `uikit/map/pagination.css`를 씁니다.
 
+### 7.1 레이어 팝업 (`modal.css`)
+
+메인 상세검색, AI 조건 수정처럼 딤 배경이 깔리는 팝업은 모두 같은 구조입니다.
+
+```html
+<dialog class="modal-container" id="…">       <!-- 딤 배경(overlay-75) + 가운데 정렬 -->
+  <form class="modal 화면-블록">                <!-- 흰 상자 -->
+    <div class="modal__header">…</div>           <!-- 제목 + 닫기 -->
+    <div class="modal__content">…</div>          <!-- 길면 이 영역만 스크롤 -->
+    <div class="modal__footer">…</div>           <!-- 버튼 -->
+  </form>
+</dialog>
+```
+
+- 여는 쪽은 `dialog.showModal()`. 배경 클릭·Esc 닫기는 각 화면 JS가 처리합니다.
+- `.modal`은 화면 폭 구간별 `max-width`가 있으므로, 고정 폭 팝업은 화면 블록 클래스에서 `width`와 `max-width`를 다시 줍니다.  
+  예: `.main-detail.modal { width: 100rem; }`, `.ai-cond.modal { width: 70rem; }`
+- 달력(flatpickr)은 `initPicker()`가 dialog 안에 붙입니다([js.md](./js.md) 공통 표).
+
+### 7.2 자주 쓰는 폼·버튼 클래스
+
+| 용도 | 클래스 |
+|------|--------|
+| 셀렉트 48 | `select-48` |
+| 입력 48 | `input-field-default-48` (+ 오른쪽 아이콘이면 `input-with-trailing-icon`) |
+| 검색 입력 48 | `search-48` |
+| 체크박스 | `checkbox-basic checkbox-basic-md` |
+| 라디오 | `radio-basic radio-basic-sm\|md\|lg`, 2칸 토글 `radio-toggle-group` > `radio-toggle-label` |
+| 주 버튼 | `blue-button-48` |
+| 보조 버튼 | `border-slate-button-48` |
+| 텍스트 버튼 | `transparent-button-40` |
+
 ---
 
 ## 8. 화면 UIKit (`uikit/`)
@@ -331,8 +366,10 @@ flowchart TD
 |-----------|------|
 | `gov-masthead`, `header-*` | 웹 헤더·공식 누리집 안내 |
 | `footer-*` | 푸터 |
-| `main-*` | 통합 메인 |
-| `tp-*` | 주제도(topical) |
+| `main-*` | 통합 메인 (`main-hero-*`, `main-detail*` 상세검색, `main-ai-*` AI 진행 팝업) |
+| `search-ai*`, `ai-cond*` | AI 검색 결과, 질문 조건 수정 팝업 |
+| `vt-*` | 환경 시각화 도구 (`vt-tm-*` 트리맵, `vt-relation*` 관계도맵, `vt-expand*` 확장맵) |
+| `tp-*` | 주제도(topical). 빠른 메뉴 `tp-quick*`, 카드 `tp-card*`는 통합검색·AI에서도 사용 |
 | `oa-*` | Open API / 마이페이지 Open API |
 | `notice-*`, `faq-*`, `inquiry-*` | 이용자 지원 |
 | `map-*`, `result-panel`, `radius-search-*` | 지도 |
@@ -345,6 +382,8 @@ flowchart TD
 | `common/footer.css` | 전 웹 화면 (`footer.html`) |
 | `main/main.css` | `pages/main/` |
 | `search/search.css` | `pages/search/` |
+| `search/ai-search.css` | `pages/search/ai.html` |
+| `visual-tool/visual-tool.css` | `pages/visualTool/` |
 | `topical/*.css` | `pages/topicalMap/` |
 | `data-open/*.css` | `pages/data-open/` |
 | `user-support/*.css` | `pages/userSupport/` |
@@ -426,6 +465,11 @@ flowchart TD
 | GNB·통합검색 레이어 | `uikit/common/header.css`, `assets/js/common/header.js` |
 | 푸터·관련사이트 | `uikit/common/footer.css` |
 | 메인 히어로·카드 | `uikit/main/main.css` |
+| 메인 상세검색 팝업 | `uikit/main/main.css` — `/* 상세검색 모달 */` 블록 |
+| AI 검색 진행 팝업 | `uikit/main/main.css` — `/* AI 검색 프로그레스 */` 블록 |
+| AI 검색 결과·조건 수정 | `uikit/search/ai-search.css` |
+| 환경 시각화 도구 | `uikit/visual-tool/visual-tool.css` |
+| 레이어 팝업 공통 | `component/modal.css` |
 | 토스트 위치 | `uikit/common/toast.css`, `assets/js/common/toast.js` |
 | 지도 결과 패널 | `uikit/map/result-panel.css` |
 | 색 값 확인 | `tokens/color.css` + `default/color.css` |

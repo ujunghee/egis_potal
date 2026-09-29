@@ -24,8 +24,10 @@
 | 설계서 | 대표 클래스 |
 |--------|-------------|
 | 헤더 (3–4) | `gov-masthead`, `header` / 푸터 `footer` / 토스트 `toast-stack` |
-| 메인 (5–8) | `main-hero`, `main-hero-search`, `main-feature-card` |
+| 메인 (5–8) | `main-hero`, `main-hero-ai`, `main-hero-search`, `main-hero-rank`, `main-feature-card` / 팝업 `main-ai-overlay`, `main-detail` |
 | 통합검색 (9–18) | `search-hero`, `search-tabs`, `search-listing`, `search-filter`, `faq-item` |
+| AI 검색 결과 | `search-ai-page`, `search-ai`, `search-ai__composer` / 팝업 `ai-cond` |
+| 환경 시각화 도구 | `vt-page`, `vt-tool`, `vt-map-tabs`, `vt-panel`, `vt-relation`, `vt-expand` |
 | 주제별 지도 목록 (19–27) | `tp-layout`, `search-filter` |
 | 주제별 지도 상세 (28–45) | `tp-detail`, `tp-detail__hero` |
 | 환경기초지도 (46–58) | `map-header`, `map-navigation`, `result-panel`, `region-select`, `radius-search-popup`, `selected-layer-panel`, `background-map-panel`, `map-control` |
@@ -37,5 +39,17 @@
 | FAQ | `faq-list`, `faq-item` |
 | 마이페이지 (78–97) | `mypage`, `mypage__lnb`, `mypage__tab`, `oa-mypage`, `oa-prod-detail`, `ak-mypage`, `dl-mypage` |
 | 로그인 | `breadcrumb`, `login__card`, `login__method`, `login-anyid` |
+
+## 화면별로 더 넣을 것
+
+| 화면 | `<head>` | body 끝 스크립트 | 비고 |
+|------|----------|------------------|------|
+| 메인 | `flatpickr.min.css` (foundation.css 앞) | jQuery → flatpickr → `l10n/ko.js` → `datepicjer.js` → `header.js` → `main/*.js` | 팝업 2개(`#main-ai-overlay`, `#main-detail-modal`)도 함께 넣기. [main.md](./main.md) |
+| AI 검색 결과 | `flatpickr.min.css` | jQuery → flatpickr → `l10n/ko.js` → `datepicjer.js` → `header.js` → `dataset-card.js` → `quick-nav.js` → `favorites-recent.js` → `listing.js` → `ai-results.js` → `ai-condition.js` | 조건 수정 팝업 `ai-condition-modal.html` 포함. [ai-search.md](./ai-search.md) |
+| 환경 시각화 도구 | — | jQuery → **ECharts 6.1.0** → `header.js` → `treemap.js` → `step-cat-sync.js` → `relation-map.js` → `expand-map.js` → `tabs.js` | 순서 바뀌면 동작 안 함. [visual-tool.md](./visual-tool.md) |
+
+`data-*` 속성과 `id`(예: `#md-start`, `#ai-cond-start`)는 JS가 찾는 표시입니다. 이름을 바꾸면 동작이 끊깁니다.
+
+## 공통
 
 `css`와 `font`는 **같은 상위 폴더**에 두고, 새 CSS는 `<link>`를 늘리지 말고 `@import`로만 추가합니다. 방법은 [css.md](./css.md)에 있습니다. 클래스·연결을 바꾸면 스타일이 빠집니다. 

@@ -6,7 +6,8 @@
 - **껍데기** : `index.html`처럼 페이지를 여는 파일. CSS 연결과, 어느 조각을 어디에 넣을지만 있습니다.
 - **실제 컨텐츠** : `fragments/` 안 HTML. 화면에 보이는 마크업입니다.
 
-JSP에 붙이는 법 → [jsp.md](./jsp.md) · 동작 → [js.md](./js.md) · CSS 연결 → [css.md](./css.md)
+JSP에 붙이는 법 → [jsp.md](./jsp.md) · 동작 → [js.md](./js.md) · CSS 연결 → [css.md](./css.md)  
+화면별 상세 → [main.md](./main.md) · [ai-search.md](./ai-search.md) · [visual-tool.md](./visual-tool.md)
 
 ```
 egis/
@@ -30,141 +31,103 @@ egis/
 
 1. 폴더명 : `pages/main`
 2. 껍데기 : `pages/main/index.html`
-3. 실제 컨텐츠 : `pages/main/fragments/main-content.html`
+   - `<head>` : `flatpickr.min.css`(CDN) → `foundation.css` → `common.css`
+   - `<body>` : `web-header.html` → `main-content.html` → `footer.html`
+3. 실제 컨텐츠 : `pages/main/fragments/main-content.html` **한 파일**에 전부 있습니다.
 
-## 2) 환경기초지도
+### 파일 안 순서
 
-1. 폴더명 : `pages/map`
-2. 껍데기 : `pages/map/index.html`
-3. 실제 컨텐츠 : `pages/map/fragments/`
-   - `map-navigation.html` — 좌측 메뉴
-   - `result-panel.html` — 결과 패널 (안에 `integrated-search-filter.html`, `map-sheet-search.html`)
-   - `map-toolbar.html` — 행정구역
-   - `radius-search.html` — 반경검색
-   - `spatial-search.html` — 공간검색
-   - `spatial-search-results.html` — 공간검색 결과
-   - `map-controls.html` — 줌·측량
-   - `selected-layer.html` — 선택 레이어
-   - `background-map.html` — 배경지도
+| 순서 | 영역 | 시작 표시 (주석 · 블록 클래스) |
+|------|------|-------------------------------|
+| 1 | 히어로 + 검색 | `<!-- 히어로 + 검색 -->` · `section.main-hero` |
+| 1-1 | 검색 방식 탭 (AI 질문 / 통합검색) | `.main-hero-mode` |
+| 1-2 | AI 질문 입력창 | `form.main-hero-ai` (`#main-ai-input`) |
+| 1-3 | 통합검색 입력창 | `form.main-hero-search` (`#main-search-input`) |
+| 1-4 | 상세검색 버튼 | `.main-hero-detail` |
+| 1-5 | 인기 검색어 | `details.main-hero-rank` |
+| 1-6 | 추천 질문 | `.main-hero-suggest` |
+| 1-7 | 분야 바로가기 (기후관측 ~ 생활환경) | `.main-hero-category` |
+| 2 | 주요 서비스 (환경 지도 · 데이터셋 · 환경 시각화 도구 카드, 포털 카드) | `<!-- 주요 서비스 -->` · `section.main-feature` |
+| 3 | 최신 데이터 · 도움말 | `<!-- 최신 데이터 · 도움말 -->` · `section.main-bottom` |
+| 4 | AI 검색 진행 팝업 | `<!-- AI 검색 진행 팝업 -->` · `dialog#main-ai-overlay` |
+| 5 | 상세검색 팝업 | `<!-- 상세검색 모달 -->` · `dialog#main-detail-modal` |
+| 5-1 | 검색어 · 기간 · 날짜 | `.main-detail__top` |
+| 5-2 | 탭 (분류 · 갱신주기 · 자료유형 · 서비스유형 · 제공기관) | `.main-detail__tabs` |
+| 5-3 | 탭 패널 | `[data-md-panel="category\|cycle\|format\|service\|org"]` |
+| 5-4 | 적용된 필터 | `.main-detail__applied` |
+| 5-5 | 검색 버튼 | `.modal__footer` |
 
-헤더: `shared/fragments/map-header.html`
+팝업 2개(4, 5)는 `</main>` 뒤에 있지만 **같은 파일**입니다. JSP에 옮길 때 빠뜨리지 마세요.
 
-## 3) 주제별 지도
+### 관련 파일
 
-**목록**
+| 종류 | 위치 |
+|------|------|
+| CSS | `assets/css/uikit/main/main.css` (`common.css`가 불러옴) |
+| 레이어 팝업 공통 CSS | `assets/css/component/modal.css` |
+| 진입 JS (프로토타입용) | `pages/main/main-app.js` |
+| 기능 JS | `assets/js/main/hero-mode.js` — 검색 방식 탭, 추천 질문 |
+| | `assets/js/main/hero-ai-progress.js` — AI 검색 진행 팝업 |
+| | `assets/js/main/hero-rank.js` — 인기 검색어 |
+| | `assets/js/main/detail-search.js` — 상세검색 팝업 |
+| 공통 JS | `assets/js/common/header.js`, `datepicjer.js`(날짜 선택) |
+| 외부 라이브러리 | jQuery 3.7.1, flatpickr 4.6.13 + `l10n/ko.js` |
+| 이미지 (히어로·분야·카드) | `assets/image/main/` |
+| 아이콘 (화살표·필터 등) | `assets/image/icon/web/main/` — 클래스는 `default/icon.css`의 `main-*-icon` |
 
-1. 폴더명 : `pages/topicalMap`
-2. 껍데기 : `pages/topicalMap/index.html`
-3. 실제 컨텐츠 : `pages/topicalMap/fragments/` — `breadcrumb.html`, `filter-panel.html`, `search-bar.html`, `pinned.html`, `results.html`, `quick-menu.html`, `favorite-modal.html`
+AI 질문을 제출하면 `pages/search/ai.html`(AI 검색 결과)로 이동하고, 통합검색·상세검색은 `pages/search/index.html`로 이동합니다.
 
-**상세**
+## 2) 환경 시각화 도구
 
-1. 폴더명 : `pages/topicalMap`
-2. 껍데기 : `pages/topicalMap/detail.html`
-3. 실제 컨텐츠 : `pages/topicalMap/fragments/` — `detail-sticky.html`, `detail-hero.html`, `detail-body.html`, `download-modal.html`
+1. 폴더명 : `pages/visualTool`
+2. 껍데기 : `pages/visualTool/index.html`
+   - `<head>` : `foundation.css` → `common.css`
+   - `<body>` : `web-header.html` → `main.vt-page` 안에 `breadcrumb.html` · `treeMap.html` → `footer.html`
+3. 실제 컨텐츠 : `pages/visualTool/fragments/`
+   - `breadcrumb.html` — 제목 「환경 시각화 도구」 + 경로(홈 > 환경 시각화 도구)
+   - `treeMap.html` — 도구 본문 전체. **세 가지 맵이 모두 이 파일 안**에 있습니다.
 
-## 4) 데이터 개방
+### `treeMap.html` 안 순서
 
-**Open API 목록**
+| 순서 | 영역 | 시작 표시 (주석 · 블록 클래스) |
+|------|------|-------------------------------|
+| 1 | 상단 툴바 | `section.vt-tool` > `.vt-tool__head` |
+| 1-1 | 맵 유형 탭 (트리맵 · 관계도맵 · 확장맵) | `.vt-map-tabs` (`[data-vt-tabs]`) |
+| 1-2 | 전체화면용 범례 (관계도맵 / 확장맵) | `.vt-relation__node-legend--toolbar`, `.vt-expand__node-legend--toolbar` |
+| 1-3 | 데이터 검색 · 전체화면 종료 버튼 | `.vt-tool__head-right` |
+| 2 | 트리맵 | `<!-- 트리맵 -->` · `[data-vt-panel="treemap"]` |
+| 2-1 | 경로 표시 | `.vt-path` |
+| 2-2 | 차트 영역 | `.vt-chart` > `[data-vt-treemap]` |
+| 2-3 | 상세 패널 | `aside.vt-tm-detail` |
+| 3 | 관계도맵 | `<!-- 관계도맵-->` · `[data-vt-panel="relation"]` |
+| 3-1 | 왼쪽 필터 (단계별 확장 · 분류 선택 · 범례) | `aside.vt-relation__side` |
+| 3-2 | 그래프 영역 · 확대/축소 버튼 · 팝오버 | `.vt-relation__canvas` |
+| 3-3 | 데이터셋 상세 패널 | `aside.vt-relation__detail` |
+| 4 | 확장맵 | `<!-- 확장맵 -->` · `[data-vt-panel="expand"]` |
+| 4-1 | 범례 · 그래프 영역 · 확대/축소/맞춤 버튼 | `.vt-expand__legend`, `.vt-expand__viewport` |
 
-1. 폴더명 : `pages/data-open/open-api`
-2. 껍데기 : `pages/data-open/open-api/index.html`
-3. 실제 컨텐츠 : `fragments/breadcrumb.html`, `fragments/list/` (`filter-panel`, `search-bar`, `pinned`, `results`, `quick-menu`, `favorite-modal`)
+확장맵의 왼쪽 필터와 상세 패널은 HTML에 없습니다. 페이지가 열릴 때 **JS가 관계도맵(3-1, 3-3)을 복사**해 넣습니다. 그래서 관계도맵 마크업을 지우면 확장맵 필터도 사라집니다.
 
-**Open API 상세**
+### 관련 파일
 
-1. 폴더명 : `pages/data-open/open-api`
-2. 껍데기 : `pages/data-open/open-api/detail.html`
-3. 실제 컨텐츠 : `fragments/detail/` — `detail-sticky.html`, `detail-hero.html`, `detail-body.html`, `download-modal.html`
+| 종류 | 위치 |
+|------|------|
+| CSS | `assets/css/uikit/visual-tool/visual-tool.css` (`common.css`가 불러옴) |
+| 맵 유형 탭 CSS | `assets/css/component/radio.css` (`radio-toggle-group`) |
+| 진입 JS (프로토타입용) | `pages/visualTool/visualTool-app.js` |
+| 기능 JS | `assets/js/visual-tool/treemap.js` — 트리맵 |
+| | `assets/js/visual-tool/step-cat-sync.js` — 단계 ↔ 분류 선택 체크 연동 |
+| | `assets/js/visual-tool/relation-map.js` — 관계도맵 |
+| | `assets/js/visual-tool/expand-map.js` — 확장맵 |
+| | `assets/js/visual-tool/tabs.js` — 맵 유형 탭, 전체화면 |
+| 공통 JS | `assets/js/common/header.js` |
+| 외부 라이브러리 | jQuery 3.7.1, **ECharts 6.1.0** (차트는 ECharts가 그려서 JS 없이는 비어 보임) |
+| 아이콘 · 범례 이미지 | `assets/image/icon/web/visual-tool/` |
 
-**Open API 개발계정 신청**
+JS는 위 표 순서대로 불러와야 합니다(`treemap` → `step-cat-sync` → `relation-map` → `expand-map` → `tabs`).
 
-1. 폴더명 : `pages/data-open/open-api`
-2. 껍데기 : `pages/data-open/open-api/apply.html`
-3. 실제 컨텐츠 : `fragments/apply/form.html`
+진입 경로: GNB 「데이터 탐색 > 환경 시각화 도구」(`shared/fragments/web-header.html`), 메인 주요 서비스 카드.
 
-**국가토지피복 통계**
-
-1. 폴더명 : `pages/data-open/land-cover`
-2. 껍데기 : `pages/data-open/land-cover/index.html`
-3. 실제 컨텐츠 : `fragments/breadcrumb.html`, `content.html` (안에 `tabs.html`, `panel-cover.html`, `panel-green.html`, `table-section.html`)
-
-**AI 데이터셋**
-
-1. 폴더명 : `pages/data-open/ai-dataset`
-2. 껍데기 : `pages/data-open/ai-dataset/index.html`
-3. 실제 컨텐츠 : `fragments/breadcrumb.html`, `content.html`
-
-## 5) 이용자 지원
-
-**공지사항 목록**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/index.html`
-3. 실제 컨텐츠 : `fragments/notice/breadcrumb.html`, `board.html`
-
-**공지사항 상세**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/notice-detail.html`
-3. 실제 컨텐츠 : `fragments/notice/detail-body.html`
-
-**FAQ**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/faq.html`
-3. 실제 컨텐츠 : `fragments/faq/breadcrumb.html`, `list.html`
-
-**문의하기 목록**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/inquiry.html`
-3. 실제 컨텐츠 : `fragments/inquiry/breadcrumb.html`, `board.html`
-
-**문의하기 상세**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/inquiry-detail.html`
-3. 실제 컨텐츠 : `fragments/inquiry/detail-breadcrumb.html`, `detail-body.html`
-
-**문의하기 등록**
-
-1. 폴더명 : `pages/userSupport`
-2. 껍데기 : `pages/userSupport/inquiry-write.html`
-3. 실제 컨텐츠 : `fragments/inquiry/write-breadcrumb.html`, `write-body.html`
-
-## 6) 통합검색
-
-1. 폴더명 : `pages/search`
-2. 껍데기 : `index.html` / `dataset.html` / `openapi.html` / `faq.html` / `inquiry.html`
-3. 실제 컨텐츠 : `fragments/` — `search-bar.html`, `tabs.html`, 탭별 `*-results.html` · `*-filter.html`, `applied-filter.html`
-
-## 7) 로그인
-
-1. 폴더명 : `pages/login`
-2. 껍데기 : `pages/login/index.html`
-3. 실제 컨텐츠 : `fragments/breadcrumb.html`, `login-form.html`, `anyid-modal.html`
-
-## 8) 마이페이지
-
-왼쪽 메뉴 공통: `pages/mypage/fragments/lnb.html`
-
-| 화면 | 껍데기 | 실제 컨텐츠 |
-|------|--------|-------------|
-| 관심 데이터 | `mypage/index.html` | `fragments/content.html` |
-| 다운로드 내역 | `mypage/download/index.html` | `fragments/list.html`, `area-modal.html` |
-| Open API 신청 현황 | `mypage/openapi/index.html` | `fragments/list.html` |
-| 개발계정 상세 | `mypage/openapi/detail.html` | `fragments/detail.html` |
-| 개발계정 수정 | `mypage/openapi/edit.html` | `fragments/edit.html` |
-| 운영계정 신청 | `mypage/openapi/prod-apply.html` | `fragments/prod-apply.html` |
-| 운영계정 신청 상세 (완료) | `mypage/openapi/prod-detail.html` | `fragments/prod-detail.html` |
-| 운영계정 신청 상세 (심사중) | `mypage/openapi/prod-detail-review.html` | `fragments/prod-detail-review.html` |
-| 운영계정 신청 상세 (반려) | `mypage/openapi/prod-detail-rejected.html` | `fragments/prod-detail-rejected.html` |
-| 인증키 발급 현황 | `mypage/authkey/index.html` | `fragments/list.html` |
-| 나의 문의 | `mypage/inquiry/index.html` | `fragments/list.html` |
-| 나의 문의 상세 | `mypage/inquiry/detail.html` | `fragments/detail.html` |
-
-운영계정 신청 상세는 완료·심사중·반려가 **각각 HTML**입니다. `?status=`로 한 파일을 바꾸지 않습니다.
 
 ---
 
