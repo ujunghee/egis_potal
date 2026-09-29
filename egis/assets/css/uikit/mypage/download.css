@@ -1,10 +1,10 @@
-/* 마이페이지 — 다운로드 내역 (Figma 1247:11514 / 필터 1247:12106) */
+/* 마이페이지 — 다운로드 내역 */
 
 .dl-mypage__filter {
   width: 100%;
 }
 
-/* 좌측 기간 그룹 — Figma w-[422px] */
+/* 좌측 기간 그룹 */
 .dl-mypage__period {
   width: 42.2rem;
 }
@@ -36,7 +36,7 @@
 .dl-mypage__dates .input-field-default-40 {
   width: 100%;
   border-radius: var(--radius-md-6);
-  border-color: var(--slate-400); /* #8390a2 — Figma input/border */
+  border-color: var(--slate-400); /* #8390a2/border */
   font-weight: var(--font-weight-regular);
 }
 
@@ -50,7 +50,7 @@
 }
 
 .dl-mypage__dates .calendar-02-icon {
-  width: 2rem; /* 20px — Figma calendar-simple */
+  width: 2rem; /* 20px */
   height: 2rem;
 }
 
@@ -102,7 +102,7 @@
 .dl-mypage__card-body {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem; /* Figma 18px */
+  gap: 1.8rem;
 }
 
 .dl-mypage__card[hidden] {
@@ -158,7 +158,7 @@
   font: inherit;
 }
 
-/* 속성 항목 「보기」 호버 툴팁 — Figma 2044:5043 */
+/* 속성 항목 「보기」 호버 툴팁 */
 .dl-mypage__view-wrap {
   position: relative;
   flex: none;
@@ -204,7 +204,7 @@
   padding: 6.4rem 1.6rem;
 }
 
-/* ========== 선택 영역 보기 팝업 (1762:3894 / 3895 / 3953) ========== */
+/* ========== 선택 영역 보기 팝업 ========== */
 .dl-area-modal {
   position: fixed;
   top: 50%;

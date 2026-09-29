@@ -12,15 +12,19 @@
     <div data-fragment="../../shared/fragments/web-header.html"></div>
     <main role="main" class="inner-default pb-100">
       <div data-fragment="./fragments/search-bar.html"></div>
-      <div data-fragment="./fragments/tabs.html"></div>
-      <section class="search-listing grid-column-default w-full mx-auto mt-32">
+      <div class="search-tabs-row w-full mx-auto mt-32 relative">
+        <div data-fragment="./fragments/tabs.html"></div>
+        <div data-fragment="./fragments/quick-menu.html"></div>
+      </div>
+      <section class="search-listing tp-layout grid-column-default w-full mx-auto mt-32">
         <div data-fragment="./fragments/openapi-filter.html"></div>
-        <div class="search-listing__content grid-column-9">
+        <div class="search-listing__content tp-content grid-column-9">
           <div data-fragment="./fragments/applied-filter.html"></div>
           <div data-fragment="./fragments/openapi-results.html"></div>
         </div>
       </section>
     </main>
+    <div data-fragment="./fragments/favorite-modal.html"></div>
     <div data-fragment="../../shared/fragments/footer.html"></div>
     <script src="../../shared/js/fragment-loader.js"></script>
     <script src="../../shared/js/script-loader.js"></script>

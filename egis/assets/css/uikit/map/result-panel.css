@@ -8,7 +8,7 @@
   --result-panel-width: 36rem;
 }
 
-/* 도엽검색 패널 — Figma 260px */
+/* 도엽검색 패널 */
 .result-panel-wrap[data-result-panel-view="map-sheet-search"] {
   --result-panel-width: 26rem;
 }

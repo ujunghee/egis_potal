@@ -1,0 +1,753 @@
+<!-- 환경 시각화 도구 -->
+<section class="vt-tool flex flex-col gap-16 w-full">
+  <div class="vt-tool__head flex align-center justify-between gap-16 w-full">
+    <div class="vt-tool__head-left flex align-center flex-1 min-w-0">
+      <div class="vt-map-tabs radio-toggle-group" role="radiogroup" aria-label="시각화 맵 유형" data-vt-tabs>
+        <label class="radio-toggle-label body1-m-18">
+          <input type="radio" class="radio-toggle" name="vt-map-type" value="treemap" checked />
+          <span>트리맵</span>
+        </label>
+        <label class="radio-toggle-label body1-m-18">
+          <input type="radio" class="radio-toggle" name="vt-map-type" value="relation" />
+          <span>관계도맵</span>
+        </label>
+        <label class="radio-toggle-label body1-m-18">
+          <input type="radio" class="radio-toggle" name="vt-map-type" value="expand" />
+          <span>확장맵</span>
+        </label>
+      </div>
+    </div>
+
+    <div
+      class="vt-relation__node-legend vt-relation__node-legend--toolbar"
+      hidden
+      aria-hidden="true"
+    >
+      <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+        <img
+          class="vt-relation__nl-icon"
+          src="../../assets/image/icon/web/visual-tool/legend-hexagon.svg"
+          width="20"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        대분류
+      </span>
+      <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+        <img
+          class="vt-relation__nl-icon"
+          src="../../assets/image/icon/web/visual-tool/legend-diamond.svg"
+          width="18"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        중분류
+      </span>
+      <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+        <img
+          class="vt-relation__nl-icon"
+          src="../../assets/image/icon/web/visual-tool/legend-circle.svg"
+          width="18"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        소분류
+      </span>
+      <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+        <span class="vt-relation__nl-icon vt-relation__nl-icon--ds" aria-hidden="true"></span>
+        데이터셋
+      </span>
+    </div>
+
+    <div
+      class="vt-expand__node-legend vt-expand__node-legend--toolbar flex align-center gap-16"
+      hidden
+      aria-hidden="true"
+      aria-label="노드 범례"
+    >
+      <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+        <img
+          class="vt-expand__nl-icon vt-expand__nl-icon--major"
+          src="../../assets/image/icon/web/visual-tool/legend-expand-major.svg"
+          width="20"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        <span>대분류</span>
+      </span>
+      <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+        <img
+          class="vt-expand__nl-icon vt-expand__nl-icon--mid"
+          src="../../assets/image/icon/web/visual-tool/legend-expand-mid.svg"
+          width="18"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        <span>중분류</span>
+      </span>
+      <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+        <img
+          class="vt-expand__nl-icon vt-expand__nl-icon--small"
+          src="../../assets/image/icon/web/visual-tool/legend-expand-small.svg"
+          width="20"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        <span>소분류</span>
+      </span>
+      <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+        <img
+          class="vt-expand__nl-icon vt-expand__nl-icon--ds"
+          src="../../assets/image/icon/web/visual-tool/legend-expand-ds.svg"
+          width="18"
+          height="18"
+          alt=""
+          aria-hidden="true"
+        />
+        <span>데이터셋</span>
+      </span>
+    </div>
+
+    <div class="vt-tool__head-right flex align-center gap-10 flex-none">
+    <div class="vt-search flex align-center gap-8 border border-slate-200 radius-md-8 bg-white" data-vt-relation-search hidden>
+      <input
+        type="search"
+        class="vt-search__input body2-r-16 color-slate-500"
+        placeholder="데이터를 검색해주세요"
+        aria-label="데이터 검색"
+      />
+      <button type="button" class="vt-search__btn flex align-center justify-center" aria-label="검색">
+        <i class="header-search-24" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="vt-fs-exit flex align-center gap-8 border border-slate-200 radius-md-8 bg-white body1-m-18 color-slate-700 flex-none"
+      data-vt-fullscreen-exit
+      hidden
+      aria-label="전체화면 종료"
+    >
+      <i class="minimise-01-slate-700" aria-hidden="true"></i>
+      <span>전체화면 종료</span>
+    </button>
+    </div>
+  </div>
+
+  <!-- 트리맵 -->
+  <div class="vt-panel flex flex-col gap-16 w-full" data-vt-panel="treemap">
+    <div
+      class="vt-path flex align-center gap-12 w-full bg-white border border-slate-200 radius-md-8 pl-20 pr-12"
+      data-vt-path
+    >
+      <div class="vt-path__label flex align-center gap-12 flex-none">
+        <strong class="body2-sb-16 color-slate-900">탐색 경로</strong>
+        <span class="vt-path__divider" aria-hidden="true"></span>
+      </div>
+      <div class="vt-path__trail flex align-center gap-12 flex-1" data-vt-path-trail>
+        <ol class="vt-path__list flex align-center gap-12 m-0 p-0"></ol>
+      </div>
+    </div>
+
+    <div class="vt-tm-layout" data-vt-tm-layout>
+      <div class="vt-chart relative w-full border border-slate-200 bg-white radius-md-8" data-vt-chart>
+        <div class="vt-chart__canvas w-full" data-vt-treemap role="img" aria-label="대분류 트리맵"></div>
+        <button
+          type="button"
+          class="vt-chart__expand flex align-center justify-center"
+          data-vt-treemap-expand
+          aria-label="전체화면으로 보기"
+          aria-expanded="false"
+        >
+          <i class="maximise-02-slate-700" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <aside
+        class="vt-relation__detail vt-tm-detail border border-slate-200 bg-white radius-md-8"
+        data-vt-tm-detail
+        hidden
+        aria-label="데이터셋 상세"
+      >
+        <div class="vt-relation__detail-head flex align-center justify-between">
+          <div class="vt-relation__chips flex align-center gap-8">
+            <button type="button" class="vt-relation__chip is-active body3-sb-14">토지피복</button>
+            <button type="button" class="vt-relation__chip body3-sb-14">시계열 변화</button>
+            <button type="button" class="vt-relation__chip body3-sb-14">토지피복 변화량</button>
+          </div>
+          <button
+            type="button"
+            class="vt-relation__close flex align-center justify-center"
+            data-vt-tm-detail-close
+            aria-label="상세 닫기"
+          >
+            <img src="../../assets/image/icon/web/visual-tool/detail-close.svg" width="24" height="24" alt="" />
+          </button>
+        </div>
+        <div class="vt-relation__detail-body">
+          <div class="vt-relation__info">
+            <h3 class="body1-sb-18 color-slate-900 m-0">데이터셋명</h3>
+            <div class="vt-relation__meta">
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">원천기관</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">환경부 · 국립환경과학원</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">원천시스템</span>
+                <a href="#" class="vt-relation__meta-link body3-m-14 color-slate-900" target="_blank" rel="noopener noreferrer">
+                  <span>국가환경정보시스템</span>
+                  <img src="../../assets/image/icon/web/visual-tool/detail-link.svg" width="8" height="8" alt="" />
+                </a>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">관리시스템</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">환경공간정보서비스</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">최근 갱신일</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">2019-09-15</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">기준연도</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">1980~2010</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">갱신주기</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">실시간</span>
+              </div>
+              <p class="body3-r-14 color-slate-700 m-0">
+                국내 대기오염 측정망에서 수집된 실시간 측정값을 기반으로, 시도·측정소 단위의 농도와 대기질 등급을 제공합니다.
+              </p>
+            </div>
+          </div>
+          <div class="vt-relation__compose">
+            <strong class="body2-sb-16 color-slate-900">구성 데이터</strong>
+            <ul class="vt-relation__compose-list m-0 p-0">
+              <li class="vt-relation__compose-item body3-m-14 color-slate-900">비점오염저감시설 연관 하천</li>
+              <li class="vt-relation__compose-item body3-m-14 color-slate-900">비점오염저감시설 연관 하천</li>
+            </ul>
+          </div>
+        </div>
+        <div class="vt-relation__detail-foot">
+          <button type="button" class="slate-button-48 vt-relation__detail-btn">상세보기</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 관계도맵-->
+  <div class="vt-panel vt-relation" data-vt-panel="relation" hidden>
+    <div class="vt-relation__layout">
+      <aside class="vt-relation__side" aria-label="관계도맵 필터">
+        <div class="vt-relation__block vt-relation__block--steps">
+          <div class="vt-relation__block-head flex align-center justify-between">
+            <div class="flex align-center gap-8">
+              <strong class="body2-sb-16 color-slate-900">단계별 확장</strong>
+              <div class="vt-relation__help-wrap">
+                <button
+                  type="button"
+                  class="vt-relation__help"
+                  aria-label="단계별 확장 안내"
+                  aria-describedby="vt-rel-step-help"
+                  data-vt-rel-help
+                >
+                  <img
+                    src="../../assets/image/icon/web/visual-tool/step-help.svg"
+                    width="16"
+                    height="16"
+                    alt=""
+                  />
+                </button>
+                <div
+                  id="vt-rel-step-help"
+                  class="vt-relation__help-tip body3-r-14"
+                  role="tooltip"
+                  data-vt-rel-help-tip
+                >
+                  <p class="m-0">1단계: 대분류만 표시</p>
+                  <p class="m-0">2단계: 중분류까지 표시</p>
+                  <p class="m-0">3단계: 소분류까지 표시</p>
+                  <p class="m-0">4단계: 데이터셋까지 표시</p>
+                </div>
+              </div>
+            </div>
+            <span class="body3-r-14 color-slate-700" data-vt-rel-step-hint>데이터셋까지 표시</span>
+          </div>
+          <div class="vt-relation__steps">
+            <div class="vt-relation__slider" data-vt-rel-slider>
+              <div class="vt-relation__slider-track" aria-hidden="true">
+                <span class="vt-relation__slider-fill"></span>
+                <span class="vt-relation__slider-knob">
+                  <img
+                    src="../../assets/image/icon/web/visual-tool/slider-thumb.svg"
+                    width="24"
+                    height="24"
+                    alt=""
+                  />
+                </span>
+              </div>
+              <input
+                type="range"
+                class="vt-relation__range"
+                min="1"
+                max="4"
+                value="4"
+                step="1"
+                aria-label="확장 단계"
+                data-vt-rel-step
+              />
+            </div>
+            <div class="vt-relation__step-labels flex justify-between">
+              <span class="body3-r-14 color-slate-700">1단계</span>
+              <span class="body3-r-14 color-slate-700">2단계</span>
+              <span class="body3-r-14 color-slate-700">3단계</span>
+              <span class="body3-r-14 color-slate-700">4단계</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vt-relation__block vt-relation__cats">
+          <strong class="body2-sb-16 color-slate-900">분류 선택</strong>
+          <ul class="vt-relation__tree" data-vt-rel-tree>
+            <li class="vt-relation__tree-item" data-depth="1" data-vt-cat="water">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-water" />
+              <label for="vt-cat-water" class="body3-r-14 color-slate-900">물환경</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="2" data-vt-cat="water">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-water-mid" />
+              <label for="vt-cat-water-mid" class="body3-r-14 color-slate-900">중분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="3" data-vt-cat="water">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-water-small" />
+              <label for="vt-cat-water-small" class="body3-r-14 color-slate-900">소분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="water">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-water-ds-1" />
+              <label for="vt-cat-water-ds-1" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="water">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-water-ds-2" />
+              <label for="vt-cat-water-ds-2" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="water">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-water-ds-3" />
+              <label for="vt-cat-water-ds-3" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="water">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-water-ds-4" />
+              <label for="vt-cat-water-ds-4" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+
+            <li class="vt-relation__tree-item" data-depth="1" data-vt-cat="nature">
+              <button type="button" class="vt-relation__chevron" aria-label="펼치기" aria-expanded="false"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-nature" />
+              <label for="vt-cat-nature" class="body3-r-14 color-slate-900">자연환경</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="2" data-vt-cat="nature">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-nature-mid" />
+              <label for="vt-cat-nature-mid" class="body3-r-14 color-slate-900">중분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="3" data-vt-cat="nature">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-nature-small" />
+              <label for="vt-cat-nature-small" class="body3-r-14 color-slate-900">소분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="nature">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-nature-ds-1" />
+              <label for="vt-cat-nature-ds-1" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="nature">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-nature-ds-2" />
+              <label for="vt-cat-nature-ds-2" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+
+            <li class="vt-relation__tree-item" data-depth="1" data-vt-cat="carbon">
+              <button type="button" class="vt-relation__chevron" aria-label="펼치기" aria-expanded="false"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-carbon" />
+              <label for="vt-cat-carbon" class="body3-r-14 color-slate-900">탄소중립</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="2" data-vt-cat="carbon">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-carbon-mid" />
+              <label for="vt-cat-carbon-mid" class="body3-r-14 color-slate-900">중분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="3" data-vt-cat="carbon">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-carbon-small" />
+              <label for="vt-cat-carbon-small" class="body3-r-14 color-slate-900">소분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="carbon">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-carbon-ds-1" />
+              <label for="vt-cat-carbon-ds-1" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="carbon">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-carbon-ds-2" />
+              <label for="vt-cat-carbon-ds-2" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+
+            <li class="vt-relation__tree-item" data-depth="1" data-vt-cat="energy">
+              <button type="button" class="vt-relation__chevron" aria-label="펼치기" aria-expanded="false"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-energy" />
+              <label for="vt-cat-energy" class="body3-r-14 color-slate-900">에너지</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="2" data-vt-cat="energy">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-energy-mid" />
+              <label for="vt-cat-energy-mid" class="body3-r-14 color-slate-900">중분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="3" data-vt-cat="energy">
+              <button type="button" class="vt-relation__chevron" aria-label="접기" aria-expanded="true"></button>
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-energy-small" />
+              <label for="vt-cat-energy-small" class="body3-r-14 color-slate-900">소분류</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="energy">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" checked id="vt-cat-energy-ds-1" />
+              <label for="vt-cat-energy-ds-1" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+            <li class="vt-relation__tree-item" data-depth="4" data-vt-cat="energy">
+              <input type="checkbox" class="checkbox-basic checkbox-basic-sm" id="vt-cat-energy-ds-2" />
+              <label for="vt-cat-energy-ds-2" class="body3-r-14 color-slate-900">데이터셋</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="vt-relation__block vt-relation__legend">
+          <strong class="body3-sb-14 color-slate-900">범례</strong>
+          <div class="vt-relation__legend-grid">
+            <span class="vt-relation__legend-item flex align-center">
+              <i class="vt-relation__legend-swatch vt-legend-water" aria-hidden="true"></i>
+              <span class="body3-r-14 color-slate-900">물환경</span>
+            </span>
+            <span class="vt-relation__legend-item flex align-center">
+              <i class="vt-relation__legend-swatch vt-legend-nature" aria-hidden="true"></i>
+              <span class="body3-r-14 color-slate-900">자연환경</span>
+            </span>
+            <span class="vt-relation__legend-item flex align-center">
+              <i class="vt-relation__legend-swatch vt-legend-carbon" aria-hidden="true"></i>
+              <span class="body3-r-14 color-slate-900">탄소중립</span>
+            </span>
+            <span class="vt-relation__legend-item flex align-center">
+              <i class="vt-relation__legend-swatch vt-legend-energy" aria-hidden="true"></i>
+              <span class="body3-r-14 color-slate-900">에너지</span>
+            </span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="vt-relation__canvas border border-slate-200 radius-md-8 relative" data-vt-rel-canvas-wrap>
+        <div class="vt-relation__node-legend flex align-center" aria-hidden="true">
+          <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+            <img
+              class="vt-relation__nl-icon"
+              src="../../assets/image/icon/web/visual-tool/legend-hexagon.svg"
+              width="20"
+              height="18"
+              alt=""
+              aria-hidden="true"
+            />
+            대분류
+          </span>
+          <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+            <img
+              class="vt-relation__nl-icon"
+              src="../../assets/image/icon/web/visual-tool/legend-diamond.svg"
+              width="18"
+              height="18"
+              alt=""
+              aria-hidden="true"
+            />
+            중분류
+          </span>
+          <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+            <img
+              class="vt-relation__nl-icon"
+              src="../../assets/image/icon/web/visual-tool/legend-circle.svg"
+              width="18"
+              height="18"
+              alt=""
+              aria-hidden="true"
+            />
+            소분류
+          </span>
+          <span class="vt-relation__nl flex align-center body3-m-14 color-slate-700">
+            <span class="vt-relation__nl-icon vt-relation__nl-icon--ds" aria-hidden="true"></span>
+            데이터셋
+          </span>
+        </div>
+        <div class="vt-relation__graph" data-vt-relation role="img" aria-label="관계도맵"></div>
+        <div class="vt-relation__major" data-vt-rel-major hidden>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="140"
+            height="127.273"
+            viewBox="0 0 140 127.273"
+            fill="none"
+            overflow="visible"
+            aria-hidden="true"
+          >
+            <path
+              d="M92.5005 0H47.4995C38.5681 0 30.3155 4.741 25.8498 12.4323L3.34926 51.2017C-1.11642 58.8978 -1.11642 68.3749 3.34926 76.0711L25.8498 114.84C30.3155 122.537 38.5681 127.273 47.4995 127.273H92.5005C101.432 127.273 109.685 122.532 114.15 114.84L136.651 76.0711C141.116 68.3749 141.116 58.8978 136.651 51.2017L114.15 12.4323C109.685 4.73611 101.432 0 92.5005 0Z"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="heading10-sb-20" data-vt-rel-major-label>물관리</span>
+        </div>
+        <div class="vt-relation__ds-layer" data-vt-rel-ds-layer hidden aria-hidden="true"></div>
+        <button
+          type="button"
+          class="vt-chart__expand flex align-center justify-center"
+          data-vt-relation-expand
+          aria-label="전체화면으로 보기"
+          aria-expanded="false"
+        >
+          <i class="maximise-02-slate-700" aria-hidden="true"></i>
+        </button>
+        <div class="vt-relation__tools">
+          <div class="vt-relation__zoom">
+            <button type="button" class="vt-relation__zoom-btn" data-vt-rel-zoom-in aria-label="확대">
+              <img
+                src="../../assets/image/icon/web/visual-tool/nav-zoom-in.svg"
+                width="36"
+                height="36"
+                alt=""
+              />
+            </button>
+            <button type="button" class="vt-relation__zoom-btn" data-vt-rel-zoom-out aria-label="축소">
+              <img
+                src="../../assets/image/icon/web/visual-tool/nav-zoom-out.svg"
+                width="36"
+                height="36"
+                alt=""
+              />
+            </button>
+          </div>
+          <button
+            type="button"
+            class="vt-relation__reset flex align-center justify-center"
+            data-vt-rel-reset
+            aria-label="초기화"
+          >
+            <img
+              src="../../assets/image/icon/web/visual-tool/nav-reset.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="vt-relation__popover border border-slate-200 radius-md-8 bg-white" data-vt-rel-popover hidden>
+          <p class="body3-r-14 color-slate-700 m-0">포함된 구성 데이터</p>
+          <ul class="vt-relation__popover-list body3-m-14 color-slate-900 m-0 p-0">
+            <li>• 시도별 수질오염사고 발생 통계</li>
+            <li>• 연도별 수질오염사고 발생 추이</li>
+            <li>• 사고 원인별 수질오염 현황</li>
+            <li>• 수계별 수질오염사고 발생 현황</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="vt-relation__detail border border-slate-200 bg-white" data-vt-rel-detail hidden aria-label="데이터셋 상세">
+        <div
+          class="vt-relation__detail-resizer"
+          data-vt-rel-detail-resize
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="상세 패널 너비 조절"
+          tabindex="0"
+        ></div>
+        <div class="vt-relation__detail-head flex align-center justify-between">
+          <div class="vt-relation__chips flex align-center gap-8">
+            <button type="button" class="vt-relation__chip is-active body3-sb-14">토지피복</button>
+            <button type="button" class="vt-relation__chip body3-sb-14">시계열 변화</button>
+            <button type="button" class="vt-relation__chip body3-sb-14">토지피복 변화량</button>
+          </div>
+          <button type="button" class="vt-relation__close flex align-center justify-center" data-vt-rel-close aria-label="상세 닫기">
+            <img
+              src="../../assets/image/icon/web/visual-tool/detail-close.svg"
+              width="24"
+              height="24"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="vt-relation__detail-body">
+          <div class="vt-relation__info">
+            <h3 class="body1-sb-18 color-slate-900 m-0">데이터셋명</h3>
+            <div class="vt-relation__meta">
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">원천기관</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">환경부 · 국립환경과학원</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">원천시스템</span>
+                <a
+                  href="#"
+                  class="vt-relation__meta-link body3-m-14 color-slate-900"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>국가환경정보시스템</span>
+                  <img
+                    src="../../assets/image/icon/web/visual-tool/detail-link.svg"
+                    width="8"
+                    height="8"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">관리시스템</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">환경공간정보서비스</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">최근 갱신일</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">2019-09-15</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">기준연도</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">1980~2010</span>
+              </div>
+              <div class="vt-relation__meta-row">
+                <span class="vt-relation__meta-label body3-r-14 color-slate-700">갱신주기</span>
+                <span class="vt-relation__meta-value body3-m-14 color-slate-900">실시간</span>
+              </div>
+              <p class="body3-r-14 color-slate-700 m-0">
+                국내 대기오염 측정망에서 수집된 실시간 측정값을 기반으로, 시도·측정소 단위의 농도와 대기질 등급을 제공합니다.
+              </p>
+            </div>
+          </div>
+          <div class="vt-relation__compose">
+            <strong class="body2-sb-16 color-slate-900">구성 데이터</strong>
+            <ul class="vt-relation__compose-list m-0 p-0">
+              <li class="vt-relation__compose-item body3-m-14 color-slate-900">비점오염저감시설 연관 하천</li>
+              <li class="vt-relation__compose-item body3-m-14 color-slate-900">비점오염저감시설 연관 하천</li>
+            </ul>
+          </div>
+        </div>
+        <div class="vt-relation__detail-foot">
+          <button type="button" class="slate-button-48 vt-relation__detail-btn">상세보기</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 확장맵 -->
+  <div class="vt-panel vt-expand" data-vt-panel="expand" hidden>
+    <div class="vt-relation__layout" data-vt-expand-layout>
+      <div
+        class="vt-expand__canvas vt-relation__canvas border border-slate-200 radius-md-8 relative"
+        data-vt-expand-wrap
+      >
+      <div class="vt-expand__legend flex align-center gap-16" aria-label="노드 범례">
+        <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+          <img
+            class="vt-expand__nl-icon vt-expand__nl-icon--major"
+            src="../../assets/image/icon/web/visual-tool/legend-expand-major.svg"
+            width="20"
+            height="18"
+            alt=""
+          />
+          <span>대분류</span>
+        </span>
+        <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+          <img
+            class="vt-expand__nl-icon vt-expand__nl-icon--mid"
+            src="../../assets/image/icon/web/visual-tool/legend-expand-mid.svg"
+            width="18"
+            height="18"
+            alt=""
+          />
+          <span>중분류</span>
+        </span>
+        <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+          <img
+            class="vt-expand__nl-icon vt-expand__nl-icon--small"
+            src="../../assets/image/icon/web/visual-tool/legend-expand-small.svg"
+            width="20"
+            height="18"
+            alt=""
+          />
+          <span>소분류</span>
+        </span>
+        <span class="vt-expand__nl flex align-center gap-8 body3-m-14 color-slate-700">
+          <img
+            class="vt-expand__nl-icon vt-expand__nl-icon--ds"
+            src="../../assets/image/icon/web/visual-tool/legend-expand-ds.svg"
+            width="18"
+            height="18"
+            alt=""
+          />
+          <span>데이터셋</span>
+        </span>
+      </div>
+
+      <div class="vt-expand__viewport" data-vt-expand-viewport>
+        <div class="vt-expand__graph" data-vt-expand-chart role="img" aria-label="확장맵"></div>
+      </div>
+
+      <div
+        class="vt-expand__popover vt-relation__popover border border-slate-200 radius-md-8 bg-white"
+        data-vt-expand-popover
+        hidden
+      >
+        <p class="body3-r-14 color-slate-700 m-0">포함된 구성 데이터</p>
+        <ul class="vt-expand__popover-list vt-relation__popover-list body3-m-14 color-slate-900 m-0 p-0"></ul>
+      </div>
+
+      <button
+        type="button"
+        class="vt-chart__expand flex align-center justify-center"
+        data-vt-expand-expand
+        aria-label="전체화면으로 보기"
+        aria-expanded="false"
+      >
+        <i class="maximise-02-slate-700" aria-hidden="true"></i>
+      </button>
+
+      <div class="vt-expand__tools">
+        <div class="vt-expand__zoom">
+          <button type="button" class="vt-expand__zoom-btn" data-vt-expand-zoom-in aria-label="확대">
+            <img
+              src="../../assets/image/icon/web/visual-tool/nav-zoom-in.svg"
+              width="36"
+              height="36"
+              alt=""
+            />
+          </button>
+          <button type="button" class="vt-expand__zoom-btn" data-vt-expand-zoom-out aria-label="축소">
+            <img
+              src="../../assets/image/icon/web/visual-tool/nav-zoom-out.svg"
+              width="36"
+              height="36"
+              alt=""
+            />
+          </button>
+        </div>
+        <button
+          type="button"
+          class="vt-expand__fit flex align-center justify-center"
+          data-vt-expand-fit
+          aria-label="화면에 맞추기"
+        >
+          <img
+            src="../../assets/image/icon/web/visual-tool/nav-fit.svg"
+            width="24"
+            height="24"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

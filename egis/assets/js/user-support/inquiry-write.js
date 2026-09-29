@@ -1,4 +1,4 @@
-/** 문의하기 — 작성 폼 (검증·첨부 토스트 Figma 1728:6101 / 6361~6377) */
+/** 문의하기 — 작성 폼 (검증·첨부 토스트) */
 (() => {
   window.EgisInquiryTypes?.bind(
     document.getElementById('inquiry-write-category'),

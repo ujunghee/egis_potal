@@ -1,7 +1,4 @@
-/**
- * 다운로드 내역 — 선택 영역 보기 팝업
- * Figma: 1762:3894 (전체) / 1762:3895 (지역 선택) / 1762:3953 (지도에서 선택)
- */
+/** 다운로드 내역 — 선택 영역 보기 팝업 */
 (() => {
   const regionsModal = document.querySelector('[data-dl-area-modal="regions"]');
   const mapModal = document.querySelector('[data-dl-area-modal="map"]');

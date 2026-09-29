@@ -1,7 +1,4 @@
-/**
- * Open API 개발 계정 상세 — 정상/만료, 인증키 보기·복사, 계정 삭제
- * Figma: 1189:7760 / 1226:127
- */
+/** Open API 개발 계정 상세 — 정상/만료, 인증키 보기·복사, 계정 삭제 */
 (() => {
   const root = document.querySelector('[data-oa-detail]');
   if (!root) return;
@@ -48,7 +45,7 @@
     window.Toast?.show?.('인증키가 복사되었습니다.');
   });
 
-  /* Figma 1937:5213 — 계정 삭제 */
+  
   deleteBtn?.addEventListener('click', () => {
     window.ConfirmDialog?.show({
       title: '삭제하시겠습니까?',
@@ -63,7 +60,7 @@
     });
   });
 
-  /* Figma 1937:5227 — 연장 신청 (아이콘 없음) */
+  
   extendBtn?.addEventListener('click', () => {
     window.ConfirmDialog?.show({
       title: '연장 신청하시겠습니까?',

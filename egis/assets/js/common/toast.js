@@ -4,7 +4,7 @@
  * 마크업: shared/fragments/toast.html (레이아웃 body 끝에 한 번)
  * 컨테이너(.toast-stack)가 있으면 그 안에 항목을 넣고, 없으면 body 끝에 만듭니다.
  *
- *   Toast.warning('변경사항을 저장했습니다.');                   // 노란 경고 아이콘 (Figma 1960:5238)
+ *   Toast.warning('변경사항을 저장했습니다.');                   // 노란 경고 아이콘
  *   Toast.error('파일을 첨부하지 못했습니다. 잠시 후 다시 시도해 주세요.'); // 빨간 에러 아이콘
  *   Toast.show('관심 데이터에 저장했습니다.');                    // 아이콘 없음
  *   Toast.show('메시지', { duration: 5000 });                    // 기본 3000ms

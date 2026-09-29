@@ -102,7 +102,7 @@ DatasetCard.render = (
     </li>`;
 };
 
-/** 리스트형 행 마크업 — 레이아웃 Figma 1701:14674, 호버 시 포털 안내는 Figma 2162:2191 */
+/** 리스트형 행 마크업 — 레이아웃, 호버 시 포털 안내 */
 DatasetCard.renderListRow = (
   item,
   {

@@ -1,4 +1,4 @@
-/* 도엽검색 — 결과 패널 뷰 (Figma 936:4485, 260px) */
+/* 도엽검색 — 결과 패널 뷰 */
 .map-sheet-search {
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   color: var(--slate-400);
 }
 
-/* 검색 결과 (Figma 1603:823) */
+/* 검색 결과 */
 .map-sheet-search__result {
   flex: 1;
   display: flex;

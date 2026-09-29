@@ -1,4 +1,4 @@
-/* Datepicker — Figma 2168:4741 (flatpickr + SolveK select) */
+/* Datepicker */
 
 /* --- 루트 .dp ---
    월 콤보 때문에 overflow:hidden 을 쓸 수 없음 → 외곽 보더는 head/body/foot 에 분리 */
@@ -24,9 +24,10 @@
   display: none;
 }
 
-.flatpickr-calendar.dp.bottom {
-  top: auto;
-  bottom: 6.4rem;
+dialog.modal-container .flatpickr-calendar.dp,
+dialog.modal-container .flatpickr-calendar.dp.open {
+  z-index: 1000 !important;
+  pointer-events: auto;
 }
 
 /* --- dp-head · .flatpickr-months ---
@@ -233,8 +234,8 @@
 
 /*
  * 월 콤보
- * 기본(닫힘): 보더 없음 — Figma 2168:4739
- * 열림: SolveK select 보더 + 목록 — Figma 2168:4758 / 4907
+ * 기본(닫힘): 보더 없음
+ * 열림: SolveK select 보더 + 목록
  */
 .flatpickr-calendar.dp .dp-month-combo {
   order: 2;

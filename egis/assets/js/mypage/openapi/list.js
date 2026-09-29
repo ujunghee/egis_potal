@@ -1,8 +1,4 @@
-/**
- * Open API 신청 현황 — 기간 검증 토스트 + 빈 상태
- * Figma: 1189:7167 / 1935:4362
- * 토스트: 1935:4345 / 1935:4352 / 1935:4357
- */
+/** Open API 신청 현황 — 기간 검증 토스트 + 빈 상태 */
 (() => {
   const form = document.querySelector('[data-oa-filter]');
   if (!form || typeof window.initPicker !== 'function') return;

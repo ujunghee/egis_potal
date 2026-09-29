@@ -216,11 +216,7 @@ body.is-selected-layer-sorting .selected-layer-item--drag * {
   flex-shrink: 0;
 }
 
-/*
- * Figma 1995:5720 — 스와치 호버 시 해당 범례 1건 (범례명 + 데이터값)
- * Figma 2228:6796 — + 호버 시 전체 범례 목록 (스와치 + 범례명 + 데이터값)
- * 내용은 selected-layer-panel.js가 data-legend-* 값으로 생성합니다.
- */
+/* 내용은 selected-layer-panel.js가 data-legend-* 값으로 생성합니다. */
 .selected-layer-item__palette-tooltip {
   position: fixed;
   left: -9999px;

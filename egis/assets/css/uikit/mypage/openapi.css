@@ -1,6 +1,6 @@
 /* Open API 관리 — 목록 / 상세 / 수정 */
 
-/* ========== 목록 (1189:7167) ========== */
+/* ========== 목록 ========== */
 .oa-mypage__stats {
   list-style: none;
 }
@@ -74,7 +74,7 @@
   height: 2.4rem;
 }
 
-/* Figma 1189:7481 — account 79px / name 1fr / status·date fit-content */
+/* account 79px / name 1fr / status·date fit-content */
 .oa-mypage__col-account {
   width: 7.9rem;
 }
@@ -170,7 +170,7 @@
   display: none;
 }
 
-/* ========== 상세 (1189:7760 / 1226:127) ========== */
+/* ========== 상세 ========== */
 .oa-detail__actions {
   gap: 1rem;
 }
@@ -325,7 +325,7 @@
   color: var(--red-600);
 }
 
-/* ========== 수정 (1226:1737) ========== */
+/* ========== 수정 ========== */
 .oa-edit__summary-card {
   display: flex;
   flex-direction: column;
@@ -366,7 +366,7 @@
   width: 16rem;
 }
 
-/* ========== 운영계정 신청 (1226:2329) ========== */
+/* ========== 운영계정 신청 ========== */
 .oa-prod__field--date {
   width: 24.7rem;
   flex: none;
@@ -395,7 +395,7 @@
   resize: none;
 }
 
-/* Figma 1749:3290 — 서비스 설명 필드 에러 */
+
 .oa-prod__field.is-error .oa-prod__textarea {
   border-color: var(--red-500);
 }
@@ -413,7 +413,7 @@
   pointer-events: none;
 }
 
-/* Figma 1226:2689 — 연한 파란 원 + 파란 느낌표 */
+
 .oa-prod__info-icon {
   display: block;
   width: 2.4rem;
@@ -495,7 +495,7 @@
   width: 20rem;
 }
 
-/* ========== 운영계정 신청 상세 (1234:1118 / 1226:3244 / 1234:1388) ========== */
+/* ========== 운영계정 신청 상세 ========== */
 .oa-prod-detail__banner + .oa-edit__summary,
 .oa-edit__summary + .oa-prod-detail__card,
 .oa-prod-detail__card + .oa-prod-detail__card {

@@ -3,6 +3,7 @@
   try {
     await window.FragmentLoader.loadAll();
     await window.ScriptLoader.loadSequentially([
+      'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js',
       'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js',
       'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js',
       '../../assets/js/common/datepicjer.js',
@@ -10,6 +11,8 @@
       '../../assets/js/common/search-filter.js',
       '../../assets/js/common/dataset-card.js',
       '../../assets/js/search/search-head.js',
+      '../../assets/js/search/quick-nav.js',
+      '../../assets/js/search/favorites-recent.js',
       '../../assets/js/search/listing.js',
       '../../assets/js/search/dataset.js',
     ]);

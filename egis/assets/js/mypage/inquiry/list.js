@@ -1,7 +1,4 @@
-/**
- * 나의 문의 목록 — 기간 프리셋 · 문의 유형 연동 · 날짜 선택
- * Figma: 1234:2134
- */
+/** 나의 문의 목록 — 기간 프리셋 · 문의 유형 연동 · 날짜 선택 */
 (() => {
   const form = document.querySelector('[data-mi-filter]');
   if (!form || typeof window.initPicker !== 'function') return;

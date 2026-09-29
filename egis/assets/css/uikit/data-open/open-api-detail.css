@@ -115,7 +115,6 @@
   cursor: pointer;
 }
 
-/* Figma 1728:6382 — OpenAPI 지도 전체화면 */
 .oa-detail__map-fullscreen {
   position: fixed;
   inset: 0;

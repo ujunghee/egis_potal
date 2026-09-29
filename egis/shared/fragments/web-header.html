@@ -86,49 +86,44 @@
     <div class="inner-default">
       <ul class="header-nav__list">
         <li class="header-nav__item">
-          <a href="../map/index.html" class="header-nav__link body1-m-18">환경기초지도</a>
-        </li>
-        <li class="header-nav__item">
-          <a href="../topicalMap/index.html" class="header-nav__link body1-m-18">주제별 지도</a>
-        </li>
-        <li class="header-nav__item">
           <button
             type="button"
             class="header-nav__link body1-m-18"
             data-header-nav-toggle
             aria-expanded="false"
             aria-haspopup="true"
-            aria-controls="header-nav-sub-3"
+            aria-controls="header-nav-sub-1"
           >
-            데이터 개방
+            데이터 탐색
             <i class="arrow-icon" aria-hidden="true"></i>
           </button>
-          <div class="header-nav__sub" id="header-nav-sub-3">
+          <div class="header-nav__sub" id="header-nav-sub-1">
             <div class="inner-default header-nav__sub-inner">
               <div class="header-nav__sub-aside">
-                <p class="heading9-sb-22 color-slate-900">데이터 개방</p>
+                <p class="heading9-sb-22 color-slate-900">데이터 탐색</p>
               </div>
               <div class="header-nav__sub-content">
-                <ul class="header-nav__sub-list" role="menu" aria-label="데이터 개방 하위 메뉴">
+                <ul class="header-nav__sub-list" role="menu" aria-label="데이터 탐색 하위 메뉴">
                   <li role="none">
-                    <a href="../data-open/open-api/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
-                      >Open API<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    <a href="../topicalMap/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >데이터셋<span class="chevron-right-slate-700" aria-hidden="true"></span
                     ></a>
                   </li>
                   <li role="none">
-                    <a href="../data-open/land-cover/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
-                      >국가토지피복 통계<span class="chevron-right-slate-700" aria-hidden="true"></span
-                    ></a>
-                  </li>
-                  <li role="none">
-                    <a href="../data-open/ai-dataset/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
-                      >학습 데이터<span class="chevron-right-slate-700" aria-hidden="true"></span
+                    <a href="../visualTool/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
+                      >환경 시각화 도구<span class="chevron-right-slate-700" aria-hidden="true"></span
                     ></a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+        </li>
+        <li class="header-nav__item">
+          <a href="../map/index.html" class="header-nav__link body1-m-18">환경 지도</a>
+        </li>
+        <li class="header-nav__item">
+          <a href="../data-open/open-api/index.html" class="header-nav__link body1-m-18">Open API</a>
         </li>
         <li class="header-nav__item">
           <button
@@ -182,7 +177,7 @@
                 <p class="heading9-sb-22 color-slate-900">이용자 지원</p>
               </div>
               <div class="header-nav__sub-content">
-                <ul class="header-nav__sub-list" role="menu" aria-label="사용자 지원 하위 메뉴">
+                <ul class="header-nav__sub-list" role="menu" aria-label="이용자 지원 하위 메뉴">
                   <li role="none">
                     <a href="../userSupport/index.html" class="header-nav__sub-link body1-r-18" role="menuitem"
                       >공지사항<span class="chevron-right-slate-700" aria-hidden="true"></span
@@ -244,53 +239,80 @@
           <h3 id="header-search-popular-title" class="heading10-sb-20 color-slate-900 mb-8">인기 검색어</h3>
           <ol>
             <li>
-              <a href="../map/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">1</span>미세먼지</a
+              <a href="../search/index.html?q=미세먼지" class="flex align-center py-6 body2-m-16 color-slate-700"
+                <span class="body2-sb-16 color-blue-500">1</span>미세먼지</a
               >
             </li>
             <li>
-              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">2</span>기후변화 분석</a
+              <a
+                href="../search/index.html?q=기후변화%20분석"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">2</span>기후변화 분석</a
               >
             </li>
             <li>
-              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">3</span>탄소배출량</a
+              <a
+                href="../search/index.html?q=탄소배출량"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">3</span>탄소배출량</a
               >
             </li>
             <li>
-              <a href="../data-open/land-cover/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">4</span>수질오염 예측</a
+              <a
+                href="../search/index.html?q=수질오염%20예측"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">4</span>수질오염 예측</a
               >
             </li>
             <li>
-              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">5</span>도시 열섬 현상</a
+              <a
+                href="../search/index.html?q=도시%20열섬%20현상"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">5</span>도시 열섬 현상</a
               >
             </li>
             <li>
-              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">6</span>초미세먼지 현상</a
+              <a
+                href="../search/index.html?q=초미세먼지%20현상"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">6</span>초미세먼지 현상</a
               >
             </li>
             <li>
-              <a href="javascript:void(0);" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">7</span>오존 경보 지역</a
+              <a
+                href="../search/index.html?q=오존%20경보%20지역"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">7</span>오존 경보 지역</a
               >
             </li>
             <li>
-              <a href="../data-open/open-api/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">8</span>해수면 상승 모니터링</a
+              <a
+                href="../search/index.html?q=해수면%20상승%20모니터링"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">8</span>해수면 상승 모니터링</a
               >
             </li>
             <li>
-              <a href="../data-open/ai-dataset/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">9</span>산불 위험도 지수</a
+              <a
+                href="../search/index.html?q=산불%20위험도%20지수"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">9</span>산불 위험도 지수</a
               >
             </li>
             <li>
-              <a href="../data-open/ai-dataset/index.html" class="flex align-center py-6 body2-m-16 color-slate-700"
-                ><span class="body2-sb-16 color-blue-500">9</span>재생에너지 발전량</a
+              <a
+                href="../search/index.html?q=재생에너지%20발전량"
+                class="flex align-center py-6 body2-m-16 color-slate-700"
+              >
+                <span class="body2-sb-16 color-blue-500">10</span>재생에너지 발전량</a
               >
             </li>
           </ol>

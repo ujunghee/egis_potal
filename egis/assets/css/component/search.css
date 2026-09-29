@@ -82,7 +82,7 @@ input[type="search"]:hover::-webkit-search-cancel-button {
   }
 }
 
-/* 통합검색 58 — Figma 1691:658 */
+/* 통합검색 58 */
 .search-58 {
   box-sizing: border-box;
   border: 0.15rem solid var(--slate-700);
@@ -203,7 +203,6 @@ input[type="search"]:hover::-webkit-search-cancel-button {
 .main-search__input:focus {
   outline: none;
 }
-
 
 /* 지도 헤더 검색창 */
 .map-search-wrapper {

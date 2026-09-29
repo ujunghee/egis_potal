@@ -13,6 +13,7 @@
 /* 페이지별 */
 @import url('./uikit/main/main.css');
 @import url('./uikit/search/search.css');
+@import url('./uikit/search/ai-search.css');
 @import url('./uikit/topical/topical.css');
 @import url('./uikit/topical/topical-detail.css');
 /* data-open */
@@ -30,3 +31,4 @@
 @import url('./uikit/mypage/download.css');
 @import url('./uikit/login/login.css');
 @import url('./uikit/login/app.css');
+@import url('./uikit/visual-tool/visual-tool.css');

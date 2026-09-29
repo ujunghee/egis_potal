@@ -1,0 +1,215 @@
+<!-- AI 질문 조건 수정 — Figma 591:2998 -->
+<dialog class="modal-container" id="ai-cond-modal" data-ai-cond-modal aria-labelledby="ai-cond-title">
+  <form class="modal ai-cond" action="./ai.html" method="get" data-ai-cond-form>
+    <input type="hidden" name="q" data-ai-cond-query />
+
+    <div class="modal__header">
+      <h2 id="ai-cond-title" class="heading8-sb-24 color-gray-900">AI 질문 조건 수정</h2>
+      <button type="button" class="ai-cond__close" data-ai-cond-close aria-label="AI 질문 조건 수정 닫기">
+        <i class="close-icon-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal__content ai-cond__body">
+      <!-- 분석 목적 -->
+      <section class="ai-cond__group" role="radiogroup" aria-labelledby="ai-cond-purpose-title">
+        <div class="ai-cond__head flex align-center justify-between">
+          <h3 id="ai-cond-purpose-title" class="body1-sb-18 color-slate-900">분석 목적</h3>
+          <span class="ai-cond__badge flex align-center gap-6 body3-m-14 color-blue-500">
+            <i class="main-sparkles-ai-icon" aria-hidden="true"></i>AI 추출
+          </span>
+        </div>
+        <ul class="ai-cond__options">
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">관련 데이터 탐색</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="purpose" value="관련 데이터 탐색" checked />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">발전량 변화 추이 분석</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="purpose" value="발전량 변화 추이 분석" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">지역별 발전량 비교</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="purpose" value="지역별 발전량 비교" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">발전량 영향 요인 분석</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="purpose" value="발전량 영향 요인 분석" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">직접 입력</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="purpose" value="custom" data-ai-cond-custom />
+            </label>
+            <label for="ai-cond-purpose-custom" class="blind">분석 목적 직접 입력</label>
+            <input
+              type="text"
+              id="ai-cond-purpose-custom"
+              name="purposeText"
+              class="input-field-default-48 ai-cond__custom-input"
+              placeholder="분석 목적을 입력하세요"
+              autocomplete="off"
+              maxlength="40"
+              data-ai-cond-custom-input
+              hidden
+              disabled
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- 핵심 주제 -->
+      <section class="ai-cond__group" role="radiogroup" aria-labelledby="ai-cond-topic-title">
+        <div class="ai-cond__head flex align-center justify-between">
+          <h3 id="ai-cond-topic-title" class="body1-sb-18 color-slate-900">핵심 주제</h3>
+          <span class="ai-cond__badge flex align-center gap-6 body3-m-14 color-blue-500">
+            <i class="main-sparkles-ai-icon" aria-hidden="true"></i>AI 추천
+          </span>
+        </div>
+        <ul class="ai-cond__options">
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">태양광 발전량</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="topic" value="태양광 발전량" checked />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">태양광 발전설비</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="topic" value="태양광 발전설비" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">일사량·기온 등 기상요인</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="topic" value="일사량·기온 등 기상요인" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">지역별 전력 생산량</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="topic" value="지역별 전력 생산량" />
+            </label>
+          </li>
+          <li>
+            <label class="ai-cond__option">
+              <span class="ai-cond__option-text body2-m-16">직접 입력</span>
+              <input type="radio" class="radio-basic radio-basic-sm" name="topic" value="custom" data-ai-cond-custom />
+            </label>
+            <label for="ai-cond-topic-custom" class="blind">핵심 주제 직접 입력</label>
+            <input
+              type="text"
+              id="ai-cond-topic-custom"
+              name="topicText"
+              class="input-field-default-48 ai-cond__custom-input"
+              placeholder="핵심 주제를 입력하세요"
+              autocomplete="off"
+              maxlength="40"
+              data-ai-cond-custom-input
+              hidden
+              disabled
+            />
+          </li>
+        </ul>
+      </section>
+
+      <div class="ai-cond__scope">
+        <!-- 대상 지역 -->
+        <div class="ai-cond__field">
+          <label for="ai-cond-sido" class="body2-m-16 color-slate-900">대상 지역</label>
+          <div class="ai-cond__region">
+            <select id="ai-cond-sido" name="sido" class="select-48" data-ai-cond-sido>
+              <option value="">전국</option>
+              <option value="서울특별시">서울특별시</option>
+              <option value="부산광역시">부산광역시</option>
+              <option value="대구광역시">대구광역시</option>
+              <option value="인천광역시">인천광역시</option>
+              <option value="광주광역시">광주광역시</option>
+              <option value="대전광역시">대전광역시</option>
+              <option value="울산광역시">울산광역시</option>
+              <option value="세종특별자치시">세종특별자치시</option>
+              <option value="경기도">경기도</option>
+              <option value="강원특별자치도">강원특별자치도</option>
+              <option value="충청북도">충청북도</option>
+              <option value="충청남도">충청남도</option>
+              <option value="전북특별자치도">전북특별자치도</option>
+              <option value="전라남도">전라남도</option>
+              <option value="경상북도">경상북도</option>
+              <option value="경상남도">경상남도</option>
+              <option value="제주특별자치도" selected>제주특별자치도</option>
+            </select>
+            <label for="ai-cond-sigungu" class="blind">시군구</label>
+            <select id="ai-cond-sigungu" name="sigungu" class="select-48" data-ai-cond-sigungu>
+              <option value="">전체</option>
+              <option value="제주시" selected>제주시</option>
+              <option value="서귀포시">서귀포시</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 기간 -->
+        <div class="ai-cond__period">
+          <div class="ai-cond__field ai-cond__field--period">
+            <label for="ai-cond-period" class="body2-m-16 color-slate-900">기간</label>
+            <select id="ai-cond-period" name="period" class="select-48" data-ai-cond-period>
+              <option value="" selected>전체</option>
+              <option value="1w">최근 1주일</option>
+              <option value="1m">최근 1개월</option>
+              <option value="3m">최근 3개월</option>
+              <option value="6m">최근 6개월</option>
+              <option value="1y">최근 1년</option>
+              <option value="custom">직접 설정</option>
+            </select>
+          </div>
+          <div class="ai-cond__dates">
+            <span class="ai-cond__date">
+              <label for="ai-cond-start" class="blind">시작일</label>
+              <input
+                id="ai-cond-start"
+                type="text"
+                name="start"
+                class="input-field-default-48 input-with-trailing-icon ai-cond__date-input"
+                placeholder="연도-월-일"
+                autocomplete="off"
+              />
+              <button type="button" class="ai-cond__date-btn" data-datepicker-for="ai-cond-start" aria-label="시작일 선택">
+                <i class="calendar-02-icon" aria-hidden="true"></i>
+              </button>
+            </span>
+            <span class="body2-r-16 color-gray-900" aria-hidden="true">~</span>
+            <span class="ai-cond__date">
+              <label for="ai-cond-end" class="blind">종료일</label>
+              <input
+                id="ai-cond-end"
+                type="text"
+                name="end"
+                class="input-field-default-48 input-with-trailing-icon ai-cond__date-input"
+                placeholder="연도-월-일"
+                autocomplete="off"
+              />
+              <button type="button" class="ai-cond__date-btn" data-datepicker-for="ai-cond-end" aria-label="종료일 선택">
+                <i class="calendar-02-icon" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal__footer ai-cond__footer flex align-center justify-between">
+      <button type="button" class="border-slate-button-48 ai-cond__btn" data-ai-cond-reset>초기화</button>
+      <div class="flex align-center gap-8">
+        <button type="button" class="border-slate-button-48 ai-cond__btn" data-ai-cond-close>취소</button>
+        <button type="submit" class="blue-button-48 ai-cond__submit">조건 적용 후 다시 검색</button>
+      </div>
+    </div>
+  </form>
+</dialog>

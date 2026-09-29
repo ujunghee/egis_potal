@@ -1,7 +1,4 @@
-/**
- * 다운로드 내역 — 기간 프리셋 · 탭 필터 · 다운로드 토스트
- * Figma: 1247:11514
- */
+/** 다운로드 내역 — 기간 프리셋 · 탭 필터 · 다운로드 토스트 */
 (() => {
   const form = document.querySelector('[data-dl-filter]');
   const list = document.querySelector('[data-dl-list]');

@@ -1,7 +1,4 @@
-/**
- * Open API 개발계정 정보 수정 — 글자수 카운터 / 저장
- * Figma: 1226:1737
- */
+/** Open API 개발계정 정보 수정 — 글자수 카운터 / 저장 */
 (() => {
   const form = document.querySelector('[data-oa-edit-form]');
   if (!form) return;
@@ -19,7 +16,7 @@
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    /* Figma 1960:5238 — 저장 완료 토스트 */
+    
     window.Toast?.warning?.('변경사항을 저장했습니다.');
     window.setTimeout(() => {
       window.location.href = './detail.html';

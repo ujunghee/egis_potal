@@ -8,7 +8,7 @@
 (() => {
   const params = new URLSearchParams(window.location.search);
   const keyword = params.get('q')?.trim() || '';
-  const tabs = [...document.querySelectorAll('[data-search-tab]')];
+  const tabs = [...document.querySelectorAll('.search-tabs__tab[data-search-tab]')];
 
   if (keyword) {
     const input = document.getElementById('search-keyword');

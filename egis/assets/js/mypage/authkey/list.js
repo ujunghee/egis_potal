@@ -1,7 +1,4 @@
-/**
- * 인증키 발급현황 — 보기 · 복사 · 재발급
- * Figma: 1234:3869
- */
+/** 인증키 발급현황 — 보기 · 복사 · 재발급 */
 (() => {
   const list = document.querySelector('[data-ak-list]');
   if (!list) return;

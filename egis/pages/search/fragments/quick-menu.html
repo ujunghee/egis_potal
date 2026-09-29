@@ -1,0 +1,48 @@
+<div class="tp-quick-wrap absolute" data-quick-nav>
+  <aside
+    id="recent-panel"
+    class="tp-recent overflow-hidden rounded-md bg-white"
+    data-recent-panel
+    aria-labelledby="recent-title"
+    hidden
+  >
+    <div class="tp-recent__header flex align-center justify-between">
+      <h2 id="recent-title" class="flex align-center gap-4">
+        <span class="heading8-sb-24 color-slate-900">최근 본 데이터</span>
+        <span class="heading8-sb-24 color-blue-500" data-recent-count>0</span>
+      </h2>
+    </div>
+    <ul class="tp-recent-list flex flex-col gap-16 overflow-auto" data-recent-list aria-label="최근 본 데이터 목록"></ul>
+    <button type="button" class="tp-recent__close" data-recent-close>
+      <i class="modal__close" aria-hidden="true"></i>
+      <span class="blind">최근 본 데이터 닫기</span>
+    </button>
+  </aside>
+  <nav class="tp-quick bg-white" aria-label="빠른 메뉴">
+    <ul class="flex flex-col gap-8">
+      <li>
+        <button type="button" class="tp-quick__btn flex flex-col align-center w-full" data-fav-open aria-haspopup="dialog">
+          <i class="bookmark-icon" aria-hidden="true"></i>
+          <span class="body4-sb-13 color-slate-900"
+            >관심 <strong class="color-blue-500" data-fav-count>0</strong></span
+          >
+          <span class="blind">관심 데이터</span>
+        </button>
+      </li>
+      <li class="line bg-slate-100 h-1 w-full"></li>
+      <li>
+        <button
+          type="button"
+          class="tp-quick__btn flex flex-col align-center w-full"
+          data-recent-open
+          aria-expanded="false"
+          aria-controls="recent-panel"
+        >
+          <i class="time-icon" aria-hidden="true"></i>
+          <span class="body4-sb-13 color-slate-900">최근 본</span>
+          <span class="blind">최근 본 데이터</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 
-/* Figma 1247:10643 — 선택 시 노출되는 선택 삭제 */
+
 .mypage__delete-selected {
   display: inline-flex;
   align-items: center;

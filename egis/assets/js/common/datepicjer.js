@@ -57,7 +57,7 @@
     if (trigger) trigger.setAttribute('aria-expanded', 'false');
   }
 
-  /** SolveK select 스타일 월 콤보 (Figma 2168:4758 트리거 + 2168:4907 목록) */
+  /** SolveK select 스타일 월 콤보 (트리거 + 목록) */
   function ensureMonthCombo(inst) {
     var root = inst.calendarContainer;
     if (!root) return;
@@ -200,7 +200,31 @@
     var trigger = document.querySelector('[data-datepicker-for="' + inputId + '"]');
     if (!input || !trigger) return null;
 
+    var options = Object.assign({}, extra || {});
+    var skipTriggerListeners = options.skipTriggerListeners === true;
+    delete options.skipTriggerListeners;
+
+    var dialogLayer = input.closest('dialog.modal-container');
+    if (dialogLayer) {
+      if (!options.positionElement) {
+        options.positionElement = trigger.parentElement || input;
+      }
+      if (options.appendTo === undefined) {
+        options.appendTo = dialogLayer;
+      }
+    }
+
     var refresh = function (_, __, inst) { decorateCalendar(inst); };
+
+    function canOpen() {
+      if (input.disabled) return false;
+      return true;
+    }
+
+    function liftCalendarForModal(inst) {
+      if (!dialogLayer || !inst.calendarContainer) return;
+      inst.calendarContainer.style.zIndex = '1000';
+    }
 
     var picker = flatpickr(input, Object.assign({
       locale: koLocale,
@@ -210,8 +234,16 @@
       disableMobile: true,
       closeOnSelect: false,
       onOpen: function (_, __, inst) {
+        if (!canOpen()) {
+          inst.close();
+          return;
+        }
         inst._dpOpenBackup = inst.selectedDates.map(function (d) { return new Date(d.getTime()); });
         decorateCalendar(inst);
+        liftCalendarForModal(inst);
+        requestAnimationFrame(function () {
+          inst._positionCalendar();
+        });
       },
       onMonthChange: refresh,
       onYearChange: refresh,
@@ -219,11 +251,16 @@
         decorateCalendar(inst);
         injectFooter(inst);
       },
-    }, extra || {}));
+    }, options));
 
-    trigger.addEventListener('click', function () {
-      if (!input.disabled) picker.toggle();
-    });
+    if (!skipTriggerListeners) {
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (!canOpen()) return;
+        picker.toggle();
+      });
+    }
+
     return picker;
   }
 

@@ -60,6 +60,67 @@
   color: var(--slate-900);
 }
 
+/* 결과 구분 탭 — 콘텐츠 폭 전체(900px 탭 묶음 가운데 정렬) */
+.search-tabs-shell,
+.search-tabs-row {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-tabs-row {
+  min-height: 5.4rem;
+}
+
+.search-tabs-shell .search-tabs,
+.search-tabs-row .search-tabs {
+  width: 100%;
+  min-height: 5.4rem;
+  box-sizing: border-box;
+}
+
+.search-tabs-row .tp-quick-wrap {
+  
+  top: -0.9rem;
+  right: 0;
+  height: auto;
+  margin-top: 0;
+  transform: translateX(calc(100% + var(--spacing-24)));
+}
+
+.search-tabs-row .tp-quick-wrap.is-fixed {
+  height: auto;
+  display: block;
+  transform: none;
+}
+
+.search-listing__content .tp-card__footer {
+  min-height: 3.2rem;
+}
+
+main.inner-default:has(.search-tabs-row) {
+  overflow: visible;
+}
+
+@media (max-width: 1440px) {
+  main.inner-default:has(.search-tabs-row) {
+    padding-right: calc(4.2rem + 6.4rem + var(--spacing-24));
+  }
+}
+
+@media (max-width: 1280px) {
+  main.inner-default:has(.search-tabs-row) {
+    padding-right: calc(5rem + 6.4rem + var(--spacing-24));
+  }
+}
+
+@media (max-width: 1024px) {
+  main.inner-default:has(.search-tabs-row) {
+    padding-right: calc(4.2rem + 6.4rem + var(--spacing-24));
+  }
+}
+
 /* 결과 섹션 — 섹션 간 60px */
 .search-results {
   display: flex;
@@ -108,12 +169,30 @@
   align-items: start;
 }
 
+.search-listing.tp-layout {
+  position: relative;
+  overflow: visible;
+}
+
 .search-listing__content {
   min-width: 0;
 }
 
 .search-listing__head {
   min-height: 3.8rem;
+}
+
+/* 통합검색 FAQ — 그리드 12칸 전체 사용 */
+.search-listing__results.grid-column-12 {
+  min-width: 0;
+}
+
+.search-listing__results [data-faq-list] .faq-item:not(.is-open) {
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.search-listing__results [data-faq-list] .faq-item.is-open + .faq-item {
+  border-top: 0;
 }
 
 /* 문의하기 목록 */
@@ -149,9 +228,20 @@
   white-space: nowrap;
 }
 
+/* 주제도 1280px 규칙(1열)이 통합검색 목록까지 적용되지 않도록 */
+@media (max-width: 1280px) {
+  main.inner-default .search-listing .tp-cards:not(.tp-list) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* 노트북 (1024px 이하) — 카드 폭이 좁아 제목이 과하게 잘리는 구간 */
 @media (max-width: 1024px) {
   .search-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  main.inner-default .search-listing .tp-cards:not(.tp-list) {
+    grid-template-columns: 1fr;
   }
 }

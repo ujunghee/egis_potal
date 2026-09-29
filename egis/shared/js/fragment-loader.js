@@ -42,7 +42,7 @@ window.FragmentLoader = {
     const url = this.getSharedFragmentUrl('toast.html');
     if (!url) return;
 
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: 'no-cache' });
     if (!response.ok) return;
 
     const template = document.createElement('template');
@@ -108,7 +108,7 @@ window.FragmentLoader = {
     while (slots.length) {
       await Promise.all(slots.map(async (slot) => {
         const url = slot.dataset.fragment;
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-cache' });
         if (!response.ok) throw new Error(`Fragment를 불러오지 못했습니다: ${url}`);
 
         const template = document.createElement('template');

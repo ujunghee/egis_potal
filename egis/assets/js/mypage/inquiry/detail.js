@@ -1,8 +1,4 @@
-/**
- * 나의 문의 상세 — type 쿼리로 데이터셋 메타 / 태그 분기
- * Figma: 1234:2462 (dataset) · 1234:2864 (general)
- * ?type=dataset|general|openapi
- */
+/** 나의 문의 상세 — type 쿼리로 데이터셋 메타 / 태그 분기 (?type=dataset|general|openapi) */
 (() => {
   const root = document.querySelector('[data-mi-detail]');
   if (!root) return;

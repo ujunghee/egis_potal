@@ -1,0 +1,143 @@
+<!-- AI 검색 결과 본문 -->
+<div class="search-ai w-full mx-auto">
+  <div class="search-ai__main">
+    <section class="search-ai__turn" aria-labelledby="search-ai-answer-title">
+      <h2 id="search-ai-answer-title" class="blind">AI 답변</h2>
+      <div class="search-ai__query-row search-ai__quick-anchor w-full flex justify-end">
+        <div class="search-ai__query-cluster flex align-start gap-24">
+          <p class="search-ai__query body2-r-16 color-slate-900" data-ai-query-bubble></p>
+        </div>
+      </div>
+
+      <div class="search-ai__insight">
+        <div class="search-ai__detail">
+          <div class="search-ai__copy">
+            <p class="search-ai__lead body1-sb-18 color-slate-900" data-ai-answer-lead></p>
+            <div class="search-ai__answer-body body2-r-16 color-slate-700" data-ai-answer-body></div>
+          </div>
+          <hr class="search-ai__divider" />
+          <dl class="search-ai__meta">
+            <div class="search-ai__meta-item">
+              <dt class="body2-r-16 color-slate-700">제공기관</dt>
+              <dd class="body2-m-16 color-slate-900" data-ai-meta-provider></dd>
+            </div>
+            <div class="search-ai__meta-item">
+              <dt class="body2-r-16 color-slate-700">추천 기준</dt>
+              <dd class="body2-m-16 color-slate-900" data-ai-meta-criteria></dd>
+            </div>
+            <div class="search-ai__meta-item">
+              <dt class="body2-r-16 color-slate-700">답변 범위</dt>
+              <dd class="body2-m-16 color-slate-900" data-ai-meta-scope></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="search-ai__followups" aria-labelledby="search-ai-followup-title">
+          <h3 id="search-ai-followup-title" class="search-ai__followup-title body1-sb-18 color-blue-500">
+            더 알고 싶으신 게 있으신가요?
+          </h3>
+          <ul class="search-ai__followup-list" data-ai-followup-list aria-label="추천 질문"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-ai__evidence" aria-labelledby="search-ai-datasets-title">
+      <div class="search-ai__evidence-block">
+        <div class="search-listing__head search-ai__evidence-head flex align-center justify-between gap-16">
+          <h2 id="search-ai-datasets-title" class="search-ai__evidence-title heading10-sb-20">
+            <span class="color-slate-900">답변 근거 데이터셋</span>
+            <span class="color-blue-500" data-ai-dataset-count>5</span><span class="color-slate-900">개</span>
+          </h2>
+          <div class="flex align-center gap-10">
+            <div class="view-toggle" role="group" aria-label="보기 방식">
+              <button type="button" class="view-toggle__btn active" aria-pressed="true" data-view="card">
+                <i class="dashboards-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+                <i class="dashboards-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+                <span class="body2-r-16 color-slate-900">카드형</span>
+              </button>
+              <button type="button" class="view-toggle__btn" aria-pressed="false" data-view="list">
+                <i class="list-blue-icon view-toggle__icon view-toggle__icon--active" aria-hidden="true"></i>
+                <i class="list-gray-icon view-toggle__icon view-toggle__icon--inactive" aria-hidden="true"></i>
+                <span class="body2-r-16 color-slate-700">리스트형</span>
+              </button>
+            </div>
+            <div class="select-wrapper">
+              <label for="ai-page-size" class="blind">페이지당 결과 수</label>
+              <select id="ai-page-size" class="select-40 w-100">
+                <option selected>10개씩</option>
+                <option>20개씩</option>
+                <option>30개씩</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <ul class="tp-cards" data-ai-dataset-list aria-label="답변 근거 데이터셋"></ul>
+      </div>
+
+      <nav class="pagination pagination--filled" aria-label="데이터셋 페이지">
+        <ul class="pagination__list flex align-center justify-center gap-8">
+          <li>
+            <span
+              class="pagination__nav transparent-button-40 flex align-center body1-m-18 color-slate-700"
+              aria-disabled="true"
+            >
+              <span class="chevron-pagination-left-slate-700" aria-hidden="true"></span>이전<span class="blind"> 페이지</span>
+            </span>
+          </li>
+          <li><span class="pagination__link body2-b-16" aria-current="page">1</span></li>
+          <li>
+            <span
+              class="pagination__nav transparent-button-40 flex align-center body1-m-18 color-slate-700"
+              aria-disabled="true"
+            >
+              다음<span class="blind"> 페이지</span><span class="chevron-pagination-slate-700" aria-hidden="true"></span>
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </div>
+
+  <div class="search-ai__composer-stick">
+    <aside class="search-ai__composer" aria-label="AI 질문 입력">
+      <div class="search-ai__composer-block">
+        <div class="search-ai__composer-head flex align-center justify-between gap-12">
+          <p class="flex align-center gap-6 body2-sb-16 color-blue-500">
+            <i class="main-sparkles-ai-icon flex-none" aria-hidden="true"></i>
+            AI가 이해한 질문 조건
+          </p>
+          <button
+            type="button"
+            class="transparent-button-40 search-ai__composer-edit"
+            data-ai-cond-open
+            aria-haspopup="dialog"
+            aria-controls="ai-cond-modal"
+            aria-expanded="false"
+          >
+            조건 수정
+          </button>
+        </div>
+        <ul class="search-ai__conditions flex flex-wrap gap-8" data-ai-conditions aria-label="질문 조건"></ul>
+      </div>
+      <form class="search-ai__composer-form flex align-center justify-between gap-12" data-ai-composer-form action="./ai.html" method="get">
+        <label for="search-ai-composer-input" class="blind">추가 질문</label>
+        <div class="search-ai__composer-field flex align-center gap-8 flex-1">
+          <i class="main-ai-icon flex-none" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="search-ai-composer-input"
+            name="q"
+            class="search-ai__composer-input flex-1 body1-r-18 color-slate-900"
+            placeholder="궁금한 내용을 질문해 주세요"
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit" class="search-ai__composer-submit flex-none" aria-label="검색">
+          <i class="arrow-right-sm-white search-ai__composer-submit-icon" aria-hidden="true"></i>
+          <span class="blind">검색</span>
+        </button>
+      </form>
+    </aside>
+  </div>
+</div>

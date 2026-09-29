@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 검색 결과 | 환경공간정보서비스</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="../../assets/css/foundation.css" />
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+  </head>
+  <body data-search-tab="ai">
+    <div data-fragment="../../shared/fragments/web-header.html"></div>
+    <main role="main" class="inner-default search-ai-page">
+      <div class="search-ai-column">
+        <div data-fragment="./fragments/ai-breadcrumb.html"></div>
+        <div class="search-ai-shell search-ai-shell--quick tp-layout relative mt-32">
+          <div data-fragment="./fragments/quick-menu.html"></div>
+          <div data-fragment="./fragments/ai-results.html"></div>
+        </div>
+      </div>
+    </main>
+    <div data-fragment="./fragments/favorite-modal.html"></div>
+    <div data-fragment="./fragments/ai-condition-modal.html"></div>
+    <div data-fragment="../../shared/fragments/footer.html"></div>
+    <script src="../../shared/js/fragment-loader.js"></script>
+    <script src="../../shared/js/script-loader.js"></script>
+    <script src="./ai-app.js"></script>
+  </body>
+</html>

@@ -18,7 +18,7 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: var(--spacing-12); /* Figma 1960:5238 */
+  gap: var(--spacing-12); 
   /* max-width: min(70rem, calc(100vw - 3.2rem)); */
   width: fit-content;
   padding: var(--spacing-12) var(--spacing-16);
@@ -41,7 +41,7 @@
   white-space: nowrap;
 }
 
-/* Figma 1960:5238 — 변경사항 저장 등 warning 토스트 타이포 */
+
 .toast--warning .toast__text {
   font-size: var(--font-size-heading10, 2rem);
   font-weight: var(--font-weight-semibold, 600);
@@ -60,7 +60,7 @@
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='12' fill='%23F8C840'/><path d='M10.9998 17.0769V17.0255C11.0001 16.5159 11.4477 16.1025 11.9998 16.1025C12.552 16.1025 12.9996 16.5159 12.9998 17.0255V17.0769C12.9998 17.5867 12.5521 18 11.9998 18C11.4475 18 10.9998 17.5867 10.9998 17.0769ZM10.9998 12.7257V6.92308C10.9998 6.41328 11.4475 6 11.9998 6C12.5521 6 12.9998 6.41328 12.9998 6.92308V12.7257C12.9996 13.2353 12.552 13.6487 11.9998 13.6487C11.4477 13.6487 11.0001 13.2353 10.9998 12.7257Z' fill='%231E2124'/></svg>") center center / contain no-repeat;
 }
 
-/* Figma 1728:6377 — 업로드 실패 */
+
 .toast--error .toast__icon {
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='12' fill='%23E60023'/><path d='M10.9998 17.0769V17.0255C11.0001 16.5159 11.4477 16.1025 11.9998 16.1025C12.552 16.1025 12.9996 16.5159 12.9998 17.0255V17.0769C12.9998 17.5867 12.5521 18 11.9998 18C11.4475 18 10.9998 17.5867 10.9998 17.0769ZM10.9998 12.7257V6.92308C10.9998 6.41328 11.4475 6 11.9998 6C12.5521 6 12.9998 6.41328 12.9998 6.92308V12.7257C12.9996 13.2353 12.552 13.6487 11.9998 13.6487C11.4477 13.6487 11.0001 13.2353 10.9998 12.7257Z' fill='white'/></svg>") center center / contain no-repeat;
 }

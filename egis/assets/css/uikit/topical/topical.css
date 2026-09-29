@@ -101,7 +101,6 @@
   background: url('../../../image/icon/web/topical/condition-help.svg') center / contain no-repeat;
 }
 
-/* 피그마 1701:7198 — 조건검색 안내툴팁 (? 아래) */
 .tp-condition-help-tip {
   position: absolute;
   top: calc(100% + 0.4rem);
@@ -613,7 +612,6 @@ main.inner-default:has(.tp-layout) {
   margin-bottom: 2.4rem;
 }
 
-/* 피그마 1870:5857 — 관심 데이터 관리 */
 .tp-fav-manage {
   display: inline-flex;
   align-items: center;
@@ -672,7 +670,7 @@ main.inner-default:has(.tp-layout) {
   flex: 0 0 3.2rem;
 }
 
-/* 리스트형 우측 — 조회수 + 북마크 (Figma 1701:14674) */
+/* 리스트형 우측 — 조회수 + 북마크 */
 .tp-fav-row__aside {
   align-self: center;
 }
@@ -702,7 +700,7 @@ main.inner-default:has(.tp-layout) {
   white-space: nowrap;
 }
 
-/* 리스트형 포털 안내 — 호버 시 아래줄 오른쪽 끝 (Figma 2162:2191) */
+/* 리스트형 포털 안내 — 호버 시 아래줄 오른쪽 끝 */
 .tp-fav-row__portal {
   display: none;
   align-items: center;

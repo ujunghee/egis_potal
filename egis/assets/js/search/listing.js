@@ -1,8 +1,8 @@
 /**
- * 통합검색 구분별 화면(데이터셋·Open API·문의하기) 공용 동작.
+ * 통합검색 구분별 화면(데이터셋·Open API·문의하기·AI) 공용 동작 (jQuery).
  *
- *   SearchListing.init('[data-openapi-list]', items); // 카드 목록 + 적용 필터
- *   SearchListing.initApplied();                      // 적용 필터만 (문의하기처럼 마크업 목록)
+ *   SearchListing.init('[data-openapi-list]', items);
+ *   SearchListing.initApplied();
  */
 window.SearchListing = {
   escape(value) {
@@ -17,25 +17,32 @@ window.SearchListing = {
     );
   },
 
-  /** 적용된 필터 칩 — 필터 패널의 체크박스만 반영한다 */
   initApplied() {
-    const filterPanel = document.querySelector('[data-filter-panel]');
-    const appliedBox = document.querySelector('[data-applied-filter]');
-    const appliedList = document.querySelector('[data-applied-list]');
-    const appliedCount = document.querySelector('[data-applied-count]');
-    if (!filterPanel || !appliedBox || !appliedList || !appliedCount) return;
+    const $filterPanel = jQuery('[data-filter-panel]');
+    const $appliedBox = jQuery('[data-applied-filter]');
+    const $appliedList = jQuery('[data-applied-list]');
+    const $appliedCount = jQuery('[data-applied-count]');
+    if (
+      !$filterPanel.length ||
+      !$appliedBox.length ||
+      !$appliedList.length ||
+      !$appliedCount.length
+    ) {
+      return;
+    }
 
     const escape = this.escape;
 
     const renderApplied = () => {
-      const checked = [...filterPanel.querySelectorAll('input[type="checkbox"]:checked')];
-      appliedCount.textContent = String(checked.length);
-      appliedBox.hidden = checked.length === 0;
-      appliedList.innerHTML = checked
-        .map((checkbox) => {
-          const label =
-            document.querySelector(`label[for="${checkbox.id}"]`)?.textContent.trim() || checkbox.value;
-          return `
+      const checked = $filterPanel.find('input[type="checkbox"]:checked').get();
+      $appliedCount.text(String(checked.length));
+      $appliedBox.prop('hidden', checked.length === 0);
+      $appliedList.html(
+        checked
+          .map((checkbox) => {
+            const label =
+              jQuery(`label[for="${checkbox.id}"]`).text().trim() || checkbox.value;
+            return `
       <li>
         <div class="chip border-slate-500 border h-36 w-fit px-12 radius-md-6 gap-6 flex align-center justify-center bg-white">
           <span class="body2-m-16 color-slate-700">${escape(label)}</span>
@@ -44,71 +51,121 @@ window.SearchListing = {
           </button>
         </div>
       </li>`;
-        })
-        .join('');
+          })
+          .join(''),
+      );
     };
 
-    filterPanel.addEventListener('change', (event) => {
-      if (event.target.matches('input[type="checkbox"]')) renderApplied();
+    $filterPanel.on('change', (event) => {
+      if (jQuery(event.target).is('input[type="checkbox"]')) renderApplied();
     });
 
-    appliedList.addEventListener('click', (event) => {
-      const btn = event.target.closest('[data-applied-remove]');
-      if (!btn) return;
+    $appliedList.on('click', (event) => {
+      const $btn = jQuery(event.target).closest('[data-applied-remove]');
+      if (!$btn.length) return;
 
-      const checkbox = document.getElementById(btn.dataset.appliedRemove);
-      if (!checkbox) return;
+      const $checkbox = jQuery(`#${$btn.data('appliedRemove')}`);
+      if (!$checkbox.length) return;
 
-      checkbox.checked = false;
-      checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+      $checkbox.prop('checked', false);
+      $checkbox.trigger('change');
       renderApplied();
     });
 
-    document.querySelector('[data-applied-reset]')?.addEventListener('click', () => {
-      filterPanel.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
-        checkbox.checked = false;
-        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+    jQuery('[data-applied-reset]').on('click', () => {
+      $filterPanel.find('input[type="checkbox"]:checked').each(function () {
+        jQuery(this).prop('checked', false).trigger('change');
       });
       renderApplied();
     });
 
-    // 필터 패널의 초기화는 search-filter.js 가 change 없이 비우므로 여기서 칩을 다시 그린다
-    document.querySelector('[data-search-filter-reset]')?.addEventListener('click', renderApplied);
+    jQuery('[data-search-filter-reset]').on('click', renderApplied);
 
     renderApplied();
   },
 
-  init(listSelector, items) {
-    const list = document.querySelector(listSelector);
-    if (!list || !window.DatasetCard) return;
+  init(listSelector, items, options = {}) {
+    const $list = jQuery(listSelector);
+    if (!$list.length || !window.DatasetCard) return;
 
-    const cardOptions = { showCheckbox: false, showBookmark: false, pinAttr: false };
+    const enableQuickMenu =
+      options.quickMenu !== false && jQuery('[data-quick-nav]').length;
+    const cardOptions = {
+      showCheckbox: false,
+      showBookmark: enableQuickMenu,
+      pinAttr: false,
+    };
     let view = 'card';
+
+    const isFavorited = (id) =>
+      enableQuickMenu && window.SearchQuick?.state?.favorites?.has(id);
 
     const renderList = () => {
       const isList = view === 'list';
-      list.className = isList
-        ? 'tp-cards tp-list flex flex-col border-t border-slate-200 mt-24'
-        : 'tp-cards mt-24';
-      list.innerHTML = items
-        .map((item) =>
-          isList
-            ? DatasetCard.renderListRow(item, { ...cardOptions, showPortalLink: true })
-            : DatasetCard.render(item, { ...cardOptions, showPortalLink: true }),
-        )
-        .join('');
+      $list.attr(
+        'class',
+        isList
+          ? 'tp-cards tp-list flex flex-col border-t border-slate-200 mt-24'
+          : 'tp-cards mt-24',
+      );
+      $list.html(
+        items
+          .map((item) =>
+            isList
+              ? DatasetCard.renderListRow(item, {
+                  ...cardOptions,
+                  favorited: isFavorited(item.id),
+                  showPortalLink: true,
+                })
+              : DatasetCard.render(item, {
+                  ...cardOptions,
+                  favorited: isFavorited(item.id),
+                  showPortalLink: true,
+                }),
+          )
+          .join(''),
+      );
     };
 
-    document.querySelectorAll('[data-view]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        view = btn.dataset.view;
-        document.querySelectorAll('[data-view]').forEach((entry) => {
-          const active = entry === btn;
-          entry.classList.toggle('active', active);
-          entry.setAttribute('aria-pressed', String(active));
-        });
-        renderList();
+    if (enableQuickMenu && window.SearchQuick) {
+      const tab = document.body.dataset.searchTab || 'dataset';
+      window.SearchQuickNav = SearchQuick.initMenu({
+        items,
+        recentStorageKey: `egis-search-${tab}-recent-ids`,
+        onListChange: renderList,
       });
+    }
+
+    $list.on('click', (event) => {
+      const $favBtn = jQuery(event.target).closest('[data-fav-id]');
+      if ($favBtn.length && enableQuickMenu && window.SearchQuick) {
+        event.preventDefault();
+        event.stopPropagation();
+        const id = $favBtn.data('favId');
+        SearchQuick.setFavorite(id, !SearchQuick.state.favorites.has(id));
+        return;
+      }
+      const $card = jQuery(event.target).closest('[data-item]');
+      if (
+        $card.length &&
+        enableQuickMenu &&
+        window.SearchQuick &&
+        !jQuery(event.target).closest('.tp-card__bookmark').length
+      ) {
+        SearchQuick.addRecent($card.data('item'));
+      }
+    });
+
+    jQuery('[data-view]').on('click', function () {
+      const $btn = jQuery(this);
+      view = $btn.data('view');
+      jQuery('[data-view]').each(function () {
+        const $entry = jQuery(this);
+        const active = $entry.is($btn);
+        $entry.toggleClass('active', active);
+        $entry.attr('aria-pressed', String(active));
+      });
+      renderList();
     });
 
     this.initApplied();

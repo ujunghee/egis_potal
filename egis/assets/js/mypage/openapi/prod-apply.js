@@ -1,7 +1,4 @@
-/**
- * Open API 운영계정 신청 — 유효성(Figma 1749:3290) · 이미지 첨부 · 제출
- * Figma: 1226:2329 / 1749:3290
- */
+/** Open API 운영계정 신청 — 유효성 · 이미지 첨부 · 제출 */
 (() => {
   const form = document.querySelector('[data-oa-prod-form]');
   if (!form) return;

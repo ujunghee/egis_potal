@@ -213,6 +213,36 @@
   white-space: nowrap;
 }
 
+/* 포커스 */
+.footer
+  :is(a, button, input, select, textarea):not(
+    :is(
+      .transparent-button-48,
+      .transparent-button-40,
+      .transparent-button-36,
+      .transparent-button-32,
+      .transparent-button-28,
+      .blue-button-48,
+      .blue-button-40,
+      .blue-button-36,
+      .blue-button-32,
+      .blue-button-28,
+      .border-blue-button-48,
+      .border-blue-button-40,
+      .border-blue-button-36,
+      .border-blue-button-32,
+      .border-blue-button-28
+    )
+  ):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--gray-700), 0 0 0 4px var(--gray-200);
+}
+
+.footer__quick-btn:focus-visible,
+.footer__quick-link:focus-visible {
+  background-color: transparent;
+}
+
 /* 노트북 (1280px 이하) */
 @media (max-width: 1280px) {
   .footer__quick-btn,

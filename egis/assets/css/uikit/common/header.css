@@ -123,7 +123,6 @@
   }
 }
 
-
 /* PC GNB */
 .header-nav {
   position: relative;
@@ -457,7 +456,6 @@ button.header-nav__link {
   padding: 0 var(--spacing-16) var(--spacing-16);
 }
 
-
 /* 드로어 퀵메뉴 */
 .header-drawer__quick {
   padding: var(--spacing-8) 0 var(--spacing-16) 0;
@@ -661,5 +659,46 @@ button.header-nav__link {
   background-color: var(--slate-50);
 }
 
+/* 포커스 */
+.header
+  :is(a, button, input, select, textarea):not(
+    :is(
+      .transparent-button-48,
+      .transparent-button-40,
+      .transparent-button-36,
+      .transparent-button-32,
+      .transparent-button-28,
+      .blue-button-48,
+      .blue-button-40,
+      .blue-button-36,
+      .blue-button-32,
+      .blue-button-28,
+      .border-blue-button-48,
+      .border-blue-button-40,
+      .border-blue-button-36,
+      .border-blue-button-32,
+      .border-blue-button-28
+    )
+  ):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--gray-700), 0 0 0 4px var(--gray-200);
+}
+
+.header .search-58:has(:focus-visible) {
+  border-color: var(--slate-400);
+  box-shadow: 0 0 0 4px var(--gray-200);
+}
+
+.header .search-58 :is(.search-input, .search-button):focus-visible {
+  box-shadow: none;
+}
+
+.header-drawer
+  :is(a, button, input):not(
+    :is(.transparent-button-48, .transparent-button-40, .transparent-button-36, .transparent-button-32, .transparent-button-28)
+  ):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--gray-700), 0 0 0 4px var(--gray-200);
+}
 
 /* 모바일 미지원 — GNB·로그인 항상 유지 */

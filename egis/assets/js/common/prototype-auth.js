@@ -37,7 +37,7 @@ window.EgisPrototypeAuth = (() => {
 
   const isLoggedIn = () => loggedIn;
 
-  /** 피그마 1850:4765 — 비로그인 안내 */
+  /** 비로그인 안내 */
   const ensureModal = () => {
     let modal = document.querySelector('[data-login-required-modal]');
     if (modal) return modal;
